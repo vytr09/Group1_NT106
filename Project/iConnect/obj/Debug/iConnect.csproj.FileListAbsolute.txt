@@ -1,0 +1,12 @@
+Y:\Lab\Project\iConnect\bin\Debug\iConnect.exe.config
+Y:\Lab\Project\iConnect\bin\Debug\iConnect.exe
+Y:\Lab\Project\iConnect\bin\Debug\iConnect.pdb
+Y:\Lab\Project\iConnect\obj\Debug\iConnect.csproj.AssemblyReference.cache
+Y:\Lab\Project\iConnect\obj\Debug\iConnect.Properties.Resources.resources
+Y:\Lab\Project\iConnect\obj\Debug\iConnect.csproj.GenerateResource.cache
+Y:\Lab\Project\iConnect\obj\Debug\iConnect.csproj.CoreCompileInputs.cache
+Y:\Lab\Project\iConnect\obj\Debug\iConnect.exe
+Y:\Lab\Project\iConnect\obj\Debug\iConnect.pdb
+Y:\Lab\Project\iConnect\bin\Debug\Guna.UI2.dll
+Y:\Lab\Project\iConnect\obj\Debug\iConnect.Home.resources
+Y:\Lab\Project\iConnect\obj\Debug\iConnect.csproj.Up2Date
