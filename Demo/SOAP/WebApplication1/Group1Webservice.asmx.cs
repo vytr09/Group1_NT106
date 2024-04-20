@@ -36,11 +36,54 @@ namespace WebApplication1
         {
             return a - b;
         }
+
+        [WebMethod]
+        public void AddPerson(string name, int age)
+        {
+            // Create a new Person object with the provided details
+            Person newPerson = new Person { Name = name, Age = age };
+
+            // Add the new person to your data source (e.g., database)
+            AddPersonToDatabase(newPerson);
+        }
+
+        private void AddPersonToDatabase(Person person)
+        {
+            // database logic here
+            Console.WriteLine("Adding person:");
+            Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        }
+
+        [WebMethod]
+        public List<Person> SearchByName(string name)
+        {
+            // Perform search logic here
+            // For demonstration purposes, let's assume we have a list of persons
+            List<Person> persons = GetPersonsFromDatabase();
+
+            // Filter persons by name
+            List<Person> searchResults = persons.Where(p => p.Name.ToLower().Contains(name.ToLower())).ToList();
+
+            return searchResults;
+        }
+
+        private List<Person> GetPersonsFromDatabase()
+        {
+            List<Person> persons = new List<Person>
+            {
+                new Person { Name = "John", Age = 25 },
+                new Person { Name = "Jane", Age = 30 },
+                new Person { Name = "Alice", Age = 28 }
+            };
+            return persons;
+        }
+
         [WebMethod]
         public void end()
         {
             System.Environment.Exit(0);
         }
+
     }
 
     public class Person
