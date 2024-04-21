@@ -16,5 +16,10 @@ namespace iConnect
         {
             InitializeComponent();
         }
+
+        private void Following_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
