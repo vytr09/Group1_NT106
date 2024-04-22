@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "\\\\Mac\\NT106\\Project\\Project\\iConnect\\",
   "Documents": [
     {
@@ -31,6 +32,37 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|\\\\mac\\nt106\\project\\project\\iconnect\\followers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+=======
+  "WorkspaceRootPath": "D:\\Group1_NT106\\Project\\iConnect\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\group1_nt106\\project\\iconnect\\article_details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:article_details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\group1_nt106\\project\\iconnect\\privacy_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:privacy_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\group1_nt106\\project\\iconnect\\notification_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:notification_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\group1_nt106\\project\\iconnect\\block_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:block_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\group1_nt106\\project\\iconnect\\account_status_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:account_status_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\group1_nt106\\project\\iconnect\\help_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:help_settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\group1_nt106\\project\\iconnect\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+>>>>>>> ab3969b63bdf10d0c64c011862d3053a70ceeb9e
     }
   ],
   "DocumentGroupContainers": [
@@ -40,6 +72,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 4,
           "Children": [
             {
@@ -112,11 +145,90 @@
               "RelativeToolTip": "Signup.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T15:52:18.685Z",
+=======
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Article_details.cs [Design]",
+              "DocumentMoniker": "D:\\Group1_NT106\\Project\\iConnect\\Article_details.cs",
+              "RelativeDocumentMoniker": "Article_details.cs",
+              "ToolTip": "D:\\Group1_NT106\\Project\\iConnect\\Article_details.cs [Design]",
+              "RelativeToolTip": "Article_details.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T09:47:50.339Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Privacy_settings.cs [Design]",
+              "DocumentMoniker": "D:\\Group1_NT106\\Project\\iConnect\\Privacy_settings.cs",
+              "RelativeDocumentMoniker": "Privacy_settings.cs",
+              "ToolTip": "D:\\Group1_NT106\\Project\\iConnect\\Privacy_settings.cs [Design]",
+              "RelativeToolTip": "Privacy_settings.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T09:46:05.278Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Notification_settings.cs [Design]",
+              "DocumentMoniker": "D:\\Group1_NT106\\Project\\iConnect\\Notification_settings.cs",
+              "RelativeDocumentMoniker": "Notification_settings.cs",
+              "ToolTip": "D:\\Group1_NT106\\Project\\iConnect\\Notification_settings.cs [Design]",
+              "RelativeToolTip": "Notification_settings.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T09:44:35.241Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Block_settings.cs [Design]",
+              "DocumentMoniker": "D:\\Group1_NT106\\Project\\iConnect\\Block_settings.cs",
+              "RelativeDocumentMoniker": "Block_settings.cs",
+              "ToolTip": "D:\\Group1_NT106\\Project\\iConnect\\Block_settings.cs [Design]",
+              "RelativeToolTip": "Block_settings.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T09:42:33.683Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Help_settings.cs [Design]",
+              "DocumentMoniker": "D:\\Group1_NT106\\Project\\iConnect\\Help_settings.cs",
+              "RelativeDocumentMoniker": "Help_settings.cs",
+              "ToolTip": "D:\\Group1_NT106\\Project\\iConnect\\Help_settings.cs [Design]",
+              "RelativeToolTip": "Help_settings.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T09:40:55.783Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Account_status_settings.cs [Design]",
+              "DocumentMoniker": "D:\\Group1_NT106\\Project\\iConnect\\Account_status_settings.cs",
+              "RelativeDocumentMoniker": "Account_status_settings.cs",
+              "ToolTip": "D:\\Group1_NT106\\Project\\iConnect\\Account_status_settings.cs [Design]",
+              "RelativeToolTip": "Account_status_settings.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T09:38:58.244Z",
+>>>>>>> ab3969b63bdf10d0c64c011862d3053a70ceeb9e
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+<<<<<<< HEAD
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "\\\\Mac\\NT106\\Project\\Project\\iConnect\\Login.cs",
               "RelativeDocumentMoniker": "Login.cs",
@@ -160,6 +272,15 @@
               "RelativeToolTip": "Followers.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T15:51:24.804Z",
+=======
+              "Title": "Settings.cs [Design]",
+              "DocumentMoniker": "D:\\Group1_NT106\\Project\\iConnect\\Settings.cs",
+              "RelativeDocumentMoniker": "Settings.cs",
+              "ToolTip": "D:\\Group1_NT106\\Project\\iConnect\\Settings.cs [Design]",
+              "RelativeToolTip": "Settings.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T01:37:14.238Z",
+>>>>>>> ab3969b63bdf10d0c64c011862d3053a70ceeb9e
               "EditorCaption": " [Design]"
             }
           ]
