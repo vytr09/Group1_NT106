@@ -257,5 +257,32 @@
   <ItemGroup>
     <None Include="Resources\Message_fill.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Send_hor_fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\postimg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\postimg2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

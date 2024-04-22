@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:Message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\uit\\nam_2\\ltmcb\\group1_nt106\\project\\iconnect\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\uit\\nam_2\\ltmcb\\group1_nt106\\project\\iconnect\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\uit\\nam_2\\ltmcb\\group1_nt106\\project\\iconnect\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|d:\\uit\\nam_2\\ltmcb\\group1_nt106\\project\\iconnect\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EAA8194-2CFA-4144-AEBF-CCA8CD7DD276}|iConnect.csproj|solutionrelative:search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,65 +47,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Message.cs",
-              "DocumentMoniker": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Message.cs",
-              "RelativeDocumentMoniker": "Message.cs",
-              "ToolTip": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Message.cs*",
-              "RelativeToolTip": "Message.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T15:54:04.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAnAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T15:45:50.507Z",
+              "WhenOpened": "2024-04-22T17:43:36.111Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Search.cs [Design]",
-              "DocumentMoniker": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Search.cs",
-              "RelativeDocumentMoniker": "Search.cs",
-              "ToolTip": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Search.cs [Design]",
-              "RelativeToolTip": "Search.cs [Design]",
+              "Title": "Profile.cs [Design]",
+              "DocumentMoniker": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Profile.cs",
+              "RelativeDocumentMoniker": "Profile.cs",
+              "ToolTip": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Profile.cs [Design]",
+              "RelativeToolTip": "Profile.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T15:35:03.955Z",
+              "WhenOpened": "2024-04-22T17:22:05.264Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Message.cs [Design]",
-              "DocumentMoniker": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Message.cs",
-              "RelativeDocumentMoniker": "Message.cs",
-              "ToolTip": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Message.cs [Design]*",
-              "RelativeToolTip": "Message.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T14:12:39.284Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Search.cs",
+              "Title": "Search.cs [Design]",
               "DocumentMoniker": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Search.cs",
               "RelativeDocumentMoniker": "Search.cs",
-              "ToolTip": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Search.cs",
-              "RelativeToolTip": "Search.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
+              "ToolTip": "D:\\UIT\\Nam_2\\LTMCB\\Group1_NT106\\Project\\iConnect\\Search.cs [Design]*",
+              "RelativeToolTip": "Search.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T15:23:06.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:35:03.955Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
