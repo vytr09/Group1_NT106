@@ -182,6 +182,9 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notification_settings.resx">
       <DependentUpon>Notification_settings.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +206,9 @@
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Signup.resx">
+      <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -247,6 +253,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot 2024-04-20 232604.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 2%404x 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Line 22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Line 221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Line 222.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,3 +25,15 @@ Y:\Lab\Project\iConnect\obj\Debug\iConnect.csproj.Up2Date
 \\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.csproj.Up2Date
 \\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.exe
 \\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.pdb
+\\Mac\NT106\Project\Project\iConnect\bin\Debug\FontAwesome.Sharp.dll
+\\Mac\NT106\Project\Project\iConnect\bin\Debug\FontAwesome.WPF.dll
+\\Mac\NT106\Project\Project\iConnect\bin\Debug\FontAwesome.WPF.xml
+\\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.Account_status_settings.resources
+\\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.Article_details.resources
+\\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.Block_settings.resources
+\\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.Help_settings.resources
+\\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.Login.resources
+\\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.Notification_settings.resources
+\\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.Privacy_settings.resources
+\\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.Settings.resources
+\\Mac\NT106\Project\Project\iConnect\obj\Debug\iConnect.Signup.resources

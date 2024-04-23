@@ -17,5 +17,14 @@ namespace iConnect
             InitializeComponent();
         }
 
+        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,20 @@ namespace iConnect
         {
             InitializeComponent();
         }
+
+        private void guna2CircleButton3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
