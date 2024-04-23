@@ -38,6 +38,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.guna2GradientButton17 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton16 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientButton8 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -53,16 +63,6 @@
             this.guna2GradientButton22 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton23 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton24 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.guna2GradientButton8 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton17 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton16 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -70,8 +70,8 @@
             this.guna2Panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -174,6 +174,148 @@
             this.guna2Panel4.Size = new System.Drawing.Size(364, 443);
             this.guna2Panel4.TabIndex = 11;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.guna2GradientButton8);
+            this.panel7.Controls.Add(this.guna2GradientButton17);
+            this.panel7.Controls.Add(this.guna2GradientButton16);
+            this.panel7.Controls.Add(this.guna2TextBox1);
+            this.panel7.Controls.Add(this.guna2HtmlLabel6);
+            this.panel7.Controls.Add(this.guna2HtmlLabel5);
+            this.panel7.Controls.Add(this.guna2HtmlLabel4);
+            this.panel7.Controls.Add(this.guna2HtmlLabel3);
+            this.panel7.Controls.Add(this.guna2HtmlLabel2);
+            this.panel7.Location = new System.Drawing.Point(0, -1);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(365, 444);
+            this.panel7.TabIndex = 6;
+            // 
+            // guna2GradientButton17
+            // 
+            this.guna2GradientButton17.BorderRadius = 10;
+            this.guna2GradientButton17.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton17.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton17.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton17.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton17.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton17.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton17.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton17.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton17.ForeColor = System.Drawing.Color.Black;
+            this.guna2GradientButton17.Location = new System.Drawing.Point(36, 330);
+            this.guna2GradientButton17.Name = "guna2GradientButton17";
+            this.guna2GradientButton17.Size = new System.Drawing.Size(203, 95);
+            this.guna2GradientButton17.TabIndex = 21;
+            this.guna2GradientButton17.Text = "+ Tải ảnh lên";
+            // 
+            // guna2GradientButton16
+            // 
+            this.guna2GradientButton16.BorderRadius = 10;
+            this.guna2GradientButton16.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton16.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton16.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton16.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton16.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton16.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton16.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton16.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton16.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton16.Image = global::iConnect.Properties.Resources.on_off;
+            this.guna2GradientButton16.Location = new System.Drawing.Point(288, 264);
+            this.guna2GradientButton16.Name = "guna2GradientButton16";
+            this.guna2GradientButton16.Size = new System.Drawing.Size(42, 33);
+            this.guna2GradientButton16.TabIndex = 20;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(36, 135);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(294, 115);
+            this.guna2TextBox1.TabIndex = 19;
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(36, 297);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(203, 27);
+            this.guna2HtmlLabel6.TabIndex = 18;
+            this.guna2HtmlLabel6.Text = "Chỉnh sửa ảnh đại diện";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(36, 264);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(245, 27);
+            this.guna2HtmlLabel5.TabIndex = 18;
+            this.guna2HtmlLabel5.Text = "Hiển thị trạng thái hoạt động";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(36, 102);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(68, 27);
+            this.guna2HtmlLabel4.TabIndex = 18;
+            this.guna2HtmlLabel4.Text = "Tiểu sử";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(36, 69);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(122, 27);
+            this.guna2HtmlLabel3.TabIndex = 18;
+            this.guna2HtmlLabel3.Text = "Tên tài khoản";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(27, 13);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(328, 38);
+            this.guna2HtmlLabel2.TabIndex = 18;
+            this.guna2HtmlLabel2.Text = "Chỉnh sửa trang cá nhân";
+            // 
+            // guna2GradientButton8
+            // 
+            this.guna2GradientButton8.BorderRadius = 10;
+            this.guna2GradientButton8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton8.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton8.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton8.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton8.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton8.Image = global::iConnect.Properties.Resources.pen;
+            this.guna2GradientButton8.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2GradientButton8.Location = new System.Drawing.Point(288, 69);
+            this.guna2GradientButton8.Name = "guna2GradientButton8";
+            this.guna2GradientButton8.Size = new System.Drawing.Size(42, 31);
+            this.guna2GradientButton8.TabIndex = 22;
+            // 
             // guna2GradientButton2
             // 
             this.guna2GradientButton2.BorderRadius = 10;
@@ -206,7 +348,7 @@
             this.guna2GradientButton3.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton3.ForeColor = System.Drawing.Color.Black;
-            //this.guna2GradientButton3.Image = global::iConnect.Properties.Resources.help;
+            this.guna2GradientButton3.Image = global::iConnect.Properties.Resources.help;
             this.guna2GradientButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton3.Location = new System.Drawing.Point(21, 232);
             this.guna2GradientButton3.Name = "guna2GradientButton3";
@@ -227,7 +369,7 @@
             this.guna2GradientButton4.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton4.ForeColor = System.Drawing.Color.Black;
-           // this.guna2GradientButton4.Image = global::iConnect.Properties.Resources.block;
+            this.guna2GradientButton4.Image = global::iConnect.Properties.Resources.block;
             this.guna2GradientButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton4.Location = new System.Drawing.Point(21, 188);
             this.guna2GradientButton4.Name = "guna2GradientButton4";
@@ -248,7 +390,7 @@
             this.guna2GradientButton5.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientButton5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton5.ForeColor = System.Drawing.Color.Black;
-            //this.guna2GradientButton5.Image = global::iConnect.Properties.Resources.notification_turnoff;
+            this.guna2GradientButton5.Image = global::iConnect.Properties.Resources.notification_turnoff;
             this.guna2GradientButton5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton5.Location = new System.Drawing.Point(21, 145);
             this.guna2GradientButton5.Name = "guna2GradientButton5";
@@ -269,7 +411,7 @@
             this.guna2GradientButton6.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientButton6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton6.ForeColor = System.Drawing.Color.Black;
-           // this.guna2GradientButton6.Image = global::iConnect.Properties.Resources._lock;
+            this.guna2GradientButton6.Image = global::iConnect.Properties.Resources._lock;
             this.guna2GradientButton6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton6.ImageSize = new System.Drawing.Size(30, 20);
             this.guna2GradientButton6.Location = new System.Drawing.Point(21, 101);
@@ -321,7 +463,7 @@
             // 
             // guna2PictureBox2
             // 
-            //this.guna2PictureBox2.Image = global::iConnect.Properties.Resources.Screenshot_2024_04_20_2326041;
+            this.guna2PictureBox2.Image = global::iConnect.Properties.Resources.Screenshot_2024_04_20_232604;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(14, 10);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
@@ -476,149 +618,6 @@
             this.guna2GradientButton24.TabIndex = 11;
             this.guna2GradientButton24.Text = "Trang chủ";
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.guna2GradientButton8);
-            this.panel7.Controls.Add(this.guna2GradientButton17);
-            this.panel7.Controls.Add(this.guna2GradientButton16);
-            this.panel7.Controls.Add(this.guna2TextBox1);
-            this.panel7.Controls.Add(this.guna2HtmlLabel6);
-            this.panel7.Controls.Add(this.guna2HtmlLabel5);
-            this.panel7.Controls.Add(this.guna2HtmlLabel4);
-            this.panel7.Controls.Add(this.guna2HtmlLabel3);
-            this.panel7.Controls.Add(this.guna2HtmlLabel2);
-            this.panel7.Location = new System.Drawing.Point(0, -1);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(365, 444);
-            this.panel7.TabIndex = 6;
-            //this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
-            // 
-            // guna2GradientButton8
-            // 
-            this.guna2GradientButton8.BorderRadius = 10;
-            this.guna2GradientButton8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton8.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton8.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton8.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton8.ForeColor = System.Drawing.Color.White;
-            //this.guna2GradientButton8.Image = global::iConnect.Properties.Resources.pen1;
-            this.guna2GradientButton8.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2GradientButton8.Location = new System.Drawing.Point(288, 69);
-            this.guna2GradientButton8.Name = "guna2GradientButton8";
-            this.guna2GradientButton8.Size = new System.Drawing.Size(42, 31);
-            this.guna2GradientButton8.TabIndex = 22;
-            // 
-            // guna2GradientButton17
-            // 
-            this.guna2GradientButton17.BorderRadius = 10;
-            this.guna2GradientButton17.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton17.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton17.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton17.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton17.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton17.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton17.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton17.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton17.ForeColor = System.Drawing.Color.Black;
-            this.guna2GradientButton17.Location = new System.Drawing.Point(36, 330);
-            this.guna2GradientButton17.Name = "guna2GradientButton17";
-            this.guna2GradientButton17.Size = new System.Drawing.Size(203, 95);
-            this.guna2GradientButton17.TabIndex = 21;
-            this.guna2GradientButton17.Text = "+ Tải ảnh lên";
-            // 
-            // guna2GradientButton16
-            // 
-            this.guna2GradientButton16.BorderRadius = 10;
-            this.guna2GradientButton16.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton16.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton16.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton16.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton16.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton16.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton16.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton16.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton16.ForeColor = System.Drawing.Color.White;
-           // this.guna2GradientButton16.Image = global::iConnect.Properties.Resources.on_off;
-            this.guna2GradientButton16.Location = new System.Drawing.Point(288, 264);
-            this.guna2GradientButton16.Name = "guna2GradientButton16";
-            this.guna2GradientButton16.Size = new System.Drawing.Size(42, 33);
-            this.guna2GradientButton16.TabIndex = 20;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(36, 135);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(294, 115);
-            this.guna2TextBox1.TabIndex = 19;
-            // 
-            // guna2HtmlLabel6
-            // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(36, 297);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(203, 27);
-            this.guna2HtmlLabel6.TabIndex = 18;
-            this.guna2HtmlLabel6.Text = "Chỉnh sửa ảnh đại diện";
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(36, 264);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(245, 27);
-            this.guna2HtmlLabel5.TabIndex = 18;
-            this.guna2HtmlLabel5.Text = "Hiển thị trạng thái hoạt động";
-            // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(36, 102);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(68, 27);
-            this.guna2HtmlLabel4.TabIndex = 18;
-            this.guna2HtmlLabel4.Text = "Tiểu sử";
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(36, 69);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(122, 27);
-            this.guna2HtmlLabel3.TabIndex = 18;
-            this.guna2HtmlLabel3.Text = "Tên tài khoản";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(27, 13);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(328, 38);
-            this.guna2HtmlLabel2.TabIndex = 18;
-            this.guna2HtmlLabel2.Text = "Chỉnh sửa trang cá nhân";
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -638,9 +637,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
