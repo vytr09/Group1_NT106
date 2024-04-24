@@ -83,15 +83,9 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap Asset_2_4x_1 {
-            get {
-                object obj = ResourceManager.GetObject("Asset 2@4x 1", resourceCulture);
-=======
         internal static System.Drawing.Bitmap block {
             get {
                 object obj = ResourceManager.GetObject("block", resourceCulture);
->>>>>>> d56f2bda50cd1c1dbdd083aafbaa2dbe9e9e13e5
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -99,11 +93,6 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap Group_39 {
-            get {
-                object obj = ResourceManager.GetObject("Group 39", resourceCulture);
-=======
         internal static System.Drawing.Bitmap comment {
             get {
                 object obj = ResourceManager.GetObject("comment", resourceCulture);
@@ -157,7 +146,6 @@ namespace iConnect.Properties {
         internal static System.Drawing.Bitmap help {
             get {
                 object obj = ResourceManager.GetObject("help", resourceCulture);
->>>>>>> d56f2bda50cd1c1dbdd083aafbaa2dbe9e9e13e5
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -185,15 +173,9 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap Line_22 {
-            get {
-                object obj = ResourceManager.GetObject("Line 22", resourceCulture);
-=======
         internal static System.Drawing.Bitmap Img_box {
             get {
                 object obj = ResourceManager.GetObject("Img_box", resourceCulture);
->>>>>>> d56f2bda50cd1c1dbdd083aafbaa2dbe9e9e13e5
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -201,15 +183,9 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap Line_221 {
-            get {
-                object obj = ResourceManager.GetObject("Line 221", resourceCulture);
-=======
         internal static System.Drawing.Bitmap Info {
             get {
                 object obj = ResourceManager.GetObject("Info", resourceCulture);
->>>>>>> d56f2bda50cd1c1dbdd083aafbaa2dbe9e9e13e5
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -217,15 +193,9 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap Line_222 {
-            get {
-                object obj = ResourceManager.GetObject("Line 222", resourceCulture);
-=======
         internal static System.Drawing.Bitmap like {
             get {
                 object obj = ResourceManager.GetObject("like", resourceCulture);
->>>>>>> d56f2bda50cd1c1dbdd083aafbaa2dbe9e9e13e5
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
