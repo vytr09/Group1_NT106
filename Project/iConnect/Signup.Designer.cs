@@ -293,13 +293,13 @@
             // 
             // signupBtn
             // 
-            this.signupBtn.BorderRadius = 45;
+            this.signupBtn.BorderRadius = 30;
             this.signupBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.signupBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.signupBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.signupBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.signupBtn.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.signupBtn.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signupBtn.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Bold);
             this.signupBtn.ForeColor = System.Drawing.Color.White;
             this.signupBtn.Location = new System.Drawing.Point(389, 495);
             this.signupBtn.Margin = new System.Windows.Forms.Padding(2);

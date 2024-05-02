@@ -69,13 +69,13 @@
             // 
             // loginBtn
             // 
-            this.loginBtn.BorderRadius = 45;
+            this.loginBtn.BorderRadius = 30;
             this.loginBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.loginBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.loginBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.loginBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.loginBtn.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Bold);
             this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.Location = new System.Drawing.Point(308, 410);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(2);
