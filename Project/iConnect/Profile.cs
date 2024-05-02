@@ -16,5 +16,25 @@ namespace iConnect
         {
             InitializeComponent();
         }
+
+        private void followerBtn_Click(object sender, EventArgs e)
+        {
+            followerPnl.Visible = true;
+        }
+
+        private void followingBtn_Click(object sender, EventArgs e)
+        {
+            followingPnl.Visible = true;
+        }
+
+        private void guna2ControlBox2_Click(object sender, EventArgs e)
+        {
+            followingPnl.Visible = false;
+        }
+
+        private void guna2ControlBox3_Click(object sender, EventArgs e)
+        {
+            followerPnl.Visible = false;
+        }
     }
 }
