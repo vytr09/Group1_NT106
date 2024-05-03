@@ -69,6 +69,7 @@ namespace iConnect
                     {
                         Login.ActiveForm.Hide();
                         Home home = new Home();
+                        home.Closed += (s, args) => this.Close();
                         home.Show();
                         //MessageBox.Show("Login successful!");
                     }
