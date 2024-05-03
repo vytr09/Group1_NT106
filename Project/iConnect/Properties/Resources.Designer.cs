@@ -273,26 +273,6 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap noti_fill {
-            get {
-                object obj = ResourceManager.GetObject("noti_fill", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap noti_fill2 {
-            get {
-                object obj = ResourceManager.GetObject("noti_fill2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Notification {
             get {
                 object obj = ResourceManager.GetObject("Notification", resourceCulture);
@@ -416,16 +396,6 @@ namespace iConnect.Properties {
         internal static System.Drawing.Bitmap Send_hor_fill {
             get {
                 object obj = ResourceManager.GetObject("Send_hor_fill", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Setting_fill_2x {
-            get {
-                object obj = ResourceManager.GetObject("Setting_fill@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
