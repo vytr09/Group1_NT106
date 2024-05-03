@@ -40,7 +40,7 @@ namespace iConnect
                 client = new FireSharp.FirebaseClient(config);
                 if (client != null)
                 {
-                    MessageBox.Show("Connection Success");
+                    //MessageBox.Show("Connection Success");
                 }
             }
             catch
@@ -65,14 +65,14 @@ namespace iConnect
             // Check if username is valid
             if (string.IsNullOrEmpty(usernameTxt.Text))
             {
-                MessageBox.Show("Please enter a username.");
+                MessageBox.Show("Hãy nhập tên tài khoản.");
                 return;
             }
 
             // Check if password is valid
             if (string.IsNullOrEmpty(passwdTxt.Text))
             {
-                MessageBox.Show("Please enter password.");
+                MessageBox.Show("Hãy nhập mật khẩu.");
                 return;
             }
 
@@ -87,17 +87,21 @@ namespace iConnect
                     // Check if password matches the password stored in the database
                     if (passwdTxt.Text.Equals(result.password))
                     {
-                        MessageBox.Show("Login successful!");
+                        Login.ActiveForm.Hide();
+                        Home home = new Home();
+                        home.Show();
+                        //MessageBox.Show("Login successful!");
+
                     }
                     else
                     {
-                        MessageBox.Show("Incorrect password!");
+                        MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác.");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Data not found for the specified username!!");
+                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác.");
             }
         }
 
@@ -108,11 +112,11 @@ namespace iConnect
 
         }
 
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+
+
+        private void closeAppBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            Signup signup = new Signup();
-            signup.Show();
         }
 
         private void minimizeBtn_Click(object sender, EventArgs e)
@@ -120,9 +124,11 @@ namespace iConnect
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void closeAppBtn_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Login.ActiveForm.Hide();
+            Signup signup = new Signup();
+            signup.Show();
         }
     }
 }

@@ -38,7 +38,7 @@ namespace iConnect
                 client = new FireSharp.FirebaseClient(config);
                 if (client != null)
                 {
-                    MessageBox.Show("Connection Success");
+                    //MessageBox.Show("Connection Success");
                 }
             }
             catch
@@ -69,56 +69,56 @@ namespace iConnect
             // Check if username is valid
             if (string.IsNullOrEmpty(usernameTxt.Text))
             {
-                MessageBox.Show("Please enter a username.");
+                MessageBox.Show("Hãy nhập username.");
                 return;
             }
 
             // Check if email is valid
             if (string.IsNullOrEmpty(guna2TextBox5.Text))
             {
-                MessageBox.Show("Please enter an email.");
+                MessageBox.Show("Hãy nhập email.");
                 return;
             }
 
             // Check if full name is valid
             if (string.IsNullOrEmpty(guna2TextBox6.Text))
             {
-                MessageBox.Show("Please enter full name.");
+                MessageBox.Show("Hãy nhập tên.");
                 return;
             }
 
             // Check if birthday is valid
             if (string.IsNullOrEmpty(guna2TextBox4.Text))
             {
-                MessageBox.Show("Please enter birthday.");
+                MessageBox.Show("Hãy nhập ngày tháng năm sinh.");
                 return;
             }
 
             // Check if password is valid
             if (string.IsNullOrEmpty(passwdTxt.Text))
             {
-                MessageBox.Show("Please enter password.");
+                MessageBox.Show("Hãy nhập mật khẩu.");
                 return;
             }
 
             //Check if confirm password is valid
             if (string.IsNullOrEmpty(repasswdTxt.Text))
             {
-                MessageBox.Show("Please enter confirm password.");
+                MessageBox.Show("Hãy nhập mật khẩu xác nhận.");
                 return;
             }
 
             //Check confirm password similar password
             if (passwdTxt.Text != repasswdTxt.Text)
             {
-                MessageBox.Show("Confirm password and password do not match");
+                MessageBox.Show("Xác nhận mật khẩu không trùng khớp");
                 return;
             }
 
             // Check if the entered email has correct syntax
             if (!IsValidEmail(guna2TextBox5.Text))
             {
-                MessageBox.Show("Invalid email format. Please enter a valid email address.");
+                MessageBox.Show("Email không hợp lệ.");
                 return;
             }
 
@@ -131,7 +131,7 @@ namespace iConnect
                 {
                     if (data.Value.email == guna2TextBox5.Text)
                     {
-                        MessageBox.Show("Email already exists. Please enter another email.");
+                        MessageBox.Show("Email đã tồn tại.");
                         return;
                     }
                 }
@@ -146,13 +146,16 @@ namespace iConnect
 
                 if (usernameTxt.Text.Equals(result.username))
                 {
-                    MessageBox.Show("This ID already exists");
+                    MessageBox.Show("Username đã tồn tại");
                 }
             }
             else
             {
                 FirebaseResponse response1 = client.Set("Information/" + usernameTxt.Text, datalayer);
-                MessageBox.Show("Data is inserted");
+                MessageBox.Show("Đăng ký thành công!");
+                Signup.ActiveForm.Hide();
+                Login login = new Login();
+                login.Show();
             }
         }
 
@@ -170,16 +173,16 @@ namespace iConnect
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Signup.ActiveForm.Hide();
+            Login login = new Login();
+            login.Show();
+        }
+
         private void closeAppBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Login login = new Login();
-            login.Show();
         }
     }
 }
