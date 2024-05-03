@@ -63,7 +63,9 @@ namespace iConnect
             {
                 username = usernameTxt.Text,
                 password = passwdTxt.Text,
-                email = guna2TextBox5.Text
+                email = guna2TextBox5.Text,
+                name = guna2TextBox6.Text,
+                dateofb = guna2TextBox4.Text
             };
 
             // Check if username is valid
