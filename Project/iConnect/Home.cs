@@ -261,5 +261,26 @@ namespace iConnect
         {
             this.Close();
         }
+
+        private void allnotiBtn_Click(object sender, EventArgs e)
+        {
+            recnotiBtn.Checked = false;
+            allnotiBtn.Checked = true;
+            mennotiBtn.Checked = false;
+        }
+
+        private void recnotiBtn_Click(object sender, EventArgs e)
+        {
+            recnotiBtn.Checked = true;
+            allnotiBtn.Checked = false;
+            mennotiBtn.Checked = false;
+        }
+
+        private void mennotiBtn_Click(object sender, EventArgs e)
+        {
+            mennotiBtn.Checked = true;
+            recnotiBtn.Checked = false;
+            allnotiBtn.Checked = false;
+        }
     }
 }
