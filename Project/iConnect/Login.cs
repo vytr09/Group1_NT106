@@ -88,5 +88,15 @@ namespace iConnect
         {
 
         }
+
+        private void minimizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void closeAppBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

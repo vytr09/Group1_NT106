@@ -35,13 +35,14 @@
             this.passwdTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.usernameTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.minimizeBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.closeAppBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.signupBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -204,53 +205,39 @@
             this.guna2PictureBox3.TabStop = false;
             this.guna2PictureBox3.UseTransparentBackground = true;
             // 
-            // guna2CircleButton3
+            // minimizeBtn
             // 
-            this.guna2CircleButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton3.FillColor = System.Drawing.Color.LimeGreen;
-            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton3.Location = new System.Drawing.Point(962, 12);
-            this.guna2CircleButton3.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2CircleButton3.Name = "guna2CircleButton3";
-            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton3.Size = new System.Drawing.Size(20, 19);
-            this.guna2CircleButton3.TabIndex = 51;
+            this.minimizeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.minimizeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.minimizeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.minimizeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.minimizeBtn.FillColor = System.Drawing.Color.Orange;
+            this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.minimizeBtn.ForeColor = System.Drawing.Color.White;
+            this.minimizeBtn.Location = new System.Drawing.Point(16, 11);
+            this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.minimizeBtn.Size = new System.Drawing.Size(20, 19);
+            this.minimizeBtn.TabIndex = 50;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
             // 
-            // guna2CircleButton2
+            // closeAppBtn
             // 
-            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.Orange;
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(990, 12);
-            this.guna2CircleButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(20, 19);
-            this.guna2CircleButton2.TabIndex = 50;
-            // 
-            // guna2CircleButton1
-            // 
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.OrangeRed;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(1018, 12);
-            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(20, 19);
-            this.guna2CircleButton1.TabIndex = 49;
+            this.closeAppBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.closeAppBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.closeAppBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.closeAppBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.closeAppBtn.FillColor = System.Drawing.Color.OrangeRed;
+            this.closeAppBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.closeAppBtn.ForeColor = System.Drawing.Color.White;
+            this.closeAppBtn.Location = new System.Drawing.Point(44, 11);
+            this.closeAppBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.closeAppBtn.Name = "closeAppBtn";
+            this.closeAppBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.closeAppBtn.Size = new System.Drawing.Size(20, 19);
+            this.closeAppBtn.TabIndex = 49;
+            this.closeAppBtn.Click += new System.EventHandler(this.closeAppBtn_Click);
             // 
             // guna2PictureBox2
             // 
@@ -301,7 +288,7 @@
             this.signupBtn.FillColor = System.Drawing.Color.MediumAquamarine;
             this.signupBtn.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Bold);
             this.signupBtn.ForeColor = System.Drawing.Color.White;
-            this.signupBtn.Location = new System.Drawing.Point(389, 495);
+            this.signupBtn.Location = new System.Drawing.Point(389, 522);
             this.signupBtn.Margin = new System.Windows.Forms.Padding(2);
             this.signupBtn.Name = "signupBtn";
             this.signupBtn.Size = new System.Drawing.Size(273, 57);
@@ -309,17 +296,41 @@
             this.signupBtn.Text = "Đăng ký";
             this.signupBtn.Click += new System.EventHandler(this.signupBtn_Click);
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(569, 478);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(96, 27);
+            this.guna2HtmlLabel1.TabIndex = 55;
+            this.guna2HtmlLabel1.Text = "Đăng nhập";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(394, 478);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(167, 27);
+            this.guna2HtmlLabel3.TabIndex = 54;
+            this.guna2HtmlLabel3.Text = "Bạn đã có tài khoản?";
+            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1049, 595);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.signupBtn);
             this.Controls.Add(this.guna2HtmlLabel2);
-            this.Controls.Add(this.guna2CircleButton3);
-            this.Controls.Add(this.guna2CircleButton2);
-            this.Controls.Add(this.guna2CircleButton1);
+            this.Controls.Add(this.minimizeBtn);
+            this.Controls.Add(this.closeAppBtn);
             this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2TextBox4);
@@ -351,12 +362,13 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2TextBox passwdTxt;
         private Guna.UI2.WinForms.Guna2TextBox usernameTxt;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton minimizeBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton closeAppBtn;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button signupBtn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
     }
 }

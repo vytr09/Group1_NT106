@@ -15,6 +15,7 @@ namespace iConnect
         public Home()
         {
             InitializeComponent();
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
@@ -242,6 +243,16 @@ namespace iConnect
         private void guna2Panel6_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void minimizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void closeAppBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
