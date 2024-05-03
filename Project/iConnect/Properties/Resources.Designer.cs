@@ -353,6 +353,16 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap redheart {
+            get {
+                object obj = ResourceManager.GetObject("redheart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot_2024_04_20_232604 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2024-04-20 232604", resourceCulture);
