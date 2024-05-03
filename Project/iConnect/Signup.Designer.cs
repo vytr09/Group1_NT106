@@ -296,10 +296,10 @@
             this.minimizeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.minimizeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.minimizeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.minimizeBtn.FillColor = System.Drawing.Color.OrangeRed;
+            this.minimizeBtn.FillColor = System.Drawing.Color.Orange;
             this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
-            this.minimizeBtn.Location = new System.Drawing.Point(15, 15);
+            this.minimizeBtn.Location = new System.Drawing.Point(50, 15);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.minimizeBtn.Size = new System.Drawing.Size(25, 25);
@@ -311,10 +311,10 @@
             this.closeAppBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.closeAppBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.closeAppBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.closeAppBtn.FillColor = System.Drawing.Color.Orange;
+            this.closeAppBtn.FillColor = System.Drawing.Color.OrangeRed;
             this.closeAppBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.closeAppBtn.ForeColor = System.Drawing.Color.White;
-            this.closeAppBtn.Location = new System.Drawing.Point(50, 15);
+            this.closeAppBtn.Location = new System.Drawing.Point(15, 15);
             this.closeAppBtn.Name = "closeAppBtn";
             this.closeAppBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.closeAppBtn.Size = new System.Drawing.Size(25, 25);
