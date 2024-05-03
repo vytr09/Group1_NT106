@@ -313,6 +313,16 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Notification_fill {
+            get {
+                object obj = ResourceManager.GetObject("Notification_fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap notification_turnoff {
             get {
                 object obj = ResourceManager.GetObject("notification_turnoff", resourceCulture);
