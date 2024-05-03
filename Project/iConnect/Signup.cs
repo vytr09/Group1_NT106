@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Markup;
@@ -46,14 +47,97 @@ namespace iConnect
             }
         }
 
+        //function to check email format
+        private bool IsValidEmail(string email)
+        {
+            // Regular expression pattern for validating email format
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Check if the email matches the pattern
+            return Regex.IsMatch(email, pattern);
+        }
+
         private void signupBtn_Click(object sender, EventArgs e)
         {
             Data datalayer = new Data()
             {
                 username = usernameTxt.Text,
-                password = passwdTxt.Text
+                password = passwdTxt.Text,
+                email = guna2TextBox5.Text
             };
 
+            // Check if username is valid
+            if (string.IsNullOrEmpty(usernameTxt.Text))
+            {
+                MessageBox.Show("Please enter a username.");
+                return;
+            }
+
+            // Check if email is valid
+            if (string.IsNullOrEmpty(guna2TextBox5.Text))
+            {
+                MessageBox.Show("Please enter an email.");
+                return;
+            }
+
+            // Check if full name is valid
+            if (string.IsNullOrEmpty(guna2TextBox6.Text))
+            {
+                MessageBox.Show("Please enter full name.");
+                return;
+            }
+
+            // Check if birthday is valid
+            if (string.IsNullOrEmpty(guna2TextBox4.Text))
+            {
+                MessageBox.Show("Please enter birthday.");
+                return;
+            }
+
+            // Check if password is valid
+            if (string.IsNullOrEmpty(passwdTxt.Text))
+            {
+                MessageBox.Show("Please enter password.");
+                return;
+            }
+
+            //Check if confirm password is valid
+            if (string.IsNullOrEmpty(repasswdTxt.Text))
+            {
+                MessageBox.Show("Please enter confirm password.");
+                return;
+            }
+
+            //Check confirm password similar password
+            if (passwdTxt.Text != repasswdTxt.Text)
+            {
+                MessageBox.Show("Confirm password and password do not match");
+                return;
+            }
+
+            // Check if the entered email has correct syntax
+            if (!IsValidEmail(guna2TextBox5.Text))
+            {
+                MessageBox.Show("Invalid email format. Please enter a valid email address.");
+                return;
+            }
+
+            // Check if email already exists
+            FirebaseResponse responseEmail = client.Get("Information");
+            if (responseEmail != null && responseEmail.Body != "null")
+            {
+                Dictionary<string, Data> dataDict = responseEmail.ResultAs<Dictionary<string, Data>>();
+                foreach (var data in dataDict)
+                {
+                    if (data.Value.email == guna2TextBox5.Text)
+                    {
+                        MessageBox.Show("Email already exists. Please enter another email.");
+                        return;
+                    }
+                }
+            }
+
+            //Check if username already exists
             FirebaseResponse response = client.Get("Information/" + usernameTxt.Text);
 
             if (response != null && response.ResultAs<Data>() != null)

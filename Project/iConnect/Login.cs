@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Markup;
@@ -12,6 +13,7 @@ using System.Xml.Linq;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Guna.UI2.WinForms;
 
 namespace iConnect
 {
@@ -57,8 +59,22 @@ namespace iConnect
             Data datalayer = new Data()
             {
                 username = usernameTxt.Text,
-                password = passwdTxt.Text
+                password = passwdTxt.Text,
             };
+
+            // Check if username is valid
+            if (string.IsNullOrEmpty(usernameTxt.Text))
+            {
+                MessageBox.Show("Please enter a username.");
+                return;
+            }
+
+            // Check if password is valid
+            if (string.IsNullOrEmpty(passwdTxt.Text))
+            {
+                MessageBox.Show("Please enter password.");
+                return;
+            }
 
             FirebaseResponse response = client.Get("Information/" + usernameTxt.Text);
 
@@ -68,7 +84,15 @@ namespace iConnect
 
                 if (usernameTxt.Text.Equals(result.username))
                 {
-                    MessageBox.Show("Data found for the specified username!!");
+                    // Check if password matches the password stored in the database
+                    if (passwdTxt.Text.Equals(result.password))
+                    {
+                        MessageBox.Show("Login successful!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect password!");
+                    }
                 }
             }
             else
