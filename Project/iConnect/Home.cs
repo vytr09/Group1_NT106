@@ -289,5 +289,20 @@ namespace iConnect
             pnlFollowing.Visible = true;
             pnlForYou.Visible = false;
         }
+
+        private void pnlPost1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton5_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
