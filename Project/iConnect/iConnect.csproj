@@ -86,23 +86,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account_status_settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Account_status_settings.Designer.cs">
-      <DependentUpon>Account_status_settings.cs</DependentUpon>
-    </Compile>
     <Compile Include="Article_details.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Article_details.Designer.cs">
       <DependentUpon>Article_details.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Block_settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Block_settings.Designer.cs">
-      <DependentUpon>Block_settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Followers.cs">
       <SubType>Form</SubType>
@@ -115,12 +103,6 @@
     </Compile>
     <Compile Include="Following.Designer.cs">
       <DependentUpon>Following.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Help_settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Help_settings.Designer.cs">
-      <DependentUpon>Help_settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -145,18 +127,6 @@
     </Compile>
     <Compile Include="Notification.Designer.cs">
       <DependentUpon>Notification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Notification_settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Notification_settings.Designer.cs">
-      <DependentUpon>Notification_settings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Privacy_settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Privacy_settings.Designer.cs">
-      <DependentUpon>Privacy_settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
@@ -184,23 +154,14 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Account_status_settings.resx">
-      <DependentUpon>Account_status_settings.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Article_details.resx">
       <DependentUpon>Article_details.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Block_settings.resx">
-      <DependentUpon>Block_settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Followers.resx">
       <DependentUpon>Followers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Following.resx">
       <DependentUpon>Following.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Help_settings.resx">
-      <DependentUpon>Help_settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -210,12 +171,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Message.resx">
       <DependentUpon>Message.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Notification_settings.resx">
-      <DependentUpon>Notification_settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Privacy_settings.resx">
-      <DependentUpon>Privacy_settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
