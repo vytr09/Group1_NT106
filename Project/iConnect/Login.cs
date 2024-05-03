@@ -86,7 +86,9 @@ namespace iConnect
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Signup signup = new Signup();
+            signup.Show();
         }
 
         private void minimizeBtn_Click(object sender, EventArgs e)

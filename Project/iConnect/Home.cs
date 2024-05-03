@@ -20,6 +20,7 @@ namespace iConnect
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
+            homePnl.Visible = true;
             homeBtn.Checked = true;
             notiBtn.Checked = false;
             searchBtn.Checked = false;
@@ -34,6 +35,7 @@ namespace iConnect
 
         private void notiBtn_Click(object sender, EventArgs e)
         {
+            homePnl.Visible = false;
             notiBtn.Checked = true;
             searchBtn.Checked = false;
             homeBtn.Checked = false;
@@ -48,6 +50,7 @@ namespace iConnect
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            homePnl.Visible = false;
             notiBtn.Checked = false;
             homeBtn.Checked = false;
             searchBtn.Checked = true;
@@ -77,6 +80,7 @@ namespace iConnect
 
         private void userBtn_Click_1(object sender, EventArgs e)
         {
+
             postBtn.Checked = false;
             allBtn.Checked = false;
             recentBtn.Checked = false;
@@ -117,6 +121,7 @@ namespace iConnect
 
         private void msgBtn_Click(object sender, EventArgs e)
         {
+            homePnl.Visible = false;
             msgBtn.Checked = true;
             notiBtn.Checked = false;
             searchBtn.Checked = false;
@@ -156,6 +161,7 @@ namespace iConnect
 
         private void profileBtn_Click(object sender, EventArgs e)
         {
+            homePnl.Visible = false;
             profileBtn.Checked = true;
             msgBtn.Checked = false;
             notiBtn.Checked = false;
@@ -220,6 +226,7 @@ namespace iConnect
 
         private void settingBtn_Click(object sender, EventArgs e)
         {
+            homePnl.Visible = false;
             profileBtn.Checked = false;
             settingBtn.Checked = true;
             msgBtn.Checked = false;

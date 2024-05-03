@@ -90,5 +90,12 @@ namespace iConnect
         {
             this.Close();
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
+        }
     }
 }
