@@ -278,6 +278,13 @@
             this.recnotiBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.mennotiBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.modePnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.trendPnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnForYou = new Guna.UI2.WinForms.Guna2Button();
+            this.btnFollowing = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlForYou = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.pnlFollowing = new Guna.UI2.WinForms.Guna2Panel();
             this.navPnl.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.recPnl.SuspendLayout();
@@ -316,6 +323,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
+            this.homePnl.SuspendLayout();
+            this.modePnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // navPnl
@@ -338,6 +347,9 @@
             this.navPnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.navPnl.Name = "navPnl";
             this.navPnl.Size = new System.Drawing.Size(233, 639);
+            this.navPnl.Margin = new System.Windows.Forms.Padding(4);
+            this.navPnl.Name = "navPnl";
+            this.navPnl.Size = new System.Drawing.Size(350, 1000);
             this.navPnl.TabIndex = 11;
             // 
             // guna2CircleButton1
@@ -598,6 +610,10 @@
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(233, 100);
+            this.guna2Panel1.Location = new System.Drawing.Point(-1, 1002);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(351, 145);
             this.guna2Panel1.TabIndex = 17;
             // 
             // proBtn
@@ -621,6 +637,12 @@
             this.proBtn.PressedColor = System.Drawing.Color.Transparent;
             this.proBtn.PressedDepth = 0;
             this.proBtn.Size = new System.Drawing.Size(227, 100);
+            this.proBtn.Location = new System.Drawing.Point(0, 0);
+            this.proBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.proBtn.Name = "proBtn";
+            this.proBtn.PressedColor = System.Drawing.Color.Transparent;
+            this.proBtn.PressedDepth = 0;
+            this.proBtn.Size = new System.Drawing.Size(350, 144);
             this.proBtn.TabIndex = 10;
             this.proBtn.Text = "User1";
             // 
@@ -3685,6 +3707,19 @@
             this.guna2ImageButton12.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton12.Size = new System.Drawing.Size(60, 60);
             this.guna2ImageButton12.TabIndex = 73;
+            this.homePnl.Controls.Add(this.trendPnl);
+            this.homePnl.Controls.Add(this.modePnl);
+            this.homePnl.Controls.Add(this.pnlForYou);
+            this.homePnl.Controls.Add(this.pnlFollowing);
+            this.homePnl.CustomBorderColor = System.Drawing.Color.Black;
+            this.homePnl.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.homePnl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.homePnl.Location = new System.Drawing.Point(349, 0);
+            this.homePnl.Margin = new System.Windows.Forms.Padding(5);
+            this.homePnl.Name = "homePnl";
+            this.homePnl.Size = new System.Drawing.Size(1466, 1145);
+            this.homePnl.TabIndex = 53;
+            this.homePnl.Paint += new System.Windows.Forms.PaintEventHandler(this.homePnl_Paint);
             // 
             // guna2ImageButton6
             // 
@@ -4061,6 +4096,87 @@
             this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(200, 200);
             this.guna2CustomGradientPanel3.TabIndex = 0;
             // 
+            // modePnl
+            // 
+            this.modePnl.Controls.Add(this.btnFollowing);
+            this.modePnl.Controls.Add(this.btnForYou);
+            this.modePnl.CustomBorderColor = System.Drawing.Color.Black;
+            this.modePnl.CustomBorderThickness = new System.Windows.Forms.Padding(1);
+            this.modePnl.Location = new System.Drawing.Point(0, -1);
+            this.modePnl.Name = "modePnl";
+            this.modePnl.Size = new System.Drawing.Size(1038, 100);
+            this.modePnl.TabIndex = 0;
+            // 
+            // trendPnl
+            // 
+            this.trendPnl.CustomBorderColor = System.Drawing.Color.Black;
+            this.trendPnl.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.trendPnl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.trendPnl.Location = new System.Drawing.Point(1037, 0);
+            this.trendPnl.Name = "trendPnl";
+            this.trendPnl.Size = new System.Drawing.Size(429, 1145);
+            this.trendPnl.TabIndex = 1;
+            this.trendPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.trendPnl_Paint);
+            // 
+            // btnForYou
+            // 
+            this.btnForYou.Checked = true;
+            this.btnForYou.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnForYou.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForYou.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnForYou.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnForYou.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnForYou.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnForYou.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnForYou.FillColor = System.Drawing.Color.White;
+            this.btnForYou.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForYou.ForeColor = System.Drawing.Color.Silver;
+            this.btnForYou.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnForYou.Location = new System.Drawing.Point(1, 0);
+            this.btnForYou.Name = "btnForYou";
+            this.btnForYou.PressedDepth = 0;
+            this.btnForYou.Size = new System.Drawing.Size(519, 97);
+            this.btnForYou.TabIndex = 0;
+            this.btnForYou.Text = "Dành cho bạn";
+            this.btnForYou.Click += new System.EventHandler(this.btnForYou_Click);
+            // 
+            // btnFollowing
+            // 
+            this.btnFollowing.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnFollowing.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFollowing.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnFollowing.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFollowing.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFollowing.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFollowing.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFollowing.FillColor = System.Drawing.Color.White;
+            this.btnFollowing.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFollowing.ForeColor = System.Drawing.Color.Silver;
+            this.btnFollowing.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnFollowing.Location = new System.Drawing.Point(519, 1);
+            this.btnFollowing.Name = "btnFollowing";
+            this.btnFollowing.PressedDepth = 0;
+            this.btnFollowing.Size = new System.Drawing.Size(519, 97);
+            this.btnFollowing.TabIndex = 1;
+            this.btnFollowing.Text = "Đang theo dõi";
+            this.btnFollowing.Click += new System.EventHandler(this.btnFollowing_Click);
+            // 
+            // pnlForYou
+            // 
+            this.pnlForYou.AutoScroll = true;
+            this.pnlForYou.Location = new System.Drawing.Point(3, 102);
+            this.pnlForYou.Name = "pnlForYou";
+            this.pnlForYou.Size = new System.Drawing.Size(1031, 1040);
+            this.pnlForYou.TabIndex = 2;
+            // 
+            // pnlFollowing
+            // 
+            this.pnlFollowing.AutoScroll = true;
+            this.pnlFollowing.Location = new System.Drawing.Point(3, 102);
+            this.pnlFollowing.Name = "pnlFollowing";
+            this.pnlFollowing.Size = new System.Drawing.Size(1031, 1040);
+            this.pnlFollowing.TabIndex = 3;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4069,9 +4185,11 @@
             this.ClientSize = new System.Drawing.Size(1210, 705);
             this.Controls.Add(this.notiPnl);
             this.Controls.Add(this.homePnl);
+            this.ClientSize = new System.Drawing.Size(1815, 1145);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.navPnl);
+            this.Controls.Add(this.homePnl);
             this.Controls.Add(this.settingPnl);
             this.Controls.Add(this.profilePnl);
             this.Controls.Add(this.msgPnl);
@@ -4141,6 +4259,8 @@
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
+            this.homePnl.ResumeLayout(false);
+            this.modePnl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -4394,5 +4514,12 @@
         private Guna.UI2.WinForms.Guna2GradientButton allnotiBtn;
         private Guna.UI2.WinForms.Guna2GradientButton mennotiBtn;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
+        private Guna.UI2.WinForms.Guna2Panel modePnl;
+        private Guna.UI2.WinForms.Guna2Panel trendPnl;
+        private Guna.UI2.WinForms.Guna2Button btnFollowing;
+        private Guna.UI2.WinForms.Guna2Button btnForYou;
+        private Guna.UI2.WinForms.Guna2Panel pnlForYou;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2Panel pnlFollowing;
     }
 }

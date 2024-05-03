@@ -281,6 +281,32 @@ namespace iConnect
             mennotiBtn.Checked = true;
             recnotiBtn.Checked = false;
             allnotiBtn.Checked = false;
+        private void homePnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void trendPnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnForYou_Click(object sender, EventArgs e)
+        {
+            btnForYou.Checked = true;
+            btnFollowing.Checked = false;
+
+            pnlForYou.Visible = true;
+            pnlFollowing.Visible = false;
+        }
+
+        private void btnFollowing_Click(object sender, EventArgs e)
+        {
+            btnFollowing.Checked = true;
+            btnForYou.Checked = false;
+
+            pnlFollowing.Visible = true;
+            pnlForYou.Visible = false;
         }
     }
 }
