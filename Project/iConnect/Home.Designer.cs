@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.navPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.searchBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -223,7 +222,6 @@
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.settingPnl = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel61 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -269,6 +267,8 @@
             this.guna2HtmlLabel49 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.closeAppBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.homePnl = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.navPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -306,12 +306,6 @@
             this.panel7.SuspendLayout();
             this.guna2Panel11.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // navPnl
             // 
@@ -632,7 +626,7 @@
             // 
             // guna2GradientButton15
             // 
-            this.guna2GradientButton15.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.guna2GradientButton15.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.guna2GradientButton15.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton15.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton15.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -652,7 +646,7 @@
             // 
             // guna2GradientButton14
             // 
-            this.guna2GradientButton14.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
+            this.guna2GradientButton14.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2GradientButton14.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton14.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton14.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -672,7 +666,7 @@
             // 
             // guna2GradientButton13
             // 
-            this.guna2GradientButton13.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
+            this.guna2GradientButton13.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.guna2GradientButton13.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton13.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton13.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -900,7 +894,7 @@
             // 
             // guna2GradientButton16
             // 
-            this.guna2GradientButton16.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.guna2GradientButton16.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.guna2GradientButton16.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton16.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton16.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -1032,7 +1026,7 @@
             // 
             // guna2GradientButton12
             // 
-            this.guna2GradientButton12.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.guna2GradientButton12.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.guna2GradientButton12.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton12.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton12.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -1052,7 +1046,7 @@
             // 
             // guna2GradientButton11
             // 
-            this.guna2GradientButton11.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.guna2GradientButton11.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.guna2GradientButton11.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton11.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton11.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -1072,7 +1066,7 @@
             // 
             // guna2GradientButton6
             // 
-            this.guna2GradientButton6.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.guna2GradientButton6.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.guna2GradientButton6.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton6.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton6.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -1243,7 +1237,7 @@
             // 
             // guna2GradientButton20
             // 
-            this.guna2GradientButton20.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.guna2GradientButton20.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             this.guna2GradientButton20.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton20.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton20.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -1441,7 +1435,7 @@
             // 
             // guna2GradientButton19
             // 
-            this.guna2GradientButton19.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.guna2GradientButton19.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             this.guna2GradientButton19.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton19.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton19.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -1461,7 +1455,7 @@
             // 
             // guna2GradientButton18
             // 
-            this.guna2GradientButton18.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            this.guna2GradientButton18.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
             this.guna2GradientButton18.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton18.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton18.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -1481,7 +1475,7 @@
             // 
             // guna2GradientButton17
             // 
-            this.guna2GradientButton17.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.guna2GradientButton17.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
             this.guna2GradientButton17.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton17.CustomImages.ImageOffset = new System.Drawing.Point(0, -10);
             this.guna2GradientButton17.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
@@ -1873,7 +1867,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton2.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2GradientButton2.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
             this.guna2GradientButton2.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton2.CustomImages.ImageOffset = new System.Drawing.Point(0, -30);
             this.guna2GradientButton2.CustomImages.ImageSize = new System.Drawing.Size(90, 90);
@@ -1937,7 +1931,7 @@
             // 
             this.guna2GradientButton5.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton5.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2GradientButton5.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
             this.guna2GradientButton5.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton5.CustomImages.ImageOffset = new System.Drawing.Point(0, -18);
             this.guna2GradientButton5.CustomImages.ImageSize = new System.Drawing.Size(60, 60);
@@ -3241,12 +3235,6 @@
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // guna2BorderlessForm2
-            // 
-            this.guna2BorderlessForm2.ContainerControl = this;
-            this.guna2BorderlessForm2.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm2.TransparentWhileDrag = true;
-            // 
             // settingPnl
             // 
             this.settingPnl.Controls.Add(this.panel2);
@@ -3888,12 +3876,28 @@
             this.closeAppBtn.TabIndex = 51;
             this.closeAppBtn.Click += new System.EventHandler(this.closeAppBtn_Click);
             // 
+            // homePnl
+            // 
+            this.homePnl.Location = new System.Drawing.Point(236, -3);
+            this.homePnl.Name = "homePnl";
+            this.homePnl.Size = new System.Drawing.Size(975, 738);
+            this.homePnl.TabIndex = 53;
+            this.homePnl.Visible = false;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 25;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 733);
+            this.Controls.Add(this.homePnl);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.closeAppBtn);
@@ -3969,8 +3973,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2Panel navPnl;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2GradientButton msgBtn;
@@ -4163,7 +4165,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel settingPnl;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2GradientButton trangthaitaikhoan;
@@ -4209,5 +4210,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel48;
         private Guna.UI2.WinForms.Guna2CircleButton minimizeBtn;
         private Guna.UI2.WinForms.Guna2CircleButton closeAppBtn;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel homePnl;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }
