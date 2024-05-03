@@ -304,5 +304,24 @@ namespace iConnect
         {
 
         }
+
+        private void proBtn_Click(object sender, EventArgs e)
+        {
+            if (btnLogout.Visible == false)
+            {
+                btnLogout.Visible = true;
+            }    
+            else
+            {
+                btnLogout.Visible = false;
+            }
+        }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
     }
 }
