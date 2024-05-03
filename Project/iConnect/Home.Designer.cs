@@ -33,7 +33,6 @@
             this.navPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.searchBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.closeAppBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.msgBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.postBtn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -66,7 +65,6 @@
             this.guna2GradientButton16 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label9 = new System.Windows.Forms.Label();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -98,7 +96,6 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.pplLbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.searchTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.sortPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.all2Pnl = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientButton19 = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -124,7 +121,6 @@
             this.msgPnl = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -138,10 +134,8 @@
             this.guna2GradientButton8 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton9 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label20 = new System.Windows.Forms.Label();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.profilePnl = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.followerPnl = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
@@ -158,11 +152,6 @@
             this.guna2HtmlLabel32 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel33 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel34 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton8 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton9 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton10 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton11 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton12 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel35 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -182,19 +171,9 @@
             this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel20 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton6 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel44 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2HtmlLabel22 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel36 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel37 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -209,7 +188,6 @@
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
             this.followingBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox10 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -234,9 +212,7 @@
             this.chinhsuatrangcanhan = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.guna2GradientButton22 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton23 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton24 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2TextBox12 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel49 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel50 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -257,12 +233,10 @@
             this.guna2HtmlLabel59 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel45 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel46 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2GradientButton21 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2HtmlLabel47 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel48 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel60 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -276,100 +250,68 @@
             this.guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton16 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel98 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton24 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel99 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton25 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox15 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel100 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel101 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton17 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel102 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox16 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton14 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel93 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton22 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel94 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton23 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel95 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel96 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton15 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel97 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox14 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton10 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel88 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton18 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel89 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton19 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel90 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel91 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton11 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel92 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel17 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton12 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel83 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton20 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel84 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton21 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel85 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel86 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton13 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel87 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlForYou = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton8 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel73 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton16 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel74 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton17 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel75 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel76 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton9 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel77 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton6 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel68 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton14 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel69 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton15 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel70 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel71 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton7 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel72 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlPost2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel63 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton7 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel64 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton13 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel65 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel66 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton5 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel67 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlPost1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel62 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton5 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.LoveNumber = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnLove = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.picPost1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.labelCaption1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelTime1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.AccountName1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.Avatar1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2HtmlLabel82 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -378,13 +320,69 @@
             this.guna2HtmlLabel79 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel78 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ImageButton24 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton25 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2PictureBox15 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox16 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ImageButton22 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton23 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox14 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ImageButton18 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton19 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ImageButton20 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton21 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ImageButton16 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton17 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ImageButton14 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton15 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ImageButton7 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton13 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ImageButton5 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnLove = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.picPost1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Avatar1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2GradientButton22 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton24 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton21 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2ImageButton8 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton9 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton10 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton11 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton12 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton6 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.searchTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.navPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.recPnl.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.postSortPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.userSortPnl.SuspendLayout();
             this.sort2Pnl.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -399,11 +397,6 @@
             this.profilePnl.SuspendLayout();
             this.followerPnl.SuspendLayout();
             this.followingPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.settingPnl.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2Panel11.SuspendLayout();
@@ -417,30 +410,37 @@
             this.modePnl.SuspendLayout();
             this.pnlFollowing.SuspendLayout();
             this.guna2Panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox16)).BeginInit();
             this.guna2Panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).BeginInit();
             this.guna2Panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
             this.guna2Panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).BeginInit();
             this.pnlForYou.SuspendLayout();
             this.guna2Panel15.SuspendLayout();
+            this.guna2Panel14.SuspendLayout();
+            this.pnlPost2.SuspendLayout();
+            this.pnlPost1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
-            this.guna2Panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
-            this.pnlPost2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.pnlPost1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPost1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // navPnl
@@ -509,21 +509,6 @@
             this.searchBtn.TabIndex = 62;
             this.searchBtn.Text = "Tìm kiếm";
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox4.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2PictureBox4.Image = global::iConnect.Properties.Resources.Screenshot_2024_04_20_232604;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(22, 48);
-            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(308, 111);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 10;
-            this.guna2PictureBox4.TabStop = false;
-            this.guna2PictureBox4.UseTransparentBackground = true;
             // 
             // closeAppBtn
             // 
@@ -1109,18 +1094,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Bài viết";
             // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BorderRadius = 20;
-            this.guna2PictureBox3.Image = global::iConnect.Properties.Resources.postimg2;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(80, 177);
-            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(6);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(726, 800);
-            this.guna2PictureBox3.TabIndex = 16;
-            this.guna2PictureBox3.TabStop = false;
-            // 
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
@@ -1548,33 +1521,6 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "Xem tất cả...";
             // 
-            // searchTxt
-            // 
-            this.searchTxt.BorderColor = System.Drawing.Color.Black;
-            this.searchTxt.BorderRadius = 23;
-            this.searchTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchTxt.DefaultText = "";
-            this.searchTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.searchTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.searchTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchTxt.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.searchTxt.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.searchTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchTxt.ForeColor = System.Drawing.Color.Black;
-            this.searchTxt.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.searchTxt.IconLeft = global::iConnect.Properties.Resources.Search;
-            this.searchTxt.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.searchTxt.Location = new System.Drawing.Point(34, 16);
-            this.searchTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.searchTxt.Name = "searchTxt";
-            this.searchTxt.PasswordChar = '\0';
-            this.searchTxt.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.searchTxt.PlaceholderText = "Tìm kiếm...";
-            this.searchTxt.SelectedText = "";
-            this.searchTxt.Size = new System.Drawing.Size(914, 67);
-            this.searchTxt.TabIndex = 1;
-            // 
             // sortPnl
             // 
             this.sortPnl.Controls.Add(this.all2Pnl);
@@ -1994,32 +1940,6 @@
             this.guna2GradientButton1.Size = new System.Drawing.Size(48, 42);
             this.guna2GradientButton1.TabIndex = 3;
             // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.BorderRadius = 13;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeft = global::iConnect.Properties.Resources.happy_light;
-            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.guna2TextBox1.IconRight = global::iConnect.Properties.Resources.Send_hor_fill;
-            this.guna2TextBox1.IconRightSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox1.Location = new System.Drawing.Point(27, 908);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Nhắn tin...";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(952, 64);
-            this.guna2TextBox1.TabIndex = 2;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -2271,34 +2191,6 @@
             this.label20.TabIndex = 5;
             this.label20.Text = "Tin nhắn";
             // 
-            // guna2TextBox2
-            // 
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.BorderRadius = 19;
-            this.guna2TextBox2.BorderThickness = 2;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.IconLeft = global::iConnect.Properties.Resources.Search;
-            this.guna2TextBox2.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.guna2TextBox2.Location = new System.Drawing.Point(20, 98);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(8);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.PlaceholderText = "Tìm kiếm...";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(426, 62);
-            this.guna2TextBox2.TabIndex = 2;
-            // 
             // profilePnl
             // 
             this.profilePnl.Controls.Add(this.followerPnl);
@@ -2376,31 +2268,6 @@
             this.followerPnl.Size = new System.Drawing.Size(1206, 1066);
             this.followerPnl.TabIndex = 113;
             this.followerPnl.Visible = false;
-            // 
-            // guna2TextBox9
-            // 
-            this.guna2TextBox9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox9.BorderRadius = 25;
-            this.guna2TextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox9.DefaultText = "    Tìm kiếm...";
-            this.guna2TextBox9.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox9.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox9.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox9.Font = new System.Drawing.Font("Segoe UI", 11.89565F);
-            this.guna2TextBox9.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox9.IconLeft = global::iConnect.Properties.Resources.Search;
-            this.guna2TextBox9.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.guna2TextBox9.IconLeftSize = new System.Drawing.Size(35, 35);
-            this.guna2TextBox9.Location = new System.Drawing.Point(64, 186);
-            this.guna2TextBox9.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.guna2TextBox9.Name = "guna2TextBox9";
-            this.guna2TextBox9.PasswordChar = '\0';
-            this.guna2TextBox9.PlaceholderText = "";
-            this.guna2TextBox9.SelectedText = "";
-            this.guna2TextBox9.Size = new System.Drawing.Size(1058, 73);
-            this.guna2TextBox9.TabIndex = 97;
             // 
             // guna2Button10
             // 
@@ -2612,81 +2479,6 @@
             this.guna2HtmlLabel34.Size = new System.Drawing.Size(139, 34);
             this.guna2HtmlLabel34.TabIndex = 79;
             this.guna2HtmlLabel34.Text = "nick_name_1";
-            // 
-            // guna2ImageButton8
-            // 
-            this.guna2ImageButton8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton8.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton8.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton8.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton8.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton8.ImageRotate = 0F;
-            this.guna2ImageButton8.Location = new System.Drawing.Point(104, 894);
-            this.guna2ImageButton8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton8.Name = "guna2ImageButton8";
-            this.guna2ImageButton8.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton8.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton8.TabIndex = 77;
-            // 
-            // guna2ImageButton9
-            // 
-            this.guna2ImageButton9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton9.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton9.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton9.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton9.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton9.ImageRotate = 0F;
-            this.guna2ImageButton9.Location = new System.Drawing.Point(104, 753);
-            this.guna2ImageButton9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton9.Name = "guna2ImageButton9";
-            this.guna2ImageButton9.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton9.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton9.TabIndex = 76;
-            // 
-            // guna2ImageButton10
-            // 
-            this.guna2ImageButton10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton10.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton10.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton10.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton10.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton10.ImageRotate = 0F;
-            this.guna2ImageButton10.Location = new System.Drawing.Point(104, 612);
-            this.guna2ImageButton10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton10.Name = "guna2ImageButton10";
-            this.guna2ImageButton10.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton10.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton10.TabIndex = 75;
-            // 
-            // guna2ImageButton11
-            // 
-            this.guna2ImageButton11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton11.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton11.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton11.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton11.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton11.ImageRotate = 0F;
-            this.guna2ImageButton11.Location = new System.Drawing.Point(104, 472);
-            this.guna2ImageButton11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton11.Name = "guna2ImageButton11";
-            this.guna2ImageButton11.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton11.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton11.TabIndex = 74;
-            // 
-            // guna2ImageButton12
-            // 
-            this.guna2ImageButton12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton12.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton12.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton12.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton12.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton12.ImageRotate = 0F;
-            this.guna2ImageButton12.Location = new System.Drawing.Point(104, 331);
-            this.guna2ImageButton12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton12.Name = "guna2ImageButton12";
-            this.guna2ImageButton12.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton12.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton12.TabIndex = 73;
             // 
             // guna2HtmlLabel35
             // 
@@ -2958,76 +2750,6 @@
             this.guna2HtmlLabel21.TabIndex = 67;
             this.guna2HtmlLabel21.Text = "nick_name_1";
             // 
-            // guna2ImageButton6
-            // 
-            this.guna2ImageButton6.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton6.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton6.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton6.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton6.ImageRotate = 0F;
-            this.guna2ImageButton6.Location = new System.Drawing.Point(96, 869);
-            this.guna2ImageButton6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton6.Name = "guna2ImageButton6";
-            this.guna2ImageButton6.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton6.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton6.TabIndex = 65;
-            // 
-            // guna2ImageButton3
-            // 
-            this.guna2ImageButton3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton3.ImageRotate = 0F;
-            this.guna2ImageButton3.Location = new System.Drawing.Point(96, 728);
-            this.guna2ImageButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton3.Name = "guna2ImageButton3";
-            this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton3.TabIndex = 64;
-            // 
-            // guna2ImageButton4
-            // 
-            this.guna2ImageButton4.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton4.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton4.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton4.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton4.ImageRotate = 0F;
-            this.guna2ImageButton4.Location = new System.Drawing.Point(96, 588);
-            this.guna2ImageButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton4.Name = "guna2ImageButton4";
-            this.guna2ImageButton4.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton4.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton4.TabIndex = 63;
-            // 
-            // guna2ImageButton2
-            // 
-            this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton2.ImageRotate = 0F;
-            this.guna2ImageButton2.Location = new System.Drawing.Point(96, 447);
-            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton2.Name = "guna2ImageButton2";
-            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton2.TabIndex = 62;
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(96, 306);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(90, 94);
-            this.guna2ImageButton1.TabIndex = 61;
-            // 
             // guna2HtmlLabel44
             // 
             this.guna2HtmlLabel44.BackColor = System.Drawing.Color.Transparent;
@@ -3049,30 +2771,6 @@
             this.guna2Panel8.Size = new System.Drawing.Size(1058, 3);
             this.guna2Panel8.TabIndex = 59;
             // 
-            // guna2TextBox8
-            // 
-            this.guna2TextBox8.BorderRadius = 25;
-            this.guna2TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox8.DefaultText = "    Tìm kiếm...";
-            this.guna2TextBox8.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox8.Font = new System.Drawing.Font("Segoe UI", 11.89565F);
-            this.guna2TextBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox8.IconLeft = global::iConnect.Properties.Resources.Search;
-            this.guna2TextBox8.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.guna2TextBox8.IconLeftSize = new System.Drawing.Size(35, 35);
-            this.guna2TextBox8.Location = new System.Drawing.Point(57, 162);
-            this.guna2TextBox8.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.guna2TextBox8.Name = "guna2TextBox8";
-            this.guna2TextBox8.PasswordChar = '\0';
-            this.guna2TextBox8.PlaceholderText = "";
-            this.guna2TextBox8.SelectedText = "";
-            this.guna2TextBox8.Size = new System.Drawing.Size(1058, 73);
-            this.guna2TextBox8.TabIndex = 58;
-            // 
             // guna2ControlBox2
             // 
             this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -3085,57 +2783,6 @@
             this.guna2ControlBox2.Size = new System.Drawing.Size(64, 53);
             this.guna2ControlBox2.TabIndex = 57;
             this.guna2ControlBox2.Click += new System.EventHandler(this.guna2ControlBox2_Click);
-            // 
-            // guna2CirclePictureBox5
-            // 
-            this.guna2CirclePictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox5.Image = global::iConnect.Properties.Resources.icons8_plus_96;
-            this.guna2CirclePictureBox5.ImageRotate = 0F;
-            this.guna2CirclePictureBox5.Location = new System.Drawing.Point(675, 408);
-            this.guna2CirclePictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
-            this.guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox5.Size = new System.Drawing.Size(117, 122);
-            this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox5.TabIndex = 91;
-            this.guna2CirclePictureBox5.TabStop = false;
-            // 
-            // guna2CirclePictureBox4
-            // 
-            this.guna2CirclePictureBox4.FillColor = System.Drawing.Color.DarkViolet;
-            this.guna2CirclePictureBox4.ImageRotate = 0F;
-            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(489, 408);
-            this.guna2CirclePictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
-            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(117, 122);
-            this.guna2CirclePictureBox4.TabIndex = 90;
-            this.guna2CirclePictureBox4.TabStop = false;
-            // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.FillColor = System.Drawing.Color.OrangeRed;
-            this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(303, 408);
-            this.guna2CirclePictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(117, 122);
-            this.guna2CirclePictureBox3.TabIndex = 89;
-            this.guna2CirclePictureBox3.TabStop = false;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(162, 78);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(243, 253);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 87;
-            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // guna2HtmlLabel22
             // 
@@ -3354,18 +3001,6 @@
             this.followingBtn.TabIndex = 111;
             this.followingBtn.Text = "222 đang theo dõi";
             this.followingBtn.Click += new System.EventHandler(this.followingBtn_Click);
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.LawnGreen;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(117, 408);
-            this.guna2CirclePictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(117, 122);
-            this.guna2CirclePictureBox2.TabIndex = 88;
-            this.guna2CirclePictureBox2.TabStop = false;
             // 
             // guna2TextBox3
             // 
@@ -3719,26 +3354,6 @@
             this.panel7.Size = new System.Drawing.Size(922, 1128);
             this.panel7.TabIndex = 6;
             // 
-            // guna2GradientButton22
-            // 
-            this.guna2GradientButton22.BorderRadius = 10;
-            this.guna2GradientButton22.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton22.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton22.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton22.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton22.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton22.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton22.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2GradientButton22.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton22.Image = global::iConnect.Properties.Resources.pen;
-            this.guna2GradientButton22.ImageSize = new System.Drawing.Size(60, 40);
-            this.guna2GradientButton22.Location = new System.Drawing.Point(432, 142);
-            this.guna2GradientButton22.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2GradientButton22.Name = "guna2GradientButton22";
-            this.guna2GradientButton22.Size = new System.Drawing.Size(63, 48);
-            this.guna2GradientButton22.TabIndex = 22;
-            // 
             // guna2GradientButton23
             // 
             this.guna2GradientButton23.BorderRadius = 10;
@@ -3757,26 +3372,6 @@
             this.guna2GradientButton23.Size = new System.Drawing.Size(304, 148);
             this.guna2GradientButton23.TabIndex = 21;
             this.guna2GradientButton23.Text = "+ Tải ảnh lên";
-            // 
-            // guna2GradientButton24
-            // 
-            this.guna2GradientButton24.BorderRadius = 10;
-            this.guna2GradientButton24.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton24.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton24.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton24.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton24.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton24.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton24.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2GradientButton24.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton24.Image = global::iConnect.Properties.Resources.on_off;
-            this.guna2GradientButton24.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton24.Location = new System.Drawing.Point(452, 450);
-            this.guna2GradientButton24.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2GradientButton24.Name = "guna2GradientButton24";
-            this.guna2GradientButton24.Size = new System.Drawing.Size(63, 52);
-            this.guna2GradientButton24.TabIndex = 20;
             // 
             // guna2TextBox12
             // 
@@ -4028,26 +3623,6 @@
             this.guna2HtmlLabel2.TabIndex = 3;
             this.guna2HtmlLabel2.Text = "Bạn không nhìn thấy thông báo mới khi tắt thông báo";
             // 
-            // guna2GradientButton10
-            // 
-            this.guna2GradientButton10.BorderRadius = 10;
-            this.guna2GradientButton10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton10.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton10.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton10.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton10.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton10.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton10.Image = global::iConnect.Properties.Resources.on_off;
-            this.guna2GradientButton10.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton10.Location = new System.Drawing.Point(264, 117);
-            this.guna2GradientButton10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2GradientButton10.Name = "guna2GradientButton10";
-            this.guna2GradientButton10.Size = new System.Drawing.Size(52, 50);
-            this.guna2GradientButton10.TabIndex = 2;
-            // 
             // guna2HtmlLabel24
             // 
             this.guna2HtmlLabel24.BackColor = System.Drawing.Color.Transparent;
@@ -4092,26 +3667,6 @@
             this.guna2HtmlLabel46.Size = new System.Drawing.Size(791, 47);
             this.guna2HtmlLabel46.TabIndex = 3;
             this.guna2HtmlLabel46.Text = "Chỉ có người theo dõi được duyệt mới có thể tương tác";
-            // 
-            // guna2GradientButton21
-            // 
-            this.guna2GradientButton21.BorderRadius = 10;
-            this.guna2GradientButton21.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton21.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton21.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton21.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton21.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton21.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton21.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton21.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton21.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton21.Image = global::iConnect.Properties.Resources.on_off;
-            this.guna2GradientButton21.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton21.Location = new System.Drawing.Point(304, 111);
-            this.guna2GradientButton21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2GradientButton21.Name = "guna2GradientButton21";
-            this.guna2GradientButton21.Size = new System.Drawing.Size(60, 56);
-            this.guna2GradientButton21.TabIndex = 2;
             // 
             // guna2HtmlLabel47
             // 
@@ -4165,8 +3720,8 @@
             // 
             this.homePnl.Controls.Add(this.trendPnl);
             this.homePnl.Controls.Add(this.modePnl);
-            this.homePnl.Controls.Add(this.pnlFollowing);
             this.homePnl.Controls.Add(this.pnlForYou);
+            this.homePnl.Controls.Add(this.pnlFollowing);
             this.homePnl.CustomBorderColor = System.Drawing.Color.Black;
             this.homePnl.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.homePnl.Dock = System.Windows.Forms.DockStyle.Right;
@@ -4299,20 +3854,6 @@
             this.guna2HtmlLabel98.TabIndex = 9;
             this.guna2HtmlLabel98.Text = "100";
             // 
-            // guna2ImageButton24
-            // 
-            this.guna2ImageButton24.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton24.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton24.Image = global::iConnect.Properties.Resources.comment;
-            this.guna2ImageButton24.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton24.ImageRotate = 0F;
-            this.guna2ImageButton24.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton24.Location = new System.Drawing.Point(559, 951);
-            this.guna2ImageButton24.Name = "guna2ImageButton24";
-            this.guna2ImageButton24.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton24.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton24.TabIndex = 8;
-            // 
             // guna2HtmlLabel99
             // 
             this.guna2HtmlLabel99.BackColor = System.Drawing.Color.Transparent;
@@ -4322,40 +3863,6 @@
             this.guna2HtmlLabel99.Size = new System.Drawing.Size(54, 47);
             this.guna2HtmlLabel99.TabIndex = 7;
             this.guna2HtmlLabel99.Text = "100";
-            // 
-            // guna2ImageButton25
-            // 
-            this.guna2ImageButton25.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton25.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton25.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton25.Image = global::iConnect.Properties.Resources.heart;
-            this.guna2ImageButton25.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton25.ImageRotate = 0F;
-            this.guna2ImageButton25.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton25.IndicateFocus = true;
-            this.guna2ImageButton25.Location = new System.Drawing.Point(306, 951);
-            this.guna2ImageButton25.Name = "guna2ImageButton25";
-            this.guna2ImageButton25.PressedState.Image = global::iConnect.Properties.Resources.redheart;
-            this.guna2ImageButton25.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton25.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton25.TabIndex = 6;
-            this.guna2ImageButton25.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox15
-            // 
-            this.guna2PictureBox15.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox15.ErrorImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox15.Image = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox15.ImageLocation = "";
-            this.guna2PictureBox15.ImageRotate = 0F;
-            this.guna2PictureBox15.InitialImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox15.Location = new System.Drawing.Point(97, 136);
-            this.guna2PictureBox15.Name = "guna2PictureBox15";
-            this.guna2PictureBox15.Size = new System.Drawing.Size(800, 800);
-            this.guna2PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox15.TabIndex = 5;
-            this.guna2PictureBox15.TabStop = false;
-            this.guna2PictureBox15.UseTransparentBackground = true;
             // 
             // guna2HtmlLabel100
             // 
@@ -4371,7 +3878,7 @@
             // 
             this.guna2HtmlLabel101.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel101.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel101.Location = new System.Drawing.Point(306, 22);
+            this.guna2HtmlLabel101.Location = new System.Drawing.Point(357, 22);
             this.guna2HtmlLabel101.Name = "guna2HtmlLabel101";
             this.guna2HtmlLabel101.Size = new System.Drawing.Size(55, 47);
             this.guna2HtmlLabel101.TabIndex = 3;
@@ -4386,7 +3893,7 @@
             this.guna2CircleButton17.FillColor = System.Drawing.Color.Black;
             this.guna2CircleButton17.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton17.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton17.Location = new System.Drawing.Point(286, 46);
+            this.guna2CircleButton17.Location = new System.Drawing.Point(337, 46);
             this.guna2CircleButton17.Name = "guna2CircleButton17";
             this.guna2CircleButton17.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton17.Size = new System.Drawing.Size(7, 7);
@@ -4398,22 +3905,9 @@
             this.guna2HtmlLabel102.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel102.Location = new System.Drawing.Point(127, 22);
             this.guna2HtmlLabel102.Name = "guna2HtmlLabel102";
-            this.guna2HtmlLabel102.Size = new System.Drawing.Size(141, 47);
+            this.guna2HtmlLabel102.Size = new System.Drawing.Size(195, 47);
             this.guna2HtmlLabel102.TabIndex = 1;
-            this.guna2HtmlLabel102.Text = "Peter Lee";
-            // 
-            // guna2PictureBox16
-            // 
-            this.guna2PictureBox16.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox16.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2PictureBox16.ImageRotate = 0F;
-            this.guna2PictureBox16.Location = new System.Drawing.Point(22, 22);
-            this.guna2PictureBox16.Name = "guna2PictureBox16";
-            this.guna2PictureBox16.Size = new System.Drawing.Size(100, 100);
-            this.guna2PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox16.TabIndex = 0;
-            this.guna2PictureBox16.TabStop = false;
-            this.guna2PictureBox16.UseTransparentBackground = true;
+            this.guna2HtmlLabel102.Text = "Ron Weasley";
             // 
             // guna2Panel18
             // 
@@ -4460,20 +3954,6 @@
             this.guna2HtmlLabel93.TabIndex = 9;
             this.guna2HtmlLabel93.Text = "100";
             // 
-            // guna2ImageButton22
-            // 
-            this.guna2ImageButton22.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton22.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton22.Image = global::iConnect.Properties.Resources.comment;
-            this.guna2ImageButton22.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton22.ImageRotate = 0F;
-            this.guna2ImageButton22.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton22.Location = new System.Drawing.Point(559, 951);
-            this.guna2ImageButton22.Name = "guna2ImageButton22";
-            this.guna2ImageButton22.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton22.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton22.TabIndex = 8;
-            // 
             // guna2HtmlLabel94
             // 
             this.guna2HtmlLabel94.BackColor = System.Drawing.Color.Transparent;
@@ -4483,40 +3963,6 @@
             this.guna2HtmlLabel94.Size = new System.Drawing.Size(54, 47);
             this.guna2HtmlLabel94.TabIndex = 7;
             this.guna2HtmlLabel94.Text = "100";
-            // 
-            // guna2ImageButton23
-            // 
-            this.guna2ImageButton23.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton23.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton23.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton23.Image = global::iConnect.Properties.Resources.heart;
-            this.guna2ImageButton23.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton23.ImageRotate = 0F;
-            this.guna2ImageButton23.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton23.IndicateFocus = true;
-            this.guna2ImageButton23.Location = new System.Drawing.Point(306, 951);
-            this.guna2ImageButton23.Name = "guna2ImageButton23";
-            this.guna2ImageButton23.PressedState.Image = global::iConnect.Properties.Resources.redheart;
-            this.guna2ImageButton23.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton23.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton23.TabIndex = 6;
-            this.guna2ImageButton23.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox13
-            // 
-            this.guna2PictureBox13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox13.ErrorImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox13.Image = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox13.ImageLocation = "";
-            this.guna2PictureBox13.ImageRotate = 0F;
-            this.guna2PictureBox13.InitialImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox13.Location = new System.Drawing.Point(97, 136);
-            this.guna2PictureBox13.Name = "guna2PictureBox13";
-            this.guna2PictureBox13.Size = new System.Drawing.Size(800, 800);
-            this.guna2PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox13.TabIndex = 5;
-            this.guna2PictureBox13.TabStop = false;
-            this.guna2PictureBox13.UseTransparentBackground = true;
             // 
             // guna2HtmlLabel95
             // 
@@ -4532,7 +3978,7 @@
             // 
             this.guna2HtmlLabel96.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel96.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel96.Location = new System.Drawing.Point(306, 22);
+            this.guna2HtmlLabel96.Location = new System.Drawing.Point(469, 22);
             this.guna2HtmlLabel96.Name = "guna2HtmlLabel96";
             this.guna2HtmlLabel96.Size = new System.Drawing.Size(55, 47);
             this.guna2HtmlLabel96.TabIndex = 3;
@@ -4547,7 +3993,7 @@
             this.guna2CircleButton15.FillColor = System.Drawing.Color.Black;
             this.guna2CircleButton15.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton15.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton15.Location = new System.Drawing.Point(286, 46);
+            this.guna2CircleButton15.Location = new System.Drawing.Point(449, 46);
             this.guna2CircleButton15.Name = "guna2CircleButton15";
             this.guna2CircleButton15.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton15.Size = new System.Drawing.Size(7, 7);
@@ -4559,22 +4005,9 @@
             this.guna2HtmlLabel97.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel97.Location = new System.Drawing.Point(127, 22);
             this.guna2HtmlLabel97.Name = "guna2HtmlLabel97";
-            this.guna2HtmlLabel97.Size = new System.Drawing.Size(141, 47);
+            this.guna2HtmlLabel97.Size = new System.Drawing.Size(303, 47);
             this.guna2HtmlLabel97.TabIndex = 1;
-            this.guna2HtmlLabel97.Text = "Peter Lee";
-            // 
-            // guna2PictureBox14
-            // 
-            this.guna2PictureBox14.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox14.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2PictureBox14.ImageRotate = 0F;
-            this.guna2PictureBox14.Location = new System.Drawing.Point(22, 22);
-            this.guna2PictureBox14.Name = "guna2PictureBox14";
-            this.guna2PictureBox14.Size = new System.Drawing.Size(100, 100);
-            this.guna2PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox14.TabIndex = 0;
-            this.guna2PictureBox14.TabStop = false;
-            this.guna2PictureBox14.UseTransparentBackground = true;
+            this.guna2HtmlLabel97.Text = "Neville Longbottom";
             // 
             // guna2Panel16
             // 
@@ -4621,20 +4054,6 @@
             this.guna2HtmlLabel88.TabIndex = 9;
             this.guna2HtmlLabel88.Text = "100";
             // 
-            // guna2ImageButton18
-            // 
-            this.guna2ImageButton18.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton18.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton18.Image = global::iConnect.Properties.Resources.comment;
-            this.guna2ImageButton18.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton18.ImageRotate = 0F;
-            this.guna2ImageButton18.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton18.Location = new System.Drawing.Point(559, 951);
-            this.guna2ImageButton18.Name = "guna2ImageButton18";
-            this.guna2ImageButton18.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton18.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton18.TabIndex = 8;
-            // 
             // guna2HtmlLabel89
             // 
             this.guna2HtmlLabel89.BackColor = System.Drawing.Color.Transparent;
@@ -4644,40 +4063,6 @@
             this.guna2HtmlLabel89.Size = new System.Drawing.Size(54, 47);
             this.guna2HtmlLabel89.TabIndex = 7;
             this.guna2HtmlLabel89.Text = "100";
-            // 
-            // guna2ImageButton19
-            // 
-            this.guna2ImageButton19.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton19.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton19.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton19.Image = global::iConnect.Properties.Resources.heart;
-            this.guna2ImageButton19.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton19.ImageRotate = 0F;
-            this.guna2ImageButton19.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton19.IndicateFocus = true;
-            this.guna2ImageButton19.Location = new System.Drawing.Point(306, 951);
-            this.guna2ImageButton19.Name = "guna2ImageButton19";
-            this.guna2ImageButton19.PressedState.Image = global::iConnect.Properties.Resources.redheart;
-            this.guna2ImageButton19.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton19.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton19.TabIndex = 6;
-            this.guna2ImageButton19.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox9
-            // 
-            this.guna2PictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox9.ErrorImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox9.Image = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox9.ImageLocation = "";
-            this.guna2PictureBox9.ImageRotate = 0F;
-            this.guna2PictureBox9.InitialImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox9.Location = new System.Drawing.Point(97, 136);
-            this.guna2PictureBox9.Name = "guna2PictureBox9";
-            this.guna2PictureBox9.Size = new System.Drawing.Size(800, 800);
-            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox9.TabIndex = 5;
-            this.guna2PictureBox9.TabStop = false;
-            this.guna2PictureBox9.UseTransparentBackground = true;
             // 
             // guna2HtmlLabel90
             // 
@@ -4693,7 +4078,7 @@
             // 
             this.guna2HtmlLabel91.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel91.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel91.Location = new System.Drawing.Point(306, 22);
+            this.guna2HtmlLabel91.Location = new System.Drawing.Point(384, 22);
             this.guna2HtmlLabel91.Name = "guna2HtmlLabel91";
             this.guna2HtmlLabel91.Size = new System.Drawing.Size(55, 47);
             this.guna2HtmlLabel91.TabIndex = 3;
@@ -4708,7 +4093,7 @@
             this.guna2CircleButton11.FillColor = System.Drawing.Color.Black;
             this.guna2CircleButton11.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton11.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton11.Location = new System.Drawing.Point(286, 46);
+            this.guna2CircleButton11.Location = new System.Drawing.Point(364, 46);
             this.guna2CircleButton11.Name = "guna2CircleButton11";
             this.guna2CircleButton11.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton11.Size = new System.Drawing.Size(7, 7);
@@ -4720,22 +4105,9 @@
             this.guna2HtmlLabel92.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel92.Location = new System.Drawing.Point(127, 22);
             this.guna2HtmlLabel92.Name = "guna2HtmlLabel92";
-            this.guna2HtmlLabel92.Size = new System.Drawing.Size(141, 47);
+            this.guna2HtmlLabel92.Size = new System.Drawing.Size(218, 47);
             this.guna2HtmlLabel92.TabIndex = 1;
-            this.guna2HtmlLabel92.Text = "Peter Lee";
-            // 
-            // guna2PictureBox10
-            // 
-            this.guna2PictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox10.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2PictureBox10.ImageRotate = 0F;
-            this.guna2PictureBox10.Location = new System.Drawing.Point(22, 22);
-            this.guna2PictureBox10.Name = "guna2PictureBox10";
-            this.guna2PictureBox10.Size = new System.Drawing.Size(100, 100);
-            this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox10.TabIndex = 0;
-            this.guna2PictureBox10.TabStop = false;
-            this.guna2PictureBox10.UseTransparentBackground = true;
+            this.guna2HtmlLabel92.Text = "Severus Snape";
             // 
             // guna2Panel17
             // 
@@ -4782,20 +4154,6 @@
             this.guna2HtmlLabel83.TabIndex = 9;
             this.guna2HtmlLabel83.Text = "100";
             // 
-            // guna2ImageButton20
-            // 
-            this.guna2ImageButton20.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton20.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton20.Image = global::iConnect.Properties.Resources.comment;
-            this.guna2ImageButton20.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton20.ImageRotate = 0F;
-            this.guna2ImageButton20.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton20.Location = new System.Drawing.Point(559, 951);
-            this.guna2ImageButton20.Name = "guna2ImageButton20";
-            this.guna2ImageButton20.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton20.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton20.TabIndex = 8;
-            // 
             // guna2HtmlLabel84
             // 
             this.guna2HtmlLabel84.BackColor = System.Drawing.Color.Transparent;
@@ -4805,40 +4163,6 @@
             this.guna2HtmlLabel84.Size = new System.Drawing.Size(54, 47);
             this.guna2HtmlLabel84.TabIndex = 7;
             this.guna2HtmlLabel84.Text = "100";
-            // 
-            // guna2ImageButton21
-            // 
-            this.guna2ImageButton21.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton21.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton21.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton21.Image = global::iConnect.Properties.Resources.heart;
-            this.guna2ImageButton21.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton21.ImageRotate = 0F;
-            this.guna2ImageButton21.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton21.IndicateFocus = true;
-            this.guna2ImageButton21.Location = new System.Drawing.Point(306, 951);
-            this.guna2ImageButton21.Name = "guna2ImageButton21";
-            this.guna2ImageButton21.PressedState.Image = global::iConnect.Properties.Resources.redheart;
-            this.guna2ImageButton21.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton21.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton21.TabIndex = 6;
-            this.guna2ImageButton21.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox11
-            // 
-            this.guna2PictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox11.ErrorImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox11.Image = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox11.ImageLocation = "";
-            this.guna2PictureBox11.ImageRotate = 0F;
-            this.guna2PictureBox11.InitialImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox11.Location = new System.Drawing.Point(97, 136);
-            this.guna2PictureBox11.Name = "guna2PictureBox11";
-            this.guna2PictureBox11.Size = new System.Drawing.Size(800, 800);
-            this.guna2PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox11.TabIndex = 5;
-            this.guna2PictureBox11.TabStop = false;
-            this.guna2PictureBox11.UseTransparentBackground = true;
             // 
             // guna2HtmlLabel85
             // 
@@ -4854,7 +4178,7 @@
             // 
             this.guna2HtmlLabel86.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel86.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel86.Location = new System.Drawing.Point(306, 22);
+            this.guna2HtmlLabel86.Location = new System.Drawing.Point(447, 22);
             this.guna2HtmlLabel86.Name = "guna2HtmlLabel86";
             this.guna2HtmlLabel86.Size = new System.Drawing.Size(55, 47);
             this.guna2HtmlLabel86.TabIndex = 3;
@@ -4869,7 +4193,7 @@
             this.guna2CircleButton13.FillColor = System.Drawing.Color.Black;
             this.guna2CircleButton13.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton13.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton13.Location = new System.Drawing.Point(286, 46);
+            this.guna2CircleButton13.Location = new System.Drawing.Point(427, 46);
             this.guna2CircleButton13.Name = "guna2CircleButton13";
             this.guna2CircleButton13.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton13.Size = new System.Drawing.Size(7, 7);
@@ -4881,22 +4205,9 @@
             this.guna2HtmlLabel87.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel87.Location = new System.Drawing.Point(127, 22);
             this.guna2HtmlLabel87.Name = "guna2HtmlLabel87";
-            this.guna2HtmlLabel87.Size = new System.Drawing.Size(141, 47);
+            this.guna2HtmlLabel87.Size = new System.Drawing.Size(283, 47);
             this.guna2HtmlLabel87.TabIndex = 1;
-            this.guna2HtmlLabel87.Text = "Peter Lee";
-            // 
-            // guna2PictureBox12
-            // 
-            this.guna2PictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox12.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2PictureBox12.ImageRotate = 0F;
-            this.guna2PictureBox12.Location = new System.Drawing.Point(22, 22);
-            this.guna2PictureBox12.Name = "guna2PictureBox12";
-            this.guna2PictureBox12.Size = new System.Drawing.Size(100, 100);
-            this.guna2PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox12.TabIndex = 0;
-            this.guna2PictureBox12.TabStop = false;
-            this.guna2PictureBox12.UseTransparentBackground = true;
+            this.guna2HtmlLabel87.Text = "Hermione Granger";
             // 
             // pnlForYou
             // 
@@ -4925,7 +4236,7 @@
             this.guna2Panel15.Controls.Add(this.guna2PictureBox8);
             this.guna2Panel15.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Panel15.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.guna2Panel15.Location = new System.Drawing.Point(0, 3066);
+            this.guna2Panel15.Location = new System.Drawing.Point(0, 2711);
             this.guna2Panel15.Name = "guna2Panel15";
             this.guna2Panel15.Size = new System.Drawing.Size(995, 1020);
             this.guna2Panel15.TabIndex = 3;
@@ -4955,20 +4266,6 @@
             this.guna2HtmlLabel73.TabIndex = 9;
             this.guna2HtmlLabel73.Text = "100";
             // 
-            // guna2ImageButton16
-            // 
-            this.guna2ImageButton16.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton16.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton16.Image = global::iConnect.Properties.Resources.comment;
-            this.guna2ImageButton16.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton16.ImageRotate = 0F;
-            this.guna2ImageButton16.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton16.Location = new System.Drawing.Point(559, 951);
-            this.guna2ImageButton16.Name = "guna2ImageButton16";
-            this.guna2ImageButton16.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton16.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton16.TabIndex = 8;
-            // 
             // guna2HtmlLabel74
             // 
             this.guna2HtmlLabel74.BackColor = System.Drawing.Color.Transparent;
@@ -4978,40 +4275,6 @@
             this.guna2HtmlLabel74.Size = new System.Drawing.Size(54, 47);
             this.guna2HtmlLabel74.TabIndex = 7;
             this.guna2HtmlLabel74.Text = "100";
-            // 
-            // guna2ImageButton17
-            // 
-            this.guna2ImageButton17.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton17.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton17.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton17.Image = global::iConnect.Properties.Resources.heart;
-            this.guna2ImageButton17.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton17.ImageRotate = 0F;
-            this.guna2ImageButton17.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton17.IndicateFocus = true;
-            this.guna2ImageButton17.Location = new System.Drawing.Point(306, 951);
-            this.guna2ImageButton17.Name = "guna2ImageButton17";
-            this.guna2ImageButton17.PressedState.Image = global::iConnect.Properties.Resources.redheart;
-            this.guna2ImageButton17.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton17.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton17.TabIndex = 6;
-            this.guna2ImageButton17.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox7
-            // 
-            this.guna2PictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox7.ErrorImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox7.Image = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox7.ImageLocation = "";
-            this.guna2PictureBox7.ImageRotate = 0F;
-            this.guna2PictureBox7.InitialImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox7.Location = new System.Drawing.Point(97, 136);
-            this.guna2PictureBox7.Name = "guna2PictureBox7";
-            this.guna2PictureBox7.Size = new System.Drawing.Size(800, 800);
-            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox7.TabIndex = 5;
-            this.guna2PictureBox7.TabStop = false;
-            this.guna2PictureBox7.UseTransparentBackground = true;
             // 
             // guna2HtmlLabel75
             // 
@@ -5058,19 +4321,6 @@
             this.guna2HtmlLabel77.TabIndex = 1;
             this.guna2HtmlLabel77.Text = "Peter Lee";
             // 
-            // guna2PictureBox8
-            // 
-            this.guna2PictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox8.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2PictureBox8.ImageRotate = 0F;
-            this.guna2PictureBox8.Location = new System.Drawing.Point(22, 22);
-            this.guna2PictureBox8.Name = "guna2PictureBox8";
-            this.guna2PictureBox8.Size = new System.Drawing.Size(100, 100);
-            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox8.TabIndex = 0;
-            this.guna2PictureBox8.TabStop = false;
-            this.guna2PictureBox8.UseTransparentBackground = true;
-            // 
             // guna2Panel14
             // 
             this.guna2Panel14.Controls.Add(this.guna2CircleButton6);
@@ -5086,7 +4336,7 @@
             this.guna2Panel14.Controls.Add(this.guna2PictureBox6);
             this.guna2Panel14.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Panel14.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.guna2Panel14.Location = new System.Drawing.Point(0, 2044);
+            this.guna2Panel14.Location = new System.Drawing.Point(0, 1689);
             this.guna2Panel14.Name = "guna2Panel14";
             this.guna2Panel14.Size = new System.Drawing.Size(995, 1020);
             this.guna2Panel14.TabIndex = 2;
@@ -5116,20 +4366,6 @@
             this.guna2HtmlLabel68.TabIndex = 9;
             this.guna2HtmlLabel68.Text = "100";
             // 
-            // guna2ImageButton14
-            // 
-            this.guna2ImageButton14.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton14.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton14.Image = global::iConnect.Properties.Resources.comment;
-            this.guna2ImageButton14.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton14.ImageRotate = 0F;
-            this.guna2ImageButton14.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton14.Location = new System.Drawing.Point(559, 951);
-            this.guna2ImageButton14.Name = "guna2ImageButton14";
-            this.guna2ImageButton14.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton14.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton14.TabIndex = 8;
-            // 
             // guna2HtmlLabel69
             // 
             this.guna2HtmlLabel69.BackColor = System.Drawing.Color.Transparent;
@@ -5139,40 +4375,6 @@
             this.guna2HtmlLabel69.Size = new System.Drawing.Size(54, 47);
             this.guna2HtmlLabel69.TabIndex = 7;
             this.guna2HtmlLabel69.Text = "100";
-            // 
-            // guna2ImageButton15
-            // 
-            this.guna2ImageButton15.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton15.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton15.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton15.Image = global::iConnect.Properties.Resources.heart;
-            this.guna2ImageButton15.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton15.ImageRotate = 0F;
-            this.guna2ImageButton15.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton15.IndicateFocus = true;
-            this.guna2ImageButton15.Location = new System.Drawing.Point(306, 951);
-            this.guna2ImageButton15.Name = "guna2ImageButton15";
-            this.guna2ImageButton15.PressedState.Image = global::iConnect.Properties.Resources.redheart;
-            this.guna2ImageButton15.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton15.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton15.TabIndex = 6;
-            this.guna2ImageButton15.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox5.ErrorImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox5.Image = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox5.ImageLocation = "";
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.InitialImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(97, 136);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(800, 800);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox5.TabIndex = 5;
-            this.guna2PictureBox5.TabStop = false;
-            this.guna2PictureBox5.UseTransparentBackground = true;
             // 
             // guna2HtmlLabel70
             // 
@@ -5219,19 +4421,6 @@
             this.guna2HtmlLabel72.TabIndex = 1;
             this.guna2HtmlLabel72.Text = "Peter Lee";
             // 
-            // guna2PictureBox6
-            // 
-            this.guna2PictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox6.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(22, 22);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(100, 100);
-            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox6.TabIndex = 0;
-            this.guna2PictureBox6.TabStop = false;
-            this.guna2PictureBox6.UseTransparentBackground = true;
-            // 
             // pnlPost2
             // 
             this.pnlPost2.Controls.Add(this.guna2CircleButton3);
@@ -5247,7 +4436,7 @@
             this.pnlPost2.Controls.Add(this.guna2PictureBox2);
             this.pnlPost2.CustomBorderColor = System.Drawing.Color.Black;
             this.pnlPost2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.pnlPost2.Location = new System.Drawing.Point(0, 1022);
+            this.pnlPost2.Location = new System.Drawing.Point(0, 667);
             this.pnlPost2.Name = "pnlPost2";
             this.pnlPost2.Size = new System.Drawing.Size(995, 1020);
             this.pnlPost2.TabIndex = 1;
@@ -5277,20 +4466,6 @@
             this.guna2HtmlLabel63.TabIndex = 9;
             this.guna2HtmlLabel63.Text = "100";
             // 
-            // guna2ImageButton7
-            // 
-            this.guna2ImageButton7.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton7.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton7.Image = global::iConnect.Properties.Resources.comment;
-            this.guna2ImageButton7.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton7.ImageRotate = 0F;
-            this.guna2ImageButton7.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton7.Location = new System.Drawing.Point(559, 951);
-            this.guna2ImageButton7.Name = "guna2ImageButton7";
-            this.guna2ImageButton7.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton7.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton7.TabIndex = 8;
-            // 
             // guna2HtmlLabel64
             // 
             this.guna2HtmlLabel64.BackColor = System.Drawing.Color.Transparent;
@@ -5300,40 +4475,6 @@
             this.guna2HtmlLabel64.Size = new System.Drawing.Size(54, 47);
             this.guna2HtmlLabel64.TabIndex = 7;
             this.guna2HtmlLabel64.Text = "100";
-            // 
-            // guna2ImageButton13
-            // 
-            this.guna2ImageButton13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton13.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton13.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton13.Image = global::iConnect.Properties.Resources.heart;
-            this.guna2ImageButton13.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton13.ImageRotate = 0F;
-            this.guna2ImageButton13.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton13.IndicateFocus = true;
-            this.guna2ImageButton13.Location = new System.Drawing.Point(306, 951);
-            this.guna2ImageButton13.Name = "guna2ImageButton13";
-            this.guna2ImageButton13.PressedState.Image = global::iConnect.Properties.Resources.redheart;
-            this.guna2ImageButton13.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton13.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton13.TabIndex = 6;
-            this.guna2ImageButton13.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.ErrorImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox1.Image = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox1.ImageLocation = "";
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::iConnect.Properties.Resources.postimg;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(97, 136);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(800, 800);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 5;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // guna2HtmlLabel65
             // 
@@ -5380,19 +4521,6 @@
             this.guna2HtmlLabel67.TabIndex = 1;
             this.guna2HtmlLabel67.Text = "Peter Lee";
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(22, 22);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(100, 100);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 0;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
-            // 
             // pnlPost1
             // 
             this.pnlPost1.Controls.Add(this.guna2CircleButton4);
@@ -5410,7 +4538,7 @@
             this.pnlPost1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.pnlPost1.Location = new System.Drawing.Point(0, 0);
             this.pnlPost1.Name = "pnlPost1";
-            this.pnlPost1.Size = new System.Drawing.Size(995, 1020);
+            this.pnlPost1.Size = new System.Drawing.Size(995, 665);
             this.pnlPost1.TabIndex = 0;
             this.pnlPost1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPost1_Paint);
             // 
@@ -5423,7 +4551,7 @@
             this.guna2CircleButton4.FillColor = System.Drawing.Color.Black;
             this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.Location = new System.Drawing.Point(494, 975);
+            this.guna2CircleButton4.Location = new System.Drawing.Point(494, 615);
             this.guna2CircleButton4.Name = "guna2CircleButton4";
             this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton4.Size = new System.Drawing.Size(7, 7);
@@ -5433,71 +4561,21 @@
             // 
             this.guna2HtmlLabel62.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel62.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel62.Location = new System.Drawing.Point(615, 953);
+            this.guna2HtmlLabel62.Location = new System.Drawing.Point(615, 593);
             this.guna2HtmlLabel62.Name = "guna2HtmlLabel62";
             this.guna2HtmlLabel62.Size = new System.Drawing.Size(54, 47);
             this.guna2HtmlLabel62.TabIndex = 9;
             this.guna2HtmlLabel62.Text = "100";
             // 
-            // guna2ImageButton5
-            // 
-            this.guna2ImageButton5.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton5.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton5.Image = global::iConnect.Properties.Resources.comment;
-            this.guna2ImageButton5.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton5.ImageRotate = 0F;
-            this.guna2ImageButton5.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton5.Location = new System.Drawing.Point(559, 951);
-            this.guna2ImageButton5.Name = "guna2ImageButton5";
-            this.guna2ImageButton5.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton5.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton5.TabIndex = 8;
-            this.guna2ImageButton5.Click += new System.EventHandler(this.guna2ImageButton5_Click_1);
-            // 
             // LoveNumber
             // 
             this.LoveNumber.BackColor = System.Drawing.Color.Transparent;
             this.LoveNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoveNumber.Location = new System.Drawing.Point(361, 953);
+            this.LoveNumber.Location = new System.Drawing.Point(361, 593);
             this.LoveNumber.Name = "LoveNumber";
             this.LoveNumber.Size = new System.Drawing.Size(54, 47);
             this.LoveNumber.TabIndex = 7;
             this.LoveNumber.Text = "100";
-            // 
-            // btnLove
-            // 
-            this.btnLove.BackColor = System.Drawing.Color.Transparent;
-            this.btnLove.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnLove.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnLove.Image = global::iConnect.Properties.Resources.heart;
-            this.btnLove.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLove.ImageRotate = 0F;
-            this.btnLove.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnLove.IndicateFocus = true;
-            this.btnLove.Location = new System.Drawing.Point(306, 951);
-            this.btnLove.Name = "btnLove";
-            this.btnLove.PressedState.Image = global::iConnect.Properties.Resources.redheart;
-            this.btnLove.PressedState.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnLove.Size = new System.Drawing.Size(64, 54);
-            this.btnLove.TabIndex = 6;
-            this.btnLove.UseTransparentBackground = true;
-            this.btnLove.Click += new System.EventHandler(this.guna2ImageButton5_Click);
-            // 
-            // picPost1
-            // 
-            this.picPost1.BackColor = System.Drawing.Color.Transparent;
-            this.picPost1.ErrorImage = global::iConnect.Properties.Resources.postimg;
-            this.picPost1.Image = global::iConnect.Properties.Resources.postimg;
-            this.picPost1.ImageLocation = "";
-            this.picPost1.ImageRotate = 0F;
-            this.picPost1.InitialImage = global::iConnect.Properties.Resources.postimg;
-            this.picPost1.Location = new System.Drawing.Point(97, 136);
-            this.picPost1.Name = "picPost1";
-            this.picPost1.Size = new System.Drawing.Size(800, 800);
-            this.picPost1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPost1.TabIndex = 5;
-            this.picPost1.TabStop = false;
-            this.picPost1.UseTransparentBackground = true;
             // 
             // labelCaption1
             // 
@@ -5505,9 +4583,9 @@
             this.labelCaption1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCaption1.Location = new System.Drawing.Point(127, 70);
             this.labelCaption1.Name = "labelCaption1";
-            this.labelCaption1.Size = new System.Drawing.Size(190, 47);
+            this.labelCaption1.Size = new System.Drawing.Size(683, 47);
             this.labelCaption1.TabIndex = 4;
-            this.labelCaption1.Text = "Hello, World!";
+            this.labelCaption1.Text = "Chấp nhận được nuôi để có con máy trong hình";
             // 
             // labelTime1
             // 
@@ -5540,22 +4618,9 @@
             this.AccountName1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountName1.Location = new System.Drawing.Point(127, 22);
             this.AccountName1.Name = "AccountName1";
-            this.AccountName1.Size = new System.Drawing.Size(141, 47);
+            this.AccountName1.Size = new System.Drawing.Size(148, 47);
             this.AccountName1.TabIndex = 1;
-            this.AccountName1.Text = "Peter Lee";
-            // 
-            // Avatar1
-            // 
-            this.Avatar1.BackColor = System.Drawing.Color.Transparent;
-            this.Avatar1.Image = global::iConnect.Properties.Resources.User_cicrle_light;
-            this.Avatar1.ImageRotate = 0F;
-            this.Avatar1.Location = new System.Drawing.Point(22, 22);
-            this.Avatar1.Name = "Avatar1";
-            this.Avatar1.Size = new System.Drawing.Size(100, 100);
-            this.Avatar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Avatar1.TabIndex = 0;
-            this.Avatar1.TabStop = false;
-            this.Avatar1.UseTransparentBackground = true;
+            this.AccountName1.Text = "Huu Phuc";
             // 
             // guna2BorderlessForm1
             // 
@@ -5637,6 +4702,942 @@
             this.btnLogout.Visible = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
             // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2PictureBox4.Image = global::iConnect.Properties.Resources.Screenshot_2024_04_20_232604;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(22, 48);
+            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(308, 111);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 10;
+            this.guna2PictureBox4.TabStop = false;
+            this.guna2PictureBox4.UseTransparentBackground = true;
+            // 
+            // guna2ImageButton24
+            // 
+            this.guna2ImageButton24.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton24.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton24.Image = global::iConnect.Properties.Resources.comment;
+            this.guna2ImageButton24.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton24.ImageRotate = 0F;
+            this.guna2ImageButton24.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton24.Location = new System.Drawing.Point(559, 951);
+            this.guna2ImageButton24.Name = "guna2ImageButton24";
+            this.guna2ImageButton24.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton24.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton24.TabIndex = 8;
+            // 
+            // guna2ImageButton25
+            // 
+            this.guna2ImageButton25.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton25.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton25.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton25.Image = global::iConnect.Properties.Resources.heart;
+            this.guna2ImageButton25.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton25.ImageRotate = 0F;
+            this.guna2ImageButton25.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton25.IndicateFocus = true;
+            this.guna2ImageButton25.Location = new System.Drawing.Point(306, 951);
+            this.guna2ImageButton25.Name = "guna2ImageButton25";
+            this.guna2ImageButton25.PressedState.Image = global::iConnect.Properties.Resources.redheart;
+            this.guna2ImageButton25.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton25.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton25.TabIndex = 6;
+            this.guna2ImageButton25.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox15
+            // 
+            this.guna2PictureBox15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox15.ErrorImage = global::iConnect.Properties.Resources._2;
+            this.guna2PictureBox15.Image = global::iConnect.Properties.Resources._2;
+            this.guna2PictureBox15.ImageLocation = "";
+            this.guna2PictureBox15.ImageRotate = 0F;
+            this.guna2PictureBox15.InitialImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox15.Location = new System.Drawing.Point(97, 136);
+            this.guna2PictureBox15.Name = "guna2PictureBox15";
+            this.guna2PictureBox15.Size = new System.Drawing.Size(800, 800);
+            this.guna2PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox15.TabIndex = 5;
+            this.guna2PictureBox15.TabStop = false;
+            this.guna2PictureBox15.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox16
+            // 
+            this.guna2PictureBox16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox16.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2PictureBox16.ImageRotate = 0F;
+            this.guna2PictureBox16.Location = new System.Drawing.Point(22, 22);
+            this.guna2PictureBox16.Name = "guna2PictureBox16";
+            this.guna2PictureBox16.Size = new System.Drawing.Size(100, 100);
+            this.guna2PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox16.TabIndex = 0;
+            this.guna2PictureBox16.TabStop = false;
+            this.guna2PictureBox16.UseTransparentBackground = true;
+            // 
+            // guna2ImageButton22
+            // 
+            this.guna2ImageButton22.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton22.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton22.Image = global::iConnect.Properties.Resources.comment;
+            this.guna2ImageButton22.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton22.ImageRotate = 0F;
+            this.guna2ImageButton22.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton22.Location = new System.Drawing.Point(559, 951);
+            this.guna2ImageButton22.Name = "guna2ImageButton22";
+            this.guna2ImageButton22.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton22.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton22.TabIndex = 8;
+            // 
+            // guna2ImageButton23
+            // 
+            this.guna2ImageButton23.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton23.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton23.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton23.Image = global::iConnect.Properties.Resources.heart;
+            this.guna2ImageButton23.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton23.ImageRotate = 0F;
+            this.guna2ImageButton23.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton23.IndicateFocus = true;
+            this.guna2ImageButton23.Location = new System.Drawing.Point(306, 951);
+            this.guna2ImageButton23.Name = "guna2ImageButton23";
+            this.guna2ImageButton23.PressedState.Image = global::iConnect.Properties.Resources.redheart;
+            this.guna2ImageButton23.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton23.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton23.TabIndex = 6;
+            this.guna2ImageButton23.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox13
+            // 
+            this.guna2PictureBox13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox13.ErrorImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox13.Image = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox13.ImageLocation = "";
+            this.guna2PictureBox13.ImageRotate = 0F;
+            this.guna2PictureBox13.InitialImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox13.Location = new System.Drawing.Point(97, 136);
+            this.guna2PictureBox13.Name = "guna2PictureBox13";
+            this.guna2PictureBox13.Size = new System.Drawing.Size(800, 800);
+            this.guna2PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox13.TabIndex = 5;
+            this.guna2PictureBox13.TabStop = false;
+            this.guna2PictureBox13.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox14
+            // 
+            this.guna2PictureBox14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox14.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2PictureBox14.ImageRotate = 0F;
+            this.guna2PictureBox14.Location = new System.Drawing.Point(22, 22);
+            this.guna2PictureBox14.Name = "guna2PictureBox14";
+            this.guna2PictureBox14.Size = new System.Drawing.Size(100, 100);
+            this.guna2PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox14.TabIndex = 0;
+            this.guna2PictureBox14.TabStop = false;
+            this.guna2PictureBox14.UseTransparentBackground = true;
+            // 
+            // guna2ImageButton18
+            // 
+            this.guna2ImageButton18.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton18.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton18.Image = global::iConnect.Properties.Resources.comment;
+            this.guna2ImageButton18.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton18.ImageRotate = 0F;
+            this.guna2ImageButton18.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton18.Location = new System.Drawing.Point(559, 951);
+            this.guna2ImageButton18.Name = "guna2ImageButton18";
+            this.guna2ImageButton18.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton18.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton18.TabIndex = 8;
+            // 
+            // guna2ImageButton19
+            // 
+            this.guna2ImageButton19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton19.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton19.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton19.Image = global::iConnect.Properties.Resources.heart;
+            this.guna2ImageButton19.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton19.ImageRotate = 0F;
+            this.guna2ImageButton19.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton19.IndicateFocus = true;
+            this.guna2ImageButton19.Location = new System.Drawing.Point(306, 951);
+            this.guna2ImageButton19.Name = "guna2ImageButton19";
+            this.guna2ImageButton19.PressedState.Image = global::iConnect.Properties.Resources.redheart;
+            this.guna2ImageButton19.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton19.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton19.TabIndex = 6;
+            this.guna2ImageButton19.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox9
+            // 
+            this.guna2PictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox9.ErrorImage = global::iConnect.Properties.Resources._1;
+            this.guna2PictureBox9.Image = global::iConnect.Properties.Resources._1;
+            this.guna2PictureBox9.ImageLocation = "";
+            this.guna2PictureBox9.ImageRotate = 0F;
+            this.guna2PictureBox9.InitialImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox9.Location = new System.Drawing.Point(97, 136);
+            this.guna2PictureBox9.Name = "guna2PictureBox9";
+            this.guna2PictureBox9.Size = new System.Drawing.Size(800, 800);
+            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox9.TabIndex = 5;
+            this.guna2PictureBox9.TabStop = false;
+            this.guna2PictureBox9.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox10
+            // 
+            this.guna2PictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox10.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2PictureBox10.ImageRotate = 0F;
+            this.guna2PictureBox10.Location = new System.Drawing.Point(22, 22);
+            this.guna2PictureBox10.Name = "guna2PictureBox10";
+            this.guna2PictureBox10.Size = new System.Drawing.Size(100, 100);
+            this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox10.TabIndex = 0;
+            this.guna2PictureBox10.TabStop = false;
+            this.guna2PictureBox10.UseTransparentBackground = true;
+            // 
+            // guna2ImageButton20
+            // 
+            this.guna2ImageButton20.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton20.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton20.Image = global::iConnect.Properties.Resources.comment;
+            this.guna2ImageButton20.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton20.ImageRotate = 0F;
+            this.guna2ImageButton20.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton20.Location = new System.Drawing.Point(559, 951);
+            this.guna2ImageButton20.Name = "guna2ImageButton20";
+            this.guna2ImageButton20.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton20.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton20.TabIndex = 8;
+            // 
+            // guna2ImageButton21
+            // 
+            this.guna2ImageButton21.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton21.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton21.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton21.Image = global::iConnect.Properties.Resources.heart;
+            this.guna2ImageButton21.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton21.ImageRotate = 0F;
+            this.guna2ImageButton21.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton21.IndicateFocus = true;
+            this.guna2ImageButton21.Location = new System.Drawing.Point(306, 951);
+            this.guna2ImageButton21.Name = "guna2ImageButton21";
+            this.guna2ImageButton21.PressedState.Image = global::iConnect.Properties.Resources.redheart;
+            this.guna2ImageButton21.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton21.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton21.TabIndex = 6;
+            this.guna2ImageButton21.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox11
+            // 
+            this.guna2PictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox11.ErrorImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox11.Image = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox11.ImageLocation = "";
+            this.guna2PictureBox11.ImageRotate = 0F;
+            this.guna2PictureBox11.InitialImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox11.Location = new System.Drawing.Point(97, 136);
+            this.guna2PictureBox11.Name = "guna2PictureBox11";
+            this.guna2PictureBox11.Size = new System.Drawing.Size(800, 800);
+            this.guna2PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox11.TabIndex = 5;
+            this.guna2PictureBox11.TabStop = false;
+            this.guna2PictureBox11.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox12
+            // 
+            this.guna2PictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox12.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2PictureBox12.ImageRotate = 0F;
+            this.guna2PictureBox12.Location = new System.Drawing.Point(22, 22);
+            this.guna2PictureBox12.Name = "guna2PictureBox12";
+            this.guna2PictureBox12.Size = new System.Drawing.Size(100, 100);
+            this.guna2PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox12.TabIndex = 0;
+            this.guna2PictureBox12.TabStop = false;
+            this.guna2PictureBox12.UseTransparentBackground = true;
+            // 
+            // guna2ImageButton16
+            // 
+            this.guna2ImageButton16.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton16.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton16.Image = global::iConnect.Properties.Resources.comment;
+            this.guna2ImageButton16.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton16.ImageRotate = 0F;
+            this.guna2ImageButton16.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton16.Location = new System.Drawing.Point(559, 951);
+            this.guna2ImageButton16.Name = "guna2ImageButton16";
+            this.guna2ImageButton16.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton16.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton16.TabIndex = 8;
+            // 
+            // guna2ImageButton17
+            // 
+            this.guna2ImageButton17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton17.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton17.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton17.Image = global::iConnect.Properties.Resources.heart;
+            this.guna2ImageButton17.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton17.ImageRotate = 0F;
+            this.guna2ImageButton17.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton17.IndicateFocus = true;
+            this.guna2ImageButton17.Location = new System.Drawing.Point(306, 951);
+            this.guna2ImageButton17.Name = "guna2ImageButton17";
+            this.guna2ImageButton17.PressedState.Image = global::iConnect.Properties.Resources.redheart;
+            this.guna2ImageButton17.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton17.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton17.TabIndex = 6;
+            this.guna2ImageButton17.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox7
+            // 
+            this.guna2PictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox7.ErrorImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox7.Image = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox7.ImageLocation = "";
+            this.guna2PictureBox7.ImageRotate = 0F;
+            this.guna2PictureBox7.InitialImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox7.Location = new System.Drawing.Point(97, 136);
+            this.guna2PictureBox7.Name = "guna2PictureBox7";
+            this.guna2PictureBox7.Size = new System.Drawing.Size(800, 800);
+            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox7.TabIndex = 5;
+            this.guna2PictureBox7.TabStop = false;
+            this.guna2PictureBox7.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox8
+            // 
+            this.guna2PictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox8.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2PictureBox8.ImageRotate = 0F;
+            this.guna2PictureBox8.Location = new System.Drawing.Point(22, 22);
+            this.guna2PictureBox8.Name = "guna2PictureBox8";
+            this.guna2PictureBox8.Size = new System.Drawing.Size(100, 100);
+            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox8.TabIndex = 0;
+            this.guna2PictureBox8.TabStop = false;
+            this.guna2PictureBox8.UseTransparentBackground = true;
+            // 
+            // guna2ImageButton14
+            // 
+            this.guna2ImageButton14.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton14.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton14.Image = global::iConnect.Properties.Resources.comment;
+            this.guna2ImageButton14.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton14.ImageRotate = 0F;
+            this.guna2ImageButton14.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton14.Location = new System.Drawing.Point(559, 951);
+            this.guna2ImageButton14.Name = "guna2ImageButton14";
+            this.guna2ImageButton14.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton14.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton14.TabIndex = 8;
+            // 
+            // guna2ImageButton15
+            // 
+            this.guna2ImageButton15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton15.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton15.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton15.Image = global::iConnect.Properties.Resources.heart;
+            this.guna2ImageButton15.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton15.ImageRotate = 0F;
+            this.guna2ImageButton15.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton15.IndicateFocus = true;
+            this.guna2ImageButton15.Location = new System.Drawing.Point(306, 951);
+            this.guna2ImageButton15.Name = "guna2ImageButton15";
+            this.guna2ImageButton15.PressedState.Image = global::iConnect.Properties.Resources.redheart;
+            this.guna2ImageButton15.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton15.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton15.TabIndex = 6;
+            this.guna2ImageButton15.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.ErrorImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox5.Image = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox5.ImageLocation = "";
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.InitialImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(97, 136);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(800, 800);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox5.TabIndex = 5;
+            this.guna2PictureBox5.TabStop = false;
+            this.guna2PictureBox5.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox6
+            // 
+            this.guna2PictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox6.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2PictureBox6.ImageRotate = 0F;
+            this.guna2PictureBox6.Location = new System.Drawing.Point(22, 22);
+            this.guna2PictureBox6.Name = "guna2PictureBox6";
+            this.guna2PictureBox6.Size = new System.Drawing.Size(100, 100);
+            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox6.TabIndex = 0;
+            this.guna2PictureBox6.TabStop = false;
+            this.guna2PictureBox6.UseTransparentBackground = true;
+            // 
+            // guna2ImageButton7
+            // 
+            this.guna2ImageButton7.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton7.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton7.Image = global::iConnect.Properties.Resources.comment;
+            this.guna2ImageButton7.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton7.ImageRotate = 0F;
+            this.guna2ImageButton7.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton7.Location = new System.Drawing.Point(559, 951);
+            this.guna2ImageButton7.Name = "guna2ImageButton7";
+            this.guna2ImageButton7.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton7.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton7.TabIndex = 8;
+            // 
+            // guna2ImageButton13
+            // 
+            this.guna2ImageButton13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton13.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton13.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton13.Image = global::iConnect.Properties.Resources.heart;
+            this.guna2ImageButton13.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton13.ImageRotate = 0F;
+            this.guna2ImageButton13.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton13.IndicateFocus = true;
+            this.guna2ImageButton13.Location = new System.Drawing.Point(306, 951);
+            this.guna2ImageButton13.Name = "guna2ImageButton13";
+            this.guna2ImageButton13.PressedState.Image = global::iConnect.Properties.Resources.redheart;
+            this.guna2ImageButton13.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton13.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton13.TabIndex = 6;
+            this.guna2ImageButton13.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.ErrorImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox1.Image = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox1.ImageLocation = "";
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.InitialImage = global::iConnect.Properties.Resources.postimg;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(97, 136);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(800, 800);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 5;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(22, 22);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 0;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
+            // guna2ImageButton5
+            // 
+            this.guna2ImageButton5.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton5.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton5.Image = global::iConnect.Properties.Resources.comment;
+            this.guna2ImageButton5.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton5.ImageRotate = 0F;
+            this.guna2ImageButton5.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton5.Location = new System.Drawing.Point(559, 591);
+            this.guna2ImageButton5.Name = "guna2ImageButton5";
+            this.guna2ImageButton5.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2ImageButton5.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton5.TabIndex = 8;
+            this.guna2ImageButton5.Click += new System.EventHandler(this.guna2ImageButton5_Click_1);
+            // 
+            // btnLove
+            // 
+            this.btnLove.BackColor = System.Drawing.Color.Transparent;
+            this.btnLove.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnLove.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnLove.Image = global::iConnect.Properties.Resources.heart;
+            this.btnLove.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLove.ImageRotate = 0F;
+            this.btnLove.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnLove.IndicateFocus = true;
+            this.btnLove.Location = new System.Drawing.Point(306, 591);
+            this.btnLove.Name = "btnLove";
+            this.btnLove.PressedState.Image = global::iConnect.Properties.Resources.redheart;
+            this.btnLove.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnLove.Size = new System.Drawing.Size(64, 54);
+            this.btnLove.TabIndex = 6;
+            this.btnLove.UseTransparentBackground = true;
+            this.btnLove.Click += new System.EventHandler(this.guna2ImageButton5_Click);
+            // 
+            // picPost1
+            // 
+            this.picPost1.BackColor = System.Drawing.Color.Transparent;
+            this.picPost1.BorderRadius = 10;
+            this.picPost1.ErrorImage = global::iConnect.Properties.Resources.Apple_MacBook_Pro;
+            this.picPost1.Image = global::iConnect.Properties.Resources.Apple_MacBook_Pro;
+            this.picPost1.ImageLocation = "";
+            this.picPost1.ImageRotate = 0F;
+            this.picPost1.InitialImage = global::iConnect.Properties.Resources.postimg;
+            this.picPost1.Location = new System.Drawing.Point(97, 136);
+            this.picPost1.Name = "picPost1";
+            this.picPost1.Size = new System.Drawing.Size(800, 450);
+            this.picPost1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPost1.TabIndex = 5;
+            this.picPost1.TabStop = false;
+            this.picPost1.UseTransparentBackground = true;
+            // 
+            // Avatar1
+            // 
+            this.Avatar1.BackColor = System.Drawing.Color.Transparent;
+            this.Avatar1.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.Avatar1.ImageRotate = 0F;
+            this.Avatar1.Location = new System.Drawing.Point(22, 22);
+            this.Avatar1.Name = "Avatar1";
+            this.Avatar1.Size = new System.Drawing.Size(100, 100);
+            this.Avatar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Avatar1.TabIndex = 0;
+            this.Avatar1.TabStop = false;
+            this.Avatar1.UseTransparentBackground = true;
+            // 
+            // guna2GradientButton22
+            // 
+            this.guna2GradientButton22.BorderRadius = 10;
+            this.guna2GradientButton22.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton22.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton22.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton22.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton22.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton22.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton22.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2GradientButton22.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton22.Image = global::iConnect.Properties.Resources.pen;
+            this.guna2GradientButton22.ImageSize = new System.Drawing.Size(60, 40);
+            this.guna2GradientButton22.Location = new System.Drawing.Point(432, 142);
+            this.guna2GradientButton22.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2GradientButton22.Name = "guna2GradientButton22";
+            this.guna2GradientButton22.Size = new System.Drawing.Size(63, 48);
+            this.guna2GradientButton22.TabIndex = 22;
+            // 
+            // guna2GradientButton24
+            // 
+            this.guna2GradientButton24.BorderRadius = 10;
+            this.guna2GradientButton24.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton24.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton24.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton24.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton24.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton24.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton24.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2GradientButton24.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton24.Image = global::iConnect.Properties.Resources.on_off;
+            this.guna2GradientButton24.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2GradientButton24.Location = new System.Drawing.Point(452, 450);
+            this.guna2GradientButton24.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2GradientButton24.Name = "guna2GradientButton24";
+            this.guna2GradientButton24.Size = new System.Drawing.Size(63, 52);
+            this.guna2GradientButton24.TabIndex = 20;
+            // 
+            // guna2GradientButton10
+            // 
+            this.guna2GradientButton10.BorderRadius = 10;
+            this.guna2GradientButton10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton10.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton10.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton10.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton10.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton10.Image = global::iConnect.Properties.Resources.on_off;
+            this.guna2GradientButton10.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2GradientButton10.Location = new System.Drawing.Point(264, 117);
+            this.guna2GradientButton10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2GradientButton10.Name = "guna2GradientButton10";
+            this.guna2GradientButton10.Size = new System.Drawing.Size(52, 50);
+            this.guna2GradientButton10.TabIndex = 2;
+            // 
+            // guna2GradientButton21
+            // 
+            this.guna2GradientButton21.BorderRadius = 10;
+            this.guna2GradientButton21.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton21.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton21.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton21.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton21.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton21.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton21.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton21.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton21.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton21.Image = global::iConnect.Properties.Resources.on_off;
+            this.guna2GradientButton21.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2GradientButton21.Location = new System.Drawing.Point(304, 111);
+            this.guna2GradientButton21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2GradientButton21.Name = "guna2GradientButton21";
+            this.guna2GradientButton21.Size = new System.Drawing.Size(60, 56);
+            this.guna2GradientButton21.TabIndex = 2;
+            // 
+            // guna2TextBox9
+            // 
+            this.guna2TextBox9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox9.BorderRadius = 25;
+            this.guna2TextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox9.DefaultText = "    Tìm kiếm...";
+            this.guna2TextBox9.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox9.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox9.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox9.Font = new System.Drawing.Font("Segoe UI", 11.89565F);
+            this.guna2TextBox9.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox9.IconLeft = global::iConnect.Properties.Resources.Search;
+            this.guna2TextBox9.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.guna2TextBox9.IconLeftSize = new System.Drawing.Size(35, 35);
+            this.guna2TextBox9.Location = new System.Drawing.Point(64, 186);
+            this.guna2TextBox9.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.guna2TextBox9.Name = "guna2TextBox9";
+            this.guna2TextBox9.PasswordChar = '\0';
+            this.guna2TextBox9.PlaceholderText = "";
+            this.guna2TextBox9.SelectedText = "";
+            this.guna2TextBox9.Size = new System.Drawing.Size(1058, 73);
+            this.guna2TextBox9.TabIndex = 97;
+            // 
+            // guna2ImageButton8
+            // 
+            this.guna2ImageButton8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton8.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton8.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton8.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton8.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton8.ImageRotate = 0F;
+            this.guna2ImageButton8.Location = new System.Drawing.Point(104, 894);
+            this.guna2ImageButton8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton8.Name = "guna2ImageButton8";
+            this.guna2ImageButton8.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton8.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton8.TabIndex = 77;
+            // 
+            // guna2ImageButton9
+            // 
+            this.guna2ImageButton9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton9.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton9.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton9.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton9.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton9.ImageRotate = 0F;
+            this.guna2ImageButton9.Location = new System.Drawing.Point(104, 753);
+            this.guna2ImageButton9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton9.Name = "guna2ImageButton9";
+            this.guna2ImageButton9.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton9.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton9.TabIndex = 76;
+            // 
+            // guna2ImageButton10
+            // 
+            this.guna2ImageButton10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton10.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton10.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton10.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton10.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton10.ImageRotate = 0F;
+            this.guna2ImageButton10.Location = new System.Drawing.Point(104, 612);
+            this.guna2ImageButton10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton10.Name = "guna2ImageButton10";
+            this.guna2ImageButton10.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton10.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton10.TabIndex = 75;
+            // 
+            // guna2ImageButton11
+            // 
+            this.guna2ImageButton11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton11.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton11.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton11.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton11.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton11.ImageRotate = 0F;
+            this.guna2ImageButton11.Location = new System.Drawing.Point(104, 472);
+            this.guna2ImageButton11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton11.Name = "guna2ImageButton11";
+            this.guna2ImageButton11.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton11.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton11.TabIndex = 74;
+            // 
+            // guna2ImageButton12
+            // 
+            this.guna2ImageButton12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageButton12.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton12.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton12.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton12.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton12.ImageRotate = 0F;
+            this.guna2ImageButton12.Location = new System.Drawing.Point(104, 331);
+            this.guna2ImageButton12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton12.Name = "guna2ImageButton12";
+            this.guna2ImageButton12.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton12.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton12.TabIndex = 73;
+            // 
+            // guna2ImageButton6
+            // 
+            this.guna2ImageButton6.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton6.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton6.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton6.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton6.ImageRotate = 0F;
+            this.guna2ImageButton6.Location = new System.Drawing.Point(96, 869);
+            this.guna2ImageButton6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton6.Name = "guna2ImageButton6";
+            this.guna2ImageButton6.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton6.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton6.TabIndex = 65;
+            // 
+            // guna2ImageButton3
+            // 
+            this.guna2ImageButton3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton3.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton3.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton3.ImageRotate = 0F;
+            this.guna2ImageButton3.Location = new System.Drawing.Point(96, 728);
+            this.guna2ImageButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton3.Name = "guna2ImageButton3";
+            this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton3.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton3.TabIndex = 64;
+            // 
+            // guna2ImageButton4
+            // 
+            this.guna2ImageButton4.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton4.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton4.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton4.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton4.ImageRotate = 0F;
+            this.guna2ImageButton4.Location = new System.Drawing.Point(96, 588);
+            this.guna2ImageButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton4.Name = "guna2ImageButton4";
+            this.guna2ImageButton4.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton4.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton4.TabIndex = 63;
+            // 
+            // guna2ImageButton2
+            // 
+            this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton2.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton2.ImageRotate = 0F;
+            this.guna2ImageButton2.Location = new System.Drawing.Point(96, 447);
+            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton2.Name = "guna2ImageButton2";
+            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton2.TabIndex = 62;
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton1.ImageRotate = 0F;
+            this.guna2ImageButton1.Location = new System.Drawing.Point(96, 306);
+            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(90, 94);
+            this.guna2ImageButton1.TabIndex = 61;
+            // 
+            // guna2TextBox8
+            // 
+            this.guna2TextBox8.BorderRadius = 25;
+            this.guna2TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox8.DefaultText = "    Tìm kiếm...";
+            this.guna2TextBox8.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox8.Font = new System.Drawing.Font("Segoe UI", 11.89565F);
+            this.guna2TextBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox8.IconLeft = global::iConnect.Properties.Resources.Search;
+            this.guna2TextBox8.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.guna2TextBox8.IconLeftSize = new System.Drawing.Size(35, 35);
+            this.guna2TextBox8.Location = new System.Drawing.Point(57, 162);
+            this.guna2TextBox8.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.guna2TextBox8.Name = "guna2TextBox8";
+            this.guna2TextBox8.PasswordChar = '\0';
+            this.guna2TextBox8.PlaceholderText = "";
+            this.guna2TextBox8.SelectedText = "";
+            this.guna2TextBox8.Size = new System.Drawing.Size(1058, 73);
+            this.guna2TextBox8.TabIndex = 58;
+            // 
+            // guna2CirclePictureBox5
+            // 
+            this.guna2CirclePictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox5.Image = global::iConnect.Properties.Resources.icons8_plus_96;
+            this.guna2CirclePictureBox5.ImageRotate = 0F;
+            this.guna2CirclePictureBox5.Location = new System.Drawing.Point(675, 408);
+            this.guna2CirclePictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
+            this.guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox5.Size = new System.Drawing.Size(117, 122);
+            this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox5.TabIndex = 91;
+            this.guna2CirclePictureBox5.TabStop = false;
+            // 
+            // guna2CirclePictureBox4
+            // 
+            this.guna2CirclePictureBox4.FillColor = System.Drawing.Color.DarkViolet;
+            this.guna2CirclePictureBox4.ImageRotate = 0F;
+            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(489, 408);
+            this.guna2CirclePictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
+            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(117, 122);
+            this.guna2CirclePictureBox4.TabIndex = 90;
+            this.guna2CirclePictureBox4.TabStop = false;
+            // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.FillColor = System.Drawing.Color.OrangeRed;
+            this.guna2CirclePictureBox3.ImageRotate = 0F;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(303, 408);
+            this.guna2CirclePictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(117, 122);
+            this.guna2CirclePictureBox3.TabIndex = 89;
+            this.guna2CirclePictureBox3.TabStop = false;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = global::iConnect.Properties.Resources.User_cicrle_light;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(162, 78);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(243, 253);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 87;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.LawnGreen;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(117, 408);
+            this.guna2CirclePictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(117, 122);
+            this.guna2CirclePictureBox2.TabIndex = 88;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.Black;
+            this.guna2TextBox1.BorderRadius = 13;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.IconLeft = global::iConnect.Properties.Resources.happy_light;
+            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.guna2TextBox1.IconRight = global::iConnect.Properties.Resources.Send_hor_fill;
+            this.guna2TextBox1.IconRightSize = new System.Drawing.Size(30, 30);
+            this.guna2TextBox1.Location = new System.Drawing.Point(27, 908);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "Nhắn tin...";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(952, 64);
+            this.guna2TextBox1.TabIndex = 2;
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.BorderColor = System.Drawing.Color.Black;
+            this.guna2TextBox2.BorderRadius = 19;
+            this.guna2TextBox2.BorderThickness = 2;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.guna2TextBox2.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.guna2TextBox2.IconLeft = global::iConnect.Properties.Resources.Search;
+            this.guna2TextBox2.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.guna2TextBox2.Location = new System.Drawing.Point(20, 98);
+            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(8);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox2.PlaceholderText = "Tìm kiếm...";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.Size = new System.Drawing.Size(426, 62);
+            this.guna2TextBox2.TabIndex = 2;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BorderRadius = 20;
+            this.guna2PictureBox3.Image = global::iConnect.Properties.Resources.postimg2;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(80, 177);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(6);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(726, 800);
+            this.guna2PictureBox3.TabIndex = 16;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.BorderColor = System.Drawing.Color.Black;
+            this.searchTxt.BorderRadius = 23;
+            this.searchTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchTxt.DefaultText = "";
+            this.searchTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchTxt.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.searchTxt.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.searchTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchTxt.ForeColor = System.Drawing.Color.Black;
+            this.searchTxt.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.searchTxt.IconLeft = global::iConnect.Properties.Resources.Search;
+            this.searchTxt.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.searchTxt.Location = new System.Drawing.Point(34, 16);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.PasswordChar = '\0';
+            this.searchTxt.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.searchTxt.PlaceholderText = "Tìm kiếm...";
+            this.searchTxt.SelectedText = "";
+            this.searchTxt.Size = new System.Drawing.Size(914, 67);
+            this.searchTxt.TabIndex = 1;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -5659,14 +5660,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.navPnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.recPnl.ResumeLayout(false);
             this.recPnl.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
             this.postSortPnl.ResumeLayout(false);
             this.postSortPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.userSortPnl.ResumeLayout(false);
             this.userSortPnl.PerformLayout();
             this.sort2Pnl.ResumeLayout(false);
@@ -5691,11 +5690,6 @@
             this.followerPnl.PerformLayout();
             this.followingPnl.ResumeLayout(false);
             this.followingPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.settingPnl.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -5717,37 +5711,44 @@
             this.pnlFollowing.ResumeLayout(false);
             this.guna2Panel19.ResumeLayout(false);
             this.guna2Panel19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox16)).EndInit();
             this.guna2Panel18.ResumeLayout(false);
             this.guna2Panel18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).EndInit();
             this.guna2Panel16.ResumeLayout(false);
             this.guna2Panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
             this.guna2Panel17.ResumeLayout(false);
             this.guna2Panel17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
             this.pnlForYou.ResumeLayout(false);
             this.guna2Panel15.ResumeLayout(false);
             this.guna2Panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
             this.guna2Panel14.ResumeLayout(false);
             this.guna2Panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.pnlPost2.ResumeLayout(false);
             this.pnlPost2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.pnlPost1.ResumeLayout(false);
             this.pnlPost1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPost1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
