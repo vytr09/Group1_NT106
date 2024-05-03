@@ -22,7 +22,12 @@ namespace iConnect
         public Login()
         {
             InitializeComponent();
-
+            loginBtn.Enabled = false;
+            Data datalayer = new Data()
+            {
+                username = usernameTxt.Text,
+                password = passwdTxt.Text,
+            };
         }
 
         IFirebaseConfig config = new FirebaseConfig
@@ -49,33 +54,8 @@ namespace iConnect
             }
         }
 
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            Data datalayer = new Data()
-            {
-                username = usernameTxt.Text,
-                password = passwdTxt.Text,
-            };
-
-            // Check if username is valid
-            if (string.IsNullOrEmpty(usernameTxt.Text))
-            {
-                MessageBox.Show("Hãy nhập tên tài khoản.");
-                return;
-            }
-
-            // Check if password is valid
-            if (string.IsNullOrEmpty(passwdTxt.Text))
-            {
-                MessageBox.Show("Hãy nhập mật khẩu.");
-                return;
-            }
-
             FirebaseResponse response = client.Get("Information/" + usernameTxt.Text);
 
             if (response != null && response.ResultAs<Data>() != null)
@@ -91,17 +71,16 @@ namespace iConnect
                         Home home = new Home();
                         home.Show();
                         //MessageBox.Show("Login successful!");
-
                     }
                     else
                     {
-                        MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác.");
+                        passwdLbl.Text = "Tài khoản hoặc mật khẩu không chính xác.";
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác.");
+                passwdLbl.Text = "Tài khoản hoặc mật khẩu không chính xác.";
             }
         }
 
@@ -126,9 +105,50 @@ namespace iConnect
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Login.ActiveForm.Hide();
+            // Hide the current instance of the login form
+            this.Hide();
+
+            // Show the signup form
             Signup signup = new Signup();
+            signup.Closed += (s, args) => this.Show(); // Reopen login form when signup form is closed
             signup.Show();
+        }
+
+        private void usernameTxt_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (string.IsNullOrEmpty(usernameTxt.Text))
+            {
+                usernameLbl.Text = "Tên tài khoản không được để trống";
+                loginBtn.Enabled = false;
+            }
+            else
+            {
+                usernameLbl.Text = "";
+            }
+        }
+
+        private void passwdTxt_TextChanged(object sender, EventArgs e)
+        {
+            // Check if password is valid
+            if (string.IsNullOrEmpty(passwdTxt.Text))
+            {
+                passwdLbl.Text = "Mật khẩu không được để trống";
+            }
+            else
+            {
+                passwdLbl.Text = "";
+                if (string.IsNullOrEmpty(usernameTxt.Text))
+                {
+                    usernameLbl.Text = "Tên tài khoản không được để trống";
+                    loginBtn.Enabled = false;
+                }
+                else
+                {
+                    usernameLbl.Text = "";
+                    loginBtn.Enabled = true;
+                }
+            }
         }
     }
 }

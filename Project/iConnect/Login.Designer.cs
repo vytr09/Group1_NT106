@@ -40,6 +40,8 @@
             this.closeAppBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.usernameLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.passwdLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +98,7 @@
             this.passwdTxt.TabIndex = 10;
             this.passwdTxt.TextOffset = new System.Drawing.Point(20, 0);
             this.passwdTxt.UseSystemPasswordChar = true;
+            this.passwdTxt.TextChanged += new System.EventHandler(this.passwdTxt_TextChanged);
             // 
             // usernameTxt
             // 
@@ -111,7 +114,7 @@
             this.usernameTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTxt.ForeColor = System.Drawing.Color.Black;
             this.usernameTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.usernameTxt.Location = new System.Drawing.Point(211, 244);
+            this.usernameTxt.Location = new System.Drawing.Point(211, 231);
             this.usernameTxt.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.PasswordChar = '\0';
@@ -120,6 +123,7 @@
             this.usernameTxt.Size = new System.Drawing.Size(373, 57);
             this.usernameTxt.TabIndex = 9;
             this.usernameTxt.TextOffset = new System.Drawing.Point(20, 0);
+            this.usernameTxt.TextChanged += new System.EventHandler(this.usernameTxt_TextChanged);
             // 
             // guna2PictureBox2
             // 
@@ -214,12 +218,38 @@
             this.guna2Button1.UseTransparentBackground = true;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // usernameLbl
+            // 
+            this.usernameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.usernameLbl.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.usernameLbl.ForeColor = System.Drawing.Color.Red;
+            this.usernameLbl.Location = new System.Drawing.Point(215, 292);
+            this.usernameLbl.Name = "usernameLbl";
+            this.usernameLbl.Size = new System.Drawing.Size(3, 2);
+            this.usernameLbl.TabIndex = 59;
+            this.usernameLbl.Text = " ";
+            this.usernameLbl.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // passwdLbl
+            // 
+            this.passwdLbl.BackColor = System.Drawing.Color.Transparent;
+            this.passwdLbl.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.passwdLbl.ForeColor = System.Drawing.Color.Red;
+            this.passwdLbl.Location = new System.Drawing.Point(215, 383);
+            this.passwdLbl.Name = "passwdLbl";
+            this.passwdLbl.Size = new System.Drawing.Size(3, 2);
+            this.passwdLbl.TabIndex = 60;
+            this.passwdLbl.Text = " ";
+            this.passwdLbl.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 576);
+            this.Controls.Add(this.passwdLbl);
+            this.Controls.Add(this.usernameLbl);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.minimizeBtn);
@@ -252,5 +282,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton closeAppBtn;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel usernameLbl;
+        private Guna.UI2.WinForms.Guna2HtmlLabel passwdLbl;
     }
 }
