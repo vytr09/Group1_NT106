@@ -79,7 +79,7 @@ namespace iConnect
                 name = nameTxt.Text,
                 dateofb = dobTxt.Text
             };
-            FirebaseResponse response1 = client.Set("Information/" + usernameTxt.Text, datalayer);
+            FirebaseResponse response1 = client.Set("Users/" + usernameTxt.Text, datalayer);
             signupBtn.Text = "Đăng ký thành công";
             this.Close();
         }
@@ -131,7 +131,7 @@ namespace iConnect
             }
             else
             {
-                FirebaseResponse responseEmail = client.Get("Information");
+                FirebaseResponse responseEmail = client.Get("Users");
                 if (responseEmail != null && responseEmail.Body != "null")
                 {
                     Dictionary<string, Data> dataDict = responseEmail.ResultAs<Dictionary<string, Data>>();
@@ -160,7 +160,7 @@ namespace iConnect
             usernameLbl.Text = isusernameValid ? "" : "Tên tài khoản không được để trống";
             if (isusernameValid)
             {
-                FirebaseResponse response = client.Get("Information/" + usernameTxt.Text);
+                FirebaseResponse response = client.Get("Users/" + usernameTxt.Text);
                 isusernameValid = response == null || response.ResultAs<Data>() == null;
                 usernameLbl.Text = isusernameValid ? "" : "Tên tài khoản đã tồn tại";
             }

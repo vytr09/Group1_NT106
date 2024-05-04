@@ -55,7 +55,7 @@ namespace iConnect
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            FirebaseResponse response = client.Get("Information/" + usernameTxt.Text);
+            FirebaseResponse response = client.Get("Users/" + usernameTxt.Text);
 
             if (response != null && response.ResultAs<Data>() != null)
             {
