@@ -319,8 +319,9 @@ namespace iConnect
 
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
             Login login = new Login();
-            this.Click += (s, args) => login.Show();
+            login.Show();
         }
     }
 }
