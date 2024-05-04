@@ -67,7 +67,7 @@ namespace iConnect
 
         private void allBtn_Click(object sender, EventArgs e)
         {
-            postBtn.Checked = false;
+            postBtnSearch.Checked = false;
             allBtn.Checked = true;
             recentBtn.Checked = false;
             userBtn.Checked = false;
@@ -81,7 +81,7 @@ namespace iConnect
         private void userBtn_Click_1(object sender, EventArgs e)
         {
 
-            postBtn.Checked = false;
+            postBtnSearch.Checked = false;
             allBtn.Checked = false;
             recentBtn.Checked = false;
             userBtn.Checked = true;
@@ -94,7 +94,7 @@ namespace iConnect
 
         private void recentBtn_Click_1(object sender, EventArgs e)
         {
-            postBtn.Checked = false;
+            postBtnSearch.Checked = false;
             allBtn.Checked = false;
             recentBtn.Checked = true;
             userBtn.Checked = false;
@@ -105,9 +105,9 @@ namespace iConnect
             userSortPnl.Visible = false;
         }
 
-        private void guna2Button7_Click(object sender, EventArgs e)
+        private void postBtnSearch_Click(object sender, EventArgs e)
         {
-            postBtn.Checked = true;
+            postBtnSearch.Checked = true;
             allBtn.Checked = false;
             recentBtn.Checked = false;
             userBtn.Checked = false;
@@ -320,8 +320,7 @@ namespace iConnect
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
             Login login = new Login();
-            login.Show();
-            this.Close();
+            this.Click += (s, args) => login.Show();
         }
     }
 }

@@ -103,6 +103,16 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_square_fill {
+            get {
+                object obj = ResourceManager.GetObject("Add_square_fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Apple_MacBook_Pro {
             get {
                 object obj = ResourceManager.GetObject("Apple-MacBook-Pro", resourceCulture);
@@ -446,6 +456,16 @@ namespace iConnect.Properties {
         internal static System.Drawing.Bitmap Send_hor_fill {
             get {
                 object obj = ResourceManager.GetObject("Send_hor_fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Setting_fill_3x {
+            get {
+                object obj = ResourceManager.GetObject("Setting_fill@3x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

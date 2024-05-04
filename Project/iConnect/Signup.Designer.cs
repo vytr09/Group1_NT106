@@ -340,14 +340,15 @@
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2Button1.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.MediumAquamarine;
             this.guna2Button1.Location = new System.Drawing.Point(552, 567);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.PressedDepth = 0;
-            this.guna2Button1.Size = new System.Drawing.Size(145, 34);
+            this.guna2Button1.Size = new System.Drawing.Size(133, 34);
             this.guna2Button1.TabIndex = 61;
             this.guna2Button1.Text = "Đăng nhập";
             this.guna2Button1.UseTransparentBackground = true;
@@ -437,7 +438,6 @@
             this.Controls.Add(this.dobLbl);
             this.Controls.Add(this.emailLbl);
             this.Controls.Add(this.nameLbl);
-            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.closeAppBtn);
@@ -452,6 +452,7 @@
             this.Controls.Add(this.guna2PictureBox3);
             this.Controls.Add(this.passwdTxt);
             this.Controls.Add(this.usernameTxt);
+            this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Signup";
