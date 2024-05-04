@@ -35,6 +35,7 @@ namespace iConnect
                 username = usernameTxt.Text,
                 password = passwdTxt.Text,
             };
+            passwdTxt.KeyDown += passwordTxt_KeyDown;
             showPasswd.Click += showPasswd_Click; // Assign event handler for showPasswd button
             hidePasswd.Click += hidePasswd_Click; // Assign event handler for hidePasswd button
         }
@@ -148,6 +149,14 @@ namespace iConnect
             passwdTxt.PasswordChar = default(char);
             showPasswd.Hide();
             hidePasswd.Show();
+        }
+
+        private void passwordTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginBtn.PerformClick();
+            }
         }
 
         private void hidePasswd_Click(object sender, EventArgs e)
