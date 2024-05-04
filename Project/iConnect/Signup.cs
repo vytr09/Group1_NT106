@@ -169,8 +169,22 @@ namespace iConnect
 
         private void passwdTxt_TextChanged(object sender, EventArgs e)
         {
-            ispasswdValid = !string.IsNullOrEmpty(passwdTxt.Text);
-            passwdLbl.Text = ispasswdValid ? "" : "Mật khẩu không được để trống";
+            string password = passwdTxt.Text;
+            bool hasMinimumLength = password.Length >= 8;
+            bool hasSpecialCharacter = password.Any(char.IsPunctuation);
+            bool hasCapitalLetter = password.Any(char.IsUpper);
+
+            if (!hasMinimumLength || !hasSpecialCharacter || !hasCapitalLetter)
+            {
+                passwdLbl.Text = "Mật khẩu cần ít nhất 8 ký tự, 1 ký tự đặc biệt và 1 chữ hoa";
+                ispasswdValid = false;
+            }
+            else
+            {
+                passwdLbl.Text = "";
+                ispasswdValid = true;
+            }
+
             UpdateButtonState();
         }
 

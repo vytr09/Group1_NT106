@@ -127,6 +127,11 @@ namespace iConnect
                 passwdLbl.Text = "Mật khẩu không được để trống";
                 loginBtn.Enabled = false;
             }
+            else if (passwdTxt.Text.Length < 8)
+            {
+                passwdLbl.Text = "Mật khẩu phải từ 8 ký tự";
+                loginBtn.Enabled = false;
+            }
             else
             {
                 passwdLbl.Text = "";
