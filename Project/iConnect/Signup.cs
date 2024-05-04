@@ -202,5 +202,39 @@ namespace iConnect
 
             UpdateButtonState();
         }
+
+        private void hidePasswd_Click(object sender, EventArgs e)
+        {
+            passwdTxt.Focus();
+            passwdTxt.UseSystemPasswordChar = true;
+            hidePasswd.Hide();
+            showPasswd.Show();
+        }
+
+        private void showPasswd_Click(object sender, EventArgs e)
+        {
+            passwdTxt.Focus();
+            passwdTxt.UseSystemPasswordChar = false;
+            passwdTxt.PasswordChar = default(char);
+            showPasswd.Hide();
+            hidePasswd.Show();
+        }
+
+        private void rePasswdHide_Click(object sender, EventArgs e)
+        {
+            repasswdTxt.Focus();
+            repasswdTxt.UseSystemPasswordChar = true;
+            rePasswdHide.Hide();
+            rePasswdShow.Show();
+        }
+
+        private void rePasswdShow_Click(object sender, EventArgs e)
+        {
+            repasswdTxt.Focus();
+            repasswdTxt.UseSystemPasswordChar = false;
+            repasswdTxt.PasswordChar = default(char);
+            rePasswdShow.Hide();
+            rePasswdHide.Show();
+        }
     }
 }

@@ -35,6 +35,8 @@ namespace iConnect
                 username = usernameTxt.Text,
                 password = passwdTxt.Text,
             };
+            showPasswd.Click += showPasswd_Click; // Assign event handler for showPasswd button
+            hidePasswd.Click += hidePasswd_Click; // Assign event handler for hidePasswd button
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -137,6 +139,23 @@ namespace iConnect
                 passwdLbl.Text = "";
                 loginBtn.Enabled = !string.IsNullOrEmpty(usernameTxt.Text);
             }
+        }
+
+        private void showPasswd_Click(object sender, EventArgs e)
+        {
+            passwdTxt.Focus();
+            passwdTxt.UseSystemPasswordChar = false;
+            passwdTxt.PasswordChar = default(char);
+            showPasswd.Hide();
+            hidePasswd.Show();
+        }
+
+        private void hidePasswd_Click(object sender, EventArgs e)
+        {
+            passwdTxt.Focus();
+            passwdTxt.UseSystemPasswordChar = true;
+            hidePasswd.Hide();
+            showPasswd.Show();
         }
     }
 }

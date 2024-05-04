@@ -4044,7 +4044,7 @@
             this.guna2Panel15.Controls.Add(this.guna2PictureBox8);
             this.guna2Panel15.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Panel15.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.guna2Panel15.Location = new System.Drawing.Point(0, 1735);
+            this.guna2Panel15.Location = new System.Drawing.Point(0, 3457);
             this.guna2Panel15.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel15.Name = "guna2Panel15";
             this.guna2Panel15.Size = new System.Drawing.Size(663, 653);
@@ -4152,7 +4152,7 @@
             this.guna2Panel14.Controls.Add(this.guna2PictureBox6);
             this.guna2Panel14.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Panel14.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.guna2Panel14.Location = new System.Drawing.Point(0, 1081);
+            this.guna2Panel14.Location = new System.Drawing.Point(0, 2803);
             this.guna2Panel14.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel14.Name = "guna2Panel14";
             this.guna2Panel14.Size = new System.Drawing.Size(663, 653);
@@ -4260,7 +4260,7 @@
             this.pnlPost2.Controls.Add(this.guna2PictureBox2);
             this.pnlPost2.CustomBorderColor = System.Drawing.Color.Black;
             this.pnlPost2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.pnlPost2.Location = new System.Drawing.Point(0, 427);
+            this.pnlPost2.Location = new System.Drawing.Point(0, 2149);
             this.pnlPost2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPost2.Name = "pnlPost2";
             this.pnlPost2.Size = new System.Drawing.Size(663, 653);
@@ -4368,7 +4368,7 @@
             this.pnlPost1.Controls.Add(this.Avatar1);
             this.pnlPost1.CustomBorderColor = System.Drawing.Color.Black;
             this.pnlPost1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.pnlPost1.Location = new System.Drawing.Point(0, 0);
+            this.pnlPost1.Location = new System.Drawing.Point(0, 1722);
             this.pnlPost1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPost1.Name = "pnlPost1";
             this.pnlPost1.Size = new System.Drawing.Size(663, 426);
@@ -6064,11 +6064,11 @@
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.navPnl);
+            this.Controls.Add(this.msgPnl);
+            this.Controls.Add(this.searchPnl);
             this.Controls.Add(this.homePnl);
             this.Controls.Add(this.settingPnl);
             this.Controls.Add(this.profilePnl);
-            this.Controls.Add(this.msgPnl);
-            this.Controls.Add(this.searchPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1210, 733);
