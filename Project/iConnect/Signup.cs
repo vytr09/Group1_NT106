@@ -13,6 +13,8 @@ using System.Xml.Linq;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using System.Net;
+using System.Net.Mail;
 
 namespace iConnect
 {
@@ -69,12 +71,24 @@ namespace iConnect
             signupBtn.Enabled = isnameValid && isemailValid && isdobValid && isusernameValid && ispasswdValid && isrepasswdValid;
         }
 
+        // Function to hash the password using SHA256
+        private string HashPassword(string password)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
         private void signupBtn_Click(object sender, EventArgs e)
         {
+            // Hash the password using SHA256
+            string hashedPassword = HashPassword(passwdTxt.Text);
             Data datalayer = new Data()
             {
                 username = usernameTxt.Text,
-                password = passwdTxt.Text,
+                password = hashedPassword,
                 email = emailTxt.Text,
                 name = nameTxt.Text,
                 dateofb = dobTxt.Text

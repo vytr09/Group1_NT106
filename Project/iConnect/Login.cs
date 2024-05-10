@@ -55,16 +55,26 @@ namespace iConnect
                 MessageBox.Show("Connection Failed");
             }
         }
-
+        // Function to hash the password using SHA256
+        private string HashPassword(string password)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            // Hash the password using SHA256
+            string hashedPassword = HashPassword(passwdTxt.Text);
             FirebaseResponse response = client.Get("Users/" + usernameTxt.Text);
 
             if (response != null && response.ResultAs<Data>() != null)
             {
                 Data result = response.ResultAs<Data>();
 
-                if (usernameTxt.Text.Equals(result.username) && passwdTxt.Text.Equals(result.password))
+                if (usernameTxt.Text.Equals(result.username) && hashedPassword.Equals(result.password))
                 {
                     this.Hide();
                     Home home = new Home();
