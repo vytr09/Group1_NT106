@@ -523,6 +523,36 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Spinner_1x_1_0s_200px_200px {
+            get {
+                object obj = ResourceManager.GetObject("Spinner@1x-1.0s-200px-200px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner_1x_1_0s_200px_200x {
+            get {
+                object obj = ResourceManager.GetObject("Spinner@1x-1.0s-200px-200x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner_1x_1_0s200px_200px {
+            get {
+                object obj = ResourceManager.GetObject("Spinner@1x-1.0s200px-200px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap User_cicrle_light {
             get {
                 object obj = ResourceManager.GetObject("User_cicrle_light", resourceCulture);

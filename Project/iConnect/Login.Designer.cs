@@ -52,7 +52,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(251, 498);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(185, 27);
             this.guna2HtmlLabel1.TabIndex = 12;
@@ -60,7 +60,11 @@
             // 
             // loginBtn
             // 
+            this.loginBtn.AnimatedGIF = true;
             this.loginBtn.BorderRadius = 30;
+            this.loginBtn.CustomImages.CheckedImage = global::iConnect.Properties.Resources.loading;
+            this.loginBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.loginBtn.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
             this.loginBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.loginBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.loginBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -69,8 +73,9 @@
             this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Bold);
             this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.Location = new System.Drawing.Point(308, 410);
-            this.loginBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(2);
             this.loginBtn.Name = "loginBtn";
+            this.loginBtn.PressedDepth = 0;
             this.loginBtn.Size = new System.Drawing.Size(183, 57);
             this.loginBtn.TabIndex = 11;
             this.loginBtn.Text = "Đăng nhập";
@@ -137,7 +142,7 @@
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.Location = new System.Drawing.Point(57, 10);
-            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(17, 16);
@@ -153,7 +158,7 @@
             this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
             this.minimizeBtn.Location = new System.Drawing.Point(33, 10);
-            this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.minimizeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.minimizeBtn.Size = new System.Drawing.Size(17, 16);
@@ -170,7 +175,7 @@
             this.closeAppBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.closeAppBtn.ForeColor = System.Drawing.Color.White;
             this.closeAppBtn.Location = new System.Drawing.Point(10, 10);
-            this.closeAppBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closeAppBtn.Margin = new System.Windows.Forms.Padding(2);
             this.closeAppBtn.Name = "closeAppBtn";
             this.closeAppBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.closeAppBtn.Size = new System.Drawing.Size(17, 16);
@@ -251,7 +256,7 @@
             this.hidePasswd.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.hidePasswd.HoverState.FillColor2 = System.Drawing.Color.Transparent;
             this.hidePasswd.Location = new System.Drawing.Point(535, 340);
-            this.hidePasswd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hidePasswd.Margin = new System.Windows.Forms.Padding(2);
             this.hidePasswd.Name = "hidePasswd";
             this.hidePasswd.PressedColor = System.Drawing.Color.Transparent;
             this.hidePasswd.PressedDepth = 0;
@@ -281,7 +286,7 @@
             this.showPasswd.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.showPasswd.HoverState.FillColor2 = System.Drawing.Color.Transparent;
             this.showPasswd.Location = new System.Drawing.Point(535, 340);
-            this.showPasswd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.showPasswd.Margin = new System.Windows.Forms.Padding(2);
             this.showPasswd.Name = "showPasswd";
             this.showPasswd.PressedColor = System.Drawing.Color.Transparent;
             this.showPasswd.PressedDepth = 0;
@@ -324,7 +329,7 @@
             this.Controls.Add(this.hidePasswd);
             this.Controls.Add(this.passwdTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

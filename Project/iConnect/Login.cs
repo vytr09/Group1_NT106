@@ -66,6 +66,8 @@ namespace iConnect
         }
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            loginBtn.Checked = true;
+            loginBtn.Text = "";
             // Hash the password using SHA256
             string hashedPassword = HashPassword(passwdTxt.Text);
             FirebaseResponse response = client.Get("Users/" + usernameTxt.Text);

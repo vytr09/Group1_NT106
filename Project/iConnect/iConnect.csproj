@@ -328,6 +328,15 @@
   <ItemGroup>
     <None Include="Resources\loading.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner%401x-1.0s-200px-200px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner%401x-1.0s-200px-200x.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner%401x-1.0s200px-200px.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

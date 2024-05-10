@@ -31,6 +31,7 @@ namespace iConnect
             profilePnl.Visible = false;
             settingPnl.Visible = false;
             settingBtn.Checked = false;
+            notiPnl.Visible = false;
         }
 
         private void notiBtn_Click(object sender, EventArgs e)
@@ -46,6 +47,7 @@ namespace iConnect
             profilePnl.Visible = false;
             settingPnl.Visible = false;
             settingBtn.Checked = false;
+            notiPnl.Visible = true;
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -61,6 +63,7 @@ namespace iConnect
             profilePnl.Visible = false;
             settingPnl.Visible = false;
             settingBtn.Checked = false;
+            notiPnl.Visible = false;
         }
 
 
@@ -132,6 +135,7 @@ namespace iConnect
             profilePnl.Visible = false;
             settingPnl.Visible = false;
             settingBtn.Checked = false;
+            notiPnl.Visible = false;
         }
 
         private void guna2GradientButton4_Click(object sender, EventArgs e)
@@ -172,6 +176,7 @@ namespace iConnect
             profilePnl.Visible = true;
             settingPnl.Visible = false;
             settingBtn.Checked = false;
+            notiPnl.Visible = false;
         }
 
         private void chinhsuatrangcanhan_Click(object sender, EventArgs e)
@@ -237,6 +242,7 @@ namespace iConnect
             msgPnl.Visible = false;
             profilePnl.Visible = false;
             settingPnl.Visible = true;
+            notiPnl.Visible = false;
 
             //bam cai dat
             panel7.Visible = true;
@@ -322,6 +328,27 @@ namespace iConnect
             this.Hide();
             Login login = new Login();
             login.Show();
+        }
+
+        private void allnotiBtn_Click(object sender, EventArgs e)
+        {
+            allnotiBtn.Checked = true;
+            mentionnotiBtn.Checked = false;
+            recnotiBtn.Checked = false;
+        }
+
+        private void mentionnotiBtn_Click(object sender, EventArgs e)
+        {
+            allnotiBtn.Checked = false;
+            mentionnotiBtn.Checked = true;
+            recnotiBtn.Checked = false;
+        }
+
+        private void recnotiBtn_Click(object sender, EventArgs e)
+        {
+            allnotiBtn.Checked = false;
+            mentionnotiBtn.Checked = false;
+            recnotiBtn.Checked = true;
         }
     }
 }
