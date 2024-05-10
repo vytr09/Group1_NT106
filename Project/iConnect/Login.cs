@@ -79,18 +79,22 @@ namespace iConnect
                 if (usernameTxt.Text.Equals(result.username) && hashedPassword.Equals(result.password))
                 {
                     this.Hide();
-                    Home home = new Home();
+                    Home home = new Home(usernameTxt.Text); ;
                     home.Closed += (s, args) => this.Close();
                     home.Show();
                 }
                 else
                 {
                     passwdLbl.Text = "Tài khoản hoặc mật khẩu không chính xác.";
+                    loginBtn.Checked = false;
+                    loginBtn.Text = "Đăng nhập";
                 }
             }
             else
             {
                 passwdLbl.Text = "Tài khoản hoặc mật khẩu không chính xác.";
+                loginBtn.Checked = false;
+                loginBtn.Text = "Đăng nhập";
             }
         }
 

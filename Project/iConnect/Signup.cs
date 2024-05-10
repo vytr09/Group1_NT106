@@ -209,8 +209,33 @@ namespace iConnect
 
         private void dobTxt_TextChanged(object sender, EventArgs e)
         {
-            isdobValid = !string.IsNullOrEmpty(dobTxt.Text);
-            dobLbl.Text = isdobValid ? "" : "Ngày tháng năm sinh không được để trống";
+            // Lấy ngày tháng năm sinh từ TextBox
+            string dob = dobTxt.Text;
+
+            // Kiểm tra độ dài của chuỗi ngày tháng năm sinh
+            if (dob.Length != 10)
+            {
+                dobLbl.Text = "Ngày tháng năm sinh không hợp lệ";
+                isdobValid = false;
+            }
+            else
+            {
+                // Kiểm tra xem chuỗi ngày tháng năm sinh có thể được chuyển đổi thành một ngày hợp lệ không
+                if (DateTime.TryParseExact(dob, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out _))
+                {
+                    // Nếu chuyển đổi thành công, đánh dấu là ngày tháng năm sinh hợp lệ và xóa thông báo lỗi
+                    dobLbl.Text = "";
+                    isdobValid = true;
+                }
+                else
+                {
+                    // Nếu không, hiển thị thông báo lỗi và đánh dấu là ngày tháng năm sinh không hợp lệ
+                    dobLbl.Text = "Ngày tháng năm sinh không hợp lệ";
+                    isdobValid = false;
+                }
+            }
+
+            // Cập nhật trạng thái của nút Đăng ký
             UpdateButtonState();
         }
 
