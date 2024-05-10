@@ -26,6 +26,7 @@ namespace iConnect
         bool isusernameValid;
         bool ispasswdValid;
         bool isrepasswdValid;
+        private string confirmationCode;
         public Signup()
         {
             InitializeComponent();
@@ -83,20 +84,65 @@ namespace iConnect
 
         private void signupBtn_Click(object sender, EventArgs e)
         {
-            // Hash the password using SHA256
-            string hashedPassword = HashPassword(passwdTxt.Text);
-            Data datalayer = new Data()
+
+            // Generate confirmation code or link (you can replace this with your own logic)
+            confirmationCode = GenerateConfirmationCode();
+            signupBtn.Text = "";
+            signupBtn.Checked = true;
+
+            // Send confirmation email
+            try
             {
-                username = usernameTxt.Text,
-                password = hashedPassword,
-                email = emailTxt.Text,
-                name = nameTxt.Text,
-                dateofb = dobTxt.Text
-            };
-            FirebaseResponse response1 = client.Set("Users/" + usernameTxt.Text, datalayer);
-            signupBtn.Text = "Đăng ký thành công";
-            this.Close();
+                SendConfirmationEmail(emailTxt.Text, confirmationCode);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to send confirmation email. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            confirmPnl.Visible = true;
         }
+
+        private string GenerateConfirmationCode()
+        {
+            // Generate a random confirmation code
+            // Example: you can use Guid.NewGuid().ToString() for a unique identifier
+            return Guid.NewGuid().ToString().Substring(0, 8); // Generate an 8-character code
+        }
+
+        private void SendConfirmationEmail(string email, string confirmationCode)
+        {
+            // Email configuration
+            string senderEmail = "nt106group1@outlook.com"; // Your email address
+            string senderPassword = "group1nt106"; // Your email password
+            string smtpHost = "smtp-mail.outlook.com"; // Your SMTP host
+            int smtpPort = 587; // Your SMTP port (e.g., 587 for Gmail)
+
+            // Email content
+            string subject = "iConnect - Xác nhận đăng ký";
+            string body = $"Chào bạn,<br><br>Cảm ơn bạn đã đăng ký tài khoản!<br><br>Đây là mã xác nhận của bạn: " +
+                $"<b>{confirmationCode}</b>. " +
+                $"<br>Vui lòng sử dụng mã này để hoàn tất quá trình đăng ký tài khoản.<br>" +
+                $"<br>Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.<br>" +
+                $"<br>Chúng tôi rất vui mừng được chào đón bạn vào cộng đồng của chúng tôi!<br><br>Trân trọng,<br>Đội ngũ quản trị viên";
+
+
+            // Create and configure the SMTP client
+            SmtpClient client = new SmtpClient(smtpHost, smtpPort)
+            {
+                Credentials = new NetworkCredential(senderEmail, senderPassword),
+                EnableSsl = true // Enable SSL for secure connection (e.g., for Gmail)
+            };
+
+            // Create the email message
+            MailMessage mailMessage = new MailMessage(senderEmail, email, subject, body)
+            {
+                IsBodyHtml = true // Set to true if your email body contains HTML
+            };
+
+            // Send the email
+            client.Send(mailMessage);
+        }
+
 
         class Data
         {
@@ -249,6 +295,34 @@ namespace iConnect
             repasswdTxt.PasswordChar = default(char);
             rePasswdShow.Hide();
             rePasswdHide.Show();
+        }
+
+        private void confirmBtn_Click(object sender, EventArgs e)
+        {
+            // Assuming you have textbox for code input named "codeTextBox"
+            string enteredCode = codeTxt.Text;
+
+            if (enteredCode == confirmationCode)
+            {
+                // Hash the password using SHA256
+                string hashedPassword = HashPassword(passwdTxt.Text);
+                Data datalayer = new Data()
+                {
+                    username = usernameTxt.Text,
+                    password = hashedPassword,
+                    email = emailTxt.Text,
+                    name = nameTxt.Text,
+                    dateofb = dobTxt.Text
+                };
+
+                FirebaseResponse response1 = client.Set("Users/" + usernameTxt.Text, datalayer);
+                MessageBox.Show("Đăng ký thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Mã xác nhận không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
