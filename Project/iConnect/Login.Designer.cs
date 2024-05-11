@@ -44,7 +44,13 @@
             this.hidePasswd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.showPasswd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.forgetPasswdBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.forgetPasswdPnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.forgetEmailTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.forgetPasswdCodeBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.forgetPasswdCodeLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.forgetPasswdPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -309,12 +315,93 @@
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.UseTransparentBackground = true;
             // 
+            // forgetPasswdBtn
+            // 
+            this.forgetPasswdBtn.BackColor = System.Drawing.Color.Transparent;
+            this.forgetPasswdBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.forgetPasswdBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.forgetPasswdBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.forgetPasswdBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.forgetPasswdBtn.FillColor = System.Drawing.Color.Transparent;
+            this.forgetPasswdBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.forgetPasswdBtn.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.forgetPasswdBtn.HoverState.FillColor = System.Drawing.Color.White;
+            this.forgetPasswdBtn.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.forgetPasswdBtn.Location = new System.Drawing.Point(311, 519);
+            this.forgetPasswdBtn.Name = "forgetPasswdBtn";
+            this.forgetPasswdBtn.PressedDepth = 0;
+            this.forgetPasswdBtn.Size = new System.Drawing.Size(180, 45);
+            this.forgetPasswdBtn.TabIndex = 64;
+            this.forgetPasswdBtn.Text = "Quên mật khẩu?";
+            this.forgetPasswdBtn.UseTransparentBackground = true;
+            this.forgetPasswdBtn.Click += new System.EventHandler(this.forgetPasswdBtn_Click);
+            // 
+            // forgetPasswdPnl
+            // 
+            this.forgetPasswdPnl.Controls.Add(this.forgetPasswdCodeLbl);
+            this.forgetPasswdPnl.Controls.Add(this.forgetPasswdCodeBtn);
+            this.forgetPasswdPnl.Controls.Add(this.forgetEmailTxt);
+            this.forgetPasswdPnl.Location = new System.Drawing.Point(190, 211);
+            this.forgetPasswdPnl.Name = "forgetPasswdPnl";
+            this.forgetPasswdPnl.Size = new System.Drawing.Size(419, 353);
+            this.forgetPasswdPnl.TabIndex = 65;
+            this.forgetPasswdPnl.Visible = false;
+            // 
+            // forgetEmailTxt
+            // 
+            this.forgetEmailTxt.BorderRadius = 25;
+            this.forgetEmailTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.forgetEmailTxt.DefaultText = "";
+            this.forgetEmailTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.forgetEmailTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.forgetEmailTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.forgetEmailTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.forgetEmailTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.forgetEmailTxt.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.forgetEmailTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.forgetEmailTxt.Location = new System.Drawing.Point(25, 51);
+            this.forgetEmailTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.forgetEmailTxt.Name = "forgetEmailTxt";
+            this.forgetEmailTxt.PasswordChar = '\0';
+            this.forgetEmailTxt.PlaceholderText = "Email đăng ký";
+            this.forgetEmailTxt.SelectedText = "";
+            this.forgetEmailTxt.Size = new System.Drawing.Size(365, 60);
+            this.forgetEmailTxt.TabIndex = 66;
+            this.forgetEmailTxt.TextChanged += new System.EventHandler(this.forgetEmailTxt_TextChanged);
+            // 
+            // forgetPasswdCodeBtn
+            // 
+            this.forgetPasswdCodeBtn.BorderRadius = 20;
+            this.forgetPasswdCodeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.forgetPasswdCodeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.forgetPasswdCodeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.forgetPasswdCodeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.forgetPasswdCodeBtn.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.forgetPasswdCodeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.forgetPasswdCodeBtn.ForeColor = System.Drawing.Color.White;
+            this.forgetPasswdCodeBtn.Location = new System.Drawing.Point(118, 129);
+            this.forgetPasswdCodeBtn.Name = "forgetPasswdCodeBtn";
+            this.forgetPasswdCodeBtn.Size = new System.Drawing.Size(180, 45);
+            this.forgetPasswdCodeBtn.TabIndex = 66;
+            this.forgetPasswdCodeBtn.Text = "Gửi mã";
+            // 
+            // forgetPasswdCodeLbl
+            // 
+            this.forgetPasswdCodeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.forgetPasswdCodeLbl.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.forgetPasswdCodeLbl.ForeColor = System.Drawing.Color.Crimson;
+            this.forgetPasswdCodeLbl.Location = new System.Drawing.Point(32, 119);
+            this.forgetPasswdCodeLbl.Name = "forgetPasswdCodeLbl";
+            this.forgetPasswdCodeLbl.Size = new System.Drawing.Size(3, 2);
+            this.forgetPasswdCodeLbl.TabIndex = 67;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 576);
+            this.Controls.Add(this.forgetPasswdPnl);
             this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -328,6 +415,7 @@
             this.Controls.Add(this.showPasswd);
             this.Controls.Add(this.hidePasswd);
             this.Controls.Add(this.passwdTxt);
+            this.Controls.Add(this.forgetPasswdBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
@@ -335,6 +423,8 @@
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.forgetPasswdPnl.ResumeLayout(false);
+            this.forgetPasswdPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,5 +445,10 @@
         private Guna.UI2.WinForms.Guna2GradientButton hidePasswd;
         private Guna.UI2.WinForms.Guna2GradientButton showPasswd;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2Button forgetPasswdBtn;
+        private Guna.UI2.WinForms.Guna2Panel forgetPasswdPnl;
+        private Guna.UI2.WinForms.Guna2TextBox forgetEmailTxt;
+        private Guna.UI2.WinForms.Guna2Button forgetPasswdCodeBtn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel forgetPasswdCodeLbl;
     }
 }

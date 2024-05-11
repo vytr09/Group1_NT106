@@ -112,9 +112,9 @@ namespace iConnect
         private void SendConfirmationEmail(string email, string confirmationCode)
         {
             // Email configuration
-            string senderEmail = "nt106group1@outlook.com"; // Your email address
+            string senderEmail = "nt106group1@hotmail.com"; // Your email address
             string senderPassword = "group1nt106"; // Your email password
-            string smtpHost = "smtp-mail.outlook.com"; // Your SMTP host
+            string smtpHost = "smtp.office365.com"; // Your SMTP host
             int smtpPort = 587; // Your SMTP port (e.g., 587 for Gmail)
 
             // Email content

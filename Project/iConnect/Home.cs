@@ -49,7 +49,7 @@ namespace iConnect
             reload();
         }
 
-        private void reload()
+        private async void reload()
         {
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Get("Users/" + Username);
@@ -70,7 +70,7 @@ namespace iConnect
             genderCmb.Text = result.gender;
             relaCmb.Text = result.relationship;
 
-            LoadAvatarAsync(Username);
+            await LoadAvatarAsync(Username);
         }
 
         // Method to load the avatar image from the AvatarUrl

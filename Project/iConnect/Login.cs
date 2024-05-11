@@ -182,5 +182,37 @@ namespace iConnect
             hidePasswd.Hide();
             showPasswd.Show();
         }
+
+        private void forgetPasswdBtn_Click(object sender, EventArgs e)
+        {
+            forgetPasswdPnl.Visible = true;
+        }
+
+        private void forgetEmailTxt_TextChanged(object sender, EventArgs e)
+        {
+           /* // Lấy email từ textbox
+            string email = forgetEmailTxt.Text;
+
+            // Kiểm tra xem email có tồn tại không
+            FirebaseResponse response = client.Get("Users/" + email);
+
+            if (response != null && response.ResultAs<Data>() != null)
+            {
+                Data result = response.ResultAs<Data>();
+
+                if (forgetEmailTxt.Text.Equals(result.)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }*/
+        }
     }
 }
