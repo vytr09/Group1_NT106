@@ -13,6 +13,7 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using Firebase.Storage;
 using System.Net;
+using System.Globalization;
 
 namespace iConnect
 {
@@ -62,7 +63,11 @@ namespace iConnect
             proPnlAddress.Text = "Sinh sống tại: " + result.city;
             proPnlFromLbl.Text = "Đến từ: " + result.country;
             bioLbl.Text = result.bio;
-            changeBDay.Value = DateTime.Parse(result.dateofb);
+
+            // Assuming the date is stored in dd/MM/yyyy format
+            string dateFormat = "dd/MM/yyyy";
+            changeBDay.Value = DateTime.ParseExact(result.dateofb, dateFormat, CultureInfo.InvariantCulture);
+
             bioTxtChange.Text = result.bio;
             changeFullName.Text = result.name;
             countryTxt.Text = result.country;
