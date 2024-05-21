@@ -53,7 +53,7 @@ namespace iConnect
                 var messages = new Messages
                 {
                     Text = messageText,
-                    UserName = _currentUserName,
+                    //UserName = _currentUserName,
                     Timestamp = DateTime.Now
                 };
                 FirebaseResponse response = client.Set("Chats/" + messages.Timestamp, messages);
