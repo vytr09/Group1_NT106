@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -19,6 +21,9 @@ namespace iConnect
 {
     public partial class Login : Form
     {
+        private string confirmationCode;
+        bool ispasswdValid;
+        bool isrepasswdValid;
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "LvKz9QEmzDWQ6ncJrL9woSgNH9IChypOchmOSTOB",
@@ -33,7 +38,7 @@ namespace iConnect
             Data datalayer = new Data()
             {
                 username = usernameTxt.Text,
-                password = passwdTxt.Text,
+                password = passwdTxt.Text
             };
             passwdTxt.KeyDown += passwordTxt_KeyDown;
             showPasswd.Click += showPasswd_Click; // Assign event handler for showPasswd button
@@ -102,6 +107,7 @@ namespace iConnect
         {
             public string username { get; set; }
             public string password { get; set; }
+            public string email { get; set; }
 
         }
 
@@ -190,29 +196,204 @@ namespace iConnect
 
         private void forgetEmailTxt_TextChanged(object sender, EventArgs e)
         {
-           /* // Lấy email từ textbox
-            string email = forgetEmailTxt.Text;
-
-            // Kiểm tra xem email có tồn tại không
-            FirebaseResponse response = client.Get("Users/" + email);
-
-            if (response != null && response.ResultAs<Data>() != null)
+            Data user = GetUserByEmail(forgetEmailTxt.Text);
+            if (user != null)
             {
-                Data result = response.ResultAs<Data>();
+                forgetPasswdCodeLbl.Text = "";
+                forgetPasswdCodeBtn.Enabled = true;
+            }
+            else
+            {
+                forgetPasswdCodeLbl.Text = "Email không tồn tại";
+                forgetPasswdCodeBtn.Enabled = false;
+            }
+        }
 
-                if (forgetEmailTxt.Text.Equals(result.)
+        private Data GetUserByEmail(string email)
+        {
+            FirebaseResponse response = client.Get("Users");
+            if (response != null && response.Body != "null")
+            {
+                Dictionary<string, Data> dataDict = response.ResultAs<Dictionary<string, Data>>();
+                return dataDict.Values.FirstOrDefault(data => data.email == email);
+            }
+            return null;
+        }
+
+
+        private string GenerateConfirmationCode()
+        {
+            // Generate a random confirmation code
+            // Example: you can use Guid.NewGuid().ToString() for a unique identifier
+            return Guid.NewGuid().ToString().Substring(0, 8); // Generate an 8-character code
+        }
+
+        private void SendConfirmationEmail(string email, string confirmationCode)
+        {
+            // Email configuration
+            string senderEmail = "kaitsukishi@gmail.com"; // Your email address
+            string senderPassword = "psqhniyosuaxspqm"; // Your email password
+            string smtpHost = "smtp.gmail.com"; // Your SMTP host
+            int smtpPort = 587; // Your SMTP port (e.g., 587 for Gmail)
+
+            // Email content
+            string subject = "iConnect - Quên mật khẩu";
+            string body = $"Chào bạn,<br><br>" +
+                            $"Bạn đã yêu cầu thay đổi mật khẩu tài khoản của mình.<br><br>" +
+                            $"Đây là mã xác nhận của bạn: <b>{confirmationCode}</b>.<br>" +
+                            $"Vui lòng sử dụng mã này để hoàn tất quá trình thay đổi mật khẩu.<br><br>" +
+                            $"Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.<br><br>" +
+                            $"Trân trọng,<br>Đội ngũ quản trị viên";
+
+            // Create and configure the SMTP client
+            SmtpClient client = new SmtpClient(smtpHost, smtpPort)
+            {
+                Credentials = new NetworkCredential(senderEmail, senderPassword),
+                EnableSsl = true // Enable SSL for secure connection (e.g., for Gmail)
+            };
+
+            // Create the email message
+            MailMessage mailMessage = new MailMessage(senderEmail, email, subject, body)
+            {
+                IsBodyHtml = true // Set to true if your email body contains HTML
+            };
+
+            // Send the email
+            client.Send(mailMessage);
+        }
+
+        private void forgetPasswdCodeBtn_Click(object sender, EventArgs e)
+        {
+            string email = forgetEmailTxt.Text;
+            forgetPasswdPnl.Visible = false;
+            codeEnterPnl.Visible = true;
+            confirmationCode = GenerateConfirmationCode();
+
+            try
+            {
+                SendConfirmationEmail(email, confirmationCode);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to send confirmation email. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void confirmBtn_Click(object sender, EventArgs e)
+        {
+            // Assuming you have textbox for code input named "codeTextBox"
+            string enteredCode = codeTxt.Text;
+
+            if (enteredCode == confirmationCode)
+            {
+                codeEnterPnl.Visible = false;
+                resetPasswdPnl.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Mã xác nhận không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void newPasswdTxt_TextChanged(object sender, EventArgs e)
+        {
+            string password = newPasswdTxt.Text;
+            bool hasMinimumLength = password.Length >= 8;
+            bool hasSpecialCharacter = password.Any(char.IsPunctuation);
+            bool hasCapitalLetter = password.Any(char.IsUpper);
+
+            if (!hasMinimumLength || !hasSpecialCharacter || !hasCapitalLetter)
+            {
+                newpasswdLbl.Text = "Mật khẩu cần ít nhất 8 ký tự, 1 ký tự đặc biệt và 1 chữ hoa";
+                ispasswdValid = false;
+            }
+            else
+            {
+                newpasswdLbl.Text = "";
+                ispasswdValid = true;
+            }
+        }
+
+        private void renewPasswdTxt_TextChanged(object sender, EventArgs e)
+        {
+            isrepasswdValid = !string.IsNullOrEmpty(renewPasswdTxt.Text);
+            renewPasswdLbl.Text = isrepasswdValid ? "" : "Mật khẩu xác nhận không được để trống";
+
+            if (isrepasswdValid)
+            {
+                // Check confirm password similar password
+                isrepasswdValid = newPasswdTxt.Text == renewPasswdTxt.Text;
+                renewPasswdLbl.Text = isrepasswdValid ? "" : "Mật khẩu xác nhận không trùng khớp";
+            }
+        }
+
+        private void resetPasswdBtn_Click(object sender, EventArgs e)
+        {
+            if (ispasswdValid && isrepasswdValid)
+            {
+                string hashedPassword = HashPassword(newPasswdTxt.Text);
+
+                // Retrieve the user's data by email
+                Data user = GetUserByEmail(forgetEmailTxt.Text);
+                if (user != null)
                 {
+                    // Update only the password in the database
+                    var updateData = new { password = hashedPassword };
+                    FirebaseResponse updateResponse = client.Update("Users/" + user.username, updateData);
 
+                    if (updateResponse.StatusCode == HttpStatusCode.OK)
+                    {
+                        MessageBox.Show("Mật khẩu đã được thay đổi thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        resetPasswdPnl.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi xảy ra khi thay đổi mật khẩu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-
+                    MessageBox.Show("Tài khoản không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
+                MessageBox.Show("Vui lòng đảm bảo mật khẩu hợp lệ và trùng khớp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-            }*/
+        private void showNewPasswdBtn_Click(object sender, EventArgs e)
+        {
+            newPasswdTxt.Focus();
+            newPasswdTxt.UseSystemPasswordChar = false;
+            newPasswdTxt.PasswordChar = default(char);
+            showNewPasswdBtn.Hide();
+            hideNewPasswdBtn.Show();
+        }
+
+        private void showNewrePasswdBtn_Click(object sender, EventArgs e)
+        {
+            renewPasswdTxt.Focus();
+            renewPasswdTxt.UseSystemPasswordChar = false;
+            renewPasswdTxt.PasswordChar = default(char);
+            showNewrePasswdBtn.Hide();
+            hideNewrePasswdBtn.Show();
+        }
+
+        private void hideNewPasswdBtn_Click(object sender, EventArgs e)
+        {
+            newPasswdTxt.Focus();
+            newPasswdTxt.UseSystemPasswordChar = true;
+            hideNewPasswdBtn.Hide();
+            showNewPasswdBtn.Show();
+        }
+
+        private void hideNewrePasswdBtn_Click(object sender, EventArgs e)
+        {
+            renewPasswdTxt.Focus();
+            renewPasswdTxt.UseSystemPasswordChar = true;
+            hideNewrePasswdBtn.Hide();
+            showNewrePasswdBtn.Show();
         }
     }
 }

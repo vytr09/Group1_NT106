@@ -54,9 +54,9 @@
             this.rePasswdShow = new Guna.UI2.WinForms.Guna2GradientButton();
             this.rePasswdHide = new Guna.UI2.WinForms.Guna2GradientButton();
             this.confirmPnl = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.codeTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.confirmBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.codeTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.confirmPnl.SuspendLayout();
@@ -540,15 +540,24 @@
             this.confirmPnl.TabIndex = 72;
             this.confirmPnl.Visible = false;
             // 
-            // guna2HtmlLabel1
+            // confirmBtn
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(67, 13);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(688, 39);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Nhập mã xác thực đã gửi về email của bạn để tiếp tục";
+            this.confirmBtn.BorderRadius = 33;
+            this.confirmBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.confirmBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.confirmBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.confirmBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.confirmBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.confirmBtn.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.confirmBtn.FillColor2 = System.Drawing.Color.MediumAquamarine;
+            this.confirmBtn.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.confirmBtn.ForeColor = System.Drawing.Color.White;
+            this.confirmBtn.Location = new System.Drawing.Point(318, 156);
+            this.confirmBtn.Name = "confirmBtn";
+            this.confirmBtn.Size = new System.Drawing.Size(215, 62);
+            this.confirmBtn.TabIndex = 2;
+            this.confirmBtn.Text = "Xác nhận";
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // codeTxt
             // 
@@ -573,24 +582,15 @@
             this.codeTxt.TabIndex = 1;
             this.codeTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // confirmBtn
+            // guna2HtmlLabel1
             // 
-            this.confirmBtn.BorderRadius = 33;
-            this.confirmBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.confirmBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.confirmBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.confirmBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.confirmBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.confirmBtn.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.confirmBtn.FillColor2 = System.Drawing.Color.MediumAquamarine;
-            this.confirmBtn.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.confirmBtn.ForeColor = System.Drawing.Color.White;
-            this.confirmBtn.Location = new System.Drawing.Point(318, 156);
-            this.confirmBtn.Name = "confirmBtn";
-            this.confirmBtn.Size = new System.Drawing.Size(215, 62);
-            this.confirmBtn.TabIndex = 2;
-            this.confirmBtn.Text = "Xác nhận";
-            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(67, 13);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(688, 39);
+            this.guna2HtmlLabel1.TabIndex = 0;
+            this.guna2HtmlLabel1.Text = "Nhập mã xác thực đã gửi về email của bạn để tiếp tục";
             // 
             // guna2PictureBox2
             // 
