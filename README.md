@@ -34,7 +34,7 @@ For assistance, please reach out to the contributors listed below.
 
 ## License
 
-This project is licensed under the [Your License Here] License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 ## Acknowledgments
 
