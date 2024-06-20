@@ -69,7 +69,7 @@ namespace iConnect
 
         private void UpdateButtonState()
         {
-            signupBtn.Enabled = isnameValid && isemailValid && isdobValid && isusernameValid && ispasswdValid && isrepasswdValid;
+            signupBtn.Enabled = termCheckBox.Checked && isnameValid && isemailValid && isdobValid && isusernameValid && ispasswdValid && isrepasswdValid;
         }
 
         // Function to hash the password using SHA256
@@ -348,6 +348,11 @@ namespace iConnect
             {
                 MessageBox.Show("Mã xác nhận không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void termCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateButtonState();
         }
     }
 }

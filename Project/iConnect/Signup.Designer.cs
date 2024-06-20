@@ -59,6 +59,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.termCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.confirmPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
@@ -219,14 +220,15 @@
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(427, 455);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(560, 462);
             this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(198, 25);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(203, 25);
             this.guna2HtmlLabel2.TabIndex = 52;
             this.guna2HtmlLabel2.Text = "Điều khoản & Chính sách";
+            this.guna2HtmlLabel2.UseSystemCursors = true;
             // 
             // signupBtn
             // 
@@ -534,9 +536,9 @@
             this.confirmPnl.Controls.Add(this.confirmBtn);
             this.confirmPnl.Controls.Add(this.codeTxt);
             this.confirmPnl.Controls.Add(this.guna2HtmlLabel1);
-            this.confirmPnl.Location = new System.Drawing.Point(109, 188);
+            this.confirmPnl.Location = new System.Drawing.Point(109, 194);
             this.confirmPnl.Name = "confirmPnl";
-            this.confirmPnl.Size = new System.Drawing.Size(838, 414);
+            this.confirmPnl.Size = new System.Drawing.Size(828, 414);
             this.confirmPnl.TabIndex = 72;
             this.confirmPnl.Visible = false;
             // 
@@ -619,6 +621,28 @@
             this.guna2PictureBox3.TabStop = false;
             this.guna2PictureBox3.UseTransparentBackground = true;
             // 
+            // termCheckBox
+            // 
+            this.termCheckBox.AutoSize = true;
+            this.termCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.termCheckBox.CheckedState.BorderColor = System.Drawing.Color.MediumAquamarine;
+            this.termCheckBox.CheckedState.BorderRadius = 0;
+            this.termCheckBox.CheckedState.BorderThickness = 1;
+            this.termCheckBox.CheckedState.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.termCheckBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.termCheckBox.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.termCheckBox.Location = new System.Drawing.Point(317, 462);
+            this.termCheckBox.Name = "termCheckBox";
+            this.termCheckBox.Size = new System.Drawing.Size(247, 27);
+            this.termCheckBox.TabIndex = 74;
+            this.termCheckBox.Text = "Tôi đã đọc và đồng ý với các";
+            this.termCheckBox.UncheckedState.BorderColor = System.Drawing.Color.MediumAquamarine;
+            this.termCheckBox.UncheckedState.BorderRadius = 0;
+            this.termCheckBox.UncheckedState.BorderThickness = 1;
+            this.termCheckBox.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.termCheckBox.UseVisualStyleBackColor = false;
+            this.termCheckBox.CheckedChanged += new System.EventHandler(this.termCheckBox_CheckedChanged);
+            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -626,6 +650,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1049, 640);
             this.Controls.Add(this.confirmPnl);
+            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.termCheckBox);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.rePasswdShow);
             this.Controls.Add(this.showPasswd);
@@ -640,7 +666,6 @@
             this.Controls.Add(this.closeAppBtn);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.signupBtn);
-            this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.dobTxt);
             this.Controls.Add(this.emailTxt);
@@ -698,5 +723,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton confirmBtn;
         private Guna.UI2.WinForms.Guna2TextBox codeTxt;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2CheckBox termCheckBox;
     }
 }

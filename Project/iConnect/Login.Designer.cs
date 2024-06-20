@@ -54,15 +54,15 @@
             this.codeTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.resetPasswdPnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.showNewrePasswdBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.hideNewrePasswdBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.showNewPasswdBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.hideNewPasswdBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.renewPasswdLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.newpasswdLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.resetPasswdBtn = new Guna.UI2.WinForms.Guna2Button();
             this.renewPasswdTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.newPasswdTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.showNewPasswdBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.hideNewPasswdBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.showNewrePasswdBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.hideNewrePasswdBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.forgetPasswdPnl.SuspendLayout();
             this.codeEnterPnl.SuspendLayout();
@@ -448,7 +448,7 @@
             // 
             this.codeTxt.AutoRoundedCorners = true;
             this.codeTxt.BorderColor = System.Drawing.Color.Black;
-            this.codeTxt.BorderRadius = 15;
+            this.codeTxt.BorderRadius = 28;
             this.codeTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.codeTxt.DefaultText = "";
             this.codeTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -495,97 +495,64 @@
             this.resetPasswdPnl.TabIndex = 67;
             this.resetPasswdPnl.Visible = false;
             // 
-            // renewPasswdLbl
+            // showNewrePasswdBtn
             // 
-            this.renewPasswdLbl.BackColor = System.Drawing.Color.Transparent;
-            this.renewPasswdLbl.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.renewPasswdLbl.ForeColor = System.Drawing.Color.Crimson;
-            this.renewPasswdLbl.Location = new System.Drawing.Point(56, 212);
-            this.renewPasswdLbl.Name = "renewPasswdLbl";
-            this.renewPasswdLbl.Size = new System.Drawing.Size(3, 2);
-            this.renewPasswdLbl.TabIndex = 69;
-            this.renewPasswdLbl.Text = null;
+            this.showNewrePasswdBtn.BackColor = System.Drawing.Color.Transparent;
+            this.showNewrePasswdBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.showNewrePasswdBtn.CustomImages.Image = global::iConnect.Properties.Resources.eye;
+            this.showNewrePasswdBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.showNewrePasswdBtn.CustomImages.ImageOffset = new System.Drawing.Point(0, -5);
+            this.showNewrePasswdBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
+            this.showNewrePasswdBtn.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.showNewrePasswdBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.showNewrePasswdBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.showNewrePasswdBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.showNewrePasswdBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.showNewrePasswdBtn.FillColor = System.Drawing.Color.Transparent;
+            this.showNewrePasswdBtn.FillColor2 = System.Drawing.Color.Transparent;
+            this.showNewrePasswdBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.showNewrePasswdBtn.ForeColor = System.Drawing.Color.White;
+            this.showNewrePasswdBtn.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.showNewrePasswdBtn.HoverState.FillColor2 = System.Drawing.Color.Transparent;
+            this.showNewrePasswdBtn.Location = new System.Drawing.Point(400, 167);
+            this.showNewrePasswdBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.showNewrePasswdBtn.Name = "showNewrePasswdBtn";
+            this.showNewrePasswdBtn.PressedColor = System.Drawing.Color.Transparent;
+            this.showNewrePasswdBtn.PressedDepth = 0;
+            this.showNewrePasswdBtn.Size = new System.Drawing.Size(29, 23);
+            this.showNewrePasswdBtn.TabIndex = 72;
+            this.showNewrePasswdBtn.UseTransparentBackground = true;
+            this.showNewrePasswdBtn.Click += new System.EventHandler(this.showNewrePasswdBtn_Click);
             // 
-            // newpasswdLbl
+            // hideNewrePasswdBtn
             // 
-            this.newpasswdLbl.BackColor = System.Drawing.Color.Transparent;
-            this.newpasswdLbl.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.newpasswdLbl.ForeColor = System.Drawing.Color.Crimson;
-            this.newpasswdLbl.Location = new System.Drawing.Point(56, 110);
-            this.newpasswdLbl.Name = "newpasswdLbl";
-            this.newpasswdLbl.Size = new System.Drawing.Size(3, 2);
-            this.newpasswdLbl.TabIndex = 68;
-            this.newpasswdLbl.Text = null;
-            // 
-            // resetPasswdBtn
-            // 
-            this.resetPasswdBtn.AutoRoundedCorners = true;
-            this.resetPasswdBtn.BorderRadius = 27;
-            this.resetPasswdBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.resetPasswdBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.resetPasswdBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.resetPasswdBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.resetPasswdBtn.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.resetPasswdBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.resetPasswdBtn.ForeColor = System.Drawing.Color.White;
-            this.resetPasswdBtn.Location = new System.Drawing.Point(139, 237);
-            this.resetPasswdBtn.Name = "resetPasswdBtn";
-            this.resetPasswdBtn.Size = new System.Drawing.Size(194, 57);
-            this.resetPasswdBtn.TabIndex = 2;
-            this.resetPasswdBtn.Text = "Đổi mật khẩu";
-            this.resetPasswdBtn.Click += new System.EventHandler(this.resetPasswdBtn_Click);
-            // 
-            // renewPasswdTxt
-            // 
-            this.renewPasswdTxt.AutoRoundedCorners = true;
-            this.renewPasswdTxt.BorderColor = System.Drawing.Color.Black;
-            this.renewPasswdTxt.BorderRadius = 15;
-            this.renewPasswdTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.renewPasswdTxt.DefaultText = "";
-            this.renewPasswdTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.renewPasswdTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.renewPasswdTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.renewPasswdTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.renewPasswdTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.renewPasswdTxt.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.renewPasswdTxt.ForeColor = System.Drawing.Color.Black;
-            this.renewPasswdTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.renewPasswdTxt.Location = new System.Drawing.Point(53, 137);
-            this.renewPasswdTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.renewPasswdTxt.Name = "renewPasswdTxt";
-            this.renewPasswdTxt.PasswordChar = '●';
-            this.renewPasswdTxt.PlaceholderText = "Xác nhận mật khẩu mới";
-            this.renewPasswdTxt.SelectedText = "";
-            this.renewPasswdTxt.Size = new System.Drawing.Size(390, 67);
-            this.renewPasswdTxt.TabIndex = 1;
-            this.renewPasswdTxt.UseSystemPasswordChar = true;
-            this.renewPasswdTxt.TextChanged += new System.EventHandler(this.renewPasswdTxt_TextChanged);
-            // 
-            // newPasswdTxt
-            // 
-            this.newPasswdTxt.AutoRoundedCorners = true;
-            this.newPasswdTxt.BorderColor = System.Drawing.Color.Black;
-            this.newPasswdTxt.BorderRadius = 15;
-            this.newPasswdTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.newPasswdTxt.DefaultText = "";
-            this.newPasswdTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.newPasswdTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.newPasswdTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.newPasswdTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.newPasswdTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.newPasswdTxt.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.newPasswdTxt.ForeColor = System.Drawing.Color.Black;
-            this.newPasswdTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.newPasswdTxt.Location = new System.Drawing.Point(53, 47);
-            this.newPasswdTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.newPasswdTxt.Name = "newPasswdTxt";
-            this.newPasswdTxt.PasswordChar = '●';
-            this.newPasswdTxt.PlaceholderText = "Mật khẩu mới";
-            this.newPasswdTxt.SelectedText = "";
-            this.newPasswdTxt.Size = new System.Drawing.Size(390, 60);
-            this.newPasswdTxt.TabIndex = 0;
-            this.newPasswdTxt.UseSystemPasswordChar = true;
-            this.newPasswdTxt.TextChanged += new System.EventHandler(this.newPasswdTxt_TextChanged);
+            this.hideNewrePasswdBtn.BackColor = System.Drawing.Color.Transparent;
+            this.hideNewrePasswdBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.hideNewrePasswdBtn.CustomImages.Image = global::iConnect.Properties.Resources.hide;
+            this.hideNewrePasswdBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.hideNewrePasswdBtn.CustomImages.ImageOffset = new System.Drawing.Point(0, -5);
+            this.hideNewrePasswdBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
+            this.hideNewrePasswdBtn.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.hideNewrePasswdBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.hideNewrePasswdBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.hideNewrePasswdBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.hideNewrePasswdBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.hideNewrePasswdBtn.FillColor = System.Drawing.Color.Transparent;
+            this.hideNewrePasswdBtn.FillColor2 = System.Drawing.Color.Transparent;
+            this.hideNewrePasswdBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hideNewrePasswdBtn.ForeColor = System.Drawing.Color.White;
+            this.hideNewrePasswdBtn.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.hideNewrePasswdBtn.HoverState.FillColor2 = System.Drawing.Color.Transparent;
+            this.hideNewrePasswdBtn.Location = new System.Drawing.Point(400, 167);
+            this.hideNewrePasswdBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.hideNewrePasswdBtn.Name = "hideNewrePasswdBtn";
+            this.hideNewrePasswdBtn.PressedColor = System.Drawing.Color.Transparent;
+            this.hideNewrePasswdBtn.PressedDepth = 0;
+            this.hideNewrePasswdBtn.Size = new System.Drawing.Size(29, 23);
+            this.hideNewrePasswdBtn.TabIndex = 73;
+            this.hideNewrePasswdBtn.UseTransparentBackground = true;
+            this.hideNewrePasswdBtn.Visible = false;
+            this.hideNewrePasswdBtn.Click += new System.EventHandler(this.hideNewrePasswdBtn_Click);
             // 
             // showNewPasswdBtn
             // 
@@ -646,64 +613,97 @@
             this.hideNewPasswdBtn.Visible = false;
             this.hideNewPasswdBtn.Click += new System.EventHandler(this.hideNewPasswdBtn_Click);
             // 
-            // showNewrePasswdBtn
+            // renewPasswdLbl
             // 
-            this.showNewrePasswdBtn.BackColor = System.Drawing.Color.Transparent;
-            this.showNewrePasswdBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.showNewrePasswdBtn.CustomImages.Image = global::iConnect.Properties.Resources.eye;
-            this.showNewrePasswdBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.showNewrePasswdBtn.CustomImages.ImageOffset = new System.Drawing.Point(0, -5);
-            this.showNewrePasswdBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
-            this.showNewrePasswdBtn.DisabledState.BorderColor = System.Drawing.Color.Black;
-            this.showNewrePasswdBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.showNewrePasswdBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.showNewrePasswdBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.showNewrePasswdBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.showNewrePasswdBtn.FillColor = System.Drawing.Color.Transparent;
-            this.showNewrePasswdBtn.FillColor2 = System.Drawing.Color.Transparent;
-            this.showNewrePasswdBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.showNewrePasswdBtn.ForeColor = System.Drawing.Color.White;
-            this.showNewrePasswdBtn.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.showNewrePasswdBtn.HoverState.FillColor2 = System.Drawing.Color.Transparent;
-            this.showNewrePasswdBtn.Location = new System.Drawing.Point(400, 167);
-            this.showNewrePasswdBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.showNewrePasswdBtn.Name = "showNewrePasswdBtn";
-            this.showNewrePasswdBtn.PressedColor = System.Drawing.Color.Transparent;
-            this.showNewrePasswdBtn.PressedDepth = 0;
-            this.showNewrePasswdBtn.Size = new System.Drawing.Size(29, 23);
-            this.showNewrePasswdBtn.TabIndex = 72;
-            this.showNewrePasswdBtn.UseTransparentBackground = true;
-            this.showNewrePasswdBtn.Click += new System.EventHandler(this.showNewrePasswdBtn_Click);
+            this.renewPasswdLbl.BackColor = System.Drawing.Color.Transparent;
+            this.renewPasswdLbl.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.renewPasswdLbl.ForeColor = System.Drawing.Color.Crimson;
+            this.renewPasswdLbl.Location = new System.Drawing.Point(56, 212);
+            this.renewPasswdLbl.Name = "renewPasswdLbl";
+            this.renewPasswdLbl.Size = new System.Drawing.Size(3, 2);
+            this.renewPasswdLbl.TabIndex = 69;
+            this.renewPasswdLbl.Text = null;
             // 
-            // hideNewrePasswdBtn
+            // newpasswdLbl
             // 
-            this.hideNewrePasswdBtn.BackColor = System.Drawing.Color.Transparent;
-            this.hideNewrePasswdBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.hideNewrePasswdBtn.CustomImages.Image = global::iConnect.Properties.Resources.hide;
-            this.hideNewrePasswdBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.hideNewrePasswdBtn.CustomImages.ImageOffset = new System.Drawing.Point(0, -5);
-            this.hideNewrePasswdBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
-            this.hideNewrePasswdBtn.DisabledState.BorderColor = System.Drawing.Color.Black;
-            this.hideNewrePasswdBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.hideNewrePasswdBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.hideNewrePasswdBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.hideNewrePasswdBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.hideNewrePasswdBtn.FillColor = System.Drawing.Color.Transparent;
-            this.hideNewrePasswdBtn.FillColor2 = System.Drawing.Color.Transparent;
-            this.hideNewrePasswdBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hideNewrePasswdBtn.ForeColor = System.Drawing.Color.White;
-            this.hideNewrePasswdBtn.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.hideNewrePasswdBtn.HoverState.FillColor2 = System.Drawing.Color.Transparent;
-            this.hideNewrePasswdBtn.Location = new System.Drawing.Point(400, 167);
-            this.hideNewrePasswdBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.hideNewrePasswdBtn.Name = "hideNewrePasswdBtn";
-            this.hideNewrePasswdBtn.PressedColor = System.Drawing.Color.Transparent;
-            this.hideNewrePasswdBtn.PressedDepth = 0;
-            this.hideNewrePasswdBtn.Size = new System.Drawing.Size(29, 23);
-            this.hideNewrePasswdBtn.TabIndex = 73;
-            this.hideNewrePasswdBtn.UseTransparentBackground = true;
-            this.hideNewrePasswdBtn.Visible = false;
-            this.hideNewrePasswdBtn.Click += new System.EventHandler(this.hideNewrePasswdBtn_Click);
+            this.newpasswdLbl.BackColor = System.Drawing.Color.Transparent;
+            this.newpasswdLbl.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.newpasswdLbl.ForeColor = System.Drawing.Color.Crimson;
+            this.newpasswdLbl.Location = new System.Drawing.Point(56, 110);
+            this.newpasswdLbl.Name = "newpasswdLbl";
+            this.newpasswdLbl.Size = new System.Drawing.Size(3, 2);
+            this.newpasswdLbl.TabIndex = 68;
+            this.newpasswdLbl.Text = null;
+            // 
+            // resetPasswdBtn
+            // 
+            this.resetPasswdBtn.AutoRoundedCorners = true;
+            this.resetPasswdBtn.BorderRadius = 27;
+            this.resetPasswdBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.resetPasswdBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.resetPasswdBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.resetPasswdBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.resetPasswdBtn.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.resetPasswdBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.resetPasswdBtn.ForeColor = System.Drawing.Color.White;
+            this.resetPasswdBtn.Location = new System.Drawing.Point(139, 237);
+            this.resetPasswdBtn.Name = "resetPasswdBtn";
+            this.resetPasswdBtn.Size = new System.Drawing.Size(194, 57);
+            this.resetPasswdBtn.TabIndex = 2;
+            this.resetPasswdBtn.Text = "Đổi mật khẩu";
+            this.resetPasswdBtn.Click += new System.EventHandler(this.resetPasswdBtn_Click);
+            // 
+            // renewPasswdTxt
+            // 
+            this.renewPasswdTxt.AutoRoundedCorners = true;
+            this.renewPasswdTxt.BorderColor = System.Drawing.Color.Black;
+            this.renewPasswdTxt.BorderRadius = 32;
+            this.renewPasswdTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.renewPasswdTxt.DefaultText = "";
+            this.renewPasswdTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.renewPasswdTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.renewPasswdTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.renewPasswdTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.renewPasswdTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.renewPasswdTxt.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.renewPasswdTxt.ForeColor = System.Drawing.Color.Black;
+            this.renewPasswdTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.renewPasswdTxt.Location = new System.Drawing.Point(53, 137);
+            this.renewPasswdTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.renewPasswdTxt.Name = "renewPasswdTxt";
+            this.renewPasswdTxt.PasswordChar = '●';
+            this.renewPasswdTxt.PlaceholderText = "Xác nhận mật khẩu mới";
+            this.renewPasswdTxt.SelectedText = "";
+            this.renewPasswdTxt.Size = new System.Drawing.Size(390, 67);
+            this.renewPasswdTxt.TabIndex = 1;
+            this.renewPasswdTxt.UseSystemPasswordChar = true;
+            this.renewPasswdTxt.TextChanged += new System.EventHandler(this.renewPasswdTxt_TextChanged);
+            // 
+            // newPasswdTxt
+            // 
+            this.newPasswdTxt.AutoRoundedCorners = true;
+            this.newPasswdTxt.BorderColor = System.Drawing.Color.Black;
+            this.newPasswdTxt.BorderRadius = 29;
+            this.newPasswdTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.newPasswdTxt.DefaultText = "";
+            this.newPasswdTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.newPasswdTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.newPasswdTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.newPasswdTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.newPasswdTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.newPasswdTxt.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.newPasswdTxt.ForeColor = System.Drawing.Color.Black;
+            this.newPasswdTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.newPasswdTxt.Location = new System.Drawing.Point(53, 47);
+            this.newPasswdTxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.newPasswdTxt.Name = "newPasswdTxt";
+            this.newPasswdTxt.PasswordChar = '●';
+            this.newPasswdTxt.PlaceholderText = "Mật khẩu mới";
+            this.newPasswdTxt.SelectedText = "";
+            this.newPasswdTxt.Size = new System.Drawing.Size(390, 60);
+            this.newPasswdTxt.TabIndex = 0;
+            this.newPasswdTxt.UseSystemPasswordChar = true;
+            this.newPasswdTxt.TextChanged += new System.EventHandler(this.newPasswdTxt_TextChanged);
             // 
             // Login
             // 
