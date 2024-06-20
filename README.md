@@ -9,9 +9,8 @@ Chat and connect with your friends and family seamlessly.
 ## Features
 
 - Real-time messaging
-- Group chats
+- Newsfeed
 - User authentication
-- Contact management
 - Notifications
 - User-friendly interface with Guna2UI components
 
@@ -30,7 +29,7 @@ To install iConnect, follow these steps:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-repository/iConnect.git
+    git clone https://github.com/tranthehuuphuc/Group1_NT106.git
     ```
 
 2. **Open the project**:
@@ -114,5 +113,5 @@ You need to create a Firebase project and set up a Realtime Database. Add your F
 
 ### How can I report an issue or request a feature?
 
-You can report issues and request features by opening an issue in the [GitHub Issues](https://github.com/Group1_NT106/issues) section of the repository.
+You can report issues and request features by opening an issue in the [GitHub Issues](https://github.com/tranthehuuphuc/Group1_NT106/issues) section of the repository.
 
