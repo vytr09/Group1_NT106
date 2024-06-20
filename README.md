@@ -60,10 +60,9 @@ After installing and running the application, you can start chatting and connect
 ### User Guide
 
 1. **Login/Signup**: Create an account or log in using your existing credentials.
-2. **Add Contacts**: Search for friends and family members and add them to your contact list.
+2. **Newsfeed**: Post something on your newsfeed to express yourself.
 3. **Start a Chat**: Select a contact and start a chat. You can send text messages, images, and files.
-4. **Create a Group**: Create a group chat by selecting multiple contacts.
-5. **Notifications**: Receive real-time notifications for new messages.
+4. **Notifications**: Receive real-time notifications for new messages.
 
 ## Technology Stack
 
