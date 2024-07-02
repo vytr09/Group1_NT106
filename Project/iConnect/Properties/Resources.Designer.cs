@@ -93,6 +93,16 @@ namespace iConnect.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap A_piece_of_torn_white_letter_paper_white_letters_fragments_184335_wh860 {
+            get {
+                object obj = ResourceManager.GetObject("A-piece-of-torn-white-letter-paper-white-letters-fragments_184335_wh860", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Add_square {
             get {
                 object obj = ResourceManager.GetObject("Add_square", resourceCulture);
@@ -556,6 +566,16 @@ namespace iConnect.Properties {
         internal static System.Drawing.Bitmap Spinner_1x_1_0s200px_200px {
             get {
                 object obj = ResourceManager.GetObject("Spinner@1x-1.0s200px-200px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upload {
+            get {
+                object obj = ResourceManager.GetObject("upload", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
