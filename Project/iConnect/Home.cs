@@ -346,22 +346,22 @@ namespace iConnect
 
         private void followerBtn_Click(object sender, EventArgs e)
         {
-            followerPnl.Visible = true;
+          //  followerPnl.Visible = true;
         }
 
         private void followingBtn_Click(object sender, EventArgs e)
         {
-            followingPnl.Visible = true;
+          //  followingPnl.Visible = true;
         }
 
         private void guna2ControlBox2_Click(object sender, EventArgs e)
         {
-            followingPnl.Visible = false;
+           // followingPnl.Visible = false;
         }
 
         private void guna2ControlBox3_Click(object sender, EventArgs e)
         {
-            followerPnl.Visible = false;
+          //  followerPnl.Visible = false;
         }
 
         private void profileBtn_Click(object sender, EventArgs e)
