@@ -43,7 +43,6 @@
             this.passwdLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.hidePasswd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.showPasswd = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.forgetPasswdBtn = new Guna.UI2.WinForms.Guna2Button();
             this.forgetPasswdPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.forgetPasswdCodeLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -63,17 +62,19 @@
             this.resetPasswdBtn = new Guna.UI2.WinForms.Guna2Button();
             this.renewPasswdTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.newPasswdTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.googleBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.forgetPasswdPnl.SuspendLayout();
             this.codeEnterPnl.SuspendLayout();
             this.resetPasswdPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(251, 498);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(242, 537);
             this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(185, 27);
@@ -92,9 +93,9 @@
             this.loginBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.loginBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.loginBtn.FillColor = System.Drawing.Color.MediumAquamarine;
-            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Bold);
+            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
-            this.loginBtn.Location = new System.Drawing.Point(308, 410);
+            this.loginBtn.Location = new System.Drawing.Point(308, 403);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(2);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.PressedDepth = 0;
@@ -225,10 +226,10 @@
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Button1.Location = new System.Drawing.Point(437, 495);
+            this.guna2Button1.Location = new System.Drawing.Point(428, 534);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.PressedDepth = 0;
-            this.guna2Button1.Size = new System.Drawing.Size(127, 34);
+            this.guna2Button1.Size = new System.Drawing.Size(117, 34);
             this.guna2Button1.TabIndex = 58;
             this.guna2Button1.Text = "Đăng ký";
             this.guna2Button1.UseTransparentBackground = true;
@@ -317,20 +318,6 @@
             this.showPasswd.UseTransparentBackground = true;
             this.showPasswd.Click += new System.EventHandler(this.showPasswd_Click);
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::iConnect.Properties.Resources.Screenshot_2024_04_20_232604;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(206, 94);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(1);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(388, 120);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 63;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
-            // 
             // forgetPasswdBtn
             // 
             this.forgetPasswdBtn.BackColor = System.Drawing.Color.Transparent;
@@ -343,7 +330,7 @@
             this.forgetPasswdBtn.ForeColor = System.Drawing.Color.MediumAquamarine;
             this.forgetPasswdBtn.HoverState.FillColor = System.Drawing.Color.White;
             this.forgetPasswdBtn.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.forgetPasswdBtn.Location = new System.Drawing.Point(311, 519);
+            this.forgetPasswdBtn.Location = new System.Drawing.Point(302, 558);
             this.forgetPasswdBtn.Name = "forgetPasswdBtn";
             this.forgetPasswdBtn.PressedDepth = 0;
             this.forgetPasswdBtn.Size = new System.Drawing.Size(180, 45);
@@ -357,7 +344,7 @@
             this.forgetPasswdPnl.Controls.Add(this.forgetPasswdCodeLbl);
             this.forgetPasswdPnl.Controls.Add(this.forgetPasswdCodeBtn);
             this.forgetPasswdPnl.Controls.Add(this.forgetEmailTxt);
-            this.forgetPasswdPnl.Location = new System.Drawing.Point(107, 211);
+            this.forgetPasswdPnl.Location = new System.Drawing.Point(109, 234);
             this.forgetPasswdPnl.Name = "forgetPasswdPnl";
             this.forgetPasswdPnl.Size = new System.Drawing.Size(586, 353);
             this.forgetPasswdPnl.TabIndex = 65;
@@ -418,7 +405,7 @@
             this.codeEnterPnl.Controls.Add(this.confirmBtn);
             this.codeEnterPnl.Controls.Add(this.codeTxt);
             this.codeEnterPnl.Controls.Add(this.guna2HtmlLabel2);
-            this.codeEnterPnl.Location = new System.Drawing.Point(127, 194);
+            this.codeEnterPnl.Location = new System.Drawing.Point(129, 217);
             this.codeEnterPnl.Name = "codeEnterPnl";
             this.codeEnterPnl.Size = new System.Drawing.Size(544, 370);
             this.codeEnterPnl.TabIndex = 66;
@@ -489,7 +476,7 @@
             this.resetPasswdPnl.Controls.Add(this.resetPasswdBtn);
             this.resetPasswdPnl.Controls.Add(this.renewPasswdTxt);
             this.resetPasswdPnl.Controls.Add(this.newPasswdTxt);
-            this.resetPasswdPnl.Location = new System.Drawing.Point(162, 195);
+            this.resetPasswdPnl.Location = new System.Drawing.Point(164, 218);
             this.resetPasswdPnl.Name = "resetPasswdPnl";
             this.resetPasswdPnl.Size = new System.Drawing.Size(482, 373);
             this.resetPasswdPnl.TabIndex = 67;
@@ -705,15 +692,58 @@
             this.newPasswdTxt.UseSystemPasswordChar = true;
             this.newPasswdTxt.TextChanged += new System.EventHandler(this.newPasswdTxt_TextChanged);
             // 
+            // googleBtn
+            // 
+            this.googleBtn.BackColor = System.Drawing.Color.Transparent;
+            this.googleBtn.BorderRadius = 10;
+            this.googleBtn.BorderThickness = 1;
+            this.googleBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.googleBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.googleBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.googleBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.googleBtn.FillColor = System.Drawing.Color.Transparent;
+            this.googleBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.googleBtn.ForeColor = System.Drawing.Color.Black;
+            this.googleBtn.HoverState.FillColor = System.Drawing.Color.White;
+            this.googleBtn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.googleBtn.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.googleBtn.Image = global::iConnect.Properties.Resources.google1;
+            this.googleBtn.ImageSize = new System.Drawing.Size(30, 30);
+            this.googleBtn.Location = new System.Drawing.Point(253, 470);
+            this.googleBtn.Name = "googleBtn";
+            this.googleBtn.PressedDepth = 0;
+            this.googleBtn.ShadowDecoration.BorderRadius = 1;
+            this.googleBtn.ShadowDecoration.Depth = 10;
+            this.googleBtn.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1);
+            this.googleBtn.Size = new System.Drawing.Size(277, 48);
+            this.googleBtn.TabIndex = 69;
+            this.googleBtn.Text = " Đăng nhập bằng google";
+            this.googleBtn.Click += new System.EventHandler(this.googleBtn_Click);
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::iConnect.Properties.Resources.Screenshot_2024_04_20_232604;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(206, 94);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(1);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(388, 120);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 63;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 576);
+            this.ClientSize = new System.Drawing.Size(800, 616);
             this.Controls.Add(this.resetPasswdPnl);
             this.Controls.Add(this.codeEnterPnl);
             this.Controls.Add(this.forgetPasswdPnl);
+            this.Controls.Add(this.googleBtn);
             this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -734,13 +764,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.forgetPasswdPnl.ResumeLayout(false);
             this.forgetPasswdPnl.PerformLayout();
             this.codeEnterPnl.ResumeLayout(false);
             this.codeEnterPnl.PerformLayout();
             this.resetPasswdPnl.ResumeLayout(false);
             this.resetPasswdPnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -780,5 +810,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton hideNewrePasswdBtn;
         private Guna.UI2.WinForms.Guna2GradientButton showNewPasswdBtn;
         private Guna.UI2.WinForms.Guna2GradientButton hideNewPasswdBtn;
+        private Guna.UI2.WinForms.Guna2Button googleBtn;
     }
 }

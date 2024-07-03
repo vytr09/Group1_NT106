@@ -16,6 +16,13 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Guna.UI2.WinForms;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Oauth2.v2;
+using Google.Apis.Oauth2.v2.Data;
+using Google.Apis.Services;
+using Google.Apis.Util;
+using System.IO;
+using System.Threading;
 
 namespace iConnect
 {
@@ -394,6 +401,84 @@ namespace iConnect
             renewPasswdTxt.UseSystemPasswordChar = true;
             hideNewrePasswdBtn.Hide();
             showNewrePasswdBtn.Show();
+        }
+
+        private async void googleBtn_Click(object sender, EventArgs e)
+        {
+            UserCredential credential;
+            string[] scopes = { Oauth2Service.Scope.UserinfoProfile, Oauth2Service.Scope.UserinfoEmail };
+
+            using (var stream = new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
+            {
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.FromStream(stream).Secrets,
+                    scopes,
+                    "user",
+                    CancellationToken.None
+                );
+            }
+
+            if (credential != null && credential.Token.IsExpired(Google.Apis.Util.SystemClock.Default) == false)
+            {
+                var oauth2Service = new Oauth2Service(new BaseClientService.Initializer
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = "iConnect"
+                });
+
+                var userInfoRequest = oauth2Service.Userinfo.Get();
+                var userInfo = await userInfoRequest.ExecuteAsync();
+
+                if (userInfo != null)
+                {
+                    // Retrieve user info and proceed with your application logic
+                    string userEmail = userInfo.Email;
+                    string userName = userInfo.Name.Replace(" ", "_"); // Replace spaces with underscores
+
+                    // Check if the user exists in Firebase
+                    Data user = GetUserByEmail(userEmail);
+                    if (user != null)
+                    {
+                        // User exists, proceed to home
+                        this.Hide();
+                        Home home = new Home(userName);
+                        home.Closed += (s, args) => this.Close();
+                        home.Show();
+                    }
+                    else
+                    {
+                        // User doesn't exist, register user
+                        Data newUser = new Data
+                        {
+                            username = userName,
+                            email = userEmail,
+                            password = "" // Set an empty password or generate a default one
+                        };
+                        SetResponse response = client.Set("Users/" + userName, newUser);
+                        if (response.StatusCode == HttpStatusCode.OK)
+                        {
+                            MessageBox.Show("User registered successfully. Please set your password.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // Proceed to home or another screen for setting the password
+                            this.Hide();
+                            Home home = new Home(userName);
+                            home.Closed += (s, args) => this.Close();
+                            home.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registration failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Failed to retrieve user info.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Google Sign-In failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

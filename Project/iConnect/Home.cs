@@ -129,7 +129,25 @@ namespace iConnect
 
             // Assuming the date is stored in dd/MM/yyyy format
             string dateFormat = "dd/MM/yyyy";
-            changeBDay.Value = DateTime.ParseExact(result.dateofb, dateFormat, CultureInfo.InvariantCulture);
+
+            try
+            {
+                if (!string.IsNullOrEmpty(result.dateofb))
+                {
+                    changeBDay.Value = DateTime.ParseExact(result.dateofb, dateFormat, CultureInfo.InvariantCulture);
+                }
+                else
+                {
+                    // Handle the case where dateofb is null or empty
+                    changeBDay.Value = DateTime.Now; // Or set to a default date
+                }
+            }
+            catch (FormatException ex)
+            {
+                // Handle parsing errors
+                MessageBox.Show($"Failed to parse date of birth. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                changeBDay.Value = DateTime.Now; // Or set to a default date
+            }
 
             bioTxtChange.Text = result.bio;
             changeFullName.Text = result.name;
