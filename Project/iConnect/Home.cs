@@ -662,9 +662,25 @@ namespace iConnect
 
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            Login login = new Login();
-            login.Show();
+            try
+            {
+                // Clear Google credentials or any stored tokens
+                string credPath = "token.json";
+                if (Directory.Exists(credPath))
+                {
+                    Directory.Delete(credPath, true);
+                }
+
+                // Close current form and show the login form
+                this.Hide();
+                Login login = new Login();
+                login.Closed += (s, args) => this.Close();
+                login.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to log out. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void allnotiBtn_Click(object sender, EventArgs e)
