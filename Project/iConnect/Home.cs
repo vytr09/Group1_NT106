@@ -88,6 +88,16 @@ namespace iConnect
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             Username = username;
             reload();
+            this.Load += async (sender, e) => await Form_Load(sender, e);
+
+            // Gắn sự kiện KeyPress cho textbox tìm kiếm
+            searchTxt.KeyPress += new KeyPressEventHandler(SearchTextBox_KeyPress);
+        }
+
+        // Call this method when the form loads to populate the blocked users panel
+        private async Task Form_Load(object sender, EventArgs e)
+        {
+            await LoadBlockedUsers();
         }
 
         private async void reload()
@@ -1517,9 +1527,471 @@ namespace iConnect
             this.HiddenReply();
         }
 
+        private void SearchTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                PerformSearch();
+                e.Handled = true; // Đánh dấu sự kiện đã được xử lý
+            }
+        }
+
+        private void PerformSearch()
+        {
+            string searchText = searchTxt.Text.Trim();
+            // Mở form Search và truyền tham số searchText
+            Search searchForm = new Search(Username);
+            searchForm.Show();
+        }
+
         private void profilePnl_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private OpenFileDialog openFileDialog = new OpenFileDialog();
+        private void addfileBtn_Click(object sender, EventArgs e)
+        {
+            // Prompt user to select a file
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                // Check the file size
+                FileInfo fileInfo = new FileInfo(filePath);
+                if (fileInfo.Length > 10 * 1024 * 1024)
+                {
+                    MessageBox.Show("File size exceeds 10MB. Please select a smaller file.");
+                    return;
+                }
+
+                // Display selected file name in the UI
+                filenameLbl.Text = Path.GetFileName(filePath);
+            }
+            else
+            {
+                MessageBox.Show("No file selected.");
+            }
+        }
+
+        private async void reportBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string fileUrl = null;
+                string filePath = null;
+
+                // Check if a file is selected
+                if (!string.IsNullOrEmpty(filenameLbl.Text))
+                {
+                    filePath = openFileDialog.FileName; // Get the file path
+                                                        // Upload the selected file to Firebase Storage
+                    fileUrl = await UploadFileToStorageAsync(filePath);
+                }
+
+                // Get the report details from UI
+                string helpReportDetail = helpreportDetail.Text;
+
+                // Get the username (you might want to replace this with actual user info)
+                string username = Username; // Replace with actual username retrieval logic
+
+                // Submit the report to Firebase Realtime Database
+                await SubmitReportAsync(helpReportDetail, fileUrl, username);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error submitting report: {ex.Message}");
+            }
+        }
+
+        private async Task<string> UploadFileToStorageAsync(string filePath)
+        {
+            try
+            {
+                // Generate a unique identifier for the file
+                string fileName = Path.GetFileName(filePath);
+
+                // Upload the file to Firebase Storage
+                var task = new FirebaseStorage("iconnect-nt106.appspot.com")
+                    .Child("reports")
+                    .Child(fileName)
+                    .PutAsync(File.OpenRead(filePath));
+
+                // Wait for the upload to complete
+                var downloadUrl = await task;
+
+                // Return the download URL
+                return downloadUrl;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error uploading file: {ex.Message}");
+                return null;
+            }
+        }
+
+        private async Task SubmitReportAsync(string helpReportDetail, string fileUrl, string username)
+        {
+            try
+            {
+                // Generate a unique identifier for the report
+                string reportId = Guid.NewGuid().ToString();
+
+                // Create a new report object
+                Report report = new Report
+                {
+                    Id = reportId,
+                    HelpReportDetail = helpReportDetail,
+                    FileUrl = fileUrl,
+                    Username = username,
+                    CreatedAt = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
+                    Status = "Pending"
+                };
+
+                // Submit the report to Firebase Realtime Database
+                SetResponse response = await client.SetAsync("Reports/" + reportId, report);
+
+                // Check if the report was submitted successfully
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    MessageBox.Show("Report submitted successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to submit report.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error submitting report: {ex.Message}");
+            }
+        }
+        public class Report
+        {
+            public string Id { get; set; }
+            public string HelpReportDetail { get; set; }
+            public string FileUrl { get; set; }
+            public string Username { get; set; }
+            public string Status { get; set; }
+            public string CreatedAt { get; set; }
+        }
+
+
+        private void AddUserToSearchResults(Data user)
+        {
+            Guna.UI2.WinForms.Guna2Panel userPanel = new Guna.UI2.WinForms.Guna2Panel
+            {
+                Width = searchblockPnl.Width - 40,
+                Height = UserPanelHeight, // Use the constant height
+                Tag = user
+            };
+
+            Guna.UI2.WinForms.Guna2PictureBox avatar = new Guna.UI2.WinForms.Guna2PictureBox
+            {
+                Width = 50,
+                Height = 50,
+                Left = 5,
+                Top = 5,
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderRadius = 25
+            };
+
+            if (!string.IsNullOrEmpty(user.AvatarUrl))
+            {
+                avatar.ImageLocation = user.AvatarUrl;
+            }
+            else
+            {
+                avatar.Image = Properties.Resources.profile; // Ensure you have a default avatar image in your resources
+            }
+
+            Guna.UI2.WinForms.Guna2HtmlLabel nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = user.name,
+                Left = 60,
+                Top = 5,
+                Width = 200
+            };
+
+            Guna.UI2.WinForms.Guna2HtmlLabel usernameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = user.username,
+                Left = 60,
+                Top = 25,
+                Width = 200
+            };
+
+            Guna.UI2.WinForms.Guna2Button blockButton = new Guna.UI2.WinForms.Guna2Button
+            {
+                Text = "Block",
+                Left = searchblockPnl.Width - 140,
+                Width = 100,
+                AutoRoundedCorners = true,
+                FillColor = Color.MediumAquamarine,
+                Tag = user
+            };
+            blockButton.Click += BlockButton_Click;
+
+            userPanel.Controls.Add(avatar);
+            userPanel.Controls.Add(nameLabel);
+            userPanel.Controls.Add(usernameLabel);
+            userPanel.Controls.Add(blockButton);
+
+            searchblockPnl.Controls.Add(userPanel);
+
+            // Reposition all user panels in searchblockPnl
+            for (int i = 0; i < searchblockPnl.Controls.Count; i++)
+            {
+                if (searchblockPnl.Controls[i] is Guna.UI2.WinForms.Guna2Panel panel)
+                {
+                    SetPanelLocation(panel, i);
+                }
+            }
+        }
+        private async void BlockButton_Click(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button blockButton = sender as Guna.UI2.WinForms.Guna2Button;
+            Data userToBlock = blockButton.Tag as Data;
+
+            Data currentUser = await GetCurrentUserInfo();
+
+            if (currentUser == null)
+            {
+                MessageBox.Show("Error: Could not retrieve current user info.");
+                return;
+            }
+
+            if (currentUser.username == userToBlock.username)
+            {
+                MessageBox.Show("You cannot block yourself.");
+                return;
+            }
+
+            Guna.UI2.WinForms.Guna2Panel userPanel = blockButton.Parent as Guna.UI2.WinForms.Guna2Panel;
+            searchblockPnl.Controls.Remove(userPanel);
+            blockedPnl.Controls.Add(userPanel);
+
+            RepositionBlockedUsers();
+
+            blockButton.Text = "Unblock";
+            blockButton.Click -= BlockButton_Click;
+            blockButton.Click += UnblockButton_Click;
+
+            await BlockUser(currentUser, userToBlock);
+        }
+        private void RepositionBlockedUsers()
+        {
+            int yPosition = 0;
+            foreach (Control control in blockedPnl.Controls)
+            {
+                if (control is Guna.UI2.WinForms.Guna2Panel userPanel)
+                {
+                    SetPanelLocation(userPanel, yPosition);
+                    yPosition++;
+                }
+            }
+        }
+
+        private async Task BlockUser(Data currentUser, Data userToBlock)
+        {
+            try
+            {
+                var blockRelationship = new
+                {
+                    BlockedBy = currentUser.username,
+                    BlockedUser = userToBlock.username
+                };
+
+                await client.SetAsync($"BlockedUsers/{currentUser.username}/{userToBlock.username}", blockRelationship);
+                MessageBox.Show($"User {userToBlock.username} has been blocked.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error blocking user: {ex.Message}");
+            }
+        }
+
+        private async Task UnblockUser(Data currentUser, Data userToUnblock)
+        {
+            try
+            {
+                await client.DeleteAsync($"BlockedUsers/{currentUser.username}/{userToUnblock.username}");
+                MessageBox.Show($"User {userToUnblock.username} has been unblocked.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error unblocking user: {ex.Message}");
+            }
+        }
+
+        private async void UnblockButton_Click(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button unblockButton = sender as Guna.UI2.WinForms.Guna2Button;
+            Data userToUnblock = unblockButton.Tag as Data;
+
+            Data currentUser = await GetCurrentUserInfo();
+
+            if (currentUser == null)
+            {
+                MessageBox.Show("Error: Could not retrieve current user info.");
+                return;
+            }
+
+            Guna.UI2.WinForms.Guna2Panel userPanel = unblockButton.Parent as Guna.UI2.WinForms.Guna2Panel;
+            blockedPnl.Controls.Remove(userPanel);
+
+            RepositionBlockedUsers();
+
+            await UnblockUser(currentUser, userToUnblock);
+        }
+
+        private async Task<Data> GetCurrentUserInfo()
+        {
+            try
+            {
+                FirebaseResponse response = await client.GetAsync($"Users/{Username}");
+                Data currentUser = JsonConvert.DeserializeObject<Data>(response.Body);
+                return currentUser;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error retrieving current user info: {ex.Message}");
+                return null;
+            }
+        }
+
+        private async void searchblockBtn_Click_1(object sender, EventArgs e)
+        {
+            string searchText = searchblockTxt.Text.ToLower();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                MessageBox.Show("Please enter a username to search.");
+                return;
+            }
+
+            searchblockPnl.Controls.Clear();
+
+            try
+            {
+                FirebaseResponse response = await client.GetAsync("Users");
+                var usersDict = JsonConvert.DeserializeObject<Dictionary<string, Data>>(response.Body);
+
+                Data currentUser = await GetCurrentUserInfo();
+                FirebaseResponse blockedResponse = await client.GetAsync($"BlockedUsers/{currentUser.username}");
+                var blockedUsersDict = JsonConvert.DeserializeObject<Dictionary<string, object>>(blockedResponse.Body) ?? new Dictionary<string, object>();
+
+                foreach (var user in usersDict.Values)
+                {
+                    if (user.username.ToLower().Contains(searchText) && !blockedUsersDict.ContainsKey(user.username) && user.username != currentUser.username)
+                    {
+                        AddUserToSearchResults(user);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching users: {ex.Message}");
+            }
+        }
+
+        private async Task LoadBlockedUsers()
+        {
+            try
+            {
+                Data currentUser = await GetCurrentUserInfo();
+                FirebaseResponse response = await client.GetAsync($"BlockedUsers/{currentUser.username}");
+                var blockedUsersDict = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Body) ?? new Dictionary<string, object>();
+
+                blockedPnl.Controls.Clear();
+
+                foreach (var blockedUser in blockedUsersDict.Keys)
+                {
+                    FirebaseResponse userResponse = await client.GetAsync($"Users/{blockedUser}");
+                    Data user = JsonConvert.DeserializeObject<Data>(userResponse.Body);
+                    AddUserToBlockedPanel(user);
+                }
+
+                RepositionBlockedUsers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading blocked users: {ex.Message}");
+            }
+        }
+
+        private void AddUserToBlockedPanel(Data user)
+        {
+            Guna.UI2.WinForms.Guna2Panel userPanel = new Guna.UI2.WinForms.Guna2Panel
+            {
+                Width = blockedPnl.Width - 40,
+                Height = UserPanelHeight, // Use the constant height
+                Tag = user
+            };
+
+            Guna.UI2.WinForms.Guna2PictureBox avatar = new Guna.UI2.WinForms.Guna2PictureBox
+            {
+                Width = 50,
+                Height = 50,
+                Left = 5,
+                Top = 5,
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderRadius = 25
+            };
+
+            if (!string.IsNullOrEmpty(user.AvatarUrl))
+            {
+                avatar.ImageLocation = user.AvatarUrl;
+            }
+            else
+            {
+                avatar.Image = Properties.Resources.profile;
+            }
+
+            Guna.UI2.WinForms.Guna2HtmlLabel nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = user.name,
+                Left = 60,
+                Top = 5,
+                Width = 200
+            };
+
+            Guna.UI2.WinForms.Guna2HtmlLabel usernameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = user.username,
+                Left = 60,
+                Top = 25,
+                Width = 200
+            };
+
+            Guna.UI2.WinForms.Guna2Button unblockButton = new Guna.UI2.WinForms.Guna2Button
+            {
+                Text = "Unblock",
+                Left = blockedPnl.Width - 140,
+                Width = 100,
+                AutoRoundedCorners = true,
+                FillColor = Color.MediumAquamarine,
+                Tag = user
+            };
+            unblockButton.Click += UnblockButton_Click;
+
+            userPanel.Controls.Add(avatar);
+            userPanel.Controls.Add(nameLabel);
+            userPanel.Controls.Add(usernameLabel);
+            userPanel.Controls.Add(unblockButton);
+
+            blockedPnl.Controls.Add(userPanel);
+        }
+
+        private const int UserPanelHeight = 60;
+        private const int UserPanelMarginBottom = 10;
+        private const int UserPanelTopMargin = 10;
+
+
+        private void SetPanelLocation(Guna.UI2.WinForms.Guna2Panel panel, int index)
+        {
+            int topMargin = index == 0 ? UserPanelTopMargin : 0;
+            panel.Location = new Point(20, index * (UserPanelHeight + UserPanelMarginBottom) + topMargin);
+        }
+
     }
 }

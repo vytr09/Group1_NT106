@@ -254,11 +254,10 @@
             this.guna2HtmlLabel55 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel56 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2TextBox14 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.helpreportDetail = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel57 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel58 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel53 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel59 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -304,6 +303,15 @@
             this.allnotiBtn = new Guna.UI2.WinForms.Guna2Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.changeUsrname = new Guna.UI2.WinForms.Guna2TextBox();
+            this.reportBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.addfileBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.filenameLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.searchblockTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.searchblockPnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.blockedPnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.searchblockBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.navPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.profilePnl.SuspendLayout();
@@ -4151,7 +4159,10 @@
             // 
             // guna2Panel12
             // 
-            this.guna2Panel12.Controls.Add(this.guna2TextBox14);
+            this.guna2Panel12.Controls.Add(this.filenameLbl);
+            this.guna2Panel12.Controls.Add(this.addfileBtn);
+            this.guna2Panel12.Controls.Add(this.reportBtn);
+            this.guna2Panel12.Controls.Add(this.helpreportDetail);
             this.guna2Panel12.Controls.Add(this.guna2HtmlLabel57);
             this.guna2Panel12.Controls.Add(this.guna2HtmlLabel58);
             this.guna2Panel12.Location = new System.Drawing.Point(1, 27);
@@ -4160,25 +4171,27 @@
             this.guna2Panel12.Size = new System.Drawing.Size(615, 724);
             this.guna2Panel12.TabIndex = 13;
             // 
-            // guna2TextBox14
+            // helpreportDetail
             // 
-            this.guna2TextBox14.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox14.DefaultText = "";
-            this.guna2TextBox14.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox14.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox14.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox14.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox14.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox14.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox14.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox14.Location = new System.Drawing.Point(32, 101);
-            this.guna2TextBox14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox14.Name = "guna2TextBox14";
-            this.guna2TextBox14.PasswordChar = '\0';
-            this.guna2TextBox14.PlaceholderText = "";
-            this.guna2TextBox14.SelectedText = "";
-            this.guna2TextBox14.Size = new System.Drawing.Size(297, 124);
-            this.guna2TextBox14.TabIndex = 2;
+            this.helpreportDetail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.helpreportDetail.DefaultText = "";
+            this.helpreportDetail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.helpreportDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.helpreportDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.helpreportDetail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.helpreportDetail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.helpreportDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.helpreportDetail.ForeColor = System.Drawing.Color.Black;
+            this.helpreportDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.helpreportDetail.Location = new System.Drawing.Point(32, 108);
+            this.helpreportDetail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.helpreportDetail.Multiline = true;
+            this.helpreportDetail.Name = "helpreportDetail";
+            this.helpreportDetail.PasswordChar = '\0';
+            this.helpreportDetail.PlaceholderText = "Nội dung góp ý, báo cáo, hoặc yêu cầu hỗ trợ";
+            this.helpreportDetail.SelectedText = "";
+            this.helpreportDetail.Size = new System.Drawing.Size(510, 275);
+            this.helpreportDetail.TabIndex = 2;
             // 
             // guna2HtmlLabel57
             // 
@@ -4187,9 +4200,9 @@
             this.guna2HtmlLabel57.Location = new System.Drawing.Point(32, 71);
             this.guna2HtmlLabel57.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2HtmlLabel57.Name = "guna2HtmlLabel57";
-            this.guna2HtmlLabel57.Size = new System.Drawing.Size(146, 30);
+            this.guna2HtmlLabel57.Size = new System.Drawing.Size(328, 30);
             this.guna2HtmlLabel57.TabIndex = 1;
-            this.guna2HtmlLabel57.Text = "Yêu cầu trợ giúp";
+            this.guna2HtmlLabel57.Text = "Yêu cầu trợ giúp, báo cáo hoặc góp ý";
             // 
             // guna2HtmlLabel58
             // 
@@ -4204,30 +4217,24 @@
             // 
             // guna2Panel13
             // 
-            this.guna2Panel13.Controls.Add(this.guna2HtmlLabel53);
+            this.guna2Panel13.Controls.Add(this.guna2HtmlLabel13);
+            this.guna2Panel13.Controls.Add(this.searchblockPnl);
+            this.guna2Panel13.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2Panel13.Controls.Add(this.searchblockBtn);
+            this.guna2Panel13.Controls.Add(this.blockedPnl);
             this.guna2Panel13.Controls.Add(this.guna2HtmlLabel59);
+            this.guna2Panel13.Controls.Add(this.searchblockTxt);
             this.guna2Panel13.Location = new System.Drawing.Point(3, 20);
             this.guna2Panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Panel13.Name = "guna2Panel13";
             this.guna2Panel13.Size = new System.Drawing.Size(617, 721);
             this.guna2Panel13.TabIndex = 12;
             // 
-            // guna2HtmlLabel53
-            // 
-            this.guna2HtmlLabel53.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel53.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2HtmlLabel53.Location = new System.Drawing.Point(25, 58);
-            this.guna2HtmlLabel53.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2HtmlLabel53.Name = "guna2HtmlLabel53";
-            this.guna2HtmlLabel53.Size = new System.Drawing.Size(148, 30);
-            this.guna2HtmlLabel53.TabIndex = 1;
-            this.guna2HtmlLabel53.Text = "Bạn chưa chặn ai";
-            // 
             // guna2HtmlLabel59
             // 
             this.guna2HtmlLabel59.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel59.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2HtmlLabel59.Location = new System.Drawing.Point(25, 12);
+            this.guna2HtmlLabel59.Location = new System.Drawing.Point(25, 3);
             this.guna2HtmlLabel59.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2HtmlLabel59.Name = "guna2HtmlLabel59";
             this.guna2HtmlLabel59.Size = new System.Drawing.Size(67, 39);
@@ -4870,6 +4877,138 @@
             this.changeUsrname.TabIndex = 38;
             this.changeUsrname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // reportBtn
+            // 
+            this.reportBtn.AutoRoundedCorners = true;
+            this.reportBtn.BorderRadius = 21;
+            this.reportBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.reportBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.reportBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.reportBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.reportBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(205)))), ((int)(((byte)(153)))));
+            this.reportBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.reportBtn.ForeColor = System.Drawing.Color.White;
+            this.reportBtn.Location = new System.Drawing.Point(401, 403);
+            this.reportBtn.Name = "reportBtn";
+            this.reportBtn.Size = new System.Drawing.Size(141, 45);
+            this.reportBtn.TabIndex = 3;
+            this.reportBtn.Text = "Gửi";
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
+            // 
+            // addfileBtn
+            // 
+            this.addfileBtn.AutoRoundedCorners = true;
+            this.addfileBtn.BorderRadius = 21;
+            this.addfileBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.addfileBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.addfileBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addfileBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addfileBtn.FillColor = System.Drawing.Color.Black;
+            this.addfileBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.addfileBtn.ForeColor = System.Drawing.Color.White;
+            this.addfileBtn.Location = new System.Drawing.Point(238, 403);
+            this.addfileBtn.Name = "addfileBtn";
+            this.addfileBtn.Size = new System.Drawing.Size(141, 45);
+            this.addfileBtn.TabIndex = 4;
+            this.addfileBtn.Text = "Thêm tệp";
+            this.addfileBtn.Click += new System.EventHandler(this.addfileBtn_Click);
+            // 
+            // filenameLbl
+            // 
+            this.filenameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.filenameLbl.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.filenameLbl.Location = new System.Drawing.Point(295, 459);
+            this.filenameLbl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.filenameLbl.Name = "filenameLbl";
+            this.filenameLbl.Size = new System.Drawing.Size(3, 2);
+            this.filenameLbl.TabIndex = 5;
+            this.filenameLbl.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // searchblockTxt
+            // 
+            this.searchblockTxt.AutoRoundedCorners = true;
+            this.searchblockTxt.BorderRadius = 19;
+            this.searchblockTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchblockTxt.DefaultText = "";
+            this.searchblockTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchblockTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchblockTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchblockTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchblockTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchblockTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchblockTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchblockTxt.IconLeft = global::iConnect.Properties.Resources.Search;
+            this.searchblockTxt.Location = new System.Drawing.Point(25, 53);
+            this.searchblockTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchblockTxt.Name = "searchblockTxt";
+            this.searchblockTxt.PasswordChar = '\0';
+            this.searchblockTxt.PlaceholderText = "Chặn theo tên người dùng";
+            this.searchblockTxt.SelectedText = "";
+            this.searchblockTxt.Size = new System.Drawing.Size(411, 40);
+            this.searchblockTxt.TabIndex = 2;
+            // 
+            // searchblockPnl
+            // 
+            this.searchblockPnl.AutoScroll = true;
+            this.searchblockPnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.searchblockPnl.BorderRadius = 10;
+            this.searchblockPnl.BorderThickness = 1;
+            this.searchblockPnl.Location = new System.Drawing.Point(25, 113);
+            this.searchblockPnl.Name = "searchblockPnl";
+            this.searchblockPnl.Size = new System.Drawing.Size(571, 257);
+            this.searchblockPnl.TabIndex = 59;
+            // 
+            // blockedPnl
+            // 
+            this.blockedPnl.AutoScroll = true;
+            this.blockedPnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.blockedPnl.BorderRadius = 10;
+            this.blockedPnl.BorderThickness = 1;
+            this.blockedPnl.Location = new System.Drawing.Point(25, 388);
+            this.blockedPnl.Name = "blockedPnl";
+            this.blockedPnl.Size = new System.Drawing.Size(566, 314);
+            this.blockedPnl.TabIndex = 60;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(38, 368);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(67, 25);
+            this.guna2HtmlLabel3.TabIndex = 61;
+            this.guna2HtmlLabel3.Text = "Đã chặn";
+            // 
+            // searchblockBtn
+            // 
+            this.searchblockBtn.AutoRoundedCorners = true;
+            this.searchblockBtn.BorderRadius = 21;
+            this.searchblockBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.searchblockBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.searchblockBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.searchblockBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.searchblockBtn.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.searchblockBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchblockBtn.ForeColor = System.Drawing.Color.White;
+            this.searchblockBtn.Location = new System.Drawing.Point(446, 52);
+            this.searchblockBtn.Name = "searchblockBtn";
+            this.searchblockBtn.Size = new System.Drawing.Size(151, 45);
+            this.searchblockBtn.TabIndex = 63;
+            this.searchblockBtn.Text = "Tìm kiếm";
+            this.searchblockBtn.Click += new System.EventHandler(this.searchblockBtn_Click_1);
+            // 
+            // guna2HtmlLabel13
+            // 
+            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(38, 93);
+            this.guna2HtmlLabel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(65, 25);
+            this.guna2HtmlLabel13.TabIndex = 64;
+            this.guna2HtmlLabel13.Text = "Kết quả";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -5103,11 +5242,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel55;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel56;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox14;
+        private Guna.UI2.WinForms.Guna2TextBox helpreportDetail;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel57;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel58;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel53;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel59;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
@@ -5250,5 +5388,14 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel19;
         private Guna.UI2.WinForms.Guna2TextBox changeUsrname;
+        private Guna.UI2.WinForms.Guna2Button reportBtn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel filenameLbl;
+        private Guna.UI2.WinForms.Guna2Button addfileBtn;
+        private Guna.UI2.WinForms.Guna2TextBox searchblockTxt;
+        private Guna.UI2.WinForms.Guna2Panel searchblockPnl;
+        private Guna.UI2.WinForms.Guna2Panel blockedPnl;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2Button searchblockBtn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
     }
 }
