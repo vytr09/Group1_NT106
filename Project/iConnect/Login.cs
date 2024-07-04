@@ -23,6 +23,7 @@ using Google.Apis.Services;
 using Google.Apis.Util;
 using System.IO;
 using System.Threading;
+using Google.Apis.Util.Store;
 
 namespace iConnect
 {
@@ -405,79 +406,119 @@ namespace iConnect
 
         private async void googleBtn_Click(object sender, EventArgs e)
         {
-            UserCredential credential;
-            string[] scopes = { Oauth2Service.Scope.UserinfoProfile, Oauth2Service.Scope.UserinfoEmail };
+            googleBtn.Text = "Loading...";
 
-            using (var stream = new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
+            try
             {
-                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    GoogleClientSecrets.FromStream(stream).Secrets,
-                    scopes,
-                    "user",
-                    CancellationToken.None
-                );
-            }
+                UserCredential credential;
+                string[] scopes = { Oauth2Service.Scope.UserinfoProfile, Oauth2Service.Scope.UserinfoEmail };
 
-            if (credential != null && credential.Token.IsExpired(Google.Apis.Util.SystemClock.Default) == false)
-            {
-                var oauth2Service = new Oauth2Service(new BaseClientService.Initializer
+                using (var stream = new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
                 {
-                    HttpClientInitializer = credential,
-                    ApplicationName = "iConnect"
-                });
+                    string credPath = "token.json";
+                    credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                        GoogleClientSecrets.FromStream(stream).Secrets,
+                        scopes,
+                        "user",
+                        CancellationToken.None,
+                        new FileDataStore(credPath, true)
+                    );
+                }
 
-                var userInfoRequest = oauth2Service.Userinfo.Get();
-                var userInfo = await userInfoRequest.ExecuteAsync();
-
-                if (userInfo != null)
+                if (credential != null && !credential.Token.IsExpired(SystemClock.Default))
                 {
-                    // Retrieve user info and proceed with your application logic
-                    string userEmail = userInfo.Email;
-                    string userName = userInfo.Name.Replace(" ", "_"); // Replace spaces with underscores
+                    var oauth2Service = new Oauth2Service(new BaseClientService.Initializer
+                    {
+                        HttpClientInitializer = credential,
+                        ApplicationName = "iConnect"
+                    });
 
-                    // Check if the user exists in Firebase
-                    Data user = GetUserByEmail(userEmail);
-                    if (user != null)
+                    var userInfoRequest = oauth2Service.Userinfo.Get();
+                    var userInfo = await userInfoRequest.ExecuteAsync();
+
+                    if (userInfo != null)
                     {
-                        // User exists, proceed to home
-                        this.Hide();
-                        Home home = new Home(userName);
-                        home.Closed += (s, args) => this.Close();
-                        home.Show();
-                    }
-                    else
-                    {
-                        // User doesn't exist, register user
-                        Data newUser = new Data
+                        string userEmail = userInfo.Email;
+                        string userName = userInfo.Name.Replace(" ", "_");
+
+                        client = new FireSharp.FirebaseClient(config);
+                        if (client == null)
                         {
-                            username = userName,
-                            email = userEmail,
-                            password = "" // Set an empty password or generate a default one
-                        };
-                        SetResponse response = client.Set("Users/" + userName, newUser);
-                        if (response.StatusCode == HttpStatusCode.OK)
+                            MessageBox.Show("Firebase connection failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            googleBtn.Text = "Login";
+                            return;
+                        }
+
+                        Data user = GetUserByEmail(userEmail);
+                        if (user != null)
                         {
-                            MessageBox.Show("User registered successfully. Please set your password.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Proceed to home or another screen for setting the password
+                            FirebaseResponse response = client.Get("Users/" + user.username);
+                            string actualUsername = response.ResultAs<Data>().username;
+
                             this.Hide();
-                            Home home = new Home(userName);
+                            Home home = new Home(actualUsername);
                             home.Closed += (s, args) => this.Close();
                             home.Show();
                         }
                         else
                         {
-                            MessageBox.Show("Registration failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Data newUser = new Data
+                            {
+                                username = userName,
+                                email = userEmail,
+                                password = ""
+                            };
+
+                            SetResponse response = client.Set("Users/" + userName, newUser);
+                            if (response.StatusCode == HttpStatusCode.OK)
+                            {
+                                MessageBox.Show("User registered successfully. Please set your password.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Hide();
+                                Home home = new Home(userName);
+                                home.Closed += (s, args) => this.Close();
+                                home.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Registration failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                googleBtn.Text = "Login";
+                            }
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to retrieve user info.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        googleBtn.Text = "Login";
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Failed to retrieve user info.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // If token is expired, attempt to refresh it
+                    if (credential != null && credential.Token.IsExpired(SystemClock.Default))
+                    {
+                        bool refreshed = await credential.RefreshTokenAsync(CancellationToken.None);
+                        if (refreshed)
+                        {
+                            // Retry the operation after token refresh
+                            googleBtn_Click(sender, e); // Recursive call to handle after token refresh
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to refresh Google token. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            googleBtn.Text = "Login";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Google Sign-In failed or token expired.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        googleBtn.Text = "Login";
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Google Sign-In failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to log in. Error: {ex.Message}");
+                googleBtn.Text = "Login";
             }
         }
     }

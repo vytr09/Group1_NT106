@@ -812,7 +812,7 @@ namespace iConnect
         {
             try
             {
-                // Lấy thông tin mới từ các thành phần giao diện người dùng
+                // Fetch new information from UI components
                 string bio = bioTxtChange.Text;
                 string name = changeFullName.Text;
                 string dateofb = changeBDay.Text;
@@ -820,17 +820,29 @@ namespace iConnect
                 string city = currentCity.Text;
                 string gender = genderCmb.Text;
                 string relationship = relaCmb.Text;
+                string newUsername = changeUsrname.Text;
 
-                // Lấy thông tin cũ từ cơ sở dữ liệu Firebase
+                // Check if the new username is different from the current one
+                if (newUsername != usrName.Text)
+                {
+                    // Check if the new username already exists
+                    FirebaseResponse newUserCheckResponse = await client.GetAsync("Users/" + newUsername);
+                    if (newUserCheckResponse != null && newUserCheckResponse.Body != "null")
+                    {
+                        MessageBox.Show("Username already exists. Please choose a different username.");
+                        return;
+                    }
+                }
+
+                // Fetch existing data from Firebase
                 FirebaseResponse response = await client.GetAsync("Users/" + usrName.Text);
 
-                // Kiểm tra xem thông tin cũ đã có hay chưa
                 if (response != null && response.Body != "null")
                 {
-                    // Lấy thông tin cũ từ kết quả truy vấn
+                    // Parse existing data
                     Data existingData = response.ResultAs<Data>();
 
-                    // Cập nhật thông tin mới vào thông tin cũ
+                    // Update fields with new data
                     existingData.bio = bio;
                     existingData.name = name;
                     existingData.dateofb = dateofb;
@@ -839,45 +851,59 @@ namespace iConnect
                     existingData.gender = gender;
                     existingData.relationship = relationship;
 
-                    // Sử dụng phương thức UpdateAsync của client Firebase để cập nhật dữ liệu người dùng
-                    FirebaseResponse updateResponse = await client.UpdateAsync("Users/" + usrName.Text, existingData);
-
-                    // Kiểm tra xem cập nhật có thành công không
-                    if (updateResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                    // Only update the username if it's different
+                    if (newUsername != usrName.Text)
                     {
-                        MessageBox.Show("Thông tin người dùng đã được cập nhật thành công.");
+                        existingData.username = newUsername;
+                        Username = newUsername;
+                    }
+
+                    // Retain other fields such as AvatarUrl and email
+                    string avatarUrl = existingData.AvatarUrl;
+                    string email = existingData.email;
+                    string password = existingData.password;
+
+                    // Delete old data entry
+                    FirebaseResponse deleteResponse = await client.DeleteAsync("Users/" + usrName.Text);
+
+                    if (deleteResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        // Create new data entry with updated key
+                        Data newData = new Data
+                        {
+                            bio = existingData.bio,
+                            name = existingData.name,
+                            dateofb = existingData.dateofb,
+                            country = existingData.country,
+                            city = existingData.city,
+                            gender = existingData.gender,
+                            relationship = existingData.relationship,
+                            username = existingData.username,
+                            AvatarUrl = avatarUrl,
+                            email = email,
+                            password = password
+                        };
+
+                        SetResponse setResponse = await client.SetAsync("Users/" + newUsername, newData);
+
+                        if (setResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            usrName.Text = newUsername; // Update the username in the UI
+                            MessageBox.Show("Thông tin người dùng đã được cập nhật thành công.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể cập nhật thông tin người dùng.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Không thể cập nhật thông tin người dùng.");
+                        MessageBox.Show("Không thể xóa thông tin người dùng cũ.");
                     }
                 }
                 else
                 {
-                    // Tạo một đối tượng Data mới với thông tin mới
-                    Data newData = new Data
-                    {
-                        bio = bio,
-                        name = name,
-                        dateofb = dateofb,
-                        country = country,
-                        city = city,
-                        gender = gender,
-                        relationship = relationship
-                    };
-
-                    // Sử dụng phương thức PushAsync của client Firebase để thêm dữ liệu mới
-                    FirebaseResponse pushResponse = await client.PushAsync("Users", newData);
-
-                    // Kiểm tra xem thêm dữ liệu mới có thành công không
-                    if (pushResponse.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        MessageBox.Show("Thông tin người dùng đã được cập nhật thành công.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể cập nhật thông tin người dùng.");
-                    }
+                    MessageBox.Show("Không thể tìm thấy thông tin người dùng.");
                 }
             }
             catch (Exception ex)

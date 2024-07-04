@@ -42,23 +42,6 @@
             this.profileBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.notiBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.homeBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.panelDetailPost = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelLoadingPostDetail = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnCancelReply = new Guna.UI2.WinForms.Guna2Button();
-            this.labelCommentReplay = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnSubmitAddComment = new Guna.UI2.WinForms.Guna2Button();
-            this.txbComment = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panelLoadComments = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelPostCaptionDetail = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.labelCreatedAt = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.labelAuthorDetail = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.picturePostDetail = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelPostDetail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.profilePnl = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.flowLayoutLoadPostImages = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel17 = new Guna.UI2.WinForms.Guna2Panel();
@@ -113,6 +96,23 @@
             this.txbCaptionAddPost = new Guna.UI2.WinForms.Guna2TextBox();
             this.headerAddPostPannel = new Guna.UI2.WinForms.Guna2Panel();
             this.label46 = new System.Windows.Forms.Label();
+            this.panelDetailPost = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelLoadingPostDetail = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnCancelReply = new Guna.UI2.WinForms.Guna2Button();
+            this.labelCommentReplay = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnSubmitAddComment = new Guna.UI2.WinForms.Guna2Button();
+            this.txbComment = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panelLoadComments = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelPostCaptionDetail = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.labelCreatedAt = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.labelAuthorDetail = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.picturePostDetail = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelPostDetail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.avatarPro = new Guna.UI2.WinForms.Guna2PictureBox();
             this.proBtn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -232,7 +232,6 @@
             this.changeBDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.changeFullName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel38 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.emailChange = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.fullNameChange = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.saveUsrInfoBtn = new Guna.UI2.WinForms.Guna2Button();
             this.relaCmb = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -243,7 +242,6 @@
             this.guna2HtmlLabel36 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.changeUsrname = new Guna.UI2.WinForms.Guna2GradientButton();
             this.uploadAvtBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bioTxtChange = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel49 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -305,16 +303,9 @@
             this.mentionnotiBtn = new Guna.UI2.WinForms.Guna2Button();
             this.allnotiBtn = new Guna.UI2.WinForms.Guna2Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.changeUsrname = new Guna.UI2.WinForms.Guna2TextBox();
             this.navPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            this.panelDetailPost.SuspendLayout();
-            this.panelLoadingPostDetail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.guna2Panel15.SuspendLayout();
-            this.guna2Panel18.SuspendLayout();
-            this.guna2Panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePostDetail)).BeginInit();
-            this.guna2Panel14.SuspendLayout();
             this.profilePnl.SuspendLayout();
             this.loadingPostForUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -329,6 +320,14 @@
             this.panelUploadImagePost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox20)).BeginInit();
             this.headerAddPostPannel.SuspendLayout();
+            this.panelDetailPost.SuspendLayout();
+            this.panelLoadingPostDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.guna2Panel15.SuspendLayout();
+            this.guna2Panel18.SuspendLayout();
+            this.guna2Panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePostDetail)).BeginInit();
+            this.guna2Panel14.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarPro)).BeginInit();
             this.recPnl.SuspendLayout();
@@ -377,10 +376,10 @@
             this.navPnl.Controls.Add(this.profileBtn);
             this.navPnl.Controls.Add(this.notiBtn);
             this.navPnl.Controls.Add(this.homeBtn);
+            this.navPnl.Controls.Add(this.panelDetailPost);
             this.navPnl.Controls.Add(this.profilePnl);
             this.navPnl.Controls.Add(this.homePnl);
             this.navPnl.Controls.Add(this.addPostPannel);
-            this.navPnl.Controls.Add(this.panelDetailPost);
             this.navPnl.CustomBorderColor = System.Drawing.Color.Black;
             this.navPnl.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.navPnl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -705,231 +704,6 @@
             this.homeBtn.UseTransparentBackground = true;
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
-            // panelDetailPost
-            // 
-            this.panelDetailPost.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.panelDetailPost.BorderThickness = 1;
-            this.panelDetailPost.Controls.Add(this.panelLoadingPostDetail);
-            this.panelDetailPost.Controls.Add(this.guna2Panel15);
-            this.panelDetailPost.Controls.Add(this.picturePostDetail);
-            this.panelDetailPost.Controls.Add(this.guna2Panel14);
-            this.panelDetailPost.CustomBorderColor = System.Drawing.Color.MediumAquamarine;
-            this.panelDetailPost.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.panelDetailPost.Location = new System.Drawing.Point(225, 0);
-            this.panelDetailPost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelDetailPost.Name = "panelDetailPost";
-            this.panelDetailPost.Size = new System.Drawing.Size(987, 736);
-            this.panelDetailPost.TabIndex = 2;
-            this.panelDetailPost.Visible = false;
-            // 
-            // panelLoadingPostDetail
-            // 
-            this.panelLoadingPostDetail.Controls.Add(this.guna2PictureBox2);
-            this.panelLoadingPostDetail.Location = new System.Drawing.Point(431, 79);
-            this.panelLoadingPostDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelLoadingPostDetail.Name = "panelLoadingPostDetail";
-            this.panelLoadingPostDetail.Size = new System.Drawing.Size(537, 561);
-            this.panelLoadingPostDetail.TabIndex = 2;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::iConnect.Properties.Resources.Spinner_1x_1_0s_200px_200px;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(179, 223);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(189, 100);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 0;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2Panel15
-            // 
-            this.guna2Panel15.Controls.Add(this.guna2Panel18);
-            this.guna2Panel15.Controls.Add(this.panelLoadComments);
-            this.guna2Panel15.Controls.Add(this.guna2Panel16);
-            this.guna2Panel15.Location = new System.Drawing.Point(425, 74);
-            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(552, 656);
-            this.guna2Panel15.TabIndex = 2;
-            // 
-            // guna2Panel18
-            // 
-            this.guna2Panel18.Controls.Add(this.btnCancelReply);
-            this.guna2Panel18.Controls.Add(this.labelCommentReplay);
-            this.guna2Panel18.Controls.Add(this.btnSubmitAddComment);
-            this.guna2Panel18.Controls.Add(this.txbComment);
-            this.guna2Panel18.Location = new System.Drawing.Point(9, 575);
-            this.guna2Panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel18.Name = "guna2Panel18";
-            this.guna2Panel18.Size = new System.Drawing.Size(525, 81);
-            this.guna2Panel18.TabIndex = 2;
-            // 
-            // btnCancelReply
-            // 
-            this.btnCancelReply.AutoRoundedCorners = true;
-            this.btnCancelReply.BorderRadius = 13;
-            this.btnCancelReply.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancelReply.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancelReply.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancelReply.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancelReply.FillColor = System.Drawing.Color.Black;
-            this.btnCancelReply.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCancelReply.ForeColor = System.Drawing.Color.White;
-            this.btnCancelReply.Location = new System.Drawing.Point(426, 53);
-            this.btnCancelReply.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCancelReply.Name = "btnCancelReply";
-            this.btnCancelReply.Size = new System.Drawing.Size(87, 28);
-            this.btnCancelReply.TabIndex = 3;
-            this.btnCancelReply.Text = "Hủy";
-            this.btnCancelReply.Visible = false;
-            this.btnCancelReply.Click += new System.EventHandler(this.btnCancelReply_Click);
-            // 
-            // labelCommentReplay
-            // 
-            this.labelCommentReplay.BackColor = System.Drawing.Color.Transparent;
-            this.labelCommentReplay.Location = new System.Drawing.Point(11, 62);
-            this.labelCommentReplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelCommentReplay.Name = "labelCommentReplay";
-            this.labelCommentReplay.Size = new System.Drawing.Size(3, 2);
-            this.labelCommentReplay.TabIndex = 2;
-            this.labelCommentReplay.Text = null;
-            // 
-            // btnSubmitAddComment
-            // 
-            this.btnSubmitAddComment.AutoRoundedCorners = true;
-            this.btnSubmitAddComment.BorderRadius = 20;
-            this.btnSubmitAddComment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSubmitAddComment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSubmitAddComment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSubmitAddComment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSubmitAddComment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(205)))), ((int)(((byte)(153)))));
-            this.btnSubmitAddComment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSubmitAddComment.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitAddComment.Location = new System.Drawing.Point(425, 6);
-            this.btnSubmitAddComment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSubmitAddComment.Name = "btnSubmitAddComment";
-            this.btnSubmitAddComment.Size = new System.Drawing.Size(87, 42);
-            this.btnSubmitAddComment.TabIndex = 1;
-            this.btnSubmitAddComment.Text = "Đăng";
-            this.btnSubmitAddComment.Click += new System.EventHandler(this.btnSubmitAddComment_Click);
-            // 
-            // txbComment
-            // 
-            this.txbComment.BorderRadius = 8;
-            this.txbComment.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbComment.DefaultText = "";
-            this.txbComment.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txbComment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txbComment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbComment.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbComment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbComment.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txbComment.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbComment.Location = new System.Drawing.Point(9, 6);
-            this.txbComment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txbComment.Name = "txbComment";
-            this.txbComment.PasswordChar = '\0';
-            this.txbComment.PlaceholderText = "";
-            this.txbComment.SelectedText = "";
-            this.txbComment.Size = new System.Drawing.Size(400, 44);
-            this.txbComment.TabIndex = 0;
-            // 
-            // panelLoadComments
-            // 
-            this.panelLoadComments.AutoScroll = true;
-            this.panelLoadComments.Location = new System.Drawing.Point(7, 106);
-            this.panelLoadComments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelLoadComments.Name = "panelLoadComments";
-            this.panelLoadComments.Size = new System.Drawing.Size(540, 462);
-            this.panelLoadComments.TabIndex = 1;
-            // 
-            // guna2Panel16
-            // 
-            this.guna2Panel16.BorderColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Panel16.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.guna2Panel16.BorderThickness = 1;
-            this.guna2Panel16.Controls.Add(this.labelPostCaptionDetail);
-            this.guna2Panel16.Controls.Add(this.labelCreatedAt);
-            this.guna2Panel16.Controls.Add(this.labelAuthorDetail);
-            this.guna2Panel16.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.guna2Panel16.Location = new System.Drawing.Point(0, 4);
-            this.guna2Panel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel16.Name = "guna2Panel16";
-            this.guna2Panel16.Size = new System.Drawing.Size(548, 97);
-            this.guna2Panel16.TabIndex = 0;
-            // 
-            // labelPostCaptionDetail
-            // 
-            this.labelPostCaptionDetail.BackColor = System.Drawing.Color.Transparent;
-            this.labelPostCaptionDetail.Location = new System.Drawing.Point(17, 41);
-            this.labelPostCaptionDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelPostCaptionDetail.Name = "labelPostCaptionDetail";
-            this.labelPostCaptionDetail.Size = new System.Drawing.Size(103, 18);
-            this.labelPostCaptionDetail.TabIndex = 5;
-            this.labelPostCaptionDetail.Text = "Nội dung bài viết";
-            // 
-            // labelCreatedAt
-            // 
-            this.labelCreatedAt.BackColor = System.Drawing.Color.Transparent;
-            this.labelCreatedAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreatedAt.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelCreatedAt.Location = new System.Drawing.Point(210, 12);
-            this.labelCreatedAt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelCreatedAt.Name = "labelCreatedAt";
-            this.labelCreatedAt.Size = new System.Drawing.Size(72, 22);
-            this.labelCreatedAt.TabIndex = 4;
-            this.labelCreatedAt.Text = "Vừa xong";
-            // 
-            // labelAuthorDetail
-            // 
-            this.labelAuthorDetail.BackColor = System.Drawing.Color.White;
-            this.labelAuthorDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAuthorDetail.Location = new System.Drawing.Point(11, 10);
-            this.labelAuthorDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelAuthorDetail.Name = "labelAuthorDetail";
-            this.labelAuthorDetail.Size = new System.Drawing.Size(170, 27);
-            this.labelAuthorDetail.TabIndex = 0;
-            this.labelAuthorDetail.Text = "Tác  giả!!!!!!!!!!!!!!!!!";
-            // 
-            // picturePostDetail
-            // 
-            this.picturePostDetail.BorderRadius = 10;
-            this.picturePostDetail.Image = global::iConnect.Properties.Resources.A_piece_of_torn_white_letter_paper_white_letters_fragments_184335_wh860;
-            this.picturePostDetail.ImageRotate = 0F;
-            this.picturePostDetail.Location = new System.Drawing.Point(17, 76);
-            this.picturePostDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picturePostDetail.Name = "picturePostDetail";
-            this.picturePostDetail.Size = new System.Drawing.Size(401, 499);
-            this.picturePostDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturePostDetail.TabIndex = 1;
-            this.picturePostDetail.TabStop = false;
-            // 
-            // guna2Panel14
-            // 
-            this.guna2Panel14.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.guna2Panel14.Controls.Add(this.labelPostDetail);
-            this.guna2Panel14.CustomBorderColor = System.Drawing.Color.MediumAquamarine;
-            this.guna2Panel14.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 1);
-            this.guna2Panel14.Location = new System.Drawing.Point(1, 1);
-            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel14.Name = "guna2Panel14";
-            this.guna2Panel14.Size = new System.Drawing.Size(976, 64);
-            this.guna2Panel14.TabIndex = 0;
-            // 
-            // labelPostDetail
-            // 
-            this.labelPostDetail.BackColor = System.Drawing.Color.Transparent;
-            this.labelPostDetail.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelPostDetail.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.labelPostDetail.Location = new System.Drawing.Point(30, 20);
-            this.labelPostDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelPostDetail.Name = "labelPostDetail";
-            this.labelPostDetail.Size = new System.Drawing.Size(108, 43);
-            this.labelPostDetail.TabIndex = 0;
-            this.labelPostDetail.Text = "Bài viết";
-            // 
             // profilePnl
             // 
             this.profilePnl.Controls.Add(this.flowLayoutLoadPostImages);
@@ -1193,9 +967,9 @@
             // 
             // homePnl
             // 
+            this.homePnl.Controls.Add(this.trendPnl);
             this.homePnl.Controls.Add(this.panelLoadingPost);
             this.homePnl.Controls.Add(this.panelRenderPost);
-            this.homePnl.Controls.Add(this.trendPnl);
             this.homePnl.Controls.Add(this.modePnl);
             this.homePnl.CustomBorderColor = System.Drawing.Color.Black;
             this.homePnl.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
@@ -1209,7 +983,7 @@
             // panelLoadingPost
             // 
             this.panelLoadingPost.Controls.Add(this.loadingPost);
-            this.panelLoadingPost.Location = new System.Drawing.Point(16, 70);
+            this.panelLoadingPost.Location = new System.Drawing.Point(15, 66);
             this.panelLoadingPost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLoadingPost.Name = "panelLoadingPost";
             this.panelLoadingPost.Size = new System.Drawing.Size(660, 657);
@@ -1219,7 +993,7 @@
             // 
             this.loadingPost.Image = global::iConnect.Properties.Resources.Spinner_1x_1_0s_200px_200px;
             this.loadingPost.ImageRotate = 0F;
-            this.loadingPost.Location = new System.Drawing.Point(219, 277);
+            this.loadingPost.Location = new System.Drawing.Point(225, 277);
             this.loadingPost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loadingPost.Name = "loadingPost";
             this.loadingPost.Size = new System.Drawing.Size(189, 100);
@@ -1230,10 +1004,10 @@
             // panelRenderPost
             // 
             this.panelRenderPost.AutoScroll = true;
-            this.panelRenderPost.Location = new System.Drawing.Point(8, 70);
+            this.panelRenderPost.Location = new System.Drawing.Point(1, 66);
             this.panelRenderPost.Margin = new System.Windows.Forms.Padding(4);
             this.panelRenderPost.Name = "panelRenderPost";
-            this.panelRenderPost.Size = new System.Drawing.Size(677, 662);
+            this.panelRenderPost.Size = new System.Drawing.Size(691, 662);
             this.panelRenderPost.TabIndex = 2;
             // 
             // trendPnl
@@ -1569,7 +1343,7 @@
             this.addPostPannel.Controls.Add(this.headerAddPostPannel);
             this.addPostPannel.CustomBorderColor = System.Drawing.Color.MediumAquamarine;
             this.addPostPannel.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.addPostPannel.Location = new System.Drawing.Point(232, 0);
+            this.addPostPannel.Location = new System.Drawing.Point(226, 0);
             this.addPostPannel.Margin = new System.Windows.Forms.Padding(4);
             this.addPostPannel.Name = "addPostPannel";
             this.addPostPannel.Size = new System.Drawing.Size(975, 731);
@@ -1703,6 +1477,231 @@
             this.label46.Size = new System.Drawing.Size(259, 50);
             this.label46.TabIndex = 0;
             this.label46.Text = "Thêm bài viết";
+            // 
+            // panelDetailPost
+            // 
+            this.panelDetailPost.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.panelDetailPost.BorderThickness = 1;
+            this.panelDetailPost.Controls.Add(this.panelLoadingPostDetail);
+            this.panelDetailPost.Controls.Add(this.guna2Panel15);
+            this.panelDetailPost.Controls.Add(this.picturePostDetail);
+            this.panelDetailPost.Controls.Add(this.guna2Panel14);
+            this.panelDetailPost.CustomBorderColor = System.Drawing.Color.MediumAquamarine;
+            this.panelDetailPost.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.panelDetailPost.Location = new System.Drawing.Point(225, 0);
+            this.panelDetailPost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelDetailPost.Name = "panelDetailPost";
+            this.panelDetailPost.Size = new System.Drawing.Size(987, 736);
+            this.panelDetailPost.TabIndex = 2;
+            this.panelDetailPost.Visible = false;
+            // 
+            // panelLoadingPostDetail
+            // 
+            this.panelLoadingPostDetail.Controls.Add(this.guna2PictureBox2);
+            this.panelLoadingPostDetail.Location = new System.Drawing.Point(431, 79);
+            this.panelLoadingPostDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelLoadingPostDetail.Name = "panelLoadingPostDetail";
+            this.panelLoadingPostDetail.Size = new System.Drawing.Size(537, 561);
+            this.panelLoadingPostDetail.TabIndex = 2;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::iConnect.Properties.Resources.Spinner_1x_1_0s_200px_200px;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(179, 223);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(189, 100);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 0;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2Panel15
+            // 
+            this.guna2Panel15.Controls.Add(this.guna2Panel18);
+            this.guna2Panel15.Controls.Add(this.panelLoadComments);
+            this.guna2Panel15.Controls.Add(this.guna2Panel16);
+            this.guna2Panel15.Location = new System.Drawing.Point(425, 74);
+            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel15.Name = "guna2Panel15";
+            this.guna2Panel15.Size = new System.Drawing.Size(552, 656);
+            this.guna2Panel15.TabIndex = 2;
+            // 
+            // guna2Panel18
+            // 
+            this.guna2Panel18.Controls.Add(this.btnCancelReply);
+            this.guna2Panel18.Controls.Add(this.labelCommentReplay);
+            this.guna2Panel18.Controls.Add(this.btnSubmitAddComment);
+            this.guna2Panel18.Controls.Add(this.txbComment);
+            this.guna2Panel18.Location = new System.Drawing.Point(9, 575);
+            this.guna2Panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel18.Name = "guna2Panel18";
+            this.guna2Panel18.Size = new System.Drawing.Size(525, 81);
+            this.guna2Panel18.TabIndex = 2;
+            // 
+            // btnCancelReply
+            // 
+            this.btnCancelReply.AutoRoundedCorners = true;
+            this.btnCancelReply.BorderRadius = 13;
+            this.btnCancelReply.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelReply.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelReply.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancelReply.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancelReply.FillColor = System.Drawing.Color.Black;
+            this.btnCancelReply.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCancelReply.ForeColor = System.Drawing.Color.White;
+            this.btnCancelReply.Location = new System.Drawing.Point(426, 53);
+            this.btnCancelReply.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelReply.Name = "btnCancelReply";
+            this.btnCancelReply.Size = new System.Drawing.Size(87, 28);
+            this.btnCancelReply.TabIndex = 3;
+            this.btnCancelReply.Text = "Hủy";
+            this.btnCancelReply.Visible = false;
+            this.btnCancelReply.Click += new System.EventHandler(this.btnCancelReply_Click);
+            // 
+            // labelCommentReplay
+            // 
+            this.labelCommentReplay.BackColor = System.Drawing.Color.Transparent;
+            this.labelCommentReplay.Location = new System.Drawing.Point(11, 62);
+            this.labelCommentReplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelCommentReplay.Name = "labelCommentReplay";
+            this.labelCommentReplay.Size = new System.Drawing.Size(3, 2);
+            this.labelCommentReplay.TabIndex = 2;
+            this.labelCommentReplay.Text = null;
+            // 
+            // btnSubmitAddComment
+            // 
+            this.btnSubmitAddComment.AutoRoundedCorners = true;
+            this.btnSubmitAddComment.BorderRadius = 20;
+            this.btnSubmitAddComment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSubmitAddComment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSubmitAddComment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSubmitAddComment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSubmitAddComment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(205)))), ((int)(((byte)(153)))));
+            this.btnSubmitAddComment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSubmitAddComment.ForeColor = System.Drawing.Color.White;
+            this.btnSubmitAddComment.Location = new System.Drawing.Point(425, 6);
+            this.btnSubmitAddComment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmitAddComment.Name = "btnSubmitAddComment";
+            this.btnSubmitAddComment.Size = new System.Drawing.Size(87, 42);
+            this.btnSubmitAddComment.TabIndex = 1;
+            this.btnSubmitAddComment.Text = "Đăng";
+            this.btnSubmitAddComment.Click += new System.EventHandler(this.btnSubmitAddComment_Click);
+            // 
+            // txbComment
+            // 
+            this.txbComment.BorderRadius = 8;
+            this.txbComment.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbComment.DefaultText = "";
+            this.txbComment.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txbComment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txbComment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txbComment.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txbComment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txbComment.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbComment.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txbComment.Location = new System.Drawing.Point(9, 6);
+            this.txbComment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbComment.Name = "txbComment";
+            this.txbComment.PasswordChar = '\0';
+            this.txbComment.PlaceholderText = "";
+            this.txbComment.SelectedText = "";
+            this.txbComment.Size = new System.Drawing.Size(400, 44);
+            this.txbComment.TabIndex = 0;
+            // 
+            // panelLoadComments
+            // 
+            this.panelLoadComments.AutoScroll = true;
+            this.panelLoadComments.Location = new System.Drawing.Point(7, 106);
+            this.panelLoadComments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelLoadComments.Name = "panelLoadComments";
+            this.panelLoadComments.Size = new System.Drawing.Size(540, 462);
+            this.panelLoadComments.TabIndex = 1;
+            // 
+            // guna2Panel16
+            // 
+            this.guna2Panel16.BorderColor = System.Drawing.Color.MediumAquamarine;
+            this.guna2Panel16.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.guna2Panel16.BorderThickness = 1;
+            this.guna2Panel16.Controls.Add(this.labelPostCaptionDetail);
+            this.guna2Panel16.Controls.Add(this.labelCreatedAt);
+            this.guna2Panel16.Controls.Add(this.labelAuthorDetail);
+            this.guna2Panel16.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.guna2Panel16.Location = new System.Drawing.Point(0, 4);
+            this.guna2Panel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel16.Name = "guna2Panel16";
+            this.guna2Panel16.Size = new System.Drawing.Size(548, 97);
+            this.guna2Panel16.TabIndex = 0;
+            // 
+            // labelPostCaptionDetail
+            // 
+            this.labelPostCaptionDetail.BackColor = System.Drawing.Color.Transparent;
+            this.labelPostCaptionDetail.Location = new System.Drawing.Point(17, 41);
+            this.labelPostCaptionDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelPostCaptionDetail.Name = "labelPostCaptionDetail";
+            this.labelPostCaptionDetail.Size = new System.Drawing.Size(103, 18);
+            this.labelPostCaptionDetail.TabIndex = 5;
+            this.labelPostCaptionDetail.Text = "Nội dung bài viết";
+            // 
+            // labelCreatedAt
+            // 
+            this.labelCreatedAt.BackColor = System.Drawing.Color.Transparent;
+            this.labelCreatedAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreatedAt.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelCreatedAt.Location = new System.Drawing.Point(210, 12);
+            this.labelCreatedAt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelCreatedAt.Name = "labelCreatedAt";
+            this.labelCreatedAt.Size = new System.Drawing.Size(72, 22);
+            this.labelCreatedAt.TabIndex = 4;
+            this.labelCreatedAt.Text = "Vừa xong";
+            // 
+            // labelAuthorDetail
+            // 
+            this.labelAuthorDetail.BackColor = System.Drawing.Color.White;
+            this.labelAuthorDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAuthorDetail.Location = new System.Drawing.Point(11, 10);
+            this.labelAuthorDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelAuthorDetail.Name = "labelAuthorDetail";
+            this.labelAuthorDetail.Size = new System.Drawing.Size(170, 27);
+            this.labelAuthorDetail.TabIndex = 0;
+            this.labelAuthorDetail.Text = "Tác  giả!!!!!!!!!!!!!!!!!";
+            // 
+            // picturePostDetail
+            // 
+            this.picturePostDetail.BorderRadius = 10;
+            this.picturePostDetail.Image = global::iConnect.Properties.Resources.A_piece_of_torn_white_letter_paper_white_letters_fragments_184335_wh860;
+            this.picturePostDetail.ImageRotate = 0F;
+            this.picturePostDetail.Location = new System.Drawing.Point(17, 76);
+            this.picturePostDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picturePostDetail.Name = "picturePostDetail";
+            this.picturePostDetail.Size = new System.Drawing.Size(401, 499);
+            this.picturePostDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturePostDetail.TabIndex = 1;
+            this.picturePostDetail.TabStop = false;
+            // 
+            // guna2Panel14
+            // 
+            this.guna2Panel14.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.guna2Panel14.Controls.Add(this.labelPostDetail);
+            this.guna2Panel14.CustomBorderColor = System.Drawing.Color.MediumAquamarine;
+            this.guna2Panel14.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 1);
+            this.guna2Panel14.Location = new System.Drawing.Point(1, 1);
+            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel14.Name = "guna2Panel14";
+            this.guna2Panel14.Size = new System.Drawing.Size(976, 64);
+            this.guna2Panel14.TabIndex = 0;
+            // 
+            // labelPostDetail
+            // 
+            this.labelPostDetail.BackColor = System.Drawing.Color.Transparent;
+            this.labelPostDetail.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelPostDetail.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.labelPostDetail.Location = new System.Drawing.Point(30, 20);
+            this.labelPostDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelPostDetail.Name = "labelPostDetail";
+            this.labelPostDetail.Size = new System.Drawing.Size(108, 43);
+            this.labelPostDetail.TabIndex = 0;
+            this.labelPostDetail.Text = "Bài viết";
             // 
             // guna2Panel1
             // 
@@ -3626,10 +3625,10 @@
             // panel7
             // 
             this.panel7.AutoScroll = true;
+            this.panel7.Controls.Add(this.changeUsrname);
             this.panel7.Controls.Add(this.changeBDay);
             this.panel7.Controls.Add(this.changeFullName);
             this.panel7.Controls.Add(this.guna2HtmlLabel38);
-            this.panel7.Controls.Add(this.emailChange);
             this.panel7.Controls.Add(this.fullNameChange);
             this.panel7.Controls.Add(this.saveUsrInfoBtn);
             this.panel7.Controls.Add(this.relaCmb);
@@ -3640,7 +3639,6 @@
             this.panel7.Controls.Add(this.guna2HtmlLabel36);
             this.panel7.Controls.Add(this.guna2HtmlLabel11);
             this.panel7.Controls.Add(this.guna2HtmlLabel10);
-            this.panel7.Controls.Add(this.changeUsrname);
             this.panel7.Controls.Add(this.uploadAvtBtn);
             this.panel7.Controls.Add(this.bioTxtChange);
             this.panel7.Controls.Add(this.guna2HtmlLabel49);
@@ -3661,7 +3659,7 @@
             this.changeBDay.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.changeBDay.ForeColor = System.Drawing.Color.White;
             this.changeBDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.changeBDay.Location = new System.Drawing.Point(351, 361);
+            this.changeBDay.Location = new System.Drawing.Point(340, 361);
             this.changeBDay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.changeBDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.changeBDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -3689,30 +3687,19 @@
             this.changeFullName.PasswordChar = '\0';
             this.changeFullName.PlaceholderText = "";
             this.changeFullName.SelectedText = "";
-            this.changeFullName.Size = new System.Drawing.Size(257, 53);
+            this.changeFullName.Size = new System.Drawing.Size(243, 53);
             this.changeFullName.TabIndex = 35;
             // 
             // guna2HtmlLabel38
             // 
             this.guna2HtmlLabel38.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2HtmlLabel38.Location = new System.Drawing.Point(351, 319);
+            this.guna2HtmlLabel38.Location = new System.Drawing.Point(340, 319);
             this.guna2HtmlLabel38.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2HtmlLabel38.Name = "guna2HtmlLabel38";
             this.guna2HtmlLabel38.Size = new System.Drawing.Size(189, 30);
             this.guna2HtmlLabel38.TabIndex = 34;
             this.guna2HtmlLabel38.Text = "Ngày tháng năm sinh";
-            // 
-            // emailChange
-            // 
-            this.emailChange.BackColor = System.Drawing.Color.Transparent;
-            this.emailChange.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.emailChange.Location = new System.Drawing.Point(317, 96);
-            this.emailChange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.emailChange.Name = "emailChange";
-            this.emailChange.Size = new System.Drawing.Size(54, 30);
-            this.emailChange.TabIndex = 33;
-            this.emailChange.Text = "Email:";
             // 
             // fullNameChange
             // 
@@ -3760,10 +3747,10 @@
             "Đang hẹn hò",
             "Khác"});
             this.relaCmb.ItemsAppearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.relaCmb.Location = new System.Drawing.Point(351, 596);
+            this.relaCmb.Location = new System.Drawing.Point(340, 596);
             this.relaCmb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.relaCmb.Name = "relaCmb";
-            this.relaCmb.Size = new System.Drawing.Size(140, 36);
+            this.relaCmb.Size = new System.Drawing.Size(200, 36);
             this.relaCmb.TabIndex = 30;
             // 
             // genderCmb
@@ -3869,7 +3856,7 @@
             this.countryTxt.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.countryTxt.ForeColor = System.Drawing.Color.Black;
             this.countryTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.countryTxt.Location = new System.Drawing.Point(351, 481);
+            this.countryTxt.Location = new System.Drawing.Point(340, 481);
             this.countryTxt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.countryTxt.Name = "countryTxt";
             this.countryTxt.PasswordChar = '\0';
@@ -3971,7 +3958,7 @@
             // 
             this.guna2HtmlLabel37.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel37.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2HtmlLabel37.Location = new System.Drawing.Point(351, 551);
+            this.guna2HtmlLabel37.Location = new System.Drawing.Point(340, 551);
             this.guna2HtmlLabel37.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2HtmlLabel37.Name = "guna2HtmlLabel37";
             this.guna2HtmlLabel37.Size = new System.Drawing.Size(167, 30);
@@ -3993,7 +3980,7 @@
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(351, 444);
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(340, 444);
             this.guna2HtmlLabel11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             this.guna2HtmlLabel11.Size = new System.Drawing.Size(88, 30);
@@ -4011,32 +3998,6 @@
             this.guna2HtmlLabel10.TabIndex = 23;
             this.guna2HtmlLabel10.Text = "Địa chỉ hiện tại";
             // 
-            // changeUsrname
-            // 
-            this.changeUsrname.BorderRadius = 5;
-            this.changeUsrname.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.changeUsrname.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.changeUsrname.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.changeUsrname.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.changeUsrname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.changeUsrname.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.changeUsrname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.changeUsrname.FillColor = System.Drawing.Color.White;
-            this.changeUsrname.FillColor2 = System.Drawing.Color.White;
-            this.changeUsrname.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.changeUsrname.ForeColor = System.Drawing.Color.Black;
-            this.changeUsrname.HoverState.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.changeUsrname.Image = global::iConnect.Properties.Resources.edit2;
-            this.changeUsrname.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.changeUsrname.ImageSize = new System.Drawing.Size(25, 25);
-            this.changeUsrname.Location = new System.Drawing.Point(135, 90);
-            this.changeUsrname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.changeUsrname.Name = "changeUsrname";
-            this.changeUsrname.PressedDepth = 0;
-            this.changeUsrname.Size = new System.Drawing.Size(165, 31);
-            this.changeUsrname.TabIndex = 22;
-            this.changeUsrname.Text = "usrname";
-            // 
             // uploadAvtBtn
             // 
             this.uploadAvtBtn.BorderRadius = 10;
@@ -4049,7 +4010,7 @@
             this.uploadAvtBtn.FillColor2 = System.Drawing.Color.WhiteSmoke;
             this.uploadAvtBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.uploadAvtBtn.ForeColor = System.Drawing.Color.Black;
-            this.uploadAvtBtn.Location = new System.Drawing.Point(317, 167);
+            this.uploadAvtBtn.Location = new System.Drawing.Point(331, 159);
             this.uploadAvtBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uploadAvtBtn.Name = "uploadAvtBtn";
             this.uploadAvtBtn.Size = new System.Drawing.Size(203, 95);
@@ -4082,7 +4043,7 @@
             // 
             this.guna2HtmlLabel49.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel49.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2HtmlLabel49.Location = new System.Drawing.Point(319, 134);
+            this.guna2HtmlLabel49.Location = new System.Drawing.Point(333, 126);
             this.guna2HtmlLabel49.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2HtmlLabel49.Name = "guna2HtmlLabel49";
             this.guna2HtmlLabel49.Size = new System.Drawing.Size(200, 30);
@@ -4885,6 +4846,30 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // changeUsrname
+            // 
+            this.changeUsrname.AutoRoundedCorners = true;
+            this.changeUsrname.BorderRadius = 15;
+            this.changeUsrname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.changeUsrname.DefaultText = "";
+            this.changeUsrname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.changeUsrname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.changeUsrname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.changeUsrname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.changeUsrname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.changeUsrname.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.changeUsrname.ForeColor = System.Drawing.Color.Black;
+            this.changeUsrname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.changeUsrname.Location = new System.Drawing.Point(138, 94);
+            this.changeUsrname.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.changeUsrname.Name = "changeUsrname";
+            this.changeUsrname.PasswordChar = '\0';
+            this.changeUsrname.PlaceholderText = "";
+            this.changeUsrname.SelectedText = "";
+            this.changeUsrname.Size = new System.Drawing.Size(146, 33);
+            this.changeUsrname.TabIndex = 38;
+            this.changeUsrname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4908,17 +4893,6 @@
             this.Text = "Home";
             this.navPnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            this.panelDetailPost.ResumeLayout(false);
-            this.panelLoadingPostDetail.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.guna2Panel15.ResumeLayout(false);
-            this.guna2Panel18.ResumeLayout(false);
-            this.guna2Panel18.PerformLayout();
-            this.guna2Panel16.ResumeLayout(false);
-            this.guna2Panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePostDetail)).EndInit();
-            this.guna2Panel14.ResumeLayout(false);
-            this.guna2Panel14.PerformLayout();
             this.profilePnl.ResumeLayout(false);
             this.profilePnl.PerformLayout();
             this.loadingPostForUser.ResumeLayout(false);
@@ -4937,6 +4911,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox20)).EndInit();
             this.headerAddPostPannel.ResumeLayout(false);
             this.headerAddPostPannel.PerformLayout();
+            this.panelDetailPost.ResumeLayout(false);
+            this.panelLoadingPostDetail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.guna2Panel15.ResumeLayout(false);
+            this.guna2Panel18.ResumeLayout(false);
+            this.guna2Panel18.PerformLayout();
+            this.guna2Panel16.ResumeLayout(false);
+            this.guna2Panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePostDetail)).EndInit();
+            this.guna2Panel14.ResumeLayout(false);
+            this.guna2Panel14.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.avatarPro)).EndInit();
             this.recPnl.ResumeLayout(false);
@@ -5106,7 +5091,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel61;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2GradientButton changeUsrname;
         private Guna.UI2.WinForms.Guna2GradientButton uploadAvtBtn;
         private Guna.UI2.WinForms.Guna2TextBox bioTxtChange;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel49;
@@ -5226,7 +5210,6 @@
         private Guna.UI2.WinForms.Guna2Button saveUsrInfoBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel fullNameChange;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel38;
-        private Guna.UI2.WinForms.Guna2HtmlLabel emailChange;
         private Guna.UI2.WinForms.Guna2DateTimePicker changeBDay;
         private Guna.UI2.WinForms.Guna2TextBox changeFullName;
         private System.Windows.Forms.Label label8;
@@ -5266,5 +5249,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel19;
+        private Guna.UI2.WinForms.Guna2TextBox changeUsrname;
     }
 }
