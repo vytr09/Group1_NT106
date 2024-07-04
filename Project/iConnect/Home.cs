@@ -1187,7 +1187,7 @@ namespace iConnect
 
             if (timeDifference.TotalSeconds < 60)
             {
-                return "vừa xong";
+                return "Vừa xong";
             }
             if (timeDifference.TotalMinutes < 60)
             {
@@ -1199,7 +1199,7 @@ namespace iConnect
             }
             if (timeDifference.TotalDays < 2)
             {
-                return "hôm qua";
+                return "Hôm qua";
             }
             if (timeDifference.TotalDays < 7)
             {
