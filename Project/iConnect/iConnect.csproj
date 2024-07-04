@@ -269,24 +269,6 @@
     <Compile Include="AddPost.Designer.cs">
       <DependentUpon>AddPost.cs</DependentUpon>
     </Compile>
-    <Compile Include="Article_details.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Article_details.Designer.cs">
-      <DependentUpon>Article_details.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Followers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Followers.Designer.cs">
-      <DependentUpon>Followers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Following.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Following.Designer.cs">
-      <DependentUpon>Following.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\LoadImageHttp.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -306,12 +288,6 @@
     <Compile Include="Message.Designer.cs">
       <DependentUpon>Message.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Notification.Designer.cs">
-      <DependentUpon>Notification.cs</DependentUpon>
-    </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,12 +301,6 @@
     </Compile>
     <Compile Include="Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
@@ -359,15 +329,6 @@
     <EmbeddedResource Include="AddPost.resx">
       <DependentUpon>AddPost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Article_details.resx">
-      <DependentUpon>Article_details.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Followers.resx">
-      <DependentUpon>Followers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Following.resx">
-      <DependentUpon>Following.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,9 +353,6 @@
     </Compile>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
