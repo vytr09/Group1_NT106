@@ -178,6 +178,9 @@ namespace iConnect
             string accountType = await GetAccountType(result.username);
             privateAccountBtn.Checked = (accountType == "private");
 
+            string notificationSetting = await GetNotificationStatus(result.username);
+            notifSettingBtn.Checked = (notificationSetting == "on");
+
             // Check and print removed posts
             await CheckAndPrintRemovedPosts();
         }
@@ -2787,6 +2790,94 @@ namespace iConnect
                 {
                     MessageBox.Show($"Error locking account: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        // noti setting
+        private async void notifSettingBtn_Click(object sender, EventArgs e)
+        {
+            Data currentUser = await GetCurrentUserInfo();
+
+            if (currentUser == null)
+            {
+                MessageBox.Show("Error: Could not retrieve current user info.");
+                return;
+            }
+
+            string currentStatus = await GetNotificationStatus(currentUser.username);
+
+            if (currentStatus == null)
+            {
+                MessageBox.Show("Error: Could not retrieve notification status.");
+                return;
+            }
+
+            string newStatus;
+
+            if (notifSettingBtn.Checked)
+            {
+                notifSettingBtn.Checked = false;
+                newStatus = "off";
+            }
+            else
+            {
+                notifSettingBtn.Checked = true;
+                newStatus = "on";
+            }
+
+            await UpdateNotificationStatus(currentUser.username, newStatus);
+        }
+
+        private async Task<string> GetNotificationStatus(string username)
+        {
+            try
+            {
+                FirebaseResponse response = await client.GetAsync($"Settings/{username}/NotificationStatus");
+                string status = response.ResultAs<string>();
+
+                if (string.IsNullOrEmpty(status))
+                {
+                    // If notification status doesn't exist, create it with default value "off"
+                    status = "off";
+                    await client.SetAsync($"Settings/{username}/NotificationStatus", status);
+                }
+
+                if (status == "on")
+                {
+                    notiStatusLbl.Text = "Tắt thông báo";
+                }
+                else
+                {
+                    notiStatusLbl.Text = "Bật thông báo";
+                }
+
+                return status;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error retrieving notification status: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "off"; // Return default value if there's an error
+            }
+        }
+
+        private async Task UpdateNotificationStatus(string username, string newStatus)
+        {
+            try
+            {
+                await client.SetAsync($"Settings/{username}/NotificationStatus", newStatus);
+                if (newStatus == "on")
+                {
+                    notiStatusLbl.Text = "Tắt thông báo";
+                }
+                else
+                {
+                    notiStatusLbl.Text = "Bật thông báo";
+                }
+                MessageBox.Show($"Notification has been updated to {newStatus}.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating notification status: {ex.Message}");
             }
         }
     }
