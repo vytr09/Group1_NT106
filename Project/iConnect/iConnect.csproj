@@ -314,6 +314,12 @@
     <Compile Include="UserControls\UC_Comment.Designer.cs">
       <DependentUpon>UC_Comment.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_Conversation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Conversation.Designer.cs">
+      <DependentUpon>UC_Conversation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_ListComment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -359,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Comment.resx">
       <DependentUpon>UC_Comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Conversation.resx">
+      <DependentUpon>UC_Conversation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_ListComment.resx">
       <DependentUpon>UC_ListComment.cs</DependentUpon>

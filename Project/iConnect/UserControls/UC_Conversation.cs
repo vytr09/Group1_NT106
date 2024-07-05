@@ -16,5 +16,25 @@ namespace iConnect.UserControls
         {
             InitializeComponent();
         }
+
+        private string _name;
+        private Image _avatar;
+
+        public string Item_Name
+        {
+            get { return _name; }
+            set { _name = value; UserName.Text = value; }
+        }
+
+        public Image Item_Avatar
+        {
+            get { return _avatar; }
+            set { _avatar = value; UserAvatar.Image = value; }
+        }
+
+        public void UC_Conversation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

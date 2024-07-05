@@ -3800,7 +3800,7 @@ namespace iConnect
                     MessageListPanel.Controls.Add(uc_Conversation[i]);
 
                     // Add the click event handler
-                    uc_Conversation[i].Click += new EventHandler((sender, e) => uc_Conversation[i].UC_Conversation_Click(sender, e));
+                    uc_Conversation[i].Click += UC_Conversation_Click;
 
                     i++;
                 }
@@ -3826,6 +3826,20 @@ namespace iConnect
                     return Image.FromStream(stream);
                 }
             }
+        }
+
+        private void UC_Conversation_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in MessageListPanel.Controls)
+            {
+                if (control is UC_Conversation uc)
+                {
+                    uc.BackColor = Color.White;
+                }
+            }
+
+            UC_Conversation clickedItem = sender as UC_Conversation;
+            clickedItem.BackColor = Color.LightBlue;
         }
     }
 }

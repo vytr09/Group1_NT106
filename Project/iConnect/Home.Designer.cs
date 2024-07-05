@@ -4212,10 +4212,9 @@
             // 
             // MessageListPanel
             // 
-            this.MessageListPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.MessageListPanel.Location = new System.Drawing.Point(0, 194);
             this.MessageListPanel.Name = "MessageListPanel";
-            this.MessageListPanel.Size = new System.Drawing.Size(466, 950);
+            this.MessageListPanel.Size = new System.Drawing.Size(460, 950);
             this.MessageListPanel.TabIndex = 6;
             // 
             // avatarPro
