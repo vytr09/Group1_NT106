@@ -97,6 +97,7 @@ namespace iConnect
 
             // Gắn sự kiện KeyPress cho textbox tìm kiếm
             searchTxt.KeyPress += new KeyPressEventHandler(SearchTextBox_KeyPress);
+            searchTxt.TextChanged += new EventHandler(searchTxt_TextChanged);
         }
 
         // Call this method when the form loads to populate the blocked users panel
@@ -2428,11 +2429,13 @@ namespace iConnect
 
             try
             {
+                ClearSearchResults(); // Clear previous search results
                 List<Post> posts = await this.getPostsByUsername(username);
                 if (posts.Count > 0)
                 {
                     //this.RenderPosts1(posts);
-                    this.RenderPosts1(posts, this.searchPnl);
+                    //this.RenderPosts1(posts, this.searchPnl);
+                    this.RenderPosts1(posts, this.sort2Pnl);
                 }
                 else
                 {
@@ -2473,64 +2476,6 @@ namespace iConnect
             return posts.OrderBy(p => DateTime.ParseExact(p.created_at, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture)).ToList();
 
         }
-
-        //private void RenderPosts1(List<Post> posts)
-        //{
-        //    if (posts.Count < 0)
-        //    {
-        //        return;
-        //    }
-
-        //    if (this.panelRenderPost.Controls.Count > 0)
-        //    {
-        //        this.panelRenderPost.Controls.Clear();
-        //    }
-
-        //    bool isLoading = false;
-
-        //    foreach (Post post in posts)
-        //    {
-        //        Console.WriteLine(post.id);
-        //        isLoading = true;
-
-        //        UC_Post panelPost = new UC_Post();
-
-        //        panelPost.Name = $"{post.id}";
-        //        panelPost.Dock = DockStyle.Top;
-        //        panelPost.LabelCountComment = $"{post.comments.Count}";
-        //        panelPost.LabelCountLike = $"{post.likes.Count}";
-        //        panelPost.AuthorName = $"{post.userData.name}";
-        //        panelPost.LoadPostPicture(post.imageUrl);
-        //        panelPost.PostCaption = post.caption;
-        //        panelPost.PostCreatedAt = this.FormatFacebookTime(post.created_at);
-        //        panelPost.ButtonImageLike = !post.likes.Contains(Username) ? global::iConnect.Properties.Resources.heart : global::iConnect.Properties.Resources.redheart;
-
-        //        if (!string.IsNullOrEmpty(post.userData.AvatarUrl))
-        //        {
-        //            panelPost.LoadAuthorAvatar(post.userData.AvatarUrl);
-        //        }
-
-        //        panelPost.ButtonCommentClick = new System.EventHandler((object sender, EventArgs e) =>
-        //        {
-        //            this.handleClickBtnComment(post.id.ToString());
-        //        });
-
-        //        panelPost.ButtonLikeClick = new System.EventHandler((object sender, EventArgs e) =>
-        //        {
-        //            this.handleClickBtnLike(post.id.ToString(), panelPost);
-        //        });
-
-        //        this.panelRenderPost.Controls.Add(panelPost);
-
-        //        isLoading = false;
-        //    }
-
-        //    if (!isLoading)
-        //    {
-        //        this.panelLoadingPost.Visible = false;
-        //        this.panelRenderPost.Visible = true;
-        //    }
-        //}
 
         private void RenderPosts1(List<Post> posts, Panel targetPanel)
         {
@@ -2633,6 +2578,22 @@ namespace iConnect
                 MessageBox.Show($"An error occurred while loading the image: {ex.Message}");
             }
         }
+
+        private void ClearSearchResults()
+        {
+            if (this.sort2Pnl.Controls.Count > 0)
+            {
+                this.sort2Pnl.Controls.Clear();
+            }
+        }
+
+        private void searchTxt_TextChanged(object sender, EventArgs e)
+        {
+            ClearSearchResults(); // Clear previous search results
+        }
+
+
+
         // End search
 
         // start of account settings
