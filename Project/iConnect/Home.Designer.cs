@@ -372,7 +372,7 @@
             this.navPnl.Location = new System.Drawing.Point(0, 0);
             this.navPnl.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.navPnl.Name = "navPnl";
-            this.navPnl.Size = new System.Drawing.Size(1814, 1144);
+            this.navPnl.Size = new System.Drawing.Size(338, 1144);
             this.navPnl.TabIndex = 11;
             // 
             // guna2Panel19
@@ -1428,18 +1428,19 @@
             this.proBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.proBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.proBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.proBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.proBtn.FillColor = System.Drawing.Color.Transparent;
             this.proBtn.FillColor2 = System.Drawing.Color.Transparent;
             this.proBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.proBtn.ForeColor = System.Drawing.Color.Black;
             this.proBtn.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.proBtn.HoverState.FillColor2 = System.Drawing.Color.Transparent;
-            this.proBtn.Location = new System.Drawing.Point(12, 0);
+            this.proBtn.Location = new System.Drawing.Point(0, 0);
             this.proBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.proBtn.Name = "proBtn";
             this.proBtn.PressedColor = System.Drawing.Color.Transparent;
             this.proBtn.PressedDepth = 0;
-            this.proBtn.Size = new System.Drawing.Size(320, 144);
+            this.proBtn.Size = new System.Drawing.Size(340, 144);
             this.proBtn.TabIndex = 10;
             this.proBtn.Text = "        Harry";
             this.proBtn.UseTransparentBackground = true;
@@ -2359,7 +2360,7 @@
             this.searchPnl.Location = new System.Drawing.Point(339, 0);
             this.searchPnl.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchPnl.Name = "searchPnl";
-            this.searchPnl.Size = new System.Drawing.Size(1464, 1148);
+            this.searchPnl.Size = new System.Drawing.Size(1464, 1144);
             this.searchPnl.TabIndex = 20;
             this.searchPnl.Visible = false;
             // 
@@ -2369,10 +2370,10 @@
             this.msgPnl.Controls.Add(this.guna2GradientPanel5);
             this.msgPnl.Controls.Add(this.ChatDashboard);
             this.msgPnl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.msgPnl.Location = new System.Drawing.Point(344, 0);
+            this.msgPnl.Location = new System.Drawing.Point(338, 0);
             this.msgPnl.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.msgPnl.Name = "msgPnl";
-            this.msgPnl.Size = new System.Drawing.Size(1470, 1144);
+            this.msgPnl.Size = new System.Drawing.Size(1476, 1144);
             this.msgPnl.TabIndex = 21;
             this.msgPnl.Visible = false;
             // 
@@ -2387,7 +2388,7 @@
             this.guna2GradientPanel6.Location = new System.Drawing.Point(466, 121);
             this.guna2GradientPanel6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.guna2GradientPanel6.Name = "guna2GradientPanel6";
-            this.guna2GradientPanel6.Size = new System.Drawing.Size(1004, 1023);
+            this.guna2GradientPanel6.Size = new System.Drawing.Size(1010, 1023);
             this.guna2GradientPanel6.TabIndex = 7;
             // 
             // guna2GradientButton1
@@ -2451,7 +2452,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton2.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.guna2GradientButton2.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2GradientButton2.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GradientButton2.CustomImages.ImageOffset = new System.Drawing.Point(0, -30);
             this.guna2GradientButton2.CustomImages.ImageSize = new System.Drawing.Size(90, 90);
@@ -2471,7 +2472,7 @@
             this.guna2GradientButton2.Name = "guna2GradientButton2";
             this.guna2GradientButton2.PressedColor = System.Drawing.Color.Transparent;
             this.guna2GradientButton2.PressedDepth = 0;
-            this.guna2GradientButton2.Size = new System.Drawing.Size(146, 173);
+            this.guna2GradientButton2.Size = new System.Drawing.Size(152, 173);
             this.guna2GradientButton2.TabIndex = 0;
             // 
             // guna2GradientPanel5
@@ -2485,7 +2486,7 @@
             this.guna2GradientPanel5.Location = new System.Drawing.Point(466, 0);
             this.guna2GradientPanel5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.guna2GradientPanel5.Name = "guna2GradientPanel5";
-            this.guna2GradientPanel5.Size = new System.Drawing.Size(1004, 119);
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(1010, 119);
             this.guna2GradientPanel5.TabIndex = 6;
             // 
             // guna2GradientButton4
@@ -2555,6 +2556,7 @@
             // 
             // ChatDashboard
             // 
+            this.ChatDashboard.BorderThickness = 1;
             this.ChatDashboard.Controls.Add(this.MessageListPanel);
             this.ChatDashboard.Controls.Add(this.label20);
             this.ChatDashboard.Controls.Add(this.guna2TextBox2);
@@ -4098,7 +4100,7 @@
             this.notiPnl.Location = new System.Drawing.Point(339, 0);
             this.notiPnl.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.notiPnl.Name = "notiPnl";
-            this.notiPnl.Size = new System.Drawing.Size(1462, 1144);
+            this.notiPnl.Size = new System.Drawing.Size(1470, 1144);
             this.notiPnl.TabIndex = 57;
             this.notiPnl.Visible = false;
             // 
@@ -4109,7 +4111,7 @@
             this.trend2Pnl.CustomBorderColor = System.Drawing.Color.Black;
             this.trend2Pnl.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.trend2Pnl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.trend2Pnl.Location = new System.Drawing.Point(1032, 0);
+            this.trend2Pnl.Location = new System.Drawing.Point(1040, 0);
             this.trend2Pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.trend2Pnl.Name = "trend2Pnl";
             this.trend2Pnl.Size = new System.Drawing.Size(430, 1144);
@@ -4214,7 +4216,7 @@
             // 
             this.MessageListPanel.Location = new System.Drawing.Point(0, 194);
             this.MessageListPanel.Name = "MessageListPanel";
-            this.MessageListPanel.Size = new System.Drawing.Size(460, 950);
+            this.MessageListPanel.Size = new System.Drawing.Size(465, 950);
             this.MessageListPanel.TabIndex = 6;
             // 
             // avatarPro
@@ -4647,11 +4649,11 @@
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.navPnl);
             this.Controls.Add(this.msgPnl);
             this.Controls.Add(this.searchPnl);
             this.Controls.Add(this.notiPnl);
             this.Controls.Add(this.settingPnl);
-            this.Controls.Add(this.navPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximumSize = new System.Drawing.Size(1814, 1144);
