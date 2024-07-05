@@ -92,8 +92,8 @@ namespace iConnect
             InitializeComponent();
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             Username = username;
-            this.Load += async (sender, e) => await Form_Load(sender, e);
             reload();
+            this.Load += async (sender, e) => await Form_Load(sender, e);
             // Gắn sự kiện KeyPress cho textbox tìm kiếm
             searchTxt.KeyPress += new KeyPressEventHandler(SearchTextBox_KeyPress);
             searchTxt.TextChanged += new EventHandler(searchTxt_TextChanged);
@@ -103,7 +103,6 @@ namespace iConnect
         // Call this method when the form loads to populate the blocked users panel
         private async Task Form_Load(object sender, EventArgs e)
         {
-            await LoadBlockedUsers();
             await DisplayRandomUsers();
             await CheckForUnreadNotifications();
         }
@@ -679,12 +678,13 @@ namespace iConnect
             panel3.Visible = false;
         }
 
-        private void settingBtn_Click(object sender, EventArgs e)
+        private async void settingBtn_Click(object sender, EventArgs e)
         {
             homeBtn.Checked = false;
 
             reload();
             this.clearPickerUpload();
+            await LoadBlockedUsers();
 
             homePnl.Visible = false;
             profileBtn.Checked = false;
@@ -3417,6 +3417,10 @@ namespace iConnect
         {
             try
             {
+                // Show loading GIF
+                loadingGif.Visible = true;
+                loadingGif.BringToFront();
+
                 // Fetch the current user
                 Data currentUser = await GetCurrentUserInfo();
 
@@ -3456,6 +3460,11 @@ namespace iConnect
             catch (Exception ex)
             {
                 MessageBox.Show($"Error displaying notifications: {ex.Message}");
+            }
+            finally
+            {
+                // Hide loading GIF
+                loadingGif.Visible = false;
             }
         }
 

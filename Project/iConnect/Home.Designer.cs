@@ -288,6 +288,7 @@
             this.deleteAllNoti = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.loadingGif = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.navPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.panelDetailPost.SuspendLayout();
@@ -346,7 +347,9 @@
             this.guna2Panel2.SuspendLayout();
             this.notiPnl.SuspendLayout();
             this.trend2Pnl.SuspendLayout();
+            this.loadNotiPnl.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingGif)).BeginInit();
             this.SuspendLayout();
             // 
             // navPnl
@@ -4616,6 +4619,7 @@
             // loadNotiPnl
             // 
             this.loadNotiPnl.AutoScroll = true;
+            this.loadNotiPnl.Controls.Add(this.loadingGif);
             this.loadNotiPnl.Location = new System.Drawing.Point(0, 65);
             this.loadNotiPnl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.loadNotiPnl.Name = "loadNotiPnl";
@@ -4682,6 +4686,19 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // loadingGif
+            // 
+            this.loadingGif.Image = global::iConnect.Properties.Resources.Spinner_1x_1_0s_200px_200px;
+            this.loadingGif.ImageRotate = 0F;
+            this.loadingGif.InitialImage = global::iConnect.Properties.Resources.Spinner_1x_1_0s_200px_200px;
+            this.loadingGif.Location = new System.Drawing.Point(250, 200);
+            this.loadingGif.Name = "loadingGif";
+            this.loadingGif.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.loadingGif.Size = new System.Drawing.Size(200, 200);
+            this.loadingGif.TabIndex = 0;
+            this.loadingGif.TabStop = false;
+            this.loadingGif.Visible = false;
             // 
             // Home
             // 
@@ -4786,8 +4803,10 @@
             this.notiPnl.ResumeLayout(false);
             this.trend2Pnl.ResumeLayout(false);
             this.trend2Pnl.PerformLayout();
+            this.loadNotiPnl.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingGif)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5051,5 +5070,6 @@
         private Guna.UI2.WinForms.Guna2Panel recUser3Pnl;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
         private Guna.UI2.WinForms.Guna2GradientButton deleteAllNoti;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox loadingGif;
     }
 }
