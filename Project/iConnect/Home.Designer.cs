@@ -328,7 +328,7 @@
             this.allnotiBtn = new Guna.UI2.WinForms.Guna2Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.delAccountBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.lockAccountBtn = new Guna.UI2.WinForms.Guna2Button();
             this.navPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.panelDetailPost.SuspendLayout();
@@ -3678,7 +3678,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.guna2Button10);
+            this.panel3.Controls.Add(this.lockAccountBtn);
             this.panel3.Controls.Add(this.delAccountBtn);
             this.panel3.Controls.Add(this.removedContent);
             this.panel3.Controls.Add(this.guna2HtmlLabel54);
@@ -3704,12 +3704,13 @@
             this.removedContent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.removedContent.Location = new System.Drawing.Point(41, 145);
             this.removedContent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.removedContent.Multiline = true;
             this.removedContent.Name = "removedContent";
             this.removedContent.PasswordChar = '\0';
             this.removedContent.PlaceholderText = "";
             this.removedContent.ReadOnly = true;
             this.removedContent.SelectedText = "";
-            this.removedContent.Size = new System.Drawing.Size(265, 123);
+            this.removedContent.Size = new System.Drawing.Size(456, 250);
             this.removedContent.TabIndex = 7;
             // 
             // guna2HtmlLabel54
@@ -5364,28 +5365,30 @@
             this.delAccountBtn.FillColor = System.Drawing.Color.Firebrick;
             this.delAccountBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.delAccountBtn.ForeColor = System.Drawing.Color.White;
-            this.delAccountBtn.Location = new System.Drawing.Point(40, 289);
+            this.delAccountBtn.Location = new System.Drawing.Point(40, 408);
             this.delAccountBtn.Name = "delAccountBtn";
             this.delAccountBtn.Size = new System.Drawing.Size(180, 45);
             this.delAccountBtn.TabIndex = 8;
             this.delAccountBtn.Text = "Xóa tài khoản";
+            this.delAccountBtn.Click += new System.EventHandler(this.delAccountBtn_Click);
             // 
-            // guna2Button10
+            // lockAccountBtn
             // 
-            this.guna2Button10.AutoRoundedCorners = true;
-            this.guna2Button10.BorderRadius = 21;
-            this.guna2Button10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button10.FillColor = System.Drawing.Color.Green;
-            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button10.ForeColor = System.Drawing.Color.White;
-            this.guna2Button10.Location = new System.Drawing.Point(40, 347);
-            this.guna2Button10.Name = "guna2Button10";
-            this.guna2Button10.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button10.TabIndex = 9;
-            this.guna2Button10.Text = "Khóa tài khoản";
+            this.lockAccountBtn.AutoRoundedCorners = true;
+            this.lockAccountBtn.BorderRadius = 21;
+            this.lockAccountBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.lockAccountBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.lockAccountBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.lockAccountBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.lockAccountBtn.FillColor = System.Drawing.Color.Green;
+            this.lockAccountBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lockAccountBtn.ForeColor = System.Drawing.Color.White;
+            this.lockAccountBtn.Location = new System.Drawing.Point(40, 466);
+            this.lockAccountBtn.Name = "lockAccountBtn";
+            this.lockAccountBtn.Size = new System.Drawing.Size(180, 45);
+            this.lockAccountBtn.TabIndex = 9;
+            this.lockAccountBtn.Text = "Khóa tài khoản";
+            this.lockAccountBtn.Click += new System.EventHandler(this.lockAccountBtn_Click);
             // 
             // Home
             // 
@@ -5793,6 +5796,6 @@
         private Guna.UI2.WinForms.Guna2TextBox emailpwdTxt;
         private Guna.UI2.WinForms.Guna2Button changeEmailBtn;
         private Guna.UI2.WinForms.Guna2Button delAccountBtn;
-        private Guna.UI2.WinForms.Guna2Button guna2Button10;
+        private Guna.UI2.WinForms.Guna2Button lockAccountBtn;
     }
 }

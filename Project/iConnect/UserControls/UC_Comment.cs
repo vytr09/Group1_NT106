@@ -1,4 +1,6 @@
 ﻿using iConnect.Helpers;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace iConnect.UserControls
@@ -26,6 +28,10 @@ namespace iConnect.UserControls
         public async void LoadAvatarAuthor(string image)
         {
             await LoadImageHttp.LoadImageAsync(image, this.postAvatarAuthor);
+        }
+        public void LoadAvatarAuthor(Bitmap image)
+        {
+            this.postAvatarAuthor.Image = image;
         }
 
         public bool ShowDelete

@@ -7,6 +7,7 @@ using iConnect.UserControls;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -174,13 +175,34 @@ namespace iConnect
 
             // Retrieve and set the account type
             string accountType = await GetAccountType(result.username);
-            if (accountType == "private")
+            privateAccountBtn.Checked = (accountType == "private");
+
+            // Check and print removed posts
+            await CheckAndPrintRemovedPosts();
+        }
+
+        private async Task CheckAndPrintRemovedPosts()
+        {
+            try
             {
-                privateAccountBtn.Checked = true;
+                FirebaseResponse response = await client.GetAsync($"Settings/RemovedPosts");
+                List<string> removedPosts = response.ResultAs<List<string>>();
+
+                if (removedPosts == null)
+                {
+                    // If RemovedPosts doesn't exist, create an empty array
+                    removedPosts = new List<string>();
+                    await client.SetAsync($"Settings/RemovedPosts", removedPosts);
+                }
+                else
+                {
+                    // Print out post IDs
+                    MessageBox.Show("Removed Posts IDs: " + string.Join(", ", removedPosts), "Removed Posts", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                privateAccountBtn.Checked = false;
+                MessageBox.Show($"Error retrieving removed posts: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -397,16 +419,6 @@ namespace iConnect
           //  followingPnl.Visible = true;
         }
 
-        private void guna2ControlBox2_Click(object sender, EventArgs e)
-        {
-           // followingPnl.Visible = false;
-        }
-
-        private void guna2ControlBox3_Click(object sender, EventArgs e)
-        {
-          //  followerPnl.Visible = false;
-        }
-
         private void profileBtn_Click(object sender, EventArgs e)
         {
             homeBtn.Checked = false;
@@ -548,11 +560,38 @@ namespace iConnect
             panel3.Visible = false;
         }
 
-        private void trangthaitaikhoan_Click(object sender, EventArgs e)
+        private async void trangthaitaikhoan_Click(object sender, EventArgs e)
         {
             panel3.Visible = true;
             panel7.Visible = false;
+
+            // Update the removed content textbox
+            await UpdateRemovedContentTextBox();
         }
+
+        private async Task UpdateRemovedContentTextBox()
+        {
+            try
+            {
+                FirebaseResponse response = await client.GetAsync($"Settings/RemovedPosts");
+                List<string> removedPosts = response.ResultAs<List<string>>();
+
+                if (removedPosts == null || removedPosts.Count == 0)
+                {
+                    removedContent.Text = "Không có bài viết nào bị xóa";
+                }
+                else
+                {
+                    removedContent.Text = string.Join(Environment.NewLine, removedPosts);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error retrieving removed posts: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                removedContent.Text = "Không có bài viết nào bị xóa";
+            }
+        }
+
 
         private void thongbao_Click(object sender, EventArgs e)
         {
@@ -1266,7 +1305,7 @@ namespace iConnect
 
                 List<Comment> comments = await this.getCommentByPostId(postId);
 
-                this.labelAuthorDetail.Text = post.userData.name;
+                this.labelAuthorDetail.Text = post.userData?.name ?? "Deleted User";
                 await LoadImageHttp.LoadImageAsync(post.imageUrl, this.picturePostDetail);
                 this.labelPostCaptionDetail.Text = post.caption;
                 this.labelCreatedAt.Text = this.FormatFacebookTime(post.created_at);
@@ -1276,11 +1315,11 @@ namespace iConnect
                     UC_Comment comment = new UC_Comment();
 
                     comment.Dock = DockStyle.Top;
-                    comment.AuthorText = item.userData.name;
+                    comment.AuthorText = item.userData?.name ?? "Deleted User";
                     comment.CommentText = item.comment;
                     comment.CreatedAtText = this.FormatFacebookTime(item.created_at);
                     comment.Padding = new Padding(0, 0, 0, 10);
-                    comment.ShowDelete = item.user.Equals(Username) ? true : false;
+                    comment.ShowDelete = item.user.Equals(Username);
 
                     comment.ButtonDeleteClick = new System.EventHandler((object sender, EventArgs e) =>
                     {
@@ -1292,9 +1331,15 @@ namespace iConnect
                         this.handleReplayComment(item.id.ToString(), item.user);
                     });
 
-                    if (!string.IsNullOrEmpty(item.userData.AvatarUrl))
+                    string avatarUrl = item.userData?.AvatarUrl;
+                    if (!string.IsNullOrEmpty(avatarUrl))
                     {
-                        comment.LoadAvatarAuthor(item.userData.AvatarUrl);
+                        comment.LoadAvatarAuthor(avatarUrl);
+                    }
+                    else
+                    {
+                        // Load default avatar from resources
+                        comment.LoadAvatarAuthor(Properties.Resources.profile);
                     }
 
                     if (item.children.Count > 0)
@@ -1307,10 +1352,10 @@ namespace iConnect
 
                             commentChild.Dock = DockStyle.Top;
                             commentChild.Padding = padding;
-                            commentChild.AuthorText = child.userData.name;
+                            commentChild.AuthorText = child.userData?.name ?? "Deleted User";
                             commentChild.CommentText = child.comment;
                             commentChild.CreatedAtText = this.FormatFacebookTime(child.created_at);
-                            commentChild.ShowDelete = child.user.Equals(Username) ? true : false;
+                            commentChild.ShowDelete = child.user.Equals(Username);
 
                             commentChild.ButtonDeleteClick = new System.EventHandler((object sender, EventArgs e) =>
                             {
@@ -1322,9 +1367,15 @@ namespace iConnect
                                 this.handleReplayComment(item.id.ToString(), child.user);
                             });
 
-                            if (!string.IsNullOrEmpty(child.userData.AvatarUrl))
+                            string childAvatarUrl = child.userData?.AvatarUrl;
+                            if (!string.IsNullOrEmpty(childAvatarUrl))
                             {
-                                commentChild.LoadAvatarAuthor(child.userData.AvatarUrl);
+                                commentChild.LoadAvatarAuthor(childAvatarUrl);
+                            }
+                            else
+                            {
+                                // Load default avatar from resources
+                                commentChild.LoadAvatarAuthor(Properties.Resources.profile);
                             }
 
                             this.panelLoadComments.Controls.Add(commentChild);
@@ -1340,6 +1391,7 @@ namespace iConnect
                 this.panelLoadingPostDetail.Visible = false;
             }
         }
+
 
         private async void handleDeleteComment(string postId, string key, string commentId, List<Comment> child)
         {
@@ -2488,6 +2540,174 @@ namespace iConnect
         }
 
 
+        // start of account settings
+        // start of account settings
+        // start of account settings
+        private async void delAccountBtn_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to delete your account? This action cannot be undone.",
+                                             "Confirm Account Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Assuming the username is stored in a variable called Username
+                    string username = Username;
+
+                    // Delete user data
+                    await client.DeleteAsync($"Users/{username}");
+
+                    // Delete user posts
+                    var userPosts = await getPostsByUsername(username);
+                    foreach (var post in userPosts)
+                    {
+                        await client.DeleteAsync($"posts/{post.id}");
+                    }
+
+                    // Delete user comments
+                    var userComments = await getCmtByUsername(username);
+                    foreach (var comment in userComments)
+                    {
+                        await client.DeleteAsync($"comments/{comment.postId}/{comment.id}");
+                    }
+
+                    // Delete user from blocked lists and their own blocked list
+                    await DeleteUserFromBlockedLists(username);
+                    await DeleteUserOwnBlockedList(username);
+
+                    // Delete user's settings
+                    await client.DeleteAsync($"Settings/{username}");
+
+                    MessageBox.Show("Account deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Redirect to login screen or perform logout
+                    btnLogout.PerformClick();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting account: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        // Helper class to deserialize blocked user data
+        public class Block
+        {
+            public string BlockedBy { get; set; }
+            public string BlockedUser { get; set; }
+        }
+
+
+        private async Task<List<Comment>> getCmtByUsername(string username)
+        {
+            FirebaseResponse response = await client.GetAsync("/comments");
+
+            List<Comment> comments = new List<Comment>();
+
+            if (response.Body == "null")
+            {
+                return comments;
+            }
+
+            var jsonComments = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Comment>>>(response.Body);
+
+            foreach (var postComments in jsonComments)
+            {
+                foreach (var item in postComments.Value)
+                {
+                    if (item.Value.user.Equals(username, StringComparison.OrdinalIgnoreCase))
+                    {
+                        comments.Add(item.Value);
+                    }
+                    if (item.Value.children != null && item.Value.children.Count > 0)
+                    {
+                        comments.AddRange(GetNestedComments(item.Value.children, username));
+                    }
+                }
+            }
+
+            // Log the collected comments
+            Debug.WriteLine($"Total comments found: {comments.Count}");
+            foreach (var comment in comments)
+            {
+                Debug.WriteLine($"Comment ID: {comment.id}, User: {comment.user}, Post ID: {comment.postId}, Parent ID: {comment.parent_id}");
+            }
+
+            return comments.OrderBy(c => DateTime.ParseExact(c.created_at, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture)).ToList();
+        }
+
+        private List<Comment> GetNestedComments(List<Comment> comments, string username)
+        {
+            List<Comment> userComments = new List<Comment>();
+            foreach (var comment in comments)
+            {
+                if (comment.user.Equals(username, StringComparison.OrdinalIgnoreCase))
+                {
+                    userComments.Add(comment);
+                }
+                if (comment.children != null && comment.children.Count > 0)
+                {
+                    userComments.AddRange(GetNestedComments(comment.children, username));
+                }
+            }
+            return userComments;
+        }
+
+        private async Task DeleteUserFromBlockedLists(string username)
+        {
+            var blockedUsersResponse = await client.GetAsync("BlockedUsers");
+            if (blockedUsersResponse.Body != "null")
+            {
+                var blockedUsers = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Block>>>(blockedUsersResponse.Body);
+                if (blockedUsers != null)
+                {
+                    foreach (var blockedUser in blockedUsers)
+                    {
+                        if (blockedUser.Value != null && blockedUser.Value.ContainsKey(username))
+                        {
+                            await client.DeleteAsync($"BlockedUsers/{blockedUser.Key}/{username}");
+                        }
+                    }
+                }
+            }
+        }
+
+        private async Task DeleteUserOwnBlockedList(string username)
+        {
+            var userBlockedListResponse = await client.GetAsync($"BlockedUsers/{username}");
+            if (userBlockedListResponse.Body != "null")
+            {
+                await client.DeleteAsync($"BlockedUsers/{username}");
+            }
+        }
+
+
+        private async void lockAccountBtn_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to lock your account?",
+                             "Confirm Account Lock", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Assuming the username is stored in a variable called Username
+                    string settingsPath = $"Settings/{Username}";
+
+                    // Set the account status to locked
+                    await client.SetAsync($"{settingsPath}/AccountStatus", "locked");
+
+                    MessageBox.Show("Account locked successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Redirect to login screen or perform logout
+                    btnLogout.PerformClick();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error locking account: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
