@@ -29,9 +29,20 @@ namespace iConnect.UserControls
         {
             await LoadImageHttp.LoadImageAsync(image, this.postAvatarAuthor);
         }
+
         public void LoadAvatarAuthor(Bitmap image)
         {
-            this.postAvatarAuthor.Image = image;
+            this.postAvatarAuthor.Image = ResizeImage(image, this.postAvatarAuthor.Width, this.postAvatarAuthor.Height);
+        }
+
+        private static Bitmap ResizeImage(Image image, int width, int height)
+        {
+            var resizedImage = new Bitmap(width, height);
+            using (var graphics = Graphics.FromImage(resizedImage))
+            {
+                graphics.DrawImage(image, 0, 0, width, height);
+            }
+            return resizedImage;
         }
 
         public bool ShowDelete
@@ -39,6 +50,7 @@ namespace iConnect.UserControls
             get { return this.buttonDeleteComment.Visible; }
             set { this.buttonDeleteComment.Visible = value; }
         }
+
         public System.EventHandler ButtonDeleteClick
         {
             set { this.buttonDeleteComment.Click += value; }
@@ -62,12 +74,12 @@ namespace iConnect.UserControls
 
         private void btnReply_Click(object sender, System.EventArgs e)
         {
-
+            // Handle reply click
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            // Handle paint event
         }
     }
 }
