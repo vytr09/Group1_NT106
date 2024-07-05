@@ -286,6 +286,7 @@
             this.deleteAllNoti = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.followProfileBtn = new Guna.UI2.WinForms.Guna2Button();
             this.navPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.panelDetailPost.SuspendLayout();
@@ -918,6 +919,7 @@
             // profilePnl
             // 
             this.profilePnl.Controls.Add(this.followPnl);
+            this.profilePnl.Controls.Add(this.followProfileBtn);
             this.profilePnl.Controls.Add(this.flowLayoutLoadPostImages);
             this.profilePnl.Controls.Add(this.loadingPostForUser);
             this.profilePnl.Controls.Add(this.guna2Panel17);
@@ -4617,6 +4619,30 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // followProfileBtn
+            // 
+            this.followProfileBtn.AutoRoundedCorners = true;
+            this.followProfileBtn.BackColor = System.Drawing.Color.Transparent;
+            this.followProfileBtn.BorderRadius = 23;
+            this.followProfileBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.followProfileBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.followProfileBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.followProfileBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.followProfileBtn.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.followProfileBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.followProfileBtn.ForeColor = System.Drawing.Color.White;
+            this.followProfileBtn.HoverState.FillColor = System.Drawing.Color.OrangeRed;
+            this.followProfileBtn.HoverState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.followProfileBtn.HoverState.ForeColor = System.Drawing.Color.White;
+            this.followProfileBtn.Location = new System.Drawing.Point(342, 277);
+            this.followProfileBtn.Margin = new System.Windows.Forms.Padding(1);
+            this.followProfileBtn.Name = "followProfileBtn";
+            this.followProfileBtn.Size = new System.Drawing.Size(151, 48);
+            this.followProfileBtn.TabIndex = 119;
+            this.followProfileBtn.Text = "Theo dõi";
+            this.followProfileBtn.UseTransparentBackground = true;
+            this.followProfileBtn.Visible = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4984,5 +5010,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton deleteAllNoti;
         private Guna.UI2.WinForms.Guna2CirclePictureBox loadingGif;
         private System.Windows.Forms.FlowLayoutPanel MessageListPanel;
+        private Guna.UI2.WinForms.Guna2Button followProfileBtn;
     }
 }

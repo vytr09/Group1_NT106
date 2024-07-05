@@ -276,6 +276,7 @@ namespace iConnect
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
+            profile = null;
             homePnl.Visible = true;
             homeBtn.Checked = true;
             notiBtn.Checked = false;
@@ -297,6 +298,7 @@ namespace iConnect
 
         private async void notiBtn_Click(object sender, EventArgs e)
         {
+            profile = null;
             homePnl.Visible = false;
             notiBtn.Checked = true;
 
@@ -321,6 +323,7 @@ namespace iConnect
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            profile = null;
             homePnl.Visible = false;
             notiBtn.Checked = false;
             homeBtn.Checked = false;
@@ -408,6 +411,7 @@ namespace iConnect
 
         private void msgBtn_Click(object sender, EventArgs e)
         {
+            profile = null;
             homeBtn.Checked = false;
 
             reload();
@@ -447,6 +451,7 @@ namespace iConnect
         private async void profileBtn_Click(object sender, EventArgs e)
         {
             profile = null;
+            followProfileBtn.Visible = false;
             homeBtn.Checked = false;
 
             reload();
@@ -698,6 +703,7 @@ namespace iConnect
 
         private async void settingBtn_Click(object sender, EventArgs e)
         {
+            profile = null;
             homeBtn.Checked = false;
 
             reload();
@@ -1063,6 +1069,7 @@ namespace iConnect
 
         private void postBtn_Click(object sender, EventArgs e)
         {
+            profile = null;
             reload();
             postBtn.Checked = true;
             addPostPannel.Visible = true;
@@ -2576,15 +2583,18 @@ namespace iConnect
                 targetPanel.Controls.Clear();
             }
 
+            if (targetPanel.Controls.Count > 0)
+            {
+                targetPanel.Controls.Clear();
+            }
+
             foreach (Post post in posts)
             {
+                Console.WriteLine(post.id);
+
                 UC_Post panelPost = new UC_Post();
 
                 panelPost.Name = $"{post.id}";
-                panelPost.Width = 653;
-                panelPost.Height = 708;
-                panelPost.Margin = new Padding(4);
-                panelPost.BorderStyle = BorderStyle.FixedSingle;
                 panelPost.Dock = DockStyle.Top;
                 panelPost.LabelCountComment = $"{post.comments.Count}";
                 panelPost.LabelCountLike = $"{post.likes.Count}";
@@ -2609,10 +2619,23 @@ namespace iConnect
                     this.handleClickBtnLike(post.id.ToString(), panelPost);
                 });
 
+                // Add event handler for avatar click
+                panelPost.AvatarClick += (s, e) =>
+                {
+                    LoadUserProfile(post.userData.username);
+                    profile = post.userData.username;
+                };
+
+                // Add event handler for username click
+                panelPost.UsernameClick += (s, e) =>
+                {
+                    LoadUserProfile(post.userData.username);
+                    profile = post.userData.username;
+                };
+
                 targetPanel.Controls.Add(panelPost);
             }
 
-            this.panelLoadingPost.Visible = false;
             targetPanel.Visible = true;
         }
 
@@ -2725,7 +2748,7 @@ namespace iConnect
 
         // Filter for User
 
-        private void renderUser(Data user, Guna.UI2.WinForms.Guna2Panel parentPanel, int topPosition)
+        private async void renderUser(Data user, Guna.UI2.WinForms.Guna2Panel parentPanel, int topPosition)
         {
             Guna.UI2.WinForms.Guna2Panel userPanel = new Guna.UI2.WinForms.Guna2Panel
             {
@@ -2755,6 +2778,12 @@ namespace iConnect
                 avatar.Image = Properties.Resources.profile; // Default profile image
             }
 
+            avatar.Click += (s, e) =>
+            {
+                LoadUserProfile(user.username);
+                profile = user.username;
+            };
+
             Guna.UI2.WinForms.Guna2HtmlLabel nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
             {
                 Text = user.name,
@@ -2777,16 +2806,41 @@ namespace iConnect
 
             Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
             {
-                Text = "Theo dõi",
-                Left = parentPanel.Width - 120,
+                Width = 120,
+                Height = 40,
+                Left = userPanel.Width - 130,
                 Top = 15,
-                Width = 100,
-                AutoRoundedCorners = true,
-                FillColor = Color.MediumAquamarine,
-                Tag = user,
-                Font = new Font("Segoe UI", 9)
+                Font = new Font("Segoe UI", 10),
+                Tag = user
             };
             followButton.Click += FollowButton_Click;
+
+            // Check if the current user is already following the selected user
+            FirebaseResponse response = await client.GetAsync($"Follow/{Username}/Following/{user.username}");
+            bool isFollowing = response.Body != "null";
+
+            if (isFollowing)
+            {
+                followButton.Text = "Bỏ theo dõi";
+                followButton.BorderColor = Color.MediumAquamarine;
+                followButton.FillColor = Color.Transparent;
+                followButton.ForeColor = Color.MediumAquamarine;
+                followButton.BorderThickness = 2;
+                followButton.AutoRoundedCorners = true;
+                followButton.Click -= FollowButton_Click;
+                followButton.Click += UnfollowButton_Click;
+            }
+            else
+            {
+                followButton.Text = "Theo dõi";
+                followButton.BorderColor = Color.Transparent;
+                followButton.FillColor = Color.MediumAquamarine;
+                followButton.ForeColor = Color.White;
+                followButton.AutoRoundedCorners = true;
+                followButton.BorderThickness = 0;
+            }
+
+            userPanel.Controls.Add(followButton);
 
             userPanel.Controls.Add(avatar);
             userPanel.Controls.Add(nameLabel);
@@ -3237,7 +3291,7 @@ namespace iConnect
         }
 
 
-        private void AddUserToTrendPanel(Data user, int topPosition, Guna.UI2.WinForms.Guna2Panel parentPanel)
+        private async void AddUserToTrendPanel(Data user, int topPosition, Guna.UI2.WinForms.Guna2Panel parentPanel)
         {
             Guna.UI2.WinForms.Guna2Panel userPanel = new Guna.UI2.WinForms.Guna2Panel
             {
@@ -3289,7 +3343,6 @@ namespace iConnect
 
             Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
             {
-                Text = "Theo dõi",
                 Left = parentPanel.Width - 120,
                 Top = 15,
                 Width = 100,
@@ -3299,6 +3352,33 @@ namespace iConnect
                 Font = new Font("Segoe UI", 9)
             };
             followButton.Click += FollowButton_Click;
+
+            // Check if the current user is already following the selected user
+            FirebaseResponse response = await client.GetAsync($"Follow/{Username}/Following/{user.username}");
+            bool isFollowing = response.Body != "null";
+
+            if (isFollowing)
+            {
+                followButton.Text = "Bỏ theo dõi";
+                followButton.BorderColor = Color.MediumAquamarine;
+                followButton.FillColor = Color.Transparent;
+                followButton.ForeColor = Color.MediumAquamarine;
+                followButton.BorderThickness = 2;
+                followButton.AutoRoundedCorners = true;
+                followButton.Click -= FollowButton_Click;
+                followButton.Click += UnfollowButton_Click;
+            }
+            else
+            {
+                followButton.Text = "Theo dõi";
+                followButton.BorderColor = Color.Transparent;
+                followButton.FillColor = Color.MediumAquamarine;
+                followButton.ForeColor = Color.White;
+                followButton.AutoRoundedCorners = true;
+                followButton.BorderThickness = 0;
+            }
+
+            userPanel.Controls.Add(followButton);
             avatar.Click += (s, e) =>
             {
                 LoadUserProfile(user.username);
@@ -4048,6 +4128,7 @@ namespace iConnect
             try
             {
                 profilePnl.Visible = true;
+
                 // Fetch the user data from the database
                 FirebaseResponse response = await client.GetAsync("Users/" + username);
                 Data userData = response.ResultAs<Data>();
@@ -4062,6 +4143,15 @@ namespace iConnect
 
                 // Hide edit profile button if viewing another user's profile
                 editPro.Visible = username == this.Username;
+
+                // Clear any previous follow buttons
+                RemovePreviousFollowButton();
+
+                if (username != this.Username)
+                {
+                    ShowFollowButton(username);
+                }
+
                 // Load user avatar
                 await LoadProfileAvatarAsync(username);
 
@@ -4070,9 +4160,6 @@ namespace iConnect
 
                 // Load user's posts
                 await LoadPostByUser(username);
-
-                // Add follow/unfollow button
-                AddFollowButton(username);
             }
             catch (Exception ex)
             {
@@ -4080,17 +4167,16 @@ namespace iConnect
             }
         }
 
-        private async void AddFollowButton(string username)
+        private void RemovePreviousFollowButton()
         {
-            // Create the follow button
-            Guna.UI2.WinForms.Guna2Button followProfileBtn = new Guna.UI2.WinForms.Guna2Button
-            {
-                Location = new Point(340, 280),
-                Size = new Size(120, 40),
-                Font = new Font("Segoe UI", 10),
-                AutoRoundedCorners = true,
-                Tag = username
-            };
+            followProfileBtn.Visible = false;
+
+            proPnlAvt.Image = Properties.Resources.profile;
+        }
+
+        private async void ShowFollowButton(string username)
+        {
+            followProfileBtn.Visible = true;
 
             // Fetch the current user
             Data currentUser = await GetCurrentUserInfo();
@@ -4117,9 +4203,6 @@ namespace iConnect
                 followProfileBtn.BorderThickness = 0;
                 followProfileBtn.Click += FollowButton_Click;
             }
-
-            // Add the button to the profile panel
-            profilePnl.Controls.Add(followProfileBtn);
         }
 
         private async Task UpdateFollowerFollowingCounts(string username)
@@ -4238,5 +4321,8 @@ namespace iConnect
                 this.flowLayoutLoadPostImages.Visible = true;
             }
         }
+        // end of profile showing
+        // end of profile showing
+        // end of profile showing
     }
 }
