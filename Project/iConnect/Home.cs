@@ -19,6 +19,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
 
 namespace iConnect
 {
@@ -417,6 +418,8 @@ namespace iConnect
             notiPnl.Visible = false;
             postBtn.Checked = false;
             addPostPannel.Visible = false;
+
+            LoadMessageList();
         }
 
         private void guna2GradientButton4_Click(object sender, EventArgs e)
@@ -3757,5 +3760,72 @@ namespace iConnect
         // end of notification
         // end of notification
         // end of notification
+
+
+//>> BEGIN OF MESSAGE
+        private async void LoadMessageList()
+        {
+            MessageListPanel.Controls.Clear();
+            // Fetch the current user
+            Data currentUser = await GetCurrentUserInfo();
+
+            // Check if the current user is already following the selected user
+            FirebaseResponse followingResponse = await client.GetAsync($"Follow/{currentUser.username}/Following");
+            var followingDict = followingResponse.Body != "null" ?
+                    JsonConvert.DeserializeObject<Dictionary<string, FollowInfo>>(followingResponse.Body) :
+                    new Dictionary<string, FollowInfo>();
+            int followingCount = followingDict.Count;
+
+            if (followingCount > 0)
+            {
+                UC_Conversation[] uc_Conversation = new UC_Conversation[followingCount];
+
+                int i = 0;
+                foreach (var key in followingDict.Keys)
+                {
+                    // Fetch user data for each following user
+                    FirebaseResponse response = await client.GetAsync($"Users/{key}");
+                    Data userData = JsonConvert.DeserializeObject<Data>(response.Body);
+
+                    // Initialize the message item with the user data
+                    uc_Conversation[i] = new UC_Conversation();
+                    uc_Conversation[i].Item_Name = userData.name;
+                    string avatarURL = userData.AvatarUrl;
+                    if (avatarURL != null)
+                    {
+                        uc_Conversation[i].Item_Avatar = await GetImageFromUrl(avatarURL);
+                    }
+
+                    // Add the message item to the panel
+                    MessageListPanel.Controls.Add(uc_Conversation[i]);
+
+                    // Add the click event handler
+                    uc_Conversation[i].Click += new EventHandler((sender, e) => uc_Conversation[i].UC_Conversation_Click(sender, e));
+
+                    i++;
+                }
+            }
+            else
+            {
+                Label label = new Label();
+                label.Text = "Your following list is empty!";
+                label.AutoSize = true;
+
+                MessageListPanel.Controls.Add(label);
+            }
+        }
+
+        private async Task<Image> GetImageFromUrl(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                using (Stream stream = await response.Content.ReadAsStreamAsync())
+                {
+                    return Image.FromStream(stream);
+                }
+            }
+        }
     }
 }
