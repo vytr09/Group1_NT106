@@ -107,6 +107,7 @@ namespace iConnect
             await DisplayRandomUsers();
             await CheckForUnreadNotifications();
             await DisplayUsers();
+            await DisplayUsers1();
         }
 
         private async void reload()
@@ -2649,14 +2650,24 @@ namespace iConnect
             }
         }
 
+        private void ClearSearchResultsForUser1()
+        {
+            if (this.userSortPnl.Controls.Count > 0)
+            {
+                this.userSortPnl.Controls.Clear();
+            }
+        }
+
 
         private async void searchTxt_TextChanged(object sender, EventArgs e)
         {
             ClearSearchResults(); // Clear previous search results
             ClearSearchResultsForPost(); // Clear post
             ClearSearchResultsForUser(); // Clear user
+            ClearSearchResultsForUser1(); // Clear user for button 'nguoi dung'
             string searchQuery = searchTxt.Text.Trim();
             await DisplayUsers(searchQuery);
+            await DisplayUsers1(searchQuery);
         }
 
         // Filter for Post
@@ -2933,6 +2944,44 @@ namespace iConnect
                 foreach (var user in filteredUsers)
                 {
                     renderUser(user, this.all2Pnl, topPosition);
+                    topPosition += verticalSpacing; // Increment top position for next user
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error displaying users: {ex.Message}");
+            }
+        }
+
+        private async Task DisplayUsers1(string searchQuery = "")
+        {
+            try
+            {
+                // Fetch all users
+                FirebaseResponse response = await client.GetAsync("Users");
+                var usersDict = JsonConvert.DeserializeObject<Dictionary<string, Data>>(response.Body);
+                var usersList = usersDict.Values.ToList(); // Convert to list
+
+                // Clear existing controls in the main panel
+                this.userSortPnl.Controls.Clear();
+
+                // Convert search query to lowercase for case-insensitive comparison
+                searchQuery = searchQuery.ToLower();
+
+                // Filter users based on search query
+                var filteredUsers = string.IsNullOrWhiteSpace(searchQuery)
+                    ? usersList
+                    : usersList.Where(user =>
+                        user.name.ToLower().Contains(searchQuery) ||
+                        user.username.ToLower().Contains(searchQuery)).ToList();
+
+                // Display filtered users
+                int topPosition = 20; // Initial top position
+                int verticalSpacing = 70; // Spacing between users
+
+                foreach (var user in filteredUsers)
+                {
+                    renderUser(user, this.userSortPnl, topPosition);
                     topPosition += verticalSpacing; // Increment top position for next user
                 }
             }
