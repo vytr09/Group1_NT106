@@ -104,6 +104,7 @@ namespace iConnect
         private async Task Form_Load(object sender, EventArgs e)
         {
             await LoadBlockedUsers();
+            await DisplayRandomUsers();
         }
 
         private async void reload()
@@ -285,7 +286,7 @@ namespace iConnect
             this.clearPickerUpload();
         }
 
-        private void notiBtn_Click(object sender, EventArgs e)
+        private async void notiBtn_Click(object sender, EventArgs e)
         {
             homePnl.Visible = false;
             notiBtn.Checked = true;
@@ -305,6 +306,7 @@ namespace iConnect
             notiPnl.Visible = true;
             postBtn.Checked = false;
             addPostPannel.Visible = false;
+            await DisplayRandomUsers();
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -413,17 +415,21 @@ namespace iConnect
 
         }
 
-        private void followerBtn_Click(object sender, EventArgs e)
+        private async void followerBtn_Click(object sender, EventArgs e)
         {
-          //  followerPnl.Visible = true;
+            followPnl.Visible = true;
+            followPnl.Parent.Controls.SetChildIndex(followPnl, 0);
+            await DisplayFollowData("Follower", "Người theo dõi");
         }
 
-        private void followingBtn_Click(object sender, EventArgs e)
+        private async void followingBtn_Click(object sender, EventArgs e)
         {
-          //  followingPnl.Visible = true;
+            followPnl.Visible = true;
+            followPnl.Parent.Controls.SetChildIndex(followPnl, 0);
+            await DisplayFollowData("Following", "Đang theo dõi");
         }
 
-        private void profileBtn_Click(object sender, EventArgs e)
+        private async void profileBtn_Click(object sender, EventArgs e)
         {
             homeBtn.Checked = false;
 
@@ -444,6 +450,42 @@ namespace iConnect
             notiPnl.Visible = false;
             postBtn.Checked = false;
             addPostPannel.Visible = false;
+
+            // Fetch follower and following counts and update button texts
+            await UpdateFollowerFollowingCounts();
+        }
+
+        private async Task UpdateFollowerFollowingCounts()
+        {
+            try
+            {
+                // Fetch the current user
+                Data currentUser = await GetCurrentUserInfo();
+
+                // Fetch the follower list
+                FirebaseResponse followerResponse = await client.GetAsync($"Follow/{currentUser.username}/Follower");
+                var followerDict = followerResponse.Body != "null" ?
+                    JsonConvert.DeserializeObject<Dictionary<string, FollowInfo>>(followerResponse.Body) :
+                    new Dictionary<string, FollowInfo>();
+                int followerCount = followerDict.Count;
+
+                // Fetch the following list
+                FirebaseResponse followingResponse = await client.GetAsync($"Follow/{currentUser.username}/Following");
+                var followingDict = followingResponse.Body != "null" ?
+                    JsonConvert.DeserializeObject<Dictionary<string, FollowInfo>>(followingResponse.Body) :
+                    new Dictionary<string, FollowInfo>();
+                int followingCount = followingDict.Count;
+
+                // Update the button texts
+                followerBtn.Text = $"{followerCount} người theo dõi";
+                followingBtn.Text = $"{followingCount} đang theo dõi";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating follower and following counts: {ex.Message}");
+                followerBtn.Text = "0 người theo dõi";
+                followingBtn.Text = "0 đang theo dõi";
+            }
         }
 
         private async Task DeleteComment(string postId, string keyId)
@@ -1784,15 +1826,17 @@ namespace iConnect
                 Text = user.name,
                 Left = 60,
                 Top = 5,
-                Width = 200
+                Width = 200,
+                Font = new Font("Segoe UI", 10)
             };
 
             Guna.UI2.WinForms.Guna2HtmlLabel usernameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
             {
-                Text = user.username,
+                Text = "@" + user.username,
                 Left = 60,
                 Top = 25,
-                Width = 200
+                Width = 200,
+                Font = new Font("Segoe UI", 9, FontStyle.Italic)
             };
 
             Guna.UI2.WinForms.Guna2Button blockButton = new Guna.UI2.WinForms.Guna2Button
@@ -2856,5 +2900,470 @@ namespace iConnect
                 MessageBox.Show($"Error updating notification status: {ex.Message}");
             }
         }
+
+        // account settings end
+        // account settings end
+        // account settings end
+
+
+        // start of recommendation and folllow
+        // start of recommendation and follow
+        // start of recommendation and follow
+        public class FollowInfo
+        {
+            public DateTime followed_at { get; set; }
+        }
+
+        private async Task DisplayRandomUsers()
+        {
+            try
+            {
+                // Fetch all users
+                FirebaseResponse response = await client.GetAsync("Users");
+                var usersDict = JsonConvert.DeserializeObject<Dictionary<string, Data>>(response.Body);
+
+                // Fetch the current user
+                Data currentUser = await GetCurrentUserInfo();
+
+                // Fetch the current user's following list
+                FirebaseResponse followingResponse = await client.GetAsync($"Follow/{currentUser.username}/Following");
+                var followingDict = followingResponse.Body != "null" ?
+                    JsonConvert.DeserializeObject<Dictionary<string, FollowInfo>>(followingResponse.Body) :
+                    new Dictionary<string, FollowInfo>();
+
+                // Exclude the current user and those already followed
+                var otherUsers = usersDict.Values
+                    .Where(user => user.username != currentUser.username && !followingDict.ContainsKey(user.username))
+                    .ToList();
+
+                // Select three random users
+                Random random = new Random();
+                var randomUsers = otherUsers.OrderBy(x => random.Next()).Take(3).ToList();
+
+                // Clear existing controls in recommendation panels
+                recUserPnl.Controls.Clear();
+                recUser2Pnl.Controls.Clear();
+                recUser3Pnl.Controls.Clear();
+
+                // Add the "Có thể bạn sẽ biết" text
+                AddRecommendationLabel();
+
+                // Display the random users
+                int topPosition = 40; // Initial top position
+                int verticalSpacing = 70; // Adjusted spacing between users
+
+                foreach (var user in randomUsers)
+                {
+                    AddUserToTrendPanel(user, topPosition, recUserPnl);
+                    AddUserToTrendPanel(user, topPosition, recUser2Pnl);
+                    AddUserToTrendPanel(user, topPosition, recUser3Pnl);
+                    topPosition += verticalSpacing; // Increment top position for next user
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error displaying random users: {ex.Message}");
+            }
+        }
+
+
+        private void AddRecommendationLabel()
+        {
+            Guna.UI2.WinForms.Guna2HtmlLabel recommendationLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = "Có thể bạn sẽ biết",
+                Top = 6,
+                Width = recUserPnl.Width,
+                Left = 50,
+                Height = 30, // Adjust as necessary
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                BackColor = Color.Transparent,
+            };
+            Guna.UI2.WinForms.Guna2HtmlLabel recommendationLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = "Có thể bạn sẽ biết",
+                Top = 6,
+                Width = recUserPnl.Width,
+                Left = 50,
+                Height = 30, // Adjust as necessary
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                BackColor = Color.Transparent,
+            };
+            Guna.UI2.WinForms.Guna2HtmlLabel recommendationLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = "Có thể bạn sẽ biết",
+                Top = 6,
+                Width = recUserPnl.Width,
+                Left = 50,
+                Height = 30, // Adjust as necessary
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                BackColor = Color.Transparent,
+            };
+
+            recUserPnl.Controls.Add(recommendationLabel);
+            recUser2Pnl.Controls.Add(recommendationLabel2);
+            recUser3Pnl.Controls.Add(recommendationLabel3);
+        }
+
+
+        private void AddUserToTrendPanel(Data user, int topPosition, Guna.UI2.WinForms.Guna2Panel parentPanel)
+        {
+            Guna.UI2.WinForms.Guna2Panel userPanel = new Guna.UI2.WinForms.Guna2Panel
+            {
+                Width = parentPanel.Width - 20,
+                Height = 60, // Adjusted height of the user panel
+                Top = topPosition,
+                Left = 5,
+                Tag = user
+            };
+
+            Guna.UI2.WinForms.Guna2PictureBox avatar = new Guna.UI2.WinForms.Guna2PictureBox
+            {
+                Width = 50,
+                Height = 50,
+                Left = 3,
+                Top = 10,
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderRadius = 25
+            };
+
+            if (!string.IsNullOrEmpty(user.AvatarUrl))
+            {
+                avatar.ImageLocation = user.AvatarUrl;
+            }
+            else
+            {
+                avatar.Image = Properties.Resources.profile;
+            }
+
+            Guna.UI2.WinForms.Guna2HtmlLabel nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = user.name,
+                Left = 55,
+                Top = 10,
+                Width = 200,
+                Font = new Font("Segoe UI", 9),
+                BackColor = Color.Transparent
+            };
+
+            Guna.UI2.WinForms.Guna2HtmlLabel usernameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = "@" + user.username,
+                Left = 55,
+                Top = 30,
+                Width = 200,
+                Font = new Font("Segoe UI", 8, FontStyle.Italic),
+                BackColor = Color.Transparent
+            };
+
+            Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
+            {
+                Text = "Theo dõi",
+                Left = parentPanel.Width - 120,
+                Top = 15,
+                Width = 100,
+                AutoRoundedCorners = true,
+                FillColor = Color.MediumAquamarine,
+                Tag = user,
+                Font = new Font("Segoe UI", 9)
+            };
+            followButton.Click += FollowButton_Click;
+
+            userPanel.Controls.Add(avatar);
+            userPanel.Controls.Add(nameLabel);
+            userPanel.Controls.Add(usernameLabel);
+            userPanel.Controls.Add(followButton);
+
+            parentPanel.Controls.Add(userPanel);
+        }
+
+        private async void FollowButton_Click(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button followButton = sender as Guna.UI2.WinForms.Guna2Button;
+            Data userToFollow = followButton.Tag as Data;
+
+            // Fetch the current user
+            Data currentUser = await GetCurrentUserInfo();
+
+            // Check if the current user is already following the selected user
+            FirebaseResponse response = await client.GetAsync($"Follow/{currentUser.username}/Following/{userToFollow.username}");
+            bool isFollowing = response.Body != "null";
+
+            if (!isFollowing)
+            {
+                // Follow the user with a timestamp
+                var followData = new { followed_at = DateTime.UtcNow };
+                await client.SetAsync($"Follow/{currentUser.username}/Following/{userToFollow.username}", followData);
+                await client.SetAsync($"Follow/{userToFollow.username}/Follower/{currentUser.username}", followData);
+
+                // Update button to "Unfollow"
+                followButton.Text = "Bỏ theo dõi";
+                followButton.BorderColor = Color.MediumAquamarine;
+                followButton.FillColor = Color.Transparent;
+                followButton.ForeColor = Color.MediumAquamarine;
+                followButton.BorderThickness = 2;
+                followButton.Click -= FollowButton_Click;
+                followButton.Click += UnfollowButton_Click;
+            }
+            else
+            {
+                // Unfollow the user
+                await UnfollowUser(currentUser, userToFollow, followButton);
+            }
+        }
+
+        private async void UnfollowButton_Click(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button followButton = sender as Guna.UI2.WinForms.Guna2Button;
+            Data userToFollow = followButton.Tag as Data;
+
+            // Fetch the current user
+            Data currentUser = await GetCurrentUserInfo();
+
+            // Unfollow the user
+            await UnfollowUser(currentUser, userToFollow, followButton);
+        }
+
+        private async Task UnfollowUser(Data currentUser, Data userToUnfollow, Guna.UI2.WinForms.Guna2Button followButton)
+        {
+            // Unfollow the user with a timestamp
+            var unfollowData = new { unfollowed_at = DateTime.UtcNow };
+            await client.DeleteAsync($"Follow/{currentUser.username}/Following/{userToUnfollow.username}");
+            await client.DeleteAsync($"Follow/{userToUnfollow.username}/Follower/{currentUser.username}");
+
+            // Optionally, you can log the unfollow action with a timestamp
+            await client.SetAsync($"UnfollowLog/{currentUser.username}/{userToUnfollow.username}", unfollowData);
+            await client.SetAsync($"UnfollowLog/{userToUnfollow.username}/{currentUser.username}", unfollowData);
+
+            // Update button to "Theo dõi"
+            followButton.Text = "Theo dõi";
+            followButton.BorderColor = Color.Transparent;
+            followButton.FillColor = Color.MediumAquamarine;
+            followButton.ForeColor = Color.White;
+            followButton.BorderThickness = 0;
+            followButton.Click -= UnfollowButton_Click;
+            followButton.Click += FollowButton_Click;
+        }
+
+        private void exitFollowBtn_Click(object sender, EventArgs e)
+        {
+            followPnl.Visible = false;
+        }
+
+        private async Task DisplayFollowData(string followType, string title)
+        {
+            try
+            {
+                // Clear existing controls in followPnl
+                followPnl.Controls.Clear();
+
+                // Add the title
+                AddFollowTitle(title);
+
+                // Fetch the current user
+                Data currentUser = await GetCurrentUserInfo();
+
+                // Fetch the follow data
+                FirebaseResponse followResponse = await client.GetAsync($"Follow/{currentUser.username}/{followType}");
+                var followDict = followResponse.Body != "null" ?
+                    JsonConvert.DeserializeObject<Dictionary<string, FollowInfo>>(followResponse.Body) :
+                    new Dictionary<string, FollowInfo>();
+
+                // Display user information
+                int topPosition = 70; // Initial top position
+                int verticalSpacing = 70; // Spacing between users
+
+                foreach (var follow in followDict)
+                {
+                    string username = follow.Key;
+                    FirebaseResponse userResponse = await client.GetAsync($"Users/{username}");
+                    Data user = JsonConvert.DeserializeObject<Data>(userResponse.Body);
+
+                    await AddUserToFollowPanel(user, topPosition, followType, currentUser); // Pass currentUser
+                    topPosition += verticalSpacing; // Increment top position for next user
+                }
+                // Re-add the existFollowBtn at the end
+                followPnl.Controls.Add(exitFollowBtn);
+
+                // Adjust the position of existFollowBtn if needed
+                exitFollowBtn.Top = 0;
+                exitFollowBtn.Left = (followPnl.Width - exitFollowBtn.Width);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error displaying {followType.ToLower()}: {ex.Message}");
+            }
+        }
+
+
+        private void AddFollowTitle(string title)
+        {
+            Guna.UI2.WinForms.Guna2HtmlLabel titleLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = title,
+                Font = new Font("Segoe UI", 16, FontStyle.Bold),
+                AutoSize = true,
+                Top = 30,
+                Left = (followPnl.Width - 170) / 2,
+                TextAlignment = ContentAlignment.MiddleCenter,
+                BackColor = Color.Transparent
+            };
+
+            followPnl.Controls.Add(titleLabel);
+
+            Guna.UI2.WinForms.Guna2Panel linePanel = new Guna.UI2.WinForms.Guna2Panel
+            {
+                Height = 1,
+                Width = (int)(followPnl.Width * 0.8),
+                Top = titleLabel.Bottom + 10,
+                Left = (followPnl.Width - (int)(followPnl.Width * 0.8)) / 2,
+                BackColor = Color.Black,
+                BorderRadius = 1
+            };
+
+            followPnl.Controls.Add(linePanel);
+        }
+
+        private async Task AddUserToFollowPanel(Data user, int topPosition, string followType, Data currentUser)
+        {
+            Guna.UI2.WinForms.Guna2Panel userPanel = new Guna.UI2.WinForms.Guna2Panel
+            {
+                Width = (int)(followPnl.Width * 0.8),
+                Height = 60,
+                Top = topPosition + 20,
+                Left = (followPnl.Width - (int)(followPnl.Width * 0.8)) / 2,
+                Tag = user
+            };
+
+            Guna.UI2.WinForms.Guna2PictureBox avatar = new Guna.UI2.WinForms.Guna2PictureBox
+            {
+                Width = 50,
+                Height = 50,
+                Left = 3,
+                Top = 5,
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderRadius = 25
+            };
+
+            if (!string.IsNullOrEmpty(user.AvatarUrl))
+            {
+                avatar.ImageLocation = user.AvatarUrl;
+            }
+            else
+            {
+                avatar.Image = Properties.Resources.profile; // Default profile image
+            }
+
+            Guna.UI2.WinForms.Guna2HtmlLabel nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = user.name,
+                Left = 60,
+                Top = 5,
+                Width = 200,
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                BackColor = Color.Transparent
+            };
+
+            Guna.UI2.WinForms.Guna2HtmlLabel usernameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = "@" + user.username,
+                Left = 60,
+                Top = 30,
+                Width = 200,
+                Font = new Font("Segoe UI", 10, FontStyle.Italic),
+                BackColor = Color.Transparent
+            };
+
+            userPanel.Controls.Add(avatar);
+            userPanel.Controls.Add(nameLabel);
+            userPanel.Controls.Add(usernameLabel);
+
+            if (followType == "Follower")
+            {
+                Guna.UI2.WinForms.Guna2Button removeButton = new Guna.UI2.WinForms.Guna2Button
+                {
+                    Text = "Gỡ",
+                    Width = 80,
+                    Height = 30,
+                    Left = userPanel.Width - 90,
+                    Top = 15,
+                    Font = new Font("Segoe UI", 10),
+                    Tag = user
+                };
+                removeButton.FillColor = Color.Black;
+                removeButton.ForeColor = Color.White;
+                removeButton.AutoRoundedCorners = true;
+                removeButton.Click += RemoveFollowerButton_Click;
+                userPanel.Controls.Add(removeButton);
+            }
+            else if (followType == "Following")
+            {
+                Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
+                {
+                    Width = 100,
+                    Height = 30,
+                    Left = userPanel.Width - 110,
+                    Top = 15,
+                    Font = new Font("Segoe UI", 10),
+                    Tag = user
+                };
+                followButton.Click += FollowButton_Click;
+
+                // Check if the current user is already following the selected user
+                FirebaseResponse response = await client.GetAsync($"Follow/{currentUser.username}/Following/{user.username}");
+                bool isFollowing = response.Body != "null";
+
+                if (isFollowing)
+                {
+                    followButton.Text = "Bỏ theo dõi";
+                    followButton.BorderColor = Color.MediumAquamarine;
+                    followButton.FillColor = Color.Transparent;
+                    followButton.ForeColor = Color.MediumAquamarine;
+                    followButton.BorderThickness = 2;
+                    followButton.AutoRoundedCorners = true;
+                    followButton.Click -= FollowButton_Click;
+                    followButton.Click += UnfollowButton_Click;
+                }
+                else
+                {
+                    followButton.Text = "Theo dõi";
+                    followButton.BorderColor = Color.Transparent;
+                    followButton.FillColor = Color.MediumAquamarine;
+                    followButton.ForeColor = Color.White;
+                    followButton.AutoRoundedCorners = true;
+                    followButton.BorderThickness = 0;
+                }
+
+                userPanel.Controls.Add(followButton);
+            }
+
+            followPnl.Controls.Add(userPanel);
+        }
+
+
+        private async void RemoveFollowerButton_Click(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button removeButton = sender as Guna.UI2.WinForms.Guna2Button;
+            Data userToRemove = removeButton.Tag as Data;
+
+            // Fetch the current user
+            Data currentUser = await GetCurrentUserInfo();
+
+            // Remove the follower
+            await client.DeleteAsync($"Follow/{currentUser.username}/Follower/{userToRemove.username}");
+            await client.DeleteAsync($"Follow/{userToRemove.username}/Following/{currentUser.username}");
+
+            // Optionally, you can log the remove action with a timestamp
+            var removeData = new { removed_at = DateTime.UtcNow };
+            await client.SetAsync($"RemoveLog/{currentUser.username}/{userToRemove.username}", removeData);
+            await client.SetAsync($"RemoveLog/{userToRemove.username}/{currentUser.username}", removeData);
+
+            // Remove the user panel from followPnl
+            followPnl.Controls.Remove(removeButton.Parent);
+        }
+
+        // end of recommendation and follow
+        // end of recommendation and follow
+        // end of recommendation and follow
     }
 }
