@@ -2578,15 +2578,7 @@ namespace iConnect
                 return;
             }
 
-            if (targetPanel.Controls.Count > 0)
-            {
-                targetPanel.Controls.Clear();
-            }
-
-            if (targetPanel.Controls.Count > 0)
-            {
-                targetPanel.Controls.Clear();
-            }
+            targetPanel.Controls.Clear();
 
             foreach (Post post in posts)
             {
