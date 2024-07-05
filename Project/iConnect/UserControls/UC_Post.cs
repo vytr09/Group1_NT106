@@ -1,4 +1,5 @@
 ﻿using iConnect.Helpers;
+using System;
 using System.Net.Http;
 using System.Windows.Forms;
 
@@ -7,6 +8,9 @@ namespace iConnect.UserControls
     public partial class UC_Post : UserControl
     {
         private static readonly HttpClient httpClient = new HttpClient();
+
+        public event EventHandler AvatarClick;
+        public event EventHandler UsernameClick;
 
         public string PostCaption
         {
@@ -67,6 +71,9 @@ namespace iConnect.UserControls
         public UC_Post()
         {
             InitializeComponent();
+
+            this.postAvatarAuthor.Click += (s, e) => AvatarClick?.Invoke(s, e);
+            this.labelAuthorName.Click += (s, e) => UsernameClick?.Invoke(s, e);
         }
     }
 }

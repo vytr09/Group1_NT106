@@ -108,6 +108,9 @@ namespace iConnect
             await CheckForUnreadNotifications();
         }
 
+        // profile and post render
+        // profile and post render
+        // profile and post render
         private async void reload()
         {
             this.panelDetailPost.Visible = false;
@@ -115,6 +118,9 @@ namespace iConnect
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = await client.GetAsync("Users/" + Username);
             Data result = response.ResultAs<Data>();
+
+            proBtn.Text = "@" + result.username;
+            await LoadAvatarAsync(Username);
 
             if (this.homeBtn.Checked)
             {
@@ -136,79 +142,48 @@ namespace iConnect
                 }
             }
 
-            proBtn.Text = "@" + result.username;
-            usrName.Text = result.username;
-            fullName.Text = result.name;
-            dateofBirth.Text = "Ngày sinh: " + result.dateofb;
-            changeUsrname.Text = result.username;
-            proPnlAddress.Text = "Sinh sống tại: " + result.city;
-            proPnlFromLbl.Text = "Đến từ: " + result.country;
-            bioLbl.Text = result.bio;
-
-            // Assuming the date is stored in dd/MM/yyyy format
-            string dateFormat = "dd/MM/yyyy";
-
-            try
+            if (this.profileBtn.Checked)
             {
-                if (!string.IsNullOrEmpty(result.dateofb))
+                usrName.Text = result.username;
+                fullName.Text = result.name;
+                dateofBirth.Text = "Ngày sinh: " + result.dateofb;
+                changeUsrname.Text = result.username;
+                proPnlAddress.Text = "Sinh sống tại: " + result.city;
+                proPnlFromLbl.Text = "Đến từ: " + result.country;
+                bioLbl.Text = result.bio;
+                await LoadProfileAvatarAsync(Username);
+            }
+
+            if (this.settingBtn.Checked)
+            {
+                // Assuming the date is stored in dd/MM/yyyy format
+                string dateFormat = "dd/MM/yyyy";
+
+                try
                 {
-                    changeBDay.Value = DateTime.ParseExact(result.dateofb, dateFormat, CultureInfo.InvariantCulture);
+                    if (!string.IsNullOrEmpty(result.dateofb))
+                    {
+                        changeBDay.Value = DateTime.ParseExact(result.dateofb, dateFormat, CultureInfo.InvariantCulture);
+                    }
+                    else
+                    {
+                        // Handle the case where dateofb is null or empty
+                        changeBDay.Value = DateTime.Now; // Or set to a default date
+                    }
                 }
-                else
+                catch (FormatException ex)
                 {
-                    // Handle the case where dateofb is null or empty
+                    // Handle parsing errors
+                    MessageBox.Show($"Failed to parse date of birth. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     changeBDay.Value = DateTime.Now; // Or set to a default date
                 }
-            }
-            catch (FormatException ex)
-            {
-                // Handle parsing errors
-                MessageBox.Show($"Failed to parse date of birth. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                changeBDay.Value = DateTime.Now; // Or set to a default date
-            }
 
-            bioTxtChange.Text = result.bio;
-            changeFullName.Text = result.name;
-            countryTxt.Text = result.country;
-            currentCity.Text = result.city;
-            genderCmb.Text = result.gender;
-            relaCmb.Text = result.relationship;
-
-            await LoadAvatarAsync(Username);
-
-            // Retrieve and set the account type
-            string accountType = await GetAccountType(result.username);
-            privateAccountBtn.Checked = (accountType == "private");
-
-            string notificationSetting = await GetNotificationStatus(result.username);
-            notifSettingBtn.Checked = (notificationSetting == "on");
-
-            // Check and print removed posts
-            await CheckAndPrintRemovedPosts();
-        }
-
-        private async Task CheckAndPrintRemovedPosts()
-        {
-            try
-            {
-                FirebaseResponse response = await client.GetAsync($"Settings/RemovedPosts");
-                List<string> removedPosts = response.ResultAs<List<string>>();
-
-                if (removedPosts == null)
-                {
-                    // If RemovedPosts doesn't exist, create an empty array
-                    removedPosts = new List<string>();
-                    await client.SetAsync($"Settings/RemovedPosts", removedPosts);
-                }
-                else
-                {
-                    // Print out post IDs
-                    MessageBox.Show("Removed Posts IDs: " + string.Join(", ", removedPosts), "Removed Posts", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error retrieving removed posts: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                bioTxtChange.Text = result.bio;
+                changeFullName.Text = result.name;
+                countryTxt.Text = result.country;
+                currentCity.Text = result.city;
+                genderCmb.Text = result.gender;
+                relaCmb.Text = result.relationship;
             }
         }
 
@@ -236,6 +211,31 @@ namespace iConnect
 
                     // Load the resized image into the PictureBox
                     avatarPro.Image = resizedImage;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading avatar: {ex.Message}");
+            }
+        }
+        private async Task LoadProfileAvatarAsync(string username)
+        {
+            try
+            {
+                // Retrieve the user data from the database
+                FirebaseResponse response = await client.GetAsync("Users/" + username);
+                Data userData = response.ResultAs<Data>();
+                proPnlAvt.InitialImage = Properties.Resources.profile;
+
+                // Check if the user has an avatar URL
+                if (!string.IsNullOrEmpty(userData.AvatarUrl))
+                {
+                    // Load the avatar image using the AvatarUrl
+                    byte[] imageData;
+                    using (var webClient = new WebClient())
+                    {
+                        imageData = await webClient.DownloadDataTaskAsync(userData.AvatarUrl);
+                    }
 
                     // Resize the image to fit the PictureBox
                     Image resizedImage2 = ResizeImage(Image.FromStream(new MemoryStream(imageData)), proPnlAvt.Width, proPnlAvt.Height);
@@ -265,6 +265,12 @@ namespace iConnect
             // Return the resized image
             return resizedImage;
         }
+
+        // end of profile and post render
+        // end of profile and post render
+        // end of profile and post render
+
+        // main buttons
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
@@ -422,11 +428,6 @@ namespace iConnect
             LoadMessageList();
         }
 
-        private void guna2GradientButton4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private async void followerBtn_Click(object sender, EventArgs e)
         {
             followPnl.Visible = true;
@@ -443,6 +444,7 @@ namespace iConnect
 
         private async void profileBtn_Click(object sender, EventArgs e)
         {
+            profile = null;
             homeBtn.Checked = false;
 
             reload();
@@ -466,6 +468,7 @@ namespace iConnect
             // Fetch follower and following counts and update button texts
             await UpdateFollowerFollowingCounts();
         }
+        // end of main buttons
 
         private async Task UpdateFollowerFollowingCounts()
         {
@@ -510,6 +513,10 @@ namespace iConnect
             await client.DeleteAsync($"comments/{postId}");
         }
 
+
+        // handle post in profile
+        // handle post in profile
+        // handle post in profile
         private async Task DeletePost(string postId)
         {
             await client.DeleteAsync($"posts/{postId}");
@@ -606,6 +613,9 @@ namespace iConnect
                 this.flowLayoutLoadPostImages.Visible = true;
             }
         }
+        // end of handle post in profile
+        // end of handle post in profile
+        // end of handle post in profile
 
         private void chinhsuatrangcanhan_Click(object sender, EventArgs e)
         {
@@ -713,6 +723,40 @@ namespace iConnect
             guna2Panel13.Visible = false;
             guna2Panel12.Visible = false;
             panel3.Visible = false;
+
+            // Check and print removed posts
+            await CheckAndPrintRemovedPosts();
+
+            // Retrieve and set the account type
+            string accountType = await GetAccountType(Username);
+            privateAccountBtn.Checked = (accountType == "private");
+
+            string notificationSetting = await GetNotificationStatus(Username);
+            notifSettingBtn.Checked = (notificationSetting == "on");
+        }
+        private async Task CheckAndPrintRemovedPosts()
+        {
+            try
+            {
+                FirebaseResponse response = await client.GetAsync($"Settings/RemovedPosts");
+                List<string> removedPosts = response.ResultAs<List<string>>();
+
+                if (removedPosts == null)
+                {
+                    // If RemovedPosts doesn't exist, create an empty array
+                    removedPosts = new List<string>();
+                    await client.SetAsync($"Settings/RemovedPosts", removedPosts);
+                }
+                else
+                {
+                    // Print out post IDs
+                    MessageBox.Show("Removed Posts IDs: " + string.Join(", ", removedPosts), "Removed Posts", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error retrieving removed posts: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void guna2Panel6_Paint(object sender, PaintEventArgs e)
@@ -754,21 +798,6 @@ namespace iConnect
             btnForYou.Checked = false;
             //pnlFollowing.Visible = true;
             //pnlForYou.Visible = false;
-        }
-
-        private void pnlPost1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2ImageButton5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ImageButton5_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void proBtn_Click(object sender, EventArgs e)
@@ -1208,6 +1237,7 @@ namespace iConnect
             return result;
         }
 
+        string profile;
         private void RenderPosts(List<Post> posts)
         {
             if (posts.Count < 0)
@@ -1253,6 +1283,20 @@ namespace iConnect
                 {
                     this.handleClickBtnLike(post.id.ToString(), panelPost);
                 });
+
+                // Add event handler for avatar click
+                panelPost.AvatarClick += (s, e) =>
+                {
+                    LoadUserProfile(post.userData.username);
+                    profile = post.userData.username;
+                };
+
+                // Add event handler for username click
+                panelPost.UsernameClick += (s, e) =>
+                {
+                    LoadUserProfile(post.userData.username);
+                    profile = post.userData.username;
+                };
 
                 this.panelRenderPost.Controls.Add(panelPost);
 
@@ -3232,6 +3276,11 @@ namespace iConnect
                 Font = new Font("Segoe UI", 9)
             };
             followButton.Click += FollowButton_Click;
+            avatar.Click += (s, e) =>
+            {
+                LoadUserProfile(user.username);
+                profile = user.username;
+            };
 
             userPanel.Controls.Add(avatar);
             userPanel.Controls.Add(nameLabel);
@@ -3327,11 +3376,11 @@ namespace iConnect
                 // Add the title
                 AddFollowTitle(title);
 
-                // Fetch the current user
-                Data currentUser = await GetCurrentUserInfo();
+                // Fetch the current profile user (not the current user)
+                Data profileUser = await GetProfileUserInfo(); // Adjust this method to get the user of the profile being viewed
 
-                // Fetch the follow data
-                FirebaseResponse followResponse = await client.GetAsync($"Follow/{currentUser.username}/{followType}");
+                // Fetch the follow data for the profile user
+                FirebaseResponse followResponse = await client.GetAsync($"Follow/{profileUser.username}/{followType}");
                 var followDict = followResponse.Body != "null" ?
                     JsonConvert.DeserializeObject<Dictionary<string, FollowInfo>>(followResponse.Body) :
                     new Dictionary<string, FollowInfo>();
@@ -3346,13 +3395,14 @@ namespace iConnect
                     FirebaseResponse userResponse = await client.GetAsync($"Users/{username}");
                     Data user = JsonConvert.DeserializeObject<Data>(userResponse.Body);
 
-                    await AddUserToFollowPanel(user, topPosition, followType, currentUser); // Pass currentUser
+                    await AddUserToFollowPanel(user, topPosition, followType, profileUser); // Pass profileUser instead of currentUser
                     topPosition += verticalSpacing; // Increment top position for next user
                 }
-                // Re-add the existFollowBtn at the end
+
+                // Re-add the exitFollowBtn at the end
                 followPnl.Controls.Add(exitFollowBtn);
 
-                // Adjust the position of existFollowBtn if needed
+                // Adjust the position of exitFollowBtn if needed
                 exitFollowBtn.Top = 0;
                 exitFollowBtn.Left = (followPnl.Width - exitFollowBtn.Width);
             }
@@ -3360,6 +3410,26 @@ namespace iConnect
             {
                 MessageBox.Show($"Error displaying {followType.ToLower()}: {ex.Message}");
             }
+        }
+
+        private async Task<Data> GetProfileUserInfo()
+        {
+            // Implement the logic to get the user information of the profile being viewed
+            // This could be based on a stored username or some other identifier
+            string profileUsername = GetProfileUsername(); // Example method to get profile username
+            FirebaseResponse response = await client.GetAsync($"Users/{profileUsername}");
+            Data profileUser = JsonConvert.DeserializeObject<Data>(response.Body);
+            return profileUser;
+        }
+
+        private string GetProfileUsername()
+        {
+            string currentProfileUsername = profile; // Implement the logic to get the profile username
+            if (string.IsNullOrEmpty(currentProfileUsername))
+            {
+                return Username; // Return the current user's username if no profile username is set
+            }
+            return currentProfileUsername; // This should be a variable holding the current profile username
         }
 
 
@@ -3441,67 +3511,165 @@ namespace iConnect
                 BackColor = Color.Transparent
             };
 
+            avatar.Click += (s, e) =>
+            {
+                LoadUserProfile(user.username);
+                profile = user.username;
+            };
+
             userPanel.Controls.Add(avatar);
             userPanel.Controls.Add(nameLabel);
             userPanel.Controls.Add(usernameLabel);
 
             if (followType == "Follower")
             {
-                Guna.UI2.WinForms.Guna2Button removeButton = new Guna.UI2.WinForms.Guna2Button
+                if (currentUser.username != Username)
                 {
-                    Text = "Gỡ",
-                    Width = 80,
-                    Height = 40,
-                    Left = userPanel.Width - 90,
-                    Top = 15,
-                    Font = new Font("Segoe UI", 10),
-                    Tag = user
-                };
-                removeButton.FillColor = Color.Black;
-                removeButton.ForeColor = Color.White;
-                removeButton.AutoRoundedCorners = true;
-                removeButton.Click += RemoveFollowerButton_Click;
-                userPanel.Controls.Add(removeButton);
-            }
-            else if (followType == "Following")
-            {
-                Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
-                {
-                    Width = 120,
-                    Height = 40,
-                    Left = userPanel.Width - 130,
-                    Top = 15,
-                    Font = new Font("Segoe UI", 10),
-                    Tag = user
-                };
-                followButton.Click += FollowButton_Click;
+                    if (user.username != Username)
+                    {
+                        Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
+                        {
+                            Width = 120,
+                            Height = 40,
+                            Left = userPanel.Width - 130,
+                            Top = 15,
+                            Font = new Font("Segoe UI", 10),
+                            Tag = user
+                        };
+                        followButton.Click += FollowButton_Click;
 
-                // Check if the current user is already following the selected user
-                FirebaseResponse response = await client.GetAsync($"Follow/{currentUser.username}/Following/{user.username}");
-                bool isFollowing = response.Body != "null";
+                        // Check if the current user is already following the selected user
+                        FirebaseResponse response = await client.GetAsync($"Follow/{Username}/Following/{user.username}");
+                        bool isFollowing = response.Body != "null";
 
-                if (isFollowing)
-                {
-                    followButton.Text = "Bỏ theo dõi";
-                    followButton.BorderColor = Color.MediumAquamarine;
-                    followButton.FillColor = Color.Transparent;
-                    followButton.ForeColor = Color.MediumAquamarine;
-                    followButton.BorderThickness = 2;
-                    followButton.AutoRoundedCorners = true;
-                    followButton.Click -= FollowButton_Click;
-                    followButton.Click += UnfollowButton_Click;
+                        if (isFollowing)
+                        {
+                            followButton.Text = "Bỏ theo dõi";
+                            followButton.BorderColor = Color.MediumAquamarine;
+                            followButton.FillColor = Color.Transparent;
+                            followButton.ForeColor = Color.MediumAquamarine;
+                            followButton.BorderThickness = 2;
+                            followButton.AutoRoundedCorners = true;
+                            followButton.Click -= FollowButton_Click;
+                            followButton.Click += UnfollowButton_Click;
+                        }
+                        else
+                        {
+                            followButton.Text = "Theo dõi";
+                            followButton.BorderColor = Color.Transparent;
+                            followButton.FillColor = Color.MediumAquamarine;
+                            followButton.ForeColor = Color.White;
+                            followButton.AutoRoundedCorners = true;
+                            followButton.BorderThickness = 0;
+                        }
+
+                        userPanel.Controls.Add(followButton);
+                    }
                 }
                 else
                 {
-                    followButton.Text = "Theo dõi";
-                    followButton.BorderColor = Color.Transparent;
-                    followButton.FillColor = Color.MediumAquamarine;
-                    followButton.ForeColor = Color.White;
-                    followButton.AutoRoundedCorners = true;
-                    followButton.BorderThickness = 0;
+                    Guna.UI2.WinForms.Guna2Button removeButton = new Guna.UI2.WinForms.Guna2Button
+                    {
+                        Text = "Gỡ",
+                        Width = 80,
+                        Height = 40,
+                        Left = userPanel.Width - 90,
+                        Top = 15,
+                        Font = new Font("Segoe UI", 10),
+                        Tag = user
+                    };
+                    removeButton.FillColor = Color.Black;
+                    removeButton.ForeColor = Color.White;
+                    removeButton.AutoRoundedCorners = true;
+                    removeButton.Click += RemoveFollowerButton_Click;
+                    userPanel.Controls.Add(removeButton);
                 }
+            }
+            else if (followType == "Following")
+            {
+                if (currentUser.username != Username)
+                {
+                    if (user.username != Username)
+                    {
+                        Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
+                        {
+                            Width = 120,
+                            Height = 40,
+                            Left = userPanel.Width - 130,
+                            Top = 15,
+                            Font = new Font("Segoe UI", 10),
+                            Tag = user
+                        };
+                        followButton.Click += FollowButton_Click;
 
-                userPanel.Controls.Add(followButton);
+                        // Check if the current user is already following the selected user
+                        FirebaseResponse response = await client.GetAsync($"Follow/{Username}/Following/{user.username}");
+                        bool isFollowing = response.Body != "null";
+
+                        if (isFollowing)
+                        {
+                            followButton.Text = "Bỏ theo dõi";
+                            followButton.BorderColor = Color.MediumAquamarine;
+                            followButton.FillColor = Color.Transparent;
+                            followButton.ForeColor = Color.MediumAquamarine;
+                            followButton.BorderThickness = 2;
+                            followButton.AutoRoundedCorners = true;
+                            followButton.Click -= FollowButton_Click;
+                            followButton.Click += UnfollowButton_Click;
+                        }
+                        else
+                        {
+                            followButton.Text = "Theo dõi";
+                            followButton.BorderColor = Color.Transparent;
+                            followButton.FillColor = Color.MediumAquamarine;
+                            followButton.ForeColor = Color.White;
+                            followButton.AutoRoundedCorners = true;
+                            followButton.BorderThickness = 0;
+                        }
+
+                        userPanel.Controls.Add(followButton);
+                    }
+                }
+                else
+                {
+                    Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
+                    {
+                        Width = 120,
+                        Height = 40,
+                        Left = userPanel.Width - 130,
+                        Top = 15,
+                        Font = new Font("Segoe UI", 10),
+                        Tag = user
+                    };
+                    followButton.Click += FollowButton_Click;
+
+                    // Check if the current user is already following the selected user
+                    FirebaseResponse response = await client.GetAsync($"Follow/{currentUser.username}/Following/{user.username}");
+                    bool isFollowing = response.Body != "null";
+
+                    if (isFollowing)
+                    {
+                        followButton.Text = "Bỏ theo dõi";
+                        followButton.BorderColor = Color.MediumAquamarine;
+                        followButton.FillColor = Color.Transparent;
+                        followButton.ForeColor = Color.MediumAquamarine;
+                        followButton.BorderThickness = 2;
+                        followButton.AutoRoundedCorners = true;
+                        followButton.Click -= FollowButton_Click;
+                        followButton.Click += UnfollowButton_Click;
+                    }
+                    else
+                    {
+                        followButton.Text = "Theo dõi";
+                        followButton.BorderColor = Color.Transparent;
+                        followButton.FillColor = Color.MediumAquamarine;
+                        followButton.ForeColor = Color.White;
+                        followButton.AutoRoundedCorners = true;
+                        followButton.BorderThickness = 0;
+                    }
+
+                    userPanel.Controls.Add(followButton);
+                }
             }
 
             followPnl.Controls.Add(userPanel);
@@ -3677,6 +3845,12 @@ namespace iConnect
                 BorderRadius = 1
             };
 
+            avatar.Click += (s, e) =>
+            {
+                LoadUserProfile(user.username);
+                profile = user.username;
+            };
+
             notificationPanel.Controls.Add(avatar);
             notificationPanel.Controls.Add(messageLabel);
 
@@ -3840,6 +4014,206 @@ namespace iConnect
 
             UC_Conversation clickedItem = sender as UC_Conversation;
             clickedItem.BackColor = Color.LightBlue;
+        }
+
+
+        // start of profile showing
+        // start of profile showing
+        // start of profile showing
+        private async void LoadUserProfile(string username)
+        {
+            try
+            {
+                profilePnl.Visible = true;
+                // Fetch the user data from the database
+                FirebaseResponse response = await client.GetAsync("Users/" + username);
+                Data userData = response.ResultAs<Data>();
+
+                // Load user profile data
+                usrName.Text = userData.username;
+                fullName.Text = userData.name;
+                dateofBirth.Text = "Ngày sinh: " + userData.dateofb;
+                proPnlAddress.Text = "Sinh sống tại: " + userData.city;
+                proPnlFromLbl.Text = "Đến từ: " + userData.country;
+                bioLbl.Text = userData.bio;
+
+                // Hide edit profile button if viewing another user's profile
+                editPro.Visible = username == this.Username;
+                // Load user avatar
+                await LoadProfileAvatarAsync(username);
+
+                // Update follower and following counts
+                await UpdateFollowerFollowingCounts(username);
+
+                // Load user's posts
+                await LoadPostByUser(username);
+
+                // Add follow/unfollow button
+                AddFollowButton(username);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading user profile: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void AddFollowButton(string username)
+        {
+            // Create the follow button
+            Guna.UI2.WinForms.Guna2Button followProfileBtn = new Guna.UI2.WinForms.Guna2Button
+            {
+                Location = new Point(340, 280),
+                Size = new Size(120, 40),
+                Font = new Font("Segoe UI", 10),
+                AutoRoundedCorners = true,
+                Tag = username
+            };
+
+            // Fetch the current user
+            Data currentUser = await GetCurrentUserInfo();
+
+            // Check if the current user is already following the displayed user
+            FirebaseResponse response = await client.GetAsync($"Follow/{currentUser.username}/Following/{username}");
+            bool isFollowing = response.Body != "null";
+
+            if (isFollowing)
+            {
+                followProfileBtn.Text = "Bỏ theo dõi";
+                followProfileBtn.BorderColor = Color.MediumAquamarine;
+                followProfileBtn.FillColor = Color.Transparent;
+                followProfileBtn.ForeColor = Color.MediumAquamarine;
+                followProfileBtn.BorderThickness = 2;
+                followProfileBtn.Click += UnfollowButton_Click;
+            }
+            else
+            {
+                followProfileBtn.Text = "Theo dõi";
+                followProfileBtn.BorderColor = Color.Transparent;
+                followProfileBtn.FillColor = Color.MediumAquamarine;
+                followProfileBtn.ForeColor = Color.White;
+                followProfileBtn.BorderThickness = 0;
+                followProfileBtn.Click += FollowButton_Click;
+            }
+
+            // Add the button to the profile panel
+            profilePnl.Controls.Add(followProfileBtn);
+        }
+
+        private async Task UpdateFollowerFollowingCounts(string username)
+        {
+            try
+            {
+                FirebaseResponse followerResponse = await client.GetAsync($"Follow/{username}/Follower");
+                var followerDict = followerResponse.Body != "null" ? JsonConvert.DeserializeObject<Dictionary<string, FollowInfo>>(followerResponse.Body) : new Dictionary<string, FollowInfo>();
+                int followerCount = followerDict.Count;
+
+                FirebaseResponse followingResponse = await client.GetAsync($"Follow/{username}/Following");
+                var followingDict = followingResponse.Body != "null" ? JsonConvert.DeserializeObject<Dictionary<string, FollowInfo>>(followingResponse.Body) : new Dictionary<string, FollowInfo>();
+                int followingCount = followingDict.Count;
+
+                followerBtn.Text = $"{followerCount} người theo dõi";
+                followingBtn.Text = $"{followingCount} đang theo dõi";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating follower and following counts: {ex.Message}");
+                followerBtn.Text = "0 người theo dõi";
+                followingBtn.Text = "0 đang theo dõi";
+            }
+        }
+
+        private async Task LoadPostByUser(string username)
+        {
+            try
+            {
+                this.loadingPostForUser.Visible = true;
+                this.flowLayoutLoadPostImages.Visible = false;
+
+                List<Post> posts = await this.getPostsByUsername(username);
+                posts = posts.OrderByDescending(p => DateTime.ParseExact(p.created_at, "dd/MM/yyyy HH:mm:ss", null)).ToList();
+
+                int totalPost = posts.Count;
+                totalPostOfUser.Text = $"{totalPost} Bài viết";
+
+                if (flowLayoutLoadPostImages.Controls.Count > 0)
+                {
+                    flowLayoutLoadPostImages.Controls.Clear();
+                }
+
+                foreach (Post post in posts)
+                {
+                    Panel panel = new Panel
+                    {
+                        Width = 300,
+                        Height = 300,
+                        Margin = new Padding(5),
+                        BorderStyle = BorderStyle.FixedSingle
+                    };
+
+                    PictureBox pictureBox = new PictureBox
+                    {
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        Width = 300,
+                        Height = 300
+                    };
+
+                    pictureBox.Click += new EventHandler(async (object sender, EventArgs e) =>
+                    {
+                        this.panelDetailPost.Visible = true;
+                        profileBtn.Checked = false;
+                        profilePnl.Visible = false;
+                        await LoadComments(post.id.ToString());
+                    });
+
+                    await LoadImageHttp.LoadImageAsync(post.imageUrl, pictureBox);
+
+                    panel.Controls.Add(pictureBox);
+
+                    if (username == Username)
+                    {
+                        Button deleteButton = new Button
+                        {
+                            Text = "X",
+                            ForeColor = Color.Red,
+                            BackColor = Color.Transparent,
+                            FlatStyle = FlatStyle.Flat,
+                            Size = new Size(30, 30),
+                            Location = new Point(270, 0),
+                            Cursor = System.Windows.Forms.Cursors.Hand
+                        };
+
+                        deleteButton.FlatAppearance.BorderSize = 0;
+                        deleteButton.BringToFront();
+                        deleteButton.Click += async (sender, e) =>
+                        {
+                            var result = MessageBox.Show($"Bạn có chắc chắn muốn xóa bài viết `{post.caption}` này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (result == DialogResult.Yes)
+                            {
+                                await this.DeletePost(post.id.ToString());
+                                await this.DeleteCommentByPost(post.id.ToString());
+
+                                MessageBox.Show("Xóa bài viết và comment thành công!");
+                                this._posts.Clear();
+
+                                totalPost -= 1;
+                                totalPostOfUser.Text = $"{totalPost} Bài viết";
+
+                                flowLayoutLoadPostImages.Controls.Remove(panel);
+                            }
+                        };
+
+                        panel.Controls.Add(deleteButton);
+                        deleteButton.BringToFront();
+                    }
+
+                    flowLayoutLoadPostImages.Controls.Add(panel);
+                }
+            }
+            finally
+            {
+                this.loadingPostForUser.Visible = false;
+                this.flowLayoutLoadPostImages.Visible = true;
+            }
         }
     }
 }
