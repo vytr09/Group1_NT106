@@ -1551,13 +1551,7 @@ namespace iConnect
         //    }
         //}
 
-        private void PerformSearch()
-        {
-            string searchText = searchTxt.Text.Trim();
-            // Mở form Search và truyền tham số searchText
-            Search searchForm = new Search(Username);
-            searchForm.Show();
-        }
+        
 
         private void profilePnl_Paint(object sender, PaintEventArgs e)
         {
