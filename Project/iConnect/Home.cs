@@ -360,6 +360,9 @@ namespace iConnect
             userSortPnl.Visible = true;
             postBtn.Checked = false;
             addPostPannel.Visible = false;
+
+            // lọc the người dùng
+            DisplayUsers();
         }
 
         private void recentBtn_Click_1(object sender, EventArgs e)
@@ -2649,18 +2652,167 @@ namespace iConnect
             }
         }
 
+        private void ClearSearchResultsForUser()
+        {
+            if (this.all2Pnl.Controls.Count > 0)
+            {
+                this.all2Pnl.Controls.Clear();
+            }
+        }
+
 
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {
             ClearSearchResults(); // Clear previous search results
             ClearSearchResultsForPost(); // Clear post
+            ClearSearchResultsForUser(); // Clear user
         }
+
+        // Filter for Post
 
         private async void DisplayPosts()
         {
             ClearSearchResultsForPost(); // Clear previous search results
             List<Post> posts = await this.getPostsByUsername(searchTxt.Text);
             RenderPosts1(posts, this.postSortPnl);
+        }
+
+        // Filter for User
+
+        private void RenderUsers(List<Data> users, Guna.UI2.WinForms.Guna2Panel parentPanel)
+        {
+            // Clear previous controls in the parent panel
+            parentPanel.Controls.Clear();
+
+            int topPosition = 0;
+
+            foreach (Data user in users)
+            {
+                // Create a panel for each user
+                Guna.UI2.WinForms.Guna2Panel userPanel = new Guna.UI2.WinForms.Guna2Panel
+                {
+                    Width = parentPanel.Width - 20,
+                    Height = 60,
+                    Top = topPosition,
+                    Left = 10,
+                    Tag = user
+                };
+
+                userPanel.Click += UserPanel_Click;
+
+                // Avatar
+                Guna.UI2.WinForms.Guna2PictureBox avatar = new Guna.UI2.WinForms.Guna2PictureBox
+                {
+                    Width = 50,
+                    Height = 50,
+                    Left = 10,
+                    Top = 5,
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    BorderRadius = 25
+                };
+
+                if (!string.IsNullOrEmpty(user.AvatarUrl))
+                {
+                    avatar.ImageLocation = user.AvatarUrl;
+                }
+                else
+                {
+                    avatar.Image = Properties.Resources.profile;
+                }
+
+                // Name label
+                Guna.UI2.WinForms.Guna2HtmlLabel nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+                {
+                    Text = user.name,
+                    Top = 10,
+                    Left = avatar.Right + 10,
+                    Width = 150,
+                    Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                    BackColor = Color.Transparent
+                };
+
+                // Username label
+                Guna.UI2.WinForms.Guna2HtmlLabel usernameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+                {
+                    Text = "@" + user.username,
+                    Top = nameLabel.Bottom + 5,
+                    Left = avatar.Right + 10,
+                    Width = 150,
+                    Font = new Font("Segoe UI", 10, FontStyle.Italic),
+                    BackColor = Color.Transparent
+                };
+
+                // Follow button
+                Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
+                {
+                    Text = "Theo dõi",
+                    Width = 80,
+                    Height = 30,
+                    Top = 15,
+                    Left = parentPanel.Width - 110,
+                    AutoRoundedCorners = true,
+                    FillColor = Color.MediumAquamarine,
+                    Tag = user,
+                    Font = new Font("Segoe UI", 10)
+                };
+                followButton.Click += FollowButton_Click;
+
+                // Add controls to user panel
+                userPanel.Controls.Add(avatar);
+                userPanel.Controls.Add(nameLabel);
+                userPanel.Controls.Add(usernameLabel);
+                userPanel.Controls.Add(followButton);
+
+                // Add user panel to parent panel
+                parentPanel.Controls.Add(userPanel);
+
+                topPosition += 70; // Update the top position for the next user panel
+            }
+        }
+
+        private void UserPanel_Click(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Panel userPanel = sender as Guna.UI2.WinForms.Guna2Panel;
+            Data user = userPanel.Tag as Data;
+
+            if (user != null)
+            {
+                // Hiển thị chi tiết người dùng hoặc thực hiện các hành động khác
+                MessageBox.Show($"Thông tin người dùng: \nTên: {user.name}\nUsername: @{user.username}", "Thông tin người dùng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+        private async void DisplayUsers()
+        {
+            ClearSearchResultsForUser(); // Clear previous search results
+            List<Data> users = await this.getUsersByUsername(searchTxt.Text);
+            //RenderUsers(users, this.userSortPnl);
+            RenderUsers(users, this.all2Pnl);
+        }
+
+        private async Task<List<Data>> getUsersByUsername(string username)
+        {
+            FirebaseResponse response = await client.GetAsync("/users");
+            List<Data> users = new List<Data>();
+
+            if (response.Body == "null")
+            {
+                return users;
+            }
+
+            var jsonUsers = JsonConvert.DeserializeObject<Dictionary<string, Data>>(response.Body);
+
+            foreach (var item in jsonUsers)
+            {
+                Data user = item.Value;
+                if (user.username.Equals(username, StringComparison.OrdinalIgnoreCase) || user.name.Equals(username, StringComparison.OrdinalIgnoreCase))
+                {
+                    users.Add(user);
+                }
+            }
+
+            return users;
         }
 
 
