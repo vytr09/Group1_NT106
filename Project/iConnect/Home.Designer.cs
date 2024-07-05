@@ -229,6 +229,8 @@
             this.chinhsuatrangcanhan = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lockAccountBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.delAccountBtn = new Guna.UI2.WinForms.Guna2Button();
             this.removedContent = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel54 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel55 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -250,8 +252,7 @@
             this.searchblockTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.notiStatusLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel45 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -327,8 +328,7 @@
             this.mentionnotiBtn = new Guna.UI2.WinForms.Guna2Button();
             this.allnotiBtn = new Guna.UI2.WinForms.Guna2Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.delAccountBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.lockAccountBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.notifSettingBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.navPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.panelDetailPost.SuspendLayout();
@@ -3662,12 +3662,12 @@
             // 
             // guna2Panel11
             // 
+            this.guna2Panel11.Controls.Add(this.panel7);
             this.guna2Panel11.Controls.Add(this.panel3);
             this.guna2Panel11.Controls.Add(this.guna2Panel12);
             this.guna2Panel11.Controls.Add(this.guna2Panel13);
             this.guna2Panel11.Controls.Add(this.guna2Panel10);
             this.guna2Panel11.Controls.Add(this.guna2Panel9);
-            this.guna2Panel11.Controls.Add(this.panel7);
             this.guna2Panel11.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Panel11.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.guna2Panel11.Location = new System.Drawing.Point(359, -1);
@@ -3689,6 +3689,42 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(615, 700);
             this.panel3.TabIndex = 10;
+            // 
+            // lockAccountBtn
+            // 
+            this.lockAccountBtn.AutoRoundedCorners = true;
+            this.lockAccountBtn.BorderRadius = 21;
+            this.lockAccountBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.lockAccountBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.lockAccountBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.lockAccountBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.lockAccountBtn.FillColor = System.Drawing.Color.Green;
+            this.lockAccountBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lockAccountBtn.ForeColor = System.Drawing.Color.White;
+            this.lockAccountBtn.Location = new System.Drawing.Point(40, 466);
+            this.lockAccountBtn.Name = "lockAccountBtn";
+            this.lockAccountBtn.Size = new System.Drawing.Size(180, 45);
+            this.lockAccountBtn.TabIndex = 9;
+            this.lockAccountBtn.Text = "Khóa tài khoản";
+            this.lockAccountBtn.Click += new System.EventHandler(this.lockAccountBtn_Click);
+            // 
+            // delAccountBtn
+            // 
+            this.delAccountBtn.AutoRoundedCorners = true;
+            this.delAccountBtn.BorderRadius = 21;
+            this.delAccountBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.delAccountBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.delAccountBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.delAccountBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.delAccountBtn.FillColor = System.Drawing.Color.Firebrick;
+            this.delAccountBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.delAccountBtn.ForeColor = System.Drawing.Color.White;
+            this.delAccountBtn.Location = new System.Drawing.Point(40, 408);
+            this.delAccountBtn.Name = "delAccountBtn";
+            this.delAccountBtn.Size = new System.Drawing.Size(180, 45);
+            this.delAccountBtn.TabIndex = 8;
+            this.delAccountBtn.Text = "Xóa tài khoản";
+            this.delAccountBtn.Click += new System.EventHandler(this.delAccountBtn_Click);
             // 
             // removedContent
             // 
@@ -3965,9 +4001,9 @@
             // 
             // guna2Panel10
             // 
+            this.guna2Panel10.Controls.Add(this.notifSettingBtn);
             this.guna2Panel10.Controls.Add(this.guna2HtmlLabel2);
-            this.guna2Panel10.Controls.Add(this.guna2GradientButton10);
-            this.guna2Panel10.Controls.Add(this.guna2HtmlLabel24);
+            this.guna2Panel10.Controls.Add(this.notiStatusLbl);
             this.guna2Panel10.Controls.Add(this.guna2HtmlLabel45);
             this.guna2Panel10.Location = new System.Drawing.Point(1, 12);
             this.guna2Panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -3987,36 +4023,16 @@
             this.guna2HtmlLabel2.TabIndex = 3;
             this.guna2HtmlLabel2.Text = "Bạn không nhìn thấy thông báo mới khi tắt thông báo";
             // 
-            // guna2GradientButton10
+            // notiStatusLbl
             // 
-            this.guna2GradientButton10.BorderRadius = 10;
-            this.guna2GradientButton10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton10.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton10.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton10.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton10.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton10.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton10.Image = global::iConnect.Properties.Resources.on_off;
-            this.guna2GradientButton10.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton10.Location = new System.Drawing.Point(176, 75);
-            this.guna2GradientButton10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2GradientButton10.Name = "guna2GradientButton10";
-            this.guna2GradientButton10.Size = new System.Drawing.Size(35, 32);
-            this.guna2GradientButton10.TabIndex = 2;
-            // 
-            // guna2HtmlLabel24
-            // 
-            this.guna2HtmlLabel24.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2HtmlLabel24.Location = new System.Drawing.Point(37, 73);
-            this.guna2HtmlLabel24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2HtmlLabel24.Name = "guna2HtmlLabel24";
-            this.guna2HtmlLabel24.Size = new System.Drawing.Size(127, 30);
-            this.guna2HtmlLabel24.TabIndex = 1;
-            this.guna2HtmlLabel24.Text = "Tắt thông báo";
+            this.notiStatusLbl.BackColor = System.Drawing.Color.Transparent;
+            this.notiStatusLbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.notiStatusLbl.Location = new System.Drawing.Point(37, 73);
+            this.notiStatusLbl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.notiStatusLbl.Name = "notiStatusLbl";
+            this.notiStatusLbl.Size = new System.Drawing.Size(127, 30);
+            this.notiStatusLbl.TabIndex = 1;
+            this.notiStatusLbl.Text = "Tắt thông báo";
             // 
             // guna2HtmlLabel45
             // 
@@ -4031,12 +4047,12 @@
             // 
             // guna2Panel9
             // 
+            this.guna2Panel9.Controls.Add(this.privateAccountBtn);
             this.guna2Panel9.Controls.Add(this.guna2HtmlLabel15);
             this.guna2Panel9.Controls.Add(this.guna2Panel5);
             this.guna2Panel9.Controls.Add(this.guna2HtmlLabel14);
             this.guna2Panel9.Controls.Add(this.guna2Panel2);
             this.guna2Panel9.Controls.Add(this.guna2HtmlLabel46);
-            this.guna2Panel9.Controls.Add(this.privateAccountBtn);
             this.guna2Panel9.Controls.Add(this.guna2HtmlLabel47);
             this.guna2Panel9.Controls.Add(this.guna2HtmlLabel48);
             this.guna2Panel9.Location = new System.Drawing.Point(1, 7);
@@ -5354,41 +5370,32 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // delAccountBtn
+            // notifSettingBtn
             // 
-            this.delAccountBtn.AutoRoundedCorners = true;
-            this.delAccountBtn.BorderRadius = 21;
-            this.delAccountBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.delAccountBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.delAccountBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.delAccountBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.delAccountBtn.FillColor = System.Drawing.Color.Firebrick;
-            this.delAccountBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.delAccountBtn.ForeColor = System.Drawing.Color.White;
-            this.delAccountBtn.Location = new System.Drawing.Point(40, 408);
-            this.delAccountBtn.Name = "delAccountBtn";
-            this.delAccountBtn.Size = new System.Drawing.Size(180, 45);
-            this.delAccountBtn.TabIndex = 8;
-            this.delAccountBtn.Text = "Xóa tài khoản";
-            this.delAccountBtn.Click += new System.EventHandler(this.delAccountBtn_Click);
-            // 
-            // lockAccountBtn
-            // 
-            this.lockAccountBtn.AutoRoundedCorners = true;
-            this.lockAccountBtn.BorderRadius = 21;
-            this.lockAccountBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.lockAccountBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.lockAccountBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.lockAccountBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.lockAccountBtn.FillColor = System.Drawing.Color.Green;
-            this.lockAccountBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lockAccountBtn.ForeColor = System.Drawing.Color.White;
-            this.lockAccountBtn.Location = new System.Drawing.Point(40, 466);
-            this.lockAccountBtn.Name = "lockAccountBtn";
-            this.lockAccountBtn.Size = new System.Drawing.Size(180, 45);
-            this.lockAccountBtn.TabIndex = 9;
-            this.lockAccountBtn.Text = "Khóa tài khoản";
-            this.lockAccountBtn.Click += new System.EventHandler(this.lockAccountBtn_Click);
+            this.notifSettingBtn.BorderRadius = 10;
+            this.notifSettingBtn.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.notifSettingBtn.CheckedState.FillColor2 = System.Drawing.Color.Transparent;
+            this.notifSettingBtn.CheckedState.Image = global::iConnect.Properties.Resources.on;
+            this.notifSettingBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.notifSettingBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.notifSettingBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.notifSettingBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.notifSettingBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.notifSettingBtn.FillColor = System.Drawing.Color.White;
+            this.notifSettingBtn.FillColor2 = System.Drawing.Color.White;
+            this.notifSettingBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.notifSettingBtn.ForeColor = System.Drawing.Color.White;
+            this.notifSettingBtn.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.notifSettingBtn.HoverState.FillColor2 = System.Drawing.Color.Transparent;
+            this.notifSettingBtn.Image = global::iConnect.Properties.Resources.off;
+            this.notifSettingBtn.ImageSize = new System.Drawing.Size(35, 35);
+            this.notifSettingBtn.Location = new System.Drawing.Point(176, 75);
+            this.notifSettingBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.notifSettingBtn.Name = "notifSettingBtn";
+            this.notifSettingBtn.PressedDepth = 0;
+            this.notifSettingBtn.Size = new System.Drawing.Size(40, 36);
+            this.notifSettingBtn.TabIndex = 4;
+            this.notifSettingBtn.Click += new System.EventHandler(this.notifSettingBtn_Click);
             // 
             // Home
             // 
@@ -5632,8 +5639,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel59;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton10;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel24;
+        private Guna.UI2.WinForms.Guna2HtmlLabel notiStatusLbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel45;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel46;
@@ -5797,5 +5803,6 @@
         private Guna.UI2.WinForms.Guna2Button changeEmailBtn;
         private Guna.UI2.WinForms.Guna2Button delAccountBtn;
         private Guna.UI2.WinForms.Guna2Button lockAccountBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton notifSettingBtn;
     }
 }
