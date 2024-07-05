@@ -92,12 +92,12 @@ namespace iConnect
             InitializeComponent();
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             Username = username;
-            reload();
             this.Load += async (sender, e) => await Form_Load(sender, e);
-
+            reload();
             // Gắn sự kiện KeyPress cho textbox tìm kiếm
             searchTxt.KeyPress += new KeyPressEventHandler(SearchTextBox_KeyPress);
             searchTxt.TextChanged += new EventHandler(searchTxt_TextChanged);
+            notiBtn.CheckedChanged += new EventHandler(notiBtn_CheckedChanged);
         }
 
         // Call this method when the form loads to populate the blocked users panel
@@ -105,6 +105,7 @@ namespace iConnect
         {
             await LoadBlockedUsers();
             await DisplayRandomUsers();
+            await CheckForUnreadNotifications();
         }
 
         private async void reload()
@@ -307,6 +308,7 @@ namespace iConnect
             postBtn.Checked = false;
             addPostPannel.Visible = false;
             await DisplayRandomUsers();
+            await DisplayNotifications();
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -796,27 +798,6 @@ namespace iConnect
             {
                 MessageBox.Show($"Failed to log out. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void allnotiBtn_Click(object sender, EventArgs e)
-        {
-            allnotiBtn.Checked = true;
-            mentionnotiBtn.Checked = false;
-            recnotiBtn.Checked = false;
-        }
-
-        private void mentionnotiBtn_Click(object sender, EventArgs e)
-        {
-            allnotiBtn.Checked = false;
-            mentionnotiBtn.Checked = true;
-            recnotiBtn.Checked = false;
-        }
-
-        private void recnotiBtn_Click(object sender, EventArgs e)
-        {
-            allnotiBtn.Checked = false;
-            mentionnotiBtn.Checked = false;
-            recnotiBtn.Checked = true;
         }
 
         private void editPro_Click(object sender, EventArgs e)
@@ -1494,6 +1475,8 @@ namespace iConnect
             {
                 post.likes.Add(user);
                 this._posts[foundPostIndex].likes.Add(user);
+                // Create notification
+                await CreateNotification(this.Username, post.user, "Like", $"{this.Username} đã thích bài viết của bạn.");
             }
 
             int countLikeComponent = this._posts[foundPostIndex].likes.Count;
@@ -1589,16 +1572,18 @@ namespace iConnect
 
             PushResponse response = await this.client.PushAsync($"/comments/{newComment.postId}", newComment);
 
+            // Update count comment in post
+            Post post = await this.getPostById(postId);
+
             if (response != null)
             {
                 MessageBox.Show("Đăng bình luận thành công!");
                 txbComment.Text = "";
                 if (!string.IsNullOrEmpty(parentId)) this.selectedCommentId = string.Empty;
                 this.HiddenReply();
+                // Create notification
+                await CreateNotification(this.Username, post.user, "Comment", $"{this.Username} đã bình luận về bài viết.");
             }
-
-            // Update count comment in post
-            Post post = await this.getPostById(postId);
 
             post.comments.Add(newComment.id.ToString());
 
@@ -3120,6 +3105,9 @@ namespace iConnect
                 await client.SetAsync($"Follow/{currentUser.username}/Following/{userToFollow.username}", followData);
                 await client.SetAsync($"Follow/{userToFollow.username}/Follower/{currentUser.username}", followData);
 
+                // Create notification
+                await CreateNotification(currentUser.username, userToFollow.username, "Follow", $"{currentUser.username} đã bắt đầu theo dõi bạn.");
+
                 // Update button to "Unfollow"
                 followButton.Text = "Bỏ theo dõi";
                 followButton.BorderColor = Color.MediumAquamarine;
@@ -3308,7 +3296,7 @@ namespace iConnect
                 {
                     Text = "Gỡ",
                     Width = 80,
-                    Height = 30,
+                    Height = 40,
                     Left = userPanel.Width - 90,
                     Top = 15,
                     Font = new Font("Segoe UI", 10),
@@ -3324,9 +3312,9 @@ namespace iConnect
             {
                 Guna.UI2.WinForms.Guna2Button followButton = new Guna.UI2.WinForms.Guna2Button
                 {
-                    Width = 100,
-                    Height = 30,
-                    Left = userPanel.Width - 110,
+                    Width = 120,
+                    Height = 40,
+                    Left = userPanel.Width - 130,
                     Top = 15,
                     Font = new Font("Segoe UI", 10),
                     Tag = user
@@ -3389,5 +3377,224 @@ namespace iConnect
         // end of recommendation and follow
         // end of recommendation and follow
         // end of recommendation and follow
+
+        // start of notification
+        // start of notification
+        // start of notification
+        public class Notification
+        {
+            public string Sender { get; set; }
+            public string Recipient { get; set; }
+            public string Type { get; set; }
+            public string Message { get; set; }
+            public DateTime Timestamp { get; set; }
+            public bool IsRead { get; set; } = false; // Default to false for new notifications
+        }
+        private async Task CreateNotification(string sender, string recipient, string type, string message)
+        {
+            Notification notification = new Notification
+            {
+                Sender = sender,
+                Recipient = recipient,
+                Type = type,
+                Message = message,
+                Timestamp = DateTime.UtcNow,
+                IsRead = false
+            };
+
+            await client.PushAsync($"Notifications/{recipient}", notification);
+        }
+        private async Task<Dictionary<string, Notification>> FetchNotifications(string username)
+        {
+            FirebaseResponse response = await client.GetAsync($"Notifications/{username}");
+            if (response.Body != "null")
+            {
+                return JsonConvert.DeserializeObject<Dictionary<string, Notification>>(response.Body);
+            }
+            return new Dictionary<string, Notification>();
+        }
+        private async Task DisplayNotifications()
+        {
+            try
+            {
+                // Fetch the current user
+                Data currentUser = await GetCurrentUserInfo();
+
+                // Fetch the user's notifications
+                FirebaseResponse response = await client.GetAsync($"Notifications/{currentUser.username}");
+                var notifications = response.Body != "null" ?
+                    JsonConvert.DeserializeObject<Dictionary<string, Notification>>(response.Body) :
+                    new Dictionary<string, Notification>();
+
+                // Clear existing controls in loadNotiPnl
+                loadNotiPnl.Controls.Clear();
+
+                // Display notifications
+                int topPosition = 10;
+                int verticalSpacing = 60;
+
+                foreach (var notification in notifications.Values.OrderByDescending(n => n.Timestamp))
+                {
+                    AddNotificationToPanel(notification, topPosition);
+                    topPosition += verticalSpacing;
+                }
+
+                // Mark notifications as read
+                foreach (var key in notifications.Keys)
+                {
+                    notifications[key].IsRead = true;
+                    await client.SetAsync($"Notifications/{currentUser.username}/{key}", notifications[key]);
+                }
+
+                // Update notification button icon only if it is checked
+                if (notiBtn.Checked)
+                {
+                    notiBtn.CustomImages.Image = Properties.Resources.Notification_fill; // Set to normal image
+                    notiBtn.Invalidate(); // Force the button to redraw
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error displaying notifications: {ex.Message}");
+            }
+        }
+
+
+        private async void AddNotificationToPanel(Notification notification, int topPosition)
+        {
+            Guna.UI2.WinForms.Guna2Panel notificationPanel = new Guna.UI2.WinForms.Guna2Panel
+            {
+                Width = loadNotiPnl.Width - 20,
+                Height = 60,
+                Top = topPosition,
+                Left = 10,
+                BorderRadius = 5
+            };
+            // Fetch the user who made the notification
+            FirebaseResponse userResponse = await client.GetAsync($"Users/{notification.Sender}");
+            Data user = JsonConvert.DeserializeObject<Data>(userResponse.Body);
+
+            Guna.UI2.WinForms.Guna2PictureBox avatar = new Guna.UI2.WinForms.Guna2PictureBox
+            {
+                Width = 50,
+                Height = 50,
+                Left = 3,
+                Top = 5,
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderRadius = 25
+            };
+
+            if (!string.IsNullOrEmpty(user.AvatarUrl))
+            {
+                avatar.ImageLocation = user.AvatarUrl;
+            }
+            else
+            {
+                avatar.Image = Properties.Resources.profile; // Default profile image
+            }
+
+            Guna.UI2.WinForms.Guna2HtmlLabel messageLabel = new Guna.UI2.WinForms.Guna2HtmlLabel
+            {
+                Text = notification.Message,
+                Left = 60,
+                Top = 15,
+                Width = loadNotiPnl.Width - 120,
+                Font = new Font("Segoe UI", 10, FontStyle.Regular),
+                BackColor = Color.Transparent
+            };
+
+            Guna.UI2.WinForms.Guna2Panel separatorPanel = new Guna.UI2.WinForms.Guna2Panel
+            {
+                Width = loadNotiPnl.Width - 20,
+                Height = 1,
+                Top = notificationPanel.Bottom + 7,
+                Left = 10,
+                BackColor = Color.Gray,
+                BorderRadius = 1
+            };
+
+            notificationPanel.Controls.Add(avatar);
+            notificationPanel.Controls.Add(messageLabel);
+
+            loadNotiPnl.Controls.Add(notificationPanel);
+            loadNotiPnl.Controls.Add(separatorPanel);
+        }
+        private async Task CheckForUnreadNotifications()
+        {
+            try
+            {
+                // Fetch the current user
+                Data currentUser = await GetCurrentUserInfo();
+
+                // Fetch the user's notifications
+                FirebaseResponse response = await client.GetAsync($"Notifications/{currentUser.username}");
+                var notifications = response.Body != "null" ?
+                    JsonConvert.DeserializeObject<Dictionary<string, Notification>>(response.Body) :
+                    new Dictionary<string, Notification>();
+
+                // Check for unread notifications
+                bool hasUnread = notifications.Values.Any(n => !n.IsRead);
+
+                // Update notification button icon
+                if (notiBtn.Checked)
+                {
+                    notiBtn.CustomImages.Image = hasUnread ? Properties.Resources.notification_new : Properties.Resources.Notification_fill;
+                }
+                else
+                {
+                    notiBtn.CustomImages.Image = hasUnread ? Properties.Resources.notification_new : Properties.Resources.Notification;
+                }
+                notiBtn.Invalidate(); // Force the button to redraw
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error checking notifications: {ex.Message}");
+            }
+        }
+
+        // Event handler for notiBtn CheckedChanged
+        private async void notiBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (notiBtn.Checked)
+            {
+                notiBtn.CustomImages.Image = Properties.Resources.Notification_fill;
+                notiBtn.Invalidate(); // Force the button to redraw
+                await DisplayNotifications();
+            }
+            else
+            {
+                await CheckForUnreadNotifications();
+            }
+        }
+
+        private async void deleteAllNoti_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete all notifications?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Fetch the current user
+                    Data currentUser = await GetCurrentUserInfo();
+
+                    // Delete all notifications for the user
+                    await client.DeleteAsync($"Notifications/{currentUser.username}");
+
+                    // Clear the notification panel
+                    loadNotiPnl.Controls.Clear();
+
+                    // Update notification button icon
+                    notiBtn.CustomImages.Image = Properties.Resources.Notification; // Set to default image
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting notifications: {ex.Message}");
+                }
+            }
+        }
+        // end of notification
+        // end of notification
+        // end of notification
     }
 }
