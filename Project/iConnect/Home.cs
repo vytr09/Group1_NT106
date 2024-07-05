@@ -2367,21 +2367,6 @@ namespace iConnect
 
         private async void SearchPostsByUsername(string username)
         {
-            //if (string.IsNullOrEmpty(username))
-            //{
-            //    MessageBox.Show("Please enter a username to search for.");
-            //    return;
-            //}
-
-            //try
-            //{
-            //    List<Post> posts = await this.getPostsByUsername(username);
-            //    this.RenderPosts(posts);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"An error occurred while searching for posts: {ex.Message}");
-            //}
 
             if (string.IsNullOrEmpty(username))
             {
@@ -2394,7 +2379,8 @@ namespace iConnect
                 List<Post> posts = await this.getPostsByUsername(username);
                 if (posts.Count > 0)
                 {
-                    this.RenderPosts(posts);
+                    //this.RenderPosts1(posts);
+                    this.RenderPosts1(posts, this.searchPnl);
                 }
                 else
                 {
@@ -2407,6 +2393,8 @@ namespace iConnect
                 MessageBox.Show($"An error occurred while searching for posts: {ex.Message}");
             }
         }
+
+
 
         private async Task<List<Post>> getPostsByUsername(string username)
         {
@@ -2433,6 +2421,113 @@ namespace iConnect
             return posts.OrderBy(p => DateTime.ParseExact(p.created_at, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture)).ToList();
 
         }
+
+        //private void RenderPosts1(List<Post> posts)
+        //{
+        //    if (posts.Count < 0)
+        //    {
+        //        return;
+        //    }
+
+        //    if (this.panelRenderPost.Controls.Count > 0)
+        //    {
+        //        this.panelRenderPost.Controls.Clear();
+        //    }
+
+        //    bool isLoading = false;
+
+        //    foreach (Post post in posts)
+        //    {
+        //        Console.WriteLine(post.id);
+        //        isLoading = true;
+
+        //        UC_Post panelPost = new UC_Post();
+
+        //        panelPost.Name = $"{post.id}";
+        //        panelPost.Dock = DockStyle.Top;
+        //        panelPost.LabelCountComment = $"{post.comments.Count}";
+        //        panelPost.LabelCountLike = $"{post.likes.Count}";
+        //        panelPost.AuthorName = $"{post.userData.name}";
+        //        panelPost.LoadPostPicture(post.imageUrl);
+        //        panelPost.PostCaption = post.caption;
+        //        panelPost.PostCreatedAt = this.FormatFacebookTime(post.created_at);
+        //        panelPost.ButtonImageLike = !post.likes.Contains(Username) ? global::iConnect.Properties.Resources.heart : global::iConnect.Properties.Resources.redheart;
+
+        //        if (!string.IsNullOrEmpty(post.userData.AvatarUrl))
+        //        {
+        //            panelPost.LoadAuthorAvatar(post.userData.AvatarUrl);
+        //        }
+
+        //        panelPost.ButtonCommentClick = new System.EventHandler((object sender, EventArgs e) =>
+        //        {
+        //            this.handleClickBtnComment(post.id.ToString());
+        //        });
+
+        //        panelPost.ButtonLikeClick = new System.EventHandler((object sender, EventArgs e) =>
+        //        {
+        //            this.handleClickBtnLike(post.id.ToString(), panelPost);
+        //        });
+
+        //        this.panelRenderPost.Controls.Add(panelPost);
+
+        //        isLoading = false;
+        //    }
+
+        //    if (!isLoading)
+        //    {
+        //        this.panelLoadingPost.Visible = false;
+        //        this.panelRenderPost.Visible = true;
+        //    }
+        //}
+
+        private void RenderPosts1(List<Post> posts, Panel targetPanel)
+        {
+            if (posts.Count == 0)
+            {
+                return;
+            }
+
+            if (targetPanel.Controls.Count > 0)
+            {
+                targetPanel.Controls.Clear();
+            }
+
+            foreach (Post post in posts)
+            {
+                UC_Post panelPost = new UC_Post();
+
+                panelPost.Name = $"{post.id}";
+                panelPost.Dock = DockStyle.Top;
+                panelPost.LabelCountComment = $"{post.comments.Count}";
+                panelPost.LabelCountLike = $"{post.likes.Count}";
+                panelPost.AuthorName = $"{post.userData.name}";
+                panelPost.LoadPostPicture(post.imageUrl);
+                panelPost.PostCaption = post.caption;
+                panelPost.PostCreatedAt = this.FormatFacebookTime(post.created_at);
+                panelPost.ButtonImageLike = !post.likes.Contains(Username) ? global::iConnect.Properties.Resources.heart : global::iConnect.Properties.Resources.redheart;
+
+                if (!string.IsNullOrEmpty(post.userData.AvatarUrl))
+                {
+                    panelPost.LoadAuthorAvatar(post.userData.AvatarUrl);
+                }
+
+                panelPost.ButtonCommentClick = new System.EventHandler((object sender, EventArgs e) =>
+                {
+                    this.handleClickBtnComment(post.id.ToString());
+                });
+
+                panelPost.ButtonLikeClick = new System.EventHandler((object sender, EventArgs e) =>
+                {
+                    this.handleClickBtnLike(post.id.ToString(), panelPost);
+                });
+
+                targetPanel.Controls.Add(panelPost);
+            }
+
+            this.panelLoadingPost.Visible = false;
+            targetPanel.Visible = true;
+        }
+
 
         public static Bitmap ResizeImage1(Image image, int width, int height)
         {
@@ -2486,7 +2581,7 @@ namespace iConnect
                 MessageBox.Show($"An error occurred while loading the image: {ex.Message}");
             }
         }
-
+        // End search
 
 
     }
