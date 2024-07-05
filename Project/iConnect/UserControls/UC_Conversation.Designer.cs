@@ -35,15 +35,17 @@
             // 
             // UserAvatar
             // 
+            this.UserAvatar.BackColor = System.Drawing.Color.Transparent;
             this.UserAvatar.Image = global::iConnect.Properties.Resources.profile;
             this.UserAvatar.ImageRotate = 0F;
             this.UserAvatar.Location = new System.Drawing.Point(20, 20);
             this.UserAvatar.Name = "UserAvatar";
             this.UserAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.UserAvatar.Size = new System.Drawing.Size(80, 80);
-            this.UserAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UserAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UserAvatar.TabIndex = 0;
             this.UserAvatar.TabStop = false;
+            this.UserAvatar.UseTransparentBackground = true;
             // 
             // UserName
             // 
