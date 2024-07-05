@@ -8,10 +8,14 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -105,7 +109,7 @@ namespace iConnect
             this.panelDetailPost.Visible = false;
 
             client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = client.Get("Users/" + Username);
+            FirebaseResponse response = await client.GetAsync("Users/" + Username);
             Data result = response.ResultAs<Data>();
 
             if (this.homeBtn.Checked)
@@ -167,6 +171,17 @@ namespace iConnect
             relaCmb.Text = result.relationship;
 
             await LoadAvatarAsync(Username);
+
+            // Retrieve and set the account type
+            string accountType = await GetAccountType(result.username);
+            if (accountType == "private")
+            {
+                privateAccountBtn.Checked = true;
+            }
+            else
+            {
+                privateAccountBtn.Checked = false;
+            }
         }
 
         // Method to load the avatar image from the AvatarUrl
@@ -1527,14 +1542,14 @@ namespace iConnect
             this.HiddenReply();
         }
 
-        private void SearchTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                PerformSearch();
-                e.Handled = true; // Đánh dấu sự kiện đã được xử lý
-            }
-        }
+        //private void SearchTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == (char)Keys.Enter)
+        //    {
+        //        PerformSearch();
+        //        e.Handled = true; // Đánh dấu sự kiện đã được xử lý
+        //    }
+        //}
 
         private void PerformSearch()
         {
@@ -1549,6 +1564,9 @@ namespace iConnect
 
         }
 
+        // report start
+        // report start
+        // report start
         private OpenFileDialog openFileDialog = new OpenFileDialog();
         private void addfileBtn_Click(object sender, EventArgs e)
         {
@@ -1675,8 +1693,14 @@ namespace iConnect
             public string Status { get; set; }
             public string CreatedAt { get; set; }
         }
+        // report end
+        // report end
+        // report end
 
 
+        // block start
+        // block start
+        // block start
         private void AddUserToSearchResults(Data user)
         {
             Guna.UI2.WinForms.Guna2Panel userPanel = new Guna.UI2.WinForms.Guna2Panel
@@ -1992,6 +2016,484 @@ namespace iConnect
             int topMargin = index == 0 ? UserPanelTopMargin : 0;
             panel.Location = new Point(20, index * (UserPanelHeight + UserPanelMarginBottom) + topMargin);
         }
+        // block end
+        // block end
+        // block end
+
+
+        // settings start
+        // settings start
+        // settings start
+        private async void privateAccountBtn_Click(object sender, EventArgs e)
+        {
+            Data currentUser = await GetCurrentUserInfo();
+
+            if (currentUser == null)
+            {
+                MessageBox.Show("Error: Could not retrieve current user info.");
+                return;
+            }
+
+            string currentAccountType = await GetAccountType(currentUser.username);
+
+            if (currentAccountType == null)
+            {
+                MessageBox.Show("Error: Could not retrieve account type.");
+                return;
+            }
+
+            string newAccountType;
+
+            if (privateAccountBtn.Checked)
+            {
+                privateAccountBtn.Checked = false;
+                newAccountType = "public";
+            }
+            else
+            {
+                privateAccountBtn.Checked = true;
+                newAccountType = "private";
+            }
+
+            await UpdateAccountType(currentUser.username, newAccountType);
+        }
+        private async Task<string> GetAccountType(string username)
+        {
+            try
+            {
+                FirebaseResponse response = await client.GetAsync($"Settings/{username}/AccountType");
+                string accountType = response.ResultAs<string>();
+
+                if (string.IsNullOrEmpty(accountType))
+                {
+                    // If AccountType doesn't exist, create it with default value "public"
+                    accountType = "public";
+                    await client.SetAsync($"Settings/{username}/AccountType", accountType);
+                }
+
+                return accountType;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error retrieving account type: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "public"; // Return default value if there's an error
+            }
+        }
+
+        private async Task UpdateAccountType(string username, string newAccountType)
+        {
+            try
+            {
+                await client.SetAsync($"Settings/{username}/AccountType", newAccountType);
+                MessageBox.Show($"Account type has been updated to {newAccountType}.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating account type: {ex.Message}");
+            }
+        }
+
+        private string verificationCode;
+
+        private async void sendCodeBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Data currentUser = await GetCurrentUserInfo();
+
+                if (currentUser == null)
+                {
+                    MessageBox.Show("Error: Could not retrieve current user info.");
+                    return;
+                }
+
+                verificationCode = GenerateVerificationCode();
+                SendVerificationCodeToEmail(currentUser.email, verificationCode);
+
+                MessageBox.Show("Verification code sent to your email.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error sending verification code: {ex.Message}");
+            }
+        }
+
+        private void SendVerificationCodeToEmail(string email, string confirmationCode)
+        {
+            // Email configuration
+            string senderEmail = "kaitsukishi@gmail.com"; // Your email address
+            string senderPassword = "psqhniyosuaxspqm"; // Your email password
+            string smtpHost = "smtp.gmail.com"; // Your SMTP host
+            int smtpPort = 587; // Your SMTP port (e.g., 587 for Gmail)
+
+            // Email content
+            string subject = "iConnect - Thay đổi mật khẩu";
+            string body = $"Chào bạn,<br><br>" +
+                            $"Bạn đã yêu cầu thay đổi mật khẩu tài khoản của mình.<br><br>" +
+                            $"Đây là mã xác nhận của bạn: <b>{confirmationCode}</b>.<br>" +
+                            $"Vui lòng sử dụng mã này để hoàn tất quá trình thay đổi mật khẩu.<br><br>" +
+                            $"Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.<br><br>" +
+                            $"Trân trọng,<br>Đội ngũ quản trị viên";
+
+            // Create and configure the SMTP client
+            SmtpClient client = new SmtpClient(smtpHost, smtpPort)
+            {
+                Credentials = new NetworkCredential(senderEmail, senderPassword),
+                EnableSsl = true // Enable SSL for secure connection (e.g., for Gmail)
+            };
+
+            // Create the email message
+            MailMessage mailMessage = new MailMessage(senderEmail, email, subject, body)
+            {
+                IsBodyHtml = true // Set to true if your email body contains HTML
+            };
+
+            // Send the email
+            client.Send(mailMessage);
+        }
+
+        private string GenerateVerificationCode()
+        {
+            Random random = new Random();
+            return random.Next(100000, 999999).ToString();
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
+        private async void changePwdBtn_Click(object sender, EventArgs e)
+        {
+            string oldPassword = oldPwdTxt.Text;
+            string newPassword = newPwdTxt.Text;
+            string reEnterPassword = renewPwdTxt.Text;
+            string enteredCode = verifyCodeTxt.Text;
+
+            Data currentUser = await GetCurrentUserInfo();
+
+            if (currentUser == null)
+            {
+                MessageBox.Show("Error: Could not retrieve current user info.");
+                return;
+            }
+
+            if (HashPassword(oldPassword) != currentUser.password)
+            {
+                MessageBox.Show("Old password is incorrect.");
+                return;
+            }
+
+            if (!IsValidPassword(newPassword))
+            {
+                MessageBox.Show("New password does not meet the requirements.");
+                return;
+            }
+
+            if (newPassword != reEnterPassword)
+            {
+                MessageBox.Show("Re-entered password does not match the new password.");
+                return;
+            }
+
+            if (enteredCode != verificationCode)
+            {
+                MessageBox.Show("Verification code is incorrect.");
+                return;
+            }
+
+            try
+            {
+                currentUser.password = HashPassword(newPassword);
+                await UpdateUserPassword(currentUser);
+
+                MessageBox.Show("Password changed successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error changing password: {ex.Message}");
+            }
+        }
+        private bool IsValidPassword(string password)
+        {
+            if (password.Length < 8) return false;
+            if (!password.Any(char.IsUpper)) return false;
+            if (!password.Any(char.IsLower)) return false;
+            if (!password.Any(char.IsDigit)) return false;
+            if (!password.Any(ch => "!@#$%^&*()".Contains(ch))) return false;
+
+            return true;
+        }
+
+        private async Task UpdateUserPassword(Data user)
+        {
+            try
+            {
+                await client.UpdateAsync($"Users/{user.username}", user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error updating user password", ex);
+            }
+        }
+
+        private string emailVerificationCode;
+        private async void sendEmailCodeBtn_Click(object sender, EventArgs e)
+        {
+            string newEmail = newEmailTxt.Text;
+            string emailPassword = emailpwdTxt.Text;
+
+            Data currentUser = await GetCurrentUserInfo();
+
+            if (currentUser == null)
+            {
+                MessageBox.Show("Error: Could not retrieve current user info.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(newEmail) || !IsValidEmail(newEmail))
+            {
+                MessageBox.Show("Please enter a valid new email.");
+                return;
+            }
+
+            if (HashPassword(emailPassword) != currentUser.password)
+            {
+                MessageBox.Show("Password is incorrect.");
+                return;
+            }
+
+            try
+            {
+                // Check if new email already exists in the database
+                FirebaseResponse response = await client.GetAsync($"Users");
+                var usersDict = JsonConvert.DeserializeObject<Dictionary<string, Data>>(response.Body);
+
+                if (usersDict.Values.Any(user => user.email.ToLower() == newEmail.ToLower()))
+                {
+                    MessageBox.Show("This email is already associated with another account.");
+                    return;
+                }
+
+                emailVerificationCode = GenerateVerificationCode();
+                SendVerificationCodeToEmail(newEmail, emailVerificationCode);
+
+                MessageBox.Show("Verification code sent to the new email.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error sending verification code: {ex.Message}");
+            }
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private async void changeEmailBtn_Click(object sender, EventArgs e)
+        {
+            string newEmail = newEmailTxt.Text;
+            string emailPassword = emailpwdTxt.Text;
+            string enteredCode = emailVerifyCodeTxt.Text;
+
+            Data currentUser = await GetCurrentUserInfo();
+
+            if (currentUser == null)
+            {
+                MessageBox.Show("Error: Could not retrieve current user info.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(newEmail) || !IsValidEmail(newEmail))
+            {
+                MessageBox.Show("Please enter a valid new email.");
+                return;
+            }
+
+            if (HashPassword(emailPassword) != currentUser.password)
+            {
+                MessageBox.Show("Password is incorrect.");
+                return;
+            }
+
+            if (enteredCode != emailVerificationCode)
+            {
+                MessageBox.Show("Verification code is incorrect.");
+                return;
+            }
+
+            try
+            {
+                currentUser.email = newEmail;
+                await UpdateUserEmail(currentUser);
+
+                MessageBox.Show("Email changed successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error changing email: {ex.Message}");
+            }
+        }
+        private async Task UpdateUserEmail(Data user)
+        {
+            try
+            {
+                await client.UpdateAsync($"Users/{user.username}", user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error updating user email", ex);
+            }
+        }
+        // settings end
+        // settings end
+        // settings end
+
+        // Search
+        private void SearchTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Prevent the 'ding' sound on Enter
+                SearchPostsByUsername(searchTxt.Text);
+            }
+        }
+
+        private async void SearchPostsByUsername(string username)
+        {
+            //if (string.IsNullOrEmpty(username))
+            //{
+            //    MessageBox.Show("Please enter a username to search for.");
+            //    return;
+            //}
+
+            //try
+            //{
+            //    List<Post> posts = await this.getPostsByUsername(username);
+            //    this.RenderPosts(posts);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"An error occurred while searching for posts: {ex.Message}");
+            //}
+
+            if (string.IsNullOrEmpty(username))
+            {
+                MessageBox.Show("Please enter a username to search for.");
+                return;
+            }
+
+            try
+            {
+                List<Post> posts = await this.getPostsByUsername(username);
+                if (posts.Count > 0)
+                {
+                    this.RenderPosts(posts);
+                }
+                else
+                {
+                    MessageBox.Show("No posts found for the specified username.");
+                    this.panelRenderPost.Controls.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while searching for posts: {ex.Message}");
+            }
+        }
+
+        private async Task<List<Post>> getPostsByUsername(string username)
+        {
+            FirebaseResponse response = await client.GetAsync("/posts");
+
+            List<Post> posts = new List<Post>();
+
+            if (response.Body == "null")
+            {
+                return posts;
+            }
+
+            var jsonPosts = JsonConvert.DeserializeObject<Dictionary<string, PostDto>>(response.Body);
+
+            foreach (var item in jsonPosts)
+            {
+                Post post = await this.mapperPost(item.Value);
+                if (post.user.Equals(username, StringComparison.OrdinalIgnoreCase) || post.userData.name.Equals(username, StringComparison.OrdinalIgnoreCase))
+                {
+                    posts.Add(post);
+                }
+            }
+
+            return posts.OrderBy(p => DateTime.ParseExact(p.created_at, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture)).ToList();
+
+        }
+
+        public static Bitmap ResizeImage1(Image image, int width, int height)
+        {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
+        }
+
+
+        public static async Task LoadImageAsync(string imageUrl, PictureBox pictureBox)
+        {
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(imageUrl);
+                using (HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
+                {
+                    using (Stream stream = response.GetResponseStream())
+                    {
+                        using (Bitmap bitmap = new Bitmap(stream))
+                        {
+                            Bitmap resizedImage = ResizeImage1(bitmap, pictureBox.Width, pictureBox.Height);
+                            pictureBox.Image = resizedImage;
+                        }
+                    }
+                }
+            }
+            catch (OutOfMemoryException)
+            {
+                MessageBox.Show("Error loading image: Out of memory. Try using smaller images.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading the image: {ex.Message}");
+            }
+        }
+
+
 
     }
 }

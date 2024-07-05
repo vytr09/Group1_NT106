@@ -466,13 +466,13 @@ namespace iConnect
                             {
                                 username = userName,
                                 email = userEmail,
-                                password = ""
+                                password = HashPassword("a")
                             };
 
                             SetResponse response = client.Set("Users/" + userName, newUser);
                             if (response.StatusCode == HttpStatusCode.OK)
                             {
-                                MessageBox.Show("User registered successfully. Please set your password.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("User registered successfully. Your default password is 'a'. Please change it in setting", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Hide();
                                 Home home = new Home(userName);
                                 home.Closed += (s, args) => this.Close();
