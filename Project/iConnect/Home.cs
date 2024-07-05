@@ -338,6 +338,8 @@ namespace iConnect
             postBtn.Checked = false;
             addPostPannel.Visible = false;
             userSortPnl.Visible = false;
+
+            //DisplayAll();
         }
 
         private void userBtn_Click_1(object sender, EventArgs e)
@@ -381,6 +383,9 @@ namespace iConnect
             userSortPnl.Visible = false;
             postBtn.Checked = false;
             addPostPannel.Visible = false;
+
+            // hàm lọc theo bài viết
+            DisplayPosts();
         }
 
         private void msgBtn_Click(object sender, EventArgs e)
@@ -2433,8 +2438,6 @@ namespace iConnect
                 List<Post> posts = await this.getPostsByUsername(username);
                 if (posts.Count > 0)
                 {
-                    //this.RenderPosts1(posts);
-                    //this.RenderPosts1(posts, this.searchPnl);
                     this.RenderPosts1(posts, this.sort2Pnl);
                 }
                 else
@@ -2494,6 +2497,10 @@ namespace iConnect
                 UC_Post panelPost = new UC_Post();
 
                 panelPost.Name = $"{post.id}";
+                panelPost.Width = 653;
+                panelPost.Height = 708;
+                panelPost.Margin = new Padding(4);
+                panelPost.BorderStyle = BorderStyle.FixedSingle;
                 panelPost.Dock = DockStyle.Top;
                 panelPost.LabelCountComment = $"{post.comments.Count}";
                 panelPost.LabelCountLike = $"{post.likes.Count}";
@@ -2587,9 +2594,26 @@ namespace iConnect
             }
         }
 
+        private void ClearSearchResultsForPost()
+        {
+            if (this.postSortPnl.Controls.Count > 0)
+            {
+                this.postSortPnl.Controls.Clear();
+            }
+        }
+
+
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {
             ClearSearchResults(); // Clear previous search results
+            ClearSearchResultsForPost(); // Clear post
+        }
+
+        private async void DisplayPosts()
+        {
+            ClearSearchResultsForPost(); // Clear previous search results
+            List<Post> posts = await this.getPostsByUsername(searchTxt.Text);
+            RenderPosts1(posts, this.postSortPnl);
         }
 
 
