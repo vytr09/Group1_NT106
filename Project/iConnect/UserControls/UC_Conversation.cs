@@ -17,6 +17,8 @@ namespace iConnect.UserControls
             InitializeComponent();
         }
 
+        public string UserID { get; set; }
+        public long LastMessageTimestamp { get; set; }
         private string _name;
         private Image _avatar;
 

@@ -269,6 +269,7 @@
     <Compile Include="AddPost.Designer.cs">
       <DependentUpon>AddPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatService.cs" />
     <Compile Include="Helpers\LoadImageHttp.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -308,6 +309,12 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MessageReceive.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MessageReceive.Designer.cs">
+      <DependentUpon>MessageReceive.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_Comment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -325,6 +332,12 @@
     </Compile>
     <Compile Include="UserControls\UC_ListComment.Designer.cs">
       <DependentUpon>UC_ListComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_MessageSend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_MessageSend.Designer.cs">
+      <DependentUpon>UC_MessageSend.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_Post.cs">
       <SubType>UserControl</SubType>
@@ -363,6 +376,9 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MessageReceive.resx">
+      <DependentUpon>MessageReceive.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Comment.resx">
       <DependentUpon>UC_Comment.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_ListComment.resx">
       <DependentUpon>UC_ListComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_MessageSend.resx">
+      <DependentUpon>UC_MessageSend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Post.resx">
       <DependentUpon>UC_Post.cs</DependentUpon>

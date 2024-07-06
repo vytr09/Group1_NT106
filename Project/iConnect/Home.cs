@@ -4031,12 +4031,24 @@ namespace iConnect
         // end of notification
 
 
-//>> BEGIN OF MESSAGE
+        //>> BEGIN OF MESSAGE
+
+        private ChatService _chatService;
+        private string _sender;
+        private string _receiver;
+        private string _chatID;
+        private List<UC_Conversation> _allConversations = new List<UC_Conversation>();
+
         private async void LoadMessageList()
         {
+            _chatService = new ChatService(client);
+
             MessageListPanel.Controls.Clear();
+            _allConversations.Clear();
+
             // Fetch the current user
             Data currentUser = await GetCurrentUserInfo();
+            _sender = currentUser.username;
 
             // Check if the current user is already following the selected user
             FirebaseResponse followingResponse = await client.GetAsync($"Follow/{currentUser.username}/Following");
@@ -4058,15 +4070,21 @@ namespace iConnect
 
                     // Initialize the message item with the user data
                     uc_Conversation[i] = new UC_Conversation();
+                    uc_Conversation[i].UserID = key;
                     uc_Conversation[i].Item_Name = userData.name;
                     string avatarURL = userData.AvatarUrl;
                     if (avatarURL != null)
                     {
                         uc_Conversation[i].Item_Avatar = await GetImageFromUrl(avatarURL);
                     }
+                    else
+                    {
+                        uc_Conversation[i].Item_Avatar = Properties.Resources.profile;
+                    }
 
                     // Add the message item to the panel
                     MessageListPanel.Controls.Add(uc_Conversation[i]);
+                    _allConversations.Add(uc_Conversation[i]);
 
                     // Add the click event handler
                     uc_Conversation[i].Click += UC_Conversation_Click;
@@ -4097,7 +4115,7 @@ namespace iConnect
             }
         }
 
-        private void UC_Conversation_Click(object sender, EventArgs e)
+        private async void UC_Conversation_Click(object sender, EventArgs e)
         {
             foreach (Control control in MessageListPanel.Controls)
             {
@@ -4109,6 +4127,144 @@ namespace iConnect
 
             UC_Conversation clickedItem = sender as UC_Conversation;
             clickedItem.BackColor = Color.LightBlue;
+
+            // Get User ID
+            _receiver = clickedItem.UserID;
+            _chatID = GenerateChatId(_sender, _receiver);
+
+            ConvTitle.Text = clickedItem.Item_Name;
+            ConvImage.Image = clickedItem.Item_Avatar;
+            ConvTitle.Visible = true;
+            ConvImage.Visible = true;
+            FirstMessage.Visible = false;
+            MessageText.Visible = true;
+            SendButton.Visible = true;
+
+            await InitializeChat(); // Load the chat for the selected receiver
+        }
+
+
+        private string GenerateChatId(string user1, string user2)
+        {
+            // Sắp xếp tên người dùng theo thứ tự bảng chữ cái để tạo ra một ID duy nhất và nhất quán
+            return string.Compare(user1, user2) < 0 ? $"{user1}_{user2}" : $"{user2}_{user1}";
+        }
+
+        private async Task InitializeChat()
+        {
+            try
+            {
+                // Clear previous messages
+                ChatContent.Controls.Clear();
+
+                var messages = await _chatService.ObserveMessages(_chatID);
+                if (messages != null && messages.Count > 0)
+                {
+                    foreach (var message in messages)
+                    {
+                        this.Invoke(new Action(() =>
+                        {
+                            if (message.Sender == _sender)
+                            {
+                                var messageItem = new UC_MessageSend
+                                {
+                                    Message = message.Text,
+                                    Timestamp = DateTimeOffset.FromUnixTimeMilliseconds(message.Timestamp).ToLocalTime().ToString("HH:mm")
+                                };
+
+                                ChatContent.Controls.Add(messageItem);
+                                ChatContent.ScrollControlIntoView(messageItem);
+                            }
+                            else
+                            {
+                                var messageItem = new MessageReceive
+                                {
+                                    Message = message.Text,
+                                    Timestamp = DateTimeOffset.FromUnixTimeMilliseconds(message.Timestamp).ToLocalTime().ToString("HH:mm")
+                                };
+
+                                ChatContent.Controls.Add(messageItem);
+                                ChatContent.ScrollControlIntoView(messageItem);
+                            }
+                        }));
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No messages found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error initializing chat: {ex.Message}");
+            }
+        }
+
+        private async void SendButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string messageText = MessageText.Text;
+                if (!string.IsNullOrEmpty(messageText))
+                {
+                    await _chatService.SendMessageAsync(_chatID, _sender, _receiver, messageText);
+                    MessageText.Clear();
+                    await InitializeChat(); // Refresh the chat to show the new message
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending message: {ex.Message}");
+            }
+        }
+
+        private void SearchConversations(string keyword)
+        {
+            MessageListPanel.Controls.Clear();
+
+            var filteredConversations = _allConversations
+                .Where(conv => conv.Item_Name.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                .ToList();
+
+            if (filteredConversations.Count > 0)
+            {
+                foreach (var conversation in filteredConversations)
+                {
+                    MessageListPanel.Controls.Add(conversation);
+                }
+            }
+            else
+            {
+                Label label = new Label();
+                label.Text = "No conversations found!";
+                label.AutoSize = true;
+                MessageListPanel.Controls.Add(label);
+            }
+        }
+
+
+        private void MessageText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SendButton_Click(sender, e);
+            }
+        }
+
+
+        private void SearchConv_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SearchConversations(SearchConv.Text);
+            }
+        }
+
+        private void SearchConv_TextChanged(object sender, EventArgs e)
+        {
+            SearchConversations(SearchConv.Text);
         }
 
 
@@ -4313,6 +4469,7 @@ namespace iConnect
                 this.flowLayoutLoadPostImages.Visible = true;
             }
         }
+
         // end of profile showing
         // end of profile showing
         // end of profile showing
