@@ -1275,7 +1275,7 @@ namespace iConnect
                 panelPost.AuthorName = $"{post.userData.name}";
                 panelPost.LoadPostPicture(post.imageUrl);
                 panelPost.PostCaption = post.caption;
-                panelPost.PostCreatedAt = this.FormatFacebookTime(post.created_at);
+                panelPost.PostCreatedAt = this.formattime(post.created_at);
                 panelPost.ButtonImageLike = !post.likes.Contains(Username) ? global::iConnect.Properties.Resources.heart : global::iConnect.Properties.Resources.redheart;
 
                 if (!string.IsNullOrEmpty(post.userData.AvatarUrl))
@@ -1319,7 +1319,7 @@ namespace iConnect
             }
         }
 
-        private string FormatFacebookTime(string input)
+        private string formattime(string input)
         {
             DateTime inputDateTime;
             if (!DateTime.TryParseExact(input, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out inputDateTime))
@@ -1399,7 +1399,7 @@ namespace iConnect
                 this.labelAuthorDetail.Text = post.userData?.name ?? "Deleted User";
                 await LoadImageHttp.LoadImageAsync(post.imageUrl, this.picturePostDetail);
                 this.labelPostCaptionDetail.Text = post.caption;
-                this.labelCreatedAt.Text = this.FormatFacebookTime(post.created_at);
+                this.labelCreatedAt.Text = this.formattime(post.created_at);
 
                 foreach (var item in comments)
                 {
@@ -1408,7 +1408,7 @@ namespace iConnect
                     comment.Dock = DockStyle.Top;
                     comment.AuthorText = item.userData?.name ?? "Deleted User";
                     comment.CommentText = item.comment;
-                    comment.CreatedAtText = this.FormatFacebookTime(item.created_at);
+                    comment.CreatedAtText = this.formattime(item.created_at);
                     comment.Padding = new Padding(0, 0, 0, 10);
                     comment.ShowDelete = item.user.Equals(Username);
 
@@ -1445,7 +1445,7 @@ namespace iConnect
                             commentChild.Padding = padding;
                             commentChild.AuthorText = child.userData?.name ?? "Deleted User";
                             commentChild.CommentText = child.comment;
-                            commentChild.CreatedAtText = this.FormatFacebookTime(child.created_at);
+                            commentChild.CreatedAtText = this.formattime(child.created_at);
                             commentChild.ShowDelete = child.user.Equals(Username);
 
                             commentChild.ButtonDeleteClick = new System.EventHandler((object sender, EventArgs e) =>
@@ -2593,7 +2593,7 @@ namespace iConnect
                 panelPost.AuthorName = $"{post.userData.name}";
                 panelPost.LoadPostPicture(post.imageUrl);
                 panelPost.PostCaption = post.caption;
-                panelPost.PostCreatedAt = this.FormatFacebookTime(post.created_at);
+                panelPost.PostCreatedAt = this.formattime(post.created_at);
                 panelPost.ButtonImageLike = !post.likes.Contains(Username) ? global::iConnect.Properties.Resources.heart : global::iConnect.Properties.Resources.redheart;
 
                 if (!string.IsNullOrEmpty(post.userData.AvatarUrl))
