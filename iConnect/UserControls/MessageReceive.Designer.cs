@@ -45,7 +45,7 @@
             // 
             this.MessageContent.BorderRadius = 30;
             this.MessageContent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.MessageContent.DefaultText = "tin nhan";
+            this.MessageContent.DefaultText = "Example";
             this.MessageContent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.MessageContent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.MessageContent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));

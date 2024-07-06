@@ -4143,7 +4143,6 @@ namespace iConnect
             await InitializeChat(); // Load the chat for the selected receiver
         }
 
-
         private string GenerateChatId(string user1, string user2)
         {
             return string.Compare(user1, user2) < 0 ? $"{user1}_{user2}" : $"{user2}_{user1}";
