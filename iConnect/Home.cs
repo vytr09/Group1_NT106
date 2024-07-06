@@ -4146,7 +4146,6 @@ namespace iConnect
 
         private string GenerateChatId(string user1, string user2)
         {
-            // Sắp xếp tên người dùng theo thứ tự bảng chữ cái để tạo ra một ID duy nhất và nhất quán
             return string.Compare(user1, user2) < 0 ? $"{user1}_{user2}" : $"{user2}_{user1}";
         }
 
