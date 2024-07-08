@@ -439,27 +439,37 @@ namespace iConnect
         {
             string username = GetProfileUsername();
 
-            // Fetch account type
-            FirebaseResponse accountTypeResponse = await client.GetAsync($"Settings/{username}/AccountType");
-            string accountType = accountTypeResponse.Body.Trim('"');
-
             // Fetch current user
             Data currentUser = await GetCurrentUserInfo();
 
-            // Check if current user follows the profile being viewed
-            FirebaseResponse followResponse = await client.GetAsync($"Follow/{currentUser.username}/Following/{username}");
-            bool isFollowing = followResponse.Body != "null" && followResponse.Body != "null\n";
-
-            if (accountType == "private" && !isFollowing)
+            if (username == currentUser.username)
             {
-                // Show restricted view message for private accounts
-                ShowPrivateAccountMessageInFollowPanel();
-            }
-            else
-            {
+                // Show followers panel for current user's own profile
                 followPnl.Visible = true;
                 followPnl.Parent.Controls.SetChildIndex(followPnl, 0);
                 await DisplayFollowData("Follower", "Người theo dõi");
+            }
+            else
+            {
+                // Fetch account type
+                FirebaseResponse accountTypeResponse = await client.GetAsync($"Settings/{username}/AccountType");
+                string accountType = accountTypeResponse.Body.Trim('"');
+
+                // Check if current user follows the profile being viewed
+                FirebaseResponse followResponse = await client.GetAsync($"Follow/{currentUser.username}/Following/{username}");
+                bool isFollowing = followResponse.Body != "null" && followResponse.Body != "null\n";
+
+                if (accountType == "private" && !isFollowing)
+                {
+                    // Show restricted view message for private accounts
+                    ShowPrivateAccountMessageInFollowPanel();
+                }
+                else
+                {
+                    followPnl.Visible = true;
+                    followPnl.Parent.Controls.SetChildIndex(followPnl, 0);
+                    await DisplayFollowData("Follower", "Người theo dõi");
+                }
             }
         }
 
@@ -467,29 +477,40 @@ namespace iConnect
         {
             string username = GetProfileUsername();
 
-            // Fetch account type
-            FirebaseResponse accountTypeResponse = await client.GetAsync($"Settings/{username}/AccountType");
-            string accountType = accountTypeResponse.Body.Trim('"');
-
             // Fetch current user
             Data currentUser = await GetCurrentUserInfo();
 
-            // Check if current user follows the profile being viewed
-            FirebaseResponse followResponse = await client.GetAsync($"Follow/{currentUser.username}/Following/{username}");
-            bool isFollowing = followResponse.Body != "null" && followResponse.Body != "null\n";
-
-            if (accountType == "private" && !isFollowing)
+            if (username == currentUser.username)
             {
-                // Show restricted view message for private accounts
-                ShowPrivateAccountMessageInFollowPanel();
-            }
-            else
-            {
+                // Show following panel for current user's own profile
                 followPnl.Visible = true;
                 followPnl.Parent.Controls.SetChildIndex(followPnl, 0);
                 await DisplayFollowData("Following", "Đang theo dõi");
             }
+            else
+            {
+                // Fetch account type
+                FirebaseResponse accountTypeResponse = await client.GetAsync($"Settings/{username}/AccountType");
+                string accountType = accountTypeResponse.Body.Trim('"');
+
+                // Check if current user follows the profile being viewed
+                FirebaseResponse followResponse = await client.GetAsync($"Follow/{currentUser.username}/Following/{username}");
+                bool isFollowing = followResponse.Body != "null" && followResponse.Body != "null\n";
+
+                if (accountType == "private" && !isFollowing)
+                {
+                    // Show restricted view message for private accounts
+                    ShowPrivateAccountMessageInFollowPanel();
+                }
+                else
+                {
+                    followPnl.Visible = true;
+                    followPnl.Parent.Controls.SetChildIndex(followPnl, 0);
+                    await DisplayFollowData("Following", "Đang theo dõi");
+                }
+            }
         }
+
 
         private void ShowPrivateAccountMessageInFollowPanel()
         {
@@ -595,10 +616,11 @@ namespace iConnect
                 this.flowLayoutLoadPostImages.Visible = false;
 
                 List<Post> posts = await this.getPosts();
-                posts = posts.FindAll((t) => t.user.Equals(Username)).OrderByDescending(p => DateTime.ParseExact(p.created_at, "dd/MM/yyyy HH:mm:ss", null)).ToList();
+                posts = posts.FindAll(post => post.user.Equals(Username))
+                             .OrderByDescending(post => DateTime.ParseExact(post.created_at, "dd/MM/yyyy HH:mm:ss", null))
+                             .ToList();
 
                 int totalPost = posts.Count;
-
                 totalPostOfUser.Text = $"{totalPost} Bài viết";
 
                 if (flowLayoutLoadPostImages.Controls.Count > 0)
@@ -658,7 +680,6 @@ namespace iConnect
                             this._posts.Clear();
 
                             totalPost -= 1;
-
                             totalPostOfUser.Text = $"{totalPost} Bài viết";
 
                             flowLayoutLoadPostImages.Controls.Remove(panel);
@@ -1259,18 +1280,33 @@ namespace iConnect
             {
                 var jsonPosts = JsonConvert.DeserializeObject<Dictionary<string, PostDto>>(response.Body);
 
+                // Fetch current user
+                Data currentUser = await GetCurrentUserInfo();
+
                 foreach (var item in jsonPosts)
                 {
                     // Fetch account type of the post creator
                     FirebaseResponse accountTypeResponse = await client.GetAsync($"Settings/{item.Value.user}/AccountType");
                     string accountType = accountTypeResponse.Body.Trim('"');
 
-                    // Fetch current user
-                    Data currentUser = await GetCurrentUserInfo();
-
                     // Check if the current user follows the profile being viewed
                     FirebaseResponse followResponse = await client.GetAsync($"Follow/{currentUser.username}/Following/{item.Value.user}");
                     bool isFollowing = followResponse.Body != "null" && followResponse.Body != "null\n";
+
+                    // Check if the post author is blocked or has blocked the current user
+                    bool isBlocked = await IsUserBlocked(currentUser.username, item.Value.user);
+                    if (isBlocked)
+                    {
+                        continue; // Skip this post if the user is blocked
+                    }
+
+                    // Always add posts from the current user
+                    if (item.Value.user == currentUser.username)
+                    {
+                        Post post = await this.mapperPost(item.Value);
+                        posts.Add(post);
+                        continue;
+                    }
 
                     // Only add posts from public profiles or private profiles followed by the current user
                     if (accountType == "public" || (accountType == "private" && isFollowing))
@@ -1283,6 +1319,8 @@ namespace iConnect
 
             return posts.OrderBy(p => DateTime.ParseExact(p.created_at, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture)).ToList();
         }
+
+
 
 
         private async void LoadPost()
@@ -2237,6 +2275,18 @@ namespace iConnect
             int topMargin = index == 0 ? UserPanelTopMargin : 0;
             panel.Location = new Point(20, index * (UserPanelHeight + UserPanelMarginBottom) + topMargin);
         }
+
+        private async Task<bool> IsUserBlocked(string currentUser, string otherUser)
+        {
+            FirebaseResponse blockedByResponse = await client.GetAsync($"BlockedUsers/{currentUser}/{otherUser}");
+            FirebaseResponse blockedUserResponse = await client.GetAsync($"BlockedUsers/{otherUser}/{currentUser}");
+
+            bool isBlockedByCurrentUser = blockedByResponse.Body != "null" && blockedByResponse.Body != "null\n";
+            bool isBlockedByOtherUser = blockedUserResponse.Body != "null" && blockedUserResponse.Body != "null\n";
+
+            return isBlockedByCurrentUser || isBlockedByOtherUser;
+        }
+
         // block end
         // block end
         // block end
@@ -2598,9 +2648,20 @@ namespace iConnect
             {
                 ClearSearchResultsForPost(); // Clear previous post search results
                 List<Post> posts = await this.getPostsByUsername(username);
-                if (posts.Count > 0)
+                List<Post> filteredPosts = new List<Post>();
+
+                foreach (var post in posts)
                 {
-                    this.RenderPosts1(posts, this.sort2Pnl);
+                    bool isBlocked = await IsUserBlocked(Username, post.user);
+                    if (!isBlocked)
+                    {
+                        filteredPosts.Add(post);
+                    }
+                }
+
+                if (filteredPosts.Count > 0)
+                {
+                    this.RenderPosts1(filteredPosts, this.sort2Pnl);
                 }
                 else
                 {
@@ -2613,9 +2674,6 @@ namespace iConnect
                 MessageBox.Show($"An error occurred while searching for posts: {ex.Message}");
             }
         }
-
-
-
 
         private async Task<List<Post>> getPostsByUsername(string username)
         {
@@ -2921,12 +2979,20 @@ namespace iConnect
                 // Convert search query to lowercase for case-insensitive comparison
                 searchQuery = searchQuery.ToLower();
 
-                // Filter users based on search query
-                var filteredUsers = string.IsNullOrWhiteSpace(searchQuery)
-                    ? usersList
-                    : usersList.Where(user =>
-                        user.name?.ToLower()?.Contains(searchQuery) == true ||
-                        user.username?.ToLower()?.Contains(searchQuery) == true).ToList();
+                // Fetch the current user
+                Data currentUser = await GetCurrentUserInfo();
+
+                // Filter users based on search query and blocked status
+                var filteredUsers = new List<Data>();
+
+                foreach (var user in usersList)
+                {
+                    bool isBlocked = await IsUserBlocked(currentUser.username, user.username);
+                    if ((user.name?.ToLower()?.Contains(searchQuery) == true || user.username?.ToLower()?.Contains(searchQuery) == true) && !isBlocked)
+                    {
+                        filteredUsers.Add(user);
+                    }
+                }
 
                 // Display filtered users
                 int topPosition = 20; // Initial top position
@@ -2961,18 +3027,25 @@ namespace iConnect
                 var usersList = usersDict?.Values?.ToList() ?? new List<Data>(); // Convert to list or initialize an empty list
 
                 // Clear existing controls in the main panel
-                this.userSortPnl.Controls.Clear();
+                this.all2Pnl.Controls.Clear();
 
                 // Convert search query to lowercase for case-insensitive comparison
                 searchQuery = searchQuery.ToLower();
 
-                // Filter users based on search query
-                var filteredUsers = string.IsNullOrWhiteSpace(searchQuery)
-                    ? usersList
-                    : usersList.Where(user =>
-                        user.name?.ToLower()?.Contains(searchQuery) == true ||
-                        user.username?.ToLower()?.Contains(searchQuery) == true).ToList();
+                // Fetch the current user
+                Data currentUser = await GetCurrentUserInfo();
 
+                // Filter users based on search query and blocked status
+                var filteredUsers = new List<Data>();
+
+                foreach (var user in usersList)
+                {
+                    bool isBlocked = await IsUserBlocked(currentUser.username, user.username);
+                    if ((user.name?.ToLower()?.Contains(searchQuery) == true || user.username?.ToLower()?.Contains(searchQuery) == true) && !isBlocked)
+                    {
+                        filteredUsers.Add(user);
+                    }
+                }
                 // Display filtered users
                 int topPosition = 20; // Initial top position
                 int verticalSpacing = 70; // Spacing between users
@@ -3281,9 +3354,16 @@ namespace iConnect
                     new Dictionary<string, FollowInfo>();
 
                 // Exclude the current user and those already followed
-                var otherUsers = usersDict.Values
-                    .Where(user => user.username != currentUser.username && !followingDict.ContainsKey(user.username))
-                    .ToList();
+                var otherUsers = new List<Data>();
+
+                foreach (var user in usersDict.Values)
+                {
+                    bool isBlocked = await IsUserBlocked(currentUser.username, user.username);
+                    if (user.username != currentUser.username && !followingDict.ContainsKey(user.username) && !isBlocked)
+                    {
+                        otherUsers.Add(user);
+                    }
+                }
 
                 // Select three random users
                 Random random = new Random();
@@ -4035,6 +4115,33 @@ namespace iConnect
             loadNotiPnl.Controls.Add(notificationPanel);
             loadNotiPnl.Controls.Add(separatorPanel);
         }
+
+        private Image ResizeNotiImage(Image image, int width, int height)
+        {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(System.Drawing.Drawing2D.WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
+        }
+
+
         private async Task CheckForUnreadNotifications()
         {
             try
@@ -4050,16 +4157,21 @@ namespace iConnect
 
                 // Check for unread notifications
                 bool hasUnread = notifications.Values.Any(n => !n.IsRead);
-
-                // Update notification button icon
+                Image notificationIcon;
                 if (notiBtn.Checked)
                 {
-                    notiBtn.CustomImages.Image = hasUnread ? Properties.Resources.notification_new : Properties.Resources.Notification_fill;
+                    notificationIcon = hasUnread ? Properties.Resources.notification_new : Properties.Resources.Notification_fill;
                 }
                 else
                 {
-                    notiBtn.CustomImages.Image = hasUnread ? Properties.Resources.notification_new : Properties.Resources.Notification;
+                    notificationIcon = hasUnread ? Properties.Resources.notification_new : Properties.Resources.Notification;
                 }
+                // Resize the icon to the desired size, e.g., 32x32 pixels
+                int desiredWidth = 32;
+                int desiredHeight = 32;
+                notificationIcon = ResizeImage(notificationIcon, desiredWidth, desiredHeight);
+
+                notiBtn.CustomImages.Image = notificationIcon;
                 notiBtn.Invalidate(); // Force the button to redraw
             }
             catch (Exception ex)
@@ -4365,9 +4477,51 @@ namespace iConnect
 
                 // Fetch the account type
                 FirebaseResponse accountTypeResponse = await client.GetAsync($"Settings/{username}/AccountType");
-                string accountType = accountTypeResponse.Body;
+                string accountType = accountTypeResponse.Body.Trim('"');
 
-                // Check if the current user is following the user
+                // If viewing own profile, load profile data and skip further checks
+                if (username == this.Username)
+                {
+                    // Load user profile data
+                    usrName.Text = userData.username;
+                    fullName.Text = userData.name;
+                    dateofBirth.Text = "Ngày sinh: " + userData.dateofb;
+                    proPnlAddress.Text = "Sinh sống tại: " + userData.city;
+                    proPnlFromLbl.Text = "Đến từ: " + userData.country;
+                    bioLbl.Text = userData.bio;
+
+                    editPro.Visible = true; // Show edit profile button for own profile
+
+                    // Clear any previous follow buttons
+                    RemovePreviousFollowButton();
+
+                    // Load user avatar
+                    await LoadProfileAvatarAsync(username);
+
+                    // Update follower and following counts
+                    await UpdateFollowerFollowingCounts(username);
+
+                    // Load user's posts
+                    await LoadPostByUser(username);
+
+                    return; // Skip the rest as we don't need to check for blocks or following for own profile
+                }
+
+                // Check if the current user is blocked by or has blocked the profile being viewed
+                FirebaseResponse blockedByResponse = await client.GetAsync($"BlockedUsers/{username}/BlockedBy/{this.Username}");
+                bool isBlockedByCurrentUser = blockedByResponse.Body != "null";
+
+                FirebaseResponse blockedUserResponse = await client.GetAsync($"BlockedUsers/{this.Username}/BlockedBy/{username}");
+                bool hasBlockedCurrentUser = blockedUserResponse.Body != "null";
+
+                if (isBlockedByCurrentUser || hasBlockedCurrentUser)
+                {
+                    MessageBox.Show("You cannot view this profile.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    profilePnl.Visible = false;
+                    return;
+                }
+
+                // Check if the current user is following the user (for private accounts)
                 bool isFollowing = false;
                 if (accountType == "private")
                 {
@@ -4384,7 +4538,7 @@ namespace iConnect
                 bioLbl.Text = userData.bio;
 
                 // Hide edit profile button if viewing another user's profile
-                editPro.Visible = username == this.Username;
+                editPro.Visible = false;
 
                 // Clear any previous follow buttons
                 RemovePreviousFollowButton();
@@ -4416,6 +4570,7 @@ namespace iConnect
                 MessageBox.Show($"Error loading user profile: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void ShowPrivateAccountMessage()
         {
@@ -4591,11 +4746,18 @@ namespace iConnect
                 // Fetch current user
                 Data currentUser = await GetCurrentUserInfo();
 
-                // Check if current user follows the profile being viewed
-                FirebaseResponse followResponse = await client.GetAsync($"Follow/{currentUser.username}/Following/{username}");
-                bool isFollowing = followResponse.Body != "null" && followResponse.Body != "null\n";
+                bool isCurrentUser = username == currentUser.username;
 
-                if (accountType == "private" && !isFollowing)
+                // Check if current user follows the profile being viewed
+                bool isFollowing = false;
+                if (!isCurrentUser)
+                {
+                    FirebaseResponse followResponse = await client.GetAsync($"Follow/{currentUser.username}/Following/{username}");
+                    isFollowing = followResponse.Body != "null" && followResponse.Body != "null\n";
+                }
+
+                // If the account is private and the current user is not following, show a private account message
+                if (!isCurrentUser && accountType == "private" && !isFollowing)
                 {
                     ShowPrivateAccountMessage();
                     return;
@@ -4641,7 +4803,7 @@ namespace iConnect
 
                     panel.Controls.Add(pictureBox);
 
-                    if (username == Username)
+                    if (isCurrentUser)
                     {
                         Button deleteButton = new Button
                         {
