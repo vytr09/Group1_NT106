@@ -3071,7 +3071,7 @@ namespace iConnect
         private async void delAccountBtn_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Are you sure you want to delete your account? This action cannot be undone.",
-                                             "Confirm Account Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                         "Confirm Account Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
@@ -3101,8 +3101,26 @@ namespace iConnect
                     await DeleteUserFromBlockedLists(username);
                     await DeleteUserOwnBlockedList(username);
 
+                    // Delete user's follow relationships
+                    await DeleteUserFollowRelationships(username);
+
+                    // Delete user's messages
+                    await DeleteUserMessages(username);
+
+                    // Delete user's notifications
+                    await DeleteUserNotifications(username);
+
                     // Delete user's settings
                     await client.DeleteAsync($"Settings/{username}");
+
+                    // Delete user's usernames entry
+                    await client.DeleteAsync($"Usernames/{username}");
+
+                    // Delete user's removed log
+                    await client.DeleteAsync($"RemoveLog/{username}");
+
+                    // Delete user's unfollow log
+                    await client.DeleteAsync($"UnfollowLog/{username}");
 
                     MessageBox.Show("Account deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -3122,7 +3140,6 @@ namespace iConnect
             public string BlockedBy { get; set; }
             public string BlockedUser { get; set; }
         }
-
 
         private async Task<List<Comment>> getCmtByUsername(string username)
         {
@@ -3204,6 +3221,87 @@ namespace iConnect
             if (userBlockedListResponse.Body != "null")
             {
                 await client.DeleteAsync($"BlockedUsers/{username}");
+            }
+        }
+
+        private async Task DeleteUserFollowRelationships(string username)
+        {
+            var followResponse = await client.GetAsync("Follow");
+            if (followResponse.Body != "null")
+            {
+                var followData = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, Follow>>>>(followResponse.Body);
+                if (followData != null)
+                {
+                    foreach (var user in followData)
+                    {
+                        // Delete follow relationships where the user is a follower
+                        if (user.Value.ContainsKey("Follower") && user.Value["Follower"].ContainsKey(username))
+                        {
+                            await client.DeleteAsync($"Follow/{user.Key}/Follower/{username}");
+                        }
+
+                        // Delete follow relationships where the user is following
+                        if (user.Value.ContainsKey("Following") && user.Value["Following"].ContainsKey(username))
+                        {
+                            await client.DeleteAsync($"Follow/{user.Key}/Following/{username}");
+                        }
+                    }
+
+                    // Delete the user's own follow data
+                    await client.DeleteAsync($"Follow/{username}");
+                }
+            }
+        }
+
+        public class Message
+        {
+            public string Id { get; set; }
+            public string Sender { get; set; }
+            public string Receiver { get; set; }
+            public string Content { get; set; }
+            public string Timestamp { get; set; }
+        }
+
+        public class Follow
+        {
+            public string Follower { get; set; }
+            public string Following { get; set; }
+        }
+
+
+        private async Task DeleteUserMessages(string username)
+        {
+            var messagesResponse = await client.GetAsync("Messages");
+            if (messagesResponse.Body != "null")
+            {
+                var messages = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Message>>>(messagesResponse.Body);
+                if (messages != null)
+                {
+                    foreach (var conversation in messages)
+                    {
+                        var updatedConversation = conversation.Value
+                            .Where(m => m.Value.Sender != username && m.Value.Receiver != username)
+                            .ToDictionary(m => m.Key, m => m.Value);
+
+                        if (updatedConversation.Count == 0)
+                        {
+                            await client.DeleteAsync($"Messages/{conversation.Key}");
+                        }
+                        else
+                        {
+                            await client.UpdateAsync($"Messages/{conversation.Key}", updatedConversation);
+                        }
+                    }
+                }
+            }
+        }
+
+        private async Task DeleteUserNotifications(string username)
+        {
+            var notificationsResponse = await client.GetAsync($"Notifications/{username}");
+            if (notificationsResponse.Body != "null")
+            {
+                await client.DeleteAsync($"Notifications/{username}");
             }
         }
 
@@ -4118,8 +4216,22 @@ namespace iConnect
 
         private Image ResizeNotiImage(Image image, int width, int height)
         {
-            var destRect = new Rectangle(0, 0, width, height);
-            var destImage = new Bitmap(width, height);
+            int newWidth, newHeight;
+            float aspectRatio = (float)image.Width / image.Height;
+
+            if (width / (float)height > aspectRatio)
+            {
+                newWidth = (int)(height * aspectRatio);
+                newHeight = height;
+            }
+            else
+            {
+                newWidth = width;
+                newHeight = (int)(width / aspectRatio);
+            }
+
+            var destRect = new Rectangle(0, 0, newWidth, newHeight);
+            var destImage = new Bitmap(newWidth, newHeight);
 
             destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
 
@@ -4140,6 +4252,7 @@ namespace iConnect
 
             return destImage;
         }
+
 
 
         private async Task CheckForUnreadNotifications()
@@ -4169,7 +4282,7 @@ namespace iConnect
                 // Resize the icon to the desired size, e.g., 32x32 pixels
                 int desiredWidth = 32;
                 int desiredHeight = 32;
-                notificationIcon = ResizeImage(notificationIcon, desiredWidth, desiredHeight);
+                notificationIcon = ResizeNotiImage(notificationIcon, desiredWidth, desiredHeight);
 
                 notiBtn.CustomImages.Image = notificationIcon;
                 notiBtn.Invalidate(); // Force the button to redraw
