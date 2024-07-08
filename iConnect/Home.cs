@@ -432,6 +432,7 @@ namespace iConnect
             postBtn.Checked = false;
             addPostPannel.Visible = false;
 
+            _chatService = new ChatService(client);
             LoadMessageList();
         }
 
@@ -4346,11 +4347,10 @@ namespace iConnect
         private string _receiver;
         private string _chatID;
         private List<UC_Conversation> _allConversations = new List<UC_Conversation>();
+        private HashSet<long> _displayedMessageTimestamps = new HashSet<long>();
 
         private async void LoadMessageList()
         {
-            _chatService = new ChatService(client);
-
             MessageListPanel.Controls.Clear();
             _allConversations.Clear();
 
@@ -4359,7 +4359,7 @@ namespace iConnect
             _sender = currentUser.username;
 
             // Check if the current user is already following the selected user
-            FirebaseResponse followingResponse = await client.GetAsync($"Follow/{currentUser.username}/Following");
+            FirebaseResponse followingResponse = await _chatService.Client.GetAsync($"Follow/{currentUser.username}/Following");
             var followingDict = followingResponse.Body != "null" ?
                     JsonConvert.DeserializeObject<Dictionary<string, FollowInfo>>(followingResponse.Body) :
                     new Dictionary<string, FollowInfo>();
@@ -4373,7 +4373,7 @@ namespace iConnect
                 foreach (var key in followingDict.Keys)
                 {
                     // Fetch user data for each following user
-                    FirebaseResponse response = await client.GetAsync($"Users/{key}");
+                    FirebaseResponse response = await _chatService.Client.GetAsync($"Users/{key}");
                     Data userData = JsonConvert.DeserializeObject<Data>(response.Body);
 
                     // Initialize the message item with the user data
@@ -4449,6 +4449,9 @@ namespace iConnect
             SendButton.Visible = true;
 
             await InitializeChat(); // Load the chat for the selected receiver
+
+            // Start polling for new messages
+            Task.Run(() => _chatService.PollForMessages(_chatID, OnNewMessageReceived));
         }
 
         private string GenerateChatId(string user1, string user2)
@@ -4460,39 +4463,16 @@ namespace iConnect
         {
             try
             {
-                // Clear previous messages
+                // Clear previous messages and displayed timestamps
                 ChatContent.Controls.Clear();
+                _displayedMessageTimestamps.Clear();
 
                 var messages = await _chatService.ObserveMessages(_chatID);
                 if (messages != null && messages.Count > 0)
                 {
                     foreach (var message in messages)
                     {
-                        this.Invoke(new Action(() =>
-                        {
-                            if (message.Sender == _sender)
-                            {
-                                var messageItem = new UC_MessageSend
-                                {
-                                    Message = message.Text,
-                                    Timestamp = DateTimeOffset.FromUnixTimeMilliseconds(message.Timestamp).ToLocalTime().ToString("HH:mm")
-                                };
-
-                                ChatContent.Controls.Add(messageItem);
-                                ChatContent.ScrollControlIntoView(messageItem);
-                            }
-                            else
-                            {
-                                var messageItem = new MessageReceive
-                                {
-                                    Message = message.Text,
-                                    Timestamp = DateTimeOffset.FromUnixTimeMilliseconds(message.Timestamp).ToLocalTime().ToString("HH:mm")
-                                };
-
-                                ChatContent.Controls.Add(messageItem);
-                                ChatContent.ScrollControlIntoView(messageItem);
-                            }
-                        }));
+                        AddMessageToChatContent(message);
                     }
                 }
                 else
@@ -4504,6 +4484,41 @@ namespace iConnect
             {
                 Console.WriteLine($"Error initializing chat: {ex.Message}");
             }
+        }
+
+        private void AddMessageToChatContent(ChatMessage message)
+        {
+            // Avoid duplicate messages by checking timestamp
+            if (_displayedMessageTimestamps.Contains(message.Timestamp))
+                return;
+
+            _displayedMessageTimestamps.Add(message.Timestamp);
+
+            this.Invoke(new Action(() =>
+            {
+                if (message.Sender == _sender)
+                {
+                    var messageItem = new UC_MessageSend
+                    {
+                        Message = message.Text,
+                        Timestamp = DateTimeOffset.FromUnixTimeMilliseconds(message.Timestamp).ToLocalTime().ToString("HH:mm")
+                    };
+
+                    ChatContent.Controls.Add(messageItem);
+                    ChatContent.ScrollControlIntoView(messageItem);
+                }
+                else
+                {
+                    var messageItem = new MessageReceive
+                    {
+                        Message = message.Text,
+                        Timestamp = DateTimeOffset.FromUnixTimeMilliseconds(message.Timestamp).ToLocalTime().ToString("HH:mm")
+                    };
+
+                    ChatContent.Controls.Add(messageItem);
+                    ChatContent.ScrollControlIntoView(messageItem);
+                }
+            }));
         }
 
         private async void SendButton_Click(object sender, EventArgs e)
@@ -4548,7 +4563,6 @@ namespace iConnect
             }
         }
 
-
         private void MessageText_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -4557,7 +4571,6 @@ namespace iConnect
                 SendButton_Click(sender, e);
             }
         }
-
 
         private void SearchConv_KeyDown(object sender, KeyEventArgs e)
         {
@@ -4571,6 +4584,11 @@ namespace iConnect
         private void SearchConv_TextChanged(object sender, EventArgs e)
         {
             SearchConversations(SearchConv.Text);
+        }
+
+        private void OnNewMessageReceived(ChatMessage message)
+        {
+            AddMessageToChatContent(message);
         }
 
 

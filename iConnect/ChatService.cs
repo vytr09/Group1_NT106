@@ -1,16 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using FireSharp.Interfaces;
 using FireSharp.Response;
-using System.Collections.Generic;
 
 public class ChatService
 {
-    private readonly IFirebaseClient _firebaseClient;
+    public IFirebaseClient Client { get; }
+
+    private long _lastTimestamp;
 
     public ChatService(IFirebaseClient firebaseClient)
     {
-        _firebaseClient = firebaseClient;
+        Client = firebaseClient;
+        _lastTimestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
     }
 
     public async Task SendMessageAsync(string chatId, string sender, string receiver, string text)
@@ -25,7 +29,7 @@ public class ChatService
 
         try
         {
-            await _firebaseClient.PushAsync($"Messages/{chatId}", message);
+            await Client.PushAsync($"Messages/{chatId}", message);
             Console.WriteLine($"Message sent: {message.Text}");
         }
         catch (Exception ex)
@@ -38,7 +42,7 @@ public class ChatService
     {
         try
         {
-            FirebaseResponse response = await _firebaseClient.GetAsync($"Messages/{chatId}");
+            FirebaseResponse response = await Client.GetAsync($"Messages/{chatId}");
             if (response.Body != "null")
             {
                 var messages = response.ResultAs<Dictionary<string, ChatMessage>>();
@@ -50,6 +54,33 @@ public class ChatService
         {
             Console.WriteLine($"Error observing messages: {ex.Message}");
             return new List<ChatMessage>();
+        }
+    }
+
+    public async Task PollForMessages(string chatId, Action<ChatMessage> onNewMessage)
+    {
+        while (true)
+        {
+            try
+            {
+                FirebaseResponse response = await Client.GetAsync($"Messages/{chatId}");
+                if (response.Body != "null")
+                {
+                    var messages = response.ResultAs<Dictionary<string, ChatMessage>>();
+                    var newMessages = messages.Values.Where(m => m.Timestamp > _lastTimestamp).ToList();
+                    foreach (var message in newMessages)
+                    {
+                        onNewMessage(message);
+                        _lastTimestamp = message.Timestamp;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error polling messages: {ex.Message}");
+            }
+
+            await Task.Delay(1000); // Poll every 1 second
         }
     }
 }
